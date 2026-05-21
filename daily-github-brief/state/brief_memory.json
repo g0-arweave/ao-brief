@@ -1,10 +1,10 @@
 {
   "global": {
-    "last_success_at": "2026-05-21T19:55:22Z"
+    "last_success_at": "2026-05-21T20:04:30Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-05-21T19:55:22Z",
+      "last_success_at": "2026-05-21T20:04:30Z",
       "last_seen_shas": [
         "75082bdb001f67d3fb14d372a027b74f619ae572",
         "a51a93ce17d8d972e6b53c8743fc7d3e6dc1d319",
