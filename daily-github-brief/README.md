@@ -22,13 +22,14 @@ The default tone is positive, realistic, and grounded in the commits. The goal i
 
 ```text
 daily-github-brief/
-  .github/workflows/daily.yml   # 8am PT GitHub Actions schedule
   brief.py                      # fetch commits, analyze, email
   sources.json                  # sources to monitor
   repo_contexts/hyperbeam.md    # durable repo context for better analysis
   state/brief_memory.json       # rolling memory, updated after each run
   requirements.txt
-  .env.example
+
+.github/workflows/
+  daily.yml                      # 8am PT GitHub Actions schedule
 ```
 
 ## Setup
@@ -108,8 +109,10 @@ The workflow is set to run every day at 8am Pacific time:
 
 ```yaml
 schedule:
-  - cron: '0 8 * * *'
-    timezone: 'America/Los_Angeles'
+  - cron: '0 15 * * *'
+  - cron: '0 16 * * *'
+
+# Workflow gates execution to exactly 8:00am America/Los_Angeles.
 ```
 
 ## Add another GitHub source
