@@ -1,6 +1,28 @@
 {
   "global": {
-    "last_success_at": null
+    "last_success_at": "2026-05-21T21:51:36Z"
   },
-  "sources": {}
+  "sources": {
+    "sam-hyperbeam": {
+      "last_success_at": "2026-05-21T21:51:36Z",
+      "last_seen_shas": [
+        "75082bdb001f67d3fb14d372a027b74f619ae572",
+        "a51a93ce17d8d972e6b53c8743fc7d3e6dc1d319",
+        "8c19c6adb45fc658e1ac06e6555efd916fd305e5"
+      ],
+      "last_public_activity_at": "2026-05-20T20:11:16Z",
+      "recent_commit_titles": [
+        "fix(forge): install templates where rebar3 reads them",
+        "fix(forge): move template installer to repo root",
+        "Merge pull request #921 from permaweb/fix/install-template-commands"
+      ],
+      "rolling_context": "Public tracking for Sam on HyperBEAM starts today with a focused developer-experience cleanup around Forge templates. The visible commits fixed where templates are installed so they match the locations that rebar3, Erlang's build tool, actually reads. Sam also moved the template installer to the repository root as ./install-template, making the setup command easier to find from a fresh HyperBEAM checkout. Related docs in device packaging and external device repository guides were updated to match the new command path. The practical trajectory is cleaner project scaffolding for people building or packaging pluggable HyperBEAM pieces. Today's evidence points to setup polish rather than protocol-level changes.",
+      "current_phase": "developer setup cleanup",
+      "recent_themes": [
+        "Forge template installation",
+        "developer documentation",
+        "project scaffolding"
+      ]
+    }
+  }
 }
