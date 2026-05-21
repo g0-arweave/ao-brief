@@ -77,6 +77,8 @@ Optional variables:
 EMAIL_FROM_NAME=AO Daily
 OPENAI_MODEL=gpt-5.5
 SENDGRID_API_BASE=https://api.sendgrid.com
+EMAIL_REPLY_TO=ops@yourdomain.com
+EMAIL_LIST_UNSUBSCRIBE=<mailto:unsubscribe@yourdomain.com>, <https://yourdomain.com/unsubscribe>
 ```
 
 For EU SendGrid regional subusers, use:

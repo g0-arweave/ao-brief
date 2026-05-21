@@ -244,6 +244,37 @@ def aggregate_stats(commits: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def build_fallback_windows(
+    session: requests.Session,
+    source: dict[str, Any],
+    now: datetime,
+    cfg: RunConfig,
+) -> list[dict[str, Any]]:
+    windows = [("day", 24), ("week", 24 * 7), ("month", 24 * 30)]
+    out: list[dict[str, Any]] = []
+    for label, hours in windows:
+        since = now - timedelta(hours=hours)
+        commits = fetch_commits_for_source(
+            session=session,
+            source=source,
+            since=since,
+            until=now,
+            max_commit_details=cfg.max_commit_details,
+            include_patch_snippets=cfg.include_patch_snippets,
+        )
+        out.append(
+            {
+                "label": label,
+                "hours": hours,
+                "window_start_utc": iso_z(since),
+                "window_end_utc": iso_z(now),
+                "stats": aggregate_stats(commits),
+                "commits": commits[:10],
+            }
+        )
+    return out
+
+
 def build_payload(
     sources: list[dict[str, Any]],
     state: dict[str, Any],
@@ -272,6 +303,15 @@ def build_payload(
         new_commits = [c for c in commits if c.get("sha") not in seen_shas]
         commits_by_source[sid] = new_commits
 
+        fallback_windows: list[dict[str, Any]] = []
+        if not new_commits:
+            fallback_windows = build_fallback_windows(
+                session=session,
+                source=source,
+                now=now,
+                cfg=cfg,
+            )
+
         context_path = base_dir / source.get("context_file", "") if source.get("context_file") else None
         context = read_text(context_path) if context_path else ""
 
@@ -295,6 +335,7 @@ def build_payload(
                 "repo_context": context,
                 "stats": aggregate_stats(new_commits),
                 "commits": new_commits,
+                "fallback_windows": fallback_windows,
             }
         )
 
@@ -340,6 +381,9 @@ def build_instructions() -> str:
         - Files changed
         - Additions and deletions, if available
         - Time window
+
+        If commit count is 0 in the primary tracked window, use fallback_windows in the payload to provide a grounded day/week/month context.
+        Clearly label that as fallback context, not new same-window activity.
 
         Proof from commits:
         List the most important commits with exact title, link, and a short practical translation.
@@ -441,11 +485,26 @@ def parse_recipients(value: str) -> list[dict[str, str]]:
     return [{"email": email} for email in emails]
 
 
+def build_deliverability_headers() -> dict[str, str]:
+    headers: dict[str, str] = {
+        "X-Auto-Response-Suppress": "All",
+        "Precedence": "bulk",
+    }
+
+    list_unsub = os.environ.get("EMAIL_LIST_UNSUBSCRIBE", "").strip()
+    if list_unsub:
+        headers["List-Unsubscribe"] = list_unsub
+        headers["List-Unsubscribe-Post"] = "List-Unsubscribe=One-Click"
+
+    return headers
+
+
 def send_email(subject: str, text_body: str, cfg: RunConfig) -> None:
     api_key = os.environ.get("SENDGRID_API_KEY")
     email_to = os.environ.get("EMAIL_TO", "")
     email_from = os.environ.get("EMAIL_FROM", "")
     email_from_name = os.environ.get("EMAIL_FROM_NAME", "AO Daily")
+    reply_to = os.environ.get("EMAIL_REPLY_TO", "").strip()
 
     missing = [name for name, value in [("SENDGRID_API_KEY", api_key), ("EMAIL_TO", email_to), ("EMAIL_FROM", email_from)] if not value]
     if missing:
@@ -455,11 +514,15 @@ def send_email(subject: str, text_body: str, cfg: RunConfig) -> None:
         "personalizations": [{"to": parse_recipients(email_to)}],
         "from": {"email": email_from, "name": email_from_name},
         "subject": subject,
+        "headers": build_deliverability_headers(),
         "content": [
             {"type": "text/plain", "value": text_body},
             {"type": "text/html", "value": text_to_html(text_body)},
         ],
     }
+
+    if reply_to:
+        payload["reply_to"] = {"email": reply_to}
 
     url = cfg.sendgrid_api_base.rstrip("/") + "/v3/mail/send"
     response = requests.post(
@@ -588,11 +651,14 @@ def main() -> int:
     payload, commits_by_source = build_payload(sources, state, cfg, now)
     subject = email_subject(payload)
 
-    try:
-        email_text, memory = call_openai(payload, cfg)
-    except Exception as exc:
-        print(f"Warning: OpenAI analysis failed, using fallback email: {exc}", file=sys.stderr)
-        email_text, memory = fallback_email(payload), {}
+    if all_sources_have_zero_new_commits(payload):
+        email_text, memory = fallback_email_with_windows(payload), {}
+    else:
+        try:
+            email_text, memory = call_openai(payload, cfg)
+        except Exception as exc:
+            print(f"Warning: OpenAI analysis failed, using fallback email: {exc}", file=sys.stderr)
+            email_text, memory = fallback_email(payload), {}
 
     if cfg.dry_run:
         print(f"Subject: {subject}\n")
