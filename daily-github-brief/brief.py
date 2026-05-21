@@ -629,18 +629,28 @@ def best_fallback_window(source: dict[str, Any]) -> dict[str, Any] | None:
     windows = source.get("fallback_windows") or []
     if not isinstance(windows, list):
         return None
-    ranked = sorted(
-        [w for w in windows if isinstance(w, dict)],
-        key=lambda w: int(((w.get("stats") or {}).get("commit_count") or 0)),
-        reverse=True,
-    )
-    return ranked[0] if ranked else None
+
+    by_label = {
+        w.get("label"): w
+        for w in windows
+        if isinstance(w, dict) and isinstance(w.get("label"), str)
+    }
+
+    for label in ["day", "week", "month"]:
+        w = by_label.get(label)
+        if not w:
+            continue
+        count = int(((w.get("stats") or {}).get("commit_count") or 0))
+        if count > 0:
+            return w
+
+    return by_label.get("day") or by_label.get("week") or by_label.get("month")
 
 
 def fallback_email_with_windows(payload: dict[str, Any]) -> str:
     lines = ["AO Daily Build Brief", f"Date: {payload.get('run_date_pt')}", ""]
     lines.append("Top takeaway:")
-    lines.append("No new commits landed in the primary tracked window, so this brief uses recent public fallback windows (day/week/month) for grounded context.")
+    lines.append("No new commits landed in the primary tracked window, so this brief uses the most recent non-empty fallback window (day, then week, then month) for grounded context.")
     lines.append("")
 
     for source in payload.get("sources", []):
@@ -665,7 +675,7 @@ def fallback_email_with_windows(payload: dict[str, Any]) -> str:
             commits = best.get("commits", [])
             if not commits:
                 lines.append("- No commits captured in fallback sample.")
-            for commit in commits[:5]:
+            for commit in commits[:3]:
                 lines.append(f"- \"{commit.get('title')}\" - {commit.get('url')}")
             lines.append("")
         else:
