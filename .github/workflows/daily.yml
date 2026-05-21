@@ -2,8 +2,9 @@ name: Daily GitHub Brief
 
 on:
   schedule:
-    - cron: '0 8 * * *'
-      timezone: 'America/Los_Angeles'
+    # Run at both 15:00 and 16:00 UTC; gate to exactly 8am America/Los_Angeles below.
+    - cron: '0 15 * * *'
+    - cron: '0 16 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -26,13 +27,31 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v4
 
+      - name: Check 8am PT window for scheduled runs
+        if: github.event_name == 'schedule'
+        id: pt_window
+        shell: bash
+        run: |
+          PT_HOUR="$(TZ=America/Los_Angeles date +%H)"
+          if [ "$PT_HOUR" = "08" ]; then
+            echo "run_now=1" >> "$GITHUB_OUTPUT"
+          else
+            echo "run_now=0" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Stop if outside 8am PT (schedule only)
+        if: github.event_name == 'schedule' && steps.pt_window.outputs.run_now != '1'
+        run: |
+          echo "Not 8am PT right now; exiting." 
+          exit 0
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r daily-github-brief/requirements.txt
 
       - name: Decide run mode
         id: mode
@@ -55,9 +74,9 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           if [ "${{ steps.mode.outputs.dry_run }}" = "1" ]; then
-            python brief.py --dry-run
+            python daily-github-brief/brief.py --dry-run
           else
-            python brief.py
+            python daily-github-brief/brief.py
           fi
 
       - name: Commit updated memory
@@ -65,7 +84,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add state/brief_memory.json
+          git add daily-github-brief/state/brief_memory.json
           if git diff --cached --quiet; then
             echo "No memory changes to commit."
           else
