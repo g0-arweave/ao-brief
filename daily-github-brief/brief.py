@@ -534,6 +534,24 @@ def fallback_email(payload: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
+def load_sources(path: Path) -> list[dict[str, Any]]:
+    raw = read_json(path, [])
+
+    if isinstance(raw, list):
+        sources = raw
+    elif isinstance(raw, dict) and isinstance(raw.get("sources"), list):
+        sources = raw["sources"]
+    else:
+        sources = []
+
+    if not sources:
+        raise RuntimeError(
+            f"sources.json must contain a non-empty list (checked: {path})"
+        )
+
+    return sources
+
+
 def parse_args() -> RunConfig:
     parser = argparse.ArgumentParser(description="Send a daily GitHub progress brief by email.")
     parser.add_argument("--sources", default="sources.json", help="Path to sources.json")
@@ -545,9 +563,11 @@ def parse_args() -> RunConfig:
     parser.add_argument("--include-patch-snippets", action="store_true", default=os.environ.get("INCLUDE_PATCH_SNIPPETS", "0") == "1")
     args = parser.parse_args()
 
+    base_dir = Path(__file__).resolve().parent
+
     return RunConfig(
-        sources_path=Path(args.sources),
-        state_path=Path(args.state),
+        sources_path=(base_dir / args.sources).resolve() if not Path(args.sources).is_absolute() else Path(args.sources),
+        state_path=(base_dir / args.state).resolve() if not Path(args.state).is_absolute() else Path(args.state),
         dry_run=args.dry_run,
         lookback_hours=args.lookback_hours,
         overlap_hours=args.overlap_hours,
@@ -560,9 +580,7 @@ def parse_args() -> RunConfig:
 
 def main() -> int:
     cfg = parse_args()
-    sources = read_json(cfg.sources_path, [])
-    if not isinstance(sources, list) or not sources:
-        raise RuntimeError("sources.json must contain a non-empty list")
+    sources = load_sources(cfg.sources_path)
 
     state = read_json(cfg.state_path, {"global": {"last_success_at": None}, "sources": {}})
     now = utc_now()
