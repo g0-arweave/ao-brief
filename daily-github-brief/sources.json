@@ -1,0 +1,12 @@
+[
+  {
+    "id": "sam-hyperbeam",
+    "label": "Sam on HyperBEAM",
+    "repo": "permaweb/HyperBEAM",
+    "author": "samcamwilliams",
+    "branch": null,
+    "context_file": "repo_contexts/hyperbeam.md",
+    "public_commits_url": "https://github.com/permaweb/HyperBEAM/commits?author=samcamwilliams",
+    "audience_note": "Readers are AO-curious, but most are not Erlang or protocol engineers. Keep the explanation plain, concrete, and positive."
+  }
+]
