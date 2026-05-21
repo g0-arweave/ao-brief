@@ -724,19 +724,22 @@ def main() -> int:
     payload, commits_by_source = build_payload(sources, state, cfg, now)
     subject = email_subject(payload)
 
-    all_zero_new = all(
-        int(((source.get("stats") or {}).get("commit_count") or 0)) == 0
-        for source in payload.get("sources", [])
-    )
+    if all_sources_have_zero_new_commits(payload):
+        message = "No new public commits found; email not sent."
+        if cfg.dry_run:
+            print(message)
+            return 0
 
-    if all_zero_new:
-        email_text, memory = fallback_email_with_windows(payload), {}
-    else:
-        try:
-            email_text, memory = call_openai(payload, cfg)
-        except Exception as exc:
-            print(f"Warning: OpenAI analysis failed, using fallback email: {exc}", file=sys.stderr)
-            email_text, memory = fallback_email(payload), {}
+        update_state(state, payload, commits_by_source, {}, now)
+        write_json(cfg.state_path, state)
+        print(message)
+        return 0
+
+    try:
+        email_text, memory = call_openai(payload, cfg)
+    except Exception as exc:
+        print(f"Warning: OpenAI analysis failed, using fallback email: {exc}", file=sys.stderr)
+        email_text, memory = fallback_email(payload), {}
 
     if cfg.dry_run:
         print(f"Subject: {subject}\n")

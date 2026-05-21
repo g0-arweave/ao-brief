@@ -2,6 +2,8 @@
 
 This repo sends one daily email that turns public GitHub commits into a simple, evidence-led progress brief.
 
+If every configured source has zero new public commits, the run exits cleanly without sending an email.
+
 It starts with Sam Williams on `permaweb/HyperBEAM`, but it is built so you can add more sources later by editing `sources.json`.
 
 ## What the email includes
@@ -138,7 +140,7 @@ Then add the context file referenced by `context_file`.
 
 ## How memory works
 
-`state/brief_memory.json` stores recent commit titles, recently seen SHAs, and a rolling narrative note for each source. After a successful email, GitHub Actions commits the updated memory back into the private repo.
+`state/brief_memory.json` stores recent commit titles, recently seen SHAs, and a rolling narrative note for each source. After a successful email, GitHub Actions commits the updated memory back into the private repo. If there are no new commits, the script still records the successful check time so the next run starts from the right window, but it does not send an email.
 
 This helps the model interpret today’s work in the context of prior days instead of treating each run like an isolated commit summary.
 
