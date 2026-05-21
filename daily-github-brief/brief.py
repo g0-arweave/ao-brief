@@ -244,6 +244,37 @@ def aggregate_stats(commits: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def build_fallback_windows(
+    session: requests.Session,
+    source: dict[str, Any],
+    now: datetime,
+    cfg: RunConfig,
+) -> list[dict[str, Any]]:
+    windows = [("day", 24), ("week", 24 * 7), ("month", 24 * 30)]
+    out: list[dict[str, Any]] = []
+    for label, hours in windows:
+        since = now - timedelta(hours=hours)
+        commits = fetch_commits_for_source(
+            session=session,
+            source=source,
+            since=since,
+            until=now,
+            max_commit_details=cfg.max_commit_details,
+            include_patch_snippets=cfg.include_patch_snippets,
+        )
+        out.append(
+            {
+                "label": label,
+                "hours": hours,
+                "window_start_utc": iso_z(since),
+                "window_end_utc": iso_z(now),
+                "stats": aggregate_stats(commits),
+                "commits": commits[:10],
+            }
+        )
+    return out
+
+
 def build_payload(
     sources: list[dict[str, Any]],
     state: dict[str, Any],
@@ -272,6 +303,15 @@ def build_payload(
         new_commits = [c for c in commits if c.get("sha") not in seen_shas]
         commits_by_source[sid] = new_commits
 
+        fallback_windows: list[dict[str, Any]] = []
+        if not new_commits:
+            fallback_windows = build_fallback_windows(
+                session=session,
+                source=source,
+                now=now,
+                cfg=cfg,
+            )
+
         context_path = base_dir / source.get("context_file", "") if source.get("context_file") else None
         context = read_text(context_path) if context_path else ""
 
@@ -295,6 +335,7 @@ def build_payload(
                 "repo_context": context,
                 "stats": aggregate_stats(new_commits),
                 "commits": new_commits,
+                "fallback_windows": fallback_windows,
             }
         )
 
@@ -340,6 +381,9 @@ def build_instructions() -> str:
         - Files changed
         - Additions and deletions, if available
         - Time window
+
+        If commit count is 0 in the primary tracked window, use fallback_windows in the payload to provide a grounded day/week/month context.
+        Clearly label that as fallback context, not new same-window activity.
 
         Proof from commits:
         List the most important commits with exact title, link, and a short practical translation.
@@ -441,11 +485,26 @@ def parse_recipients(value: str) -> list[dict[str, str]]:
     return [{"email": email} for email in emails]
 
 
+def build_deliverability_headers() -> dict[str, str]:
+    headers: dict[str, str] = {
+        "X-Auto-Response-Suppress": "All",
+        "Precedence": "bulk",
+    }
+
+    list_unsub = os.environ.get("EMAIL_LIST_UNSUBSCRIBE", "").strip()
+    if list_unsub:
+        headers["List-Unsubscribe"] = list_unsub
+        headers["List-Unsubscribe-Post"] = "List-Unsubscribe=One-Click"
+
+    return headers
+
+
 def send_email(subject: str, text_body: str, cfg: RunConfig) -> None:
     api_key = os.environ.get("SENDGRID_API_KEY")
     email_to = os.environ.get("EMAIL_TO", "")
     email_from = os.environ.get("EMAIL_FROM", "")
     email_from_name = os.environ.get("EMAIL_FROM_NAME", "AO Daily")
+    reply_to = os.environ.get("EMAIL_REPLY_TO", "").strip()
 
     missing = [name for name, value in [("SENDGRID_API_KEY", api_key), ("EMAIL_TO", email_to), ("EMAIL_FROM", email_from)] if not value]
     if missing:
@@ -455,11 +514,15 @@ def send_email(subject: str, text_body: str, cfg: RunConfig) -> None:
         "personalizations": [{"to": parse_recipients(email_to)}],
         "from": {"email": email_from, "name": email_from_name},
         "subject": subject,
+        "headers": build_deliverability_headers(),
         "content": [
             {"type": "text/plain", "value": text_body},
             {"type": "text/html", "value": text_to_html(text_body)},
         ],
     }
+
+    if reply_to:
+        payload["reply_to"] = {"email": reply_to}
 
     url = cfg.sendgrid_api_base.rstrip("/") + "/v3/mail/send"
     response = requests.post(
@@ -534,6 +597,87 @@ def fallback_email(payload: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
+def load_sources(path: Path) -> list[dict[str, Any]]:
+    raw = read_json(path, [])
+
+    if isinstance(raw, list):
+        sources = raw
+    elif isinstance(raw, dict) and isinstance(raw.get("sources"), list):
+        sources = raw["sources"]
+    else:
+        sources = []
+
+    if not sources:
+        raise RuntimeError(
+            f"sources.json must contain a non-empty list (checked: {path})"
+        )
+
+    return sources
+
+
+def all_sources_have_zero_new_commits(payload: dict[str, Any]) -> bool:
+    sources = payload.get("sources", [])
+    if not sources:
+        return True
+    for source in sources:
+        if int((source.get("stats") or {}).get("commit_count") or 0) > 0:
+            return False
+    return True
+
+
+def best_fallback_window(source: dict[str, Any]) -> dict[str, Any] | None:
+    windows = source.get("fallback_windows") or []
+    if not isinstance(windows, list):
+        return None
+    ranked = sorted(
+        [w for w in windows if isinstance(w, dict)],
+        key=lambda w: int(((w.get("stats") or {}).get("commit_count") or 0)),
+        reverse=True,
+    )
+    return ranked[0] if ranked else None
+
+
+def fallback_email_with_windows(payload: dict[str, Any]) -> str:
+    lines = ["AO Daily Build Brief", f"Date: {payload.get('run_date_pt')}", ""]
+    lines.append("Top takeaway:")
+    lines.append("No new commits landed in the primary tracked window, so this brief uses recent public fallback windows (day/week/month) for grounded context.")
+    lines.append("")
+
+    for source in payload.get("sources", []):
+        stats = source.get("stats", {})
+        lines.append(source.get("label", source.get("id", "Source")))
+        lines.append("Public activity (primary window):")
+        lines.append(f"- Commits: {stats.get('commit_count', 0)}")
+        lines.append(f"- Files changed: {stats.get('files_changed', 0)}")
+        lines.append(f"- Additions/deletions: +{stats.get('additions', 0)} / -{stats.get('deletions', 0)}")
+        lines.append("")
+
+        best = best_fallback_window(source)
+        if best:
+            bstats = best.get("stats", {})
+            lines.append(f"Fallback context ({best.get('label')} window):")
+            lines.append(f"- Commits: {bstats.get('commit_count', 0)}")
+            lines.append(f"- Files changed: {bstats.get('files_changed', 0)}")
+            lines.append(f"- Additions/deletions: +{bstats.get('additions', 0)} / -{bstats.get('deletions', 0)}")
+            lines.append("- Not new today; included for context only.")
+            lines.append("")
+            lines.append("Recent proof commits:")
+            commits = best.get("commits", [])
+            if not commits:
+                lines.append("- No commits captured in fallback sample.")
+            for commit in commits[:5]:
+                lines.append(f"- \"{commit.get('title')}\" - {commit.get('url')}")
+            lines.append("")
+        else:
+            lines.append("Fallback context:")
+            lines.append("- No fallback commit history captured.")
+            lines.append("")
+
+    lines.append("Public-work caveat:")
+    lines.append("This reflects visible public GitHub commits only, not everything the person may have worked on privately.")
+    return "\n".join(lines)
+
+
 def parse_args() -> RunConfig:
     parser = argparse.ArgumentParser(description="Send a daily GitHub progress brief by email.")
     parser.add_argument("--sources", default="sources.json", help="Path to sources.json")
@@ -545,9 +689,11 @@ def parse_args() -> RunConfig:
     parser.add_argument("--include-patch-snippets", action="store_true", default=os.environ.get("INCLUDE_PATCH_SNIPPETS", "0") == "1")
     args = parser.parse_args()
 
+    base_dir = Path(__file__).resolve().parent
+
     return RunConfig(
-        sources_path=Path(args.sources),
-        state_path=Path(args.state),
+        sources_path=(base_dir / args.sources).resolve() if not Path(args.sources).is_absolute() else Path(args.sources),
+        state_path=(base_dir / args.state).resolve() if not Path(args.state).is_absolute() else Path(args.state),
         dry_run=args.dry_run,
         lookback_hours=args.lookback_hours,
         overlap_hours=args.overlap_hours,
@@ -560,9 +706,7 @@ def parse_args() -> RunConfig:
 
 def main() -> int:
     cfg = parse_args()
-    sources = read_json(cfg.sources_path, [])
-    if not isinstance(sources, list) or not sources:
-        raise RuntimeError("sources.json must contain a non-empty list")
+    sources = load_sources(cfg.sources_path)
 
     state = read_json(cfg.state_path, {"global": {"last_success_at": None}, "sources": {}})
     now = utc_now()
@@ -570,11 +714,19 @@ def main() -> int:
     payload, commits_by_source = build_payload(sources, state, cfg, now)
     subject = email_subject(payload)
 
-    try:
-        email_text, memory = call_openai(payload, cfg)
-    except Exception as exc:
-        print(f"Warning: OpenAI analysis failed, using fallback email: {exc}", file=sys.stderr)
-        email_text, memory = fallback_email(payload), {}
+    all_zero_new = all(
+        int(((source.get("stats") or {}).get("commit_count") or 0)) == 0
+        for source in payload.get("sources", [])
+    )
+
+    if all_zero_new:
+        email_text, memory = fallback_email_with_windows(payload), {}
+    else:
+        try:
+            email_text, memory = call_openai(payload, cfg)
+        except Exception as exc:
+            print(f"Warning: OpenAI analysis failed, using fallback email: {exc}", file=sys.stderr)
+            email_text, memory = fallback_email(payload), {}
 
     if cfg.dry_run:
         print(f"Subject: {subject}\n")
