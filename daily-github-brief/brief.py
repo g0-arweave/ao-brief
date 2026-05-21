@@ -615,6 +615,69 @@ def load_sources(path: Path) -> list[dict[str, Any]]:
     return sources
 
 
+def all_sources_have_zero_new_commits(payload: dict[str, Any]) -> bool:
+    sources = payload.get("sources", [])
+    if not sources:
+        return True
+    for source in sources:
+        if int((source.get("stats") or {}).get("commit_count") or 0) > 0:
+            return False
+    return True
+
+
+def best_fallback_window(source: dict[str, Any]) -> dict[str, Any] | None:
+    windows = source.get("fallback_windows") or []
+    if not isinstance(windows, list):
+        return None
+    ranked = sorted(
+        [w for w in windows if isinstance(w, dict)],
+        key=lambda w: int(((w.get("stats") or {}).get("commit_count") or 0)),
+        reverse=True,
+    )
+    return ranked[0] if ranked else None
+
+
+def fallback_email_with_windows(payload: dict[str, Any]) -> str:
+    lines = ["AO Daily Build Brief", f"Date: {payload.get('run_date_pt')}", ""]
+    lines.append("Top takeaway:")
+    lines.append("No new commits landed in the primary tracked window, so this brief uses recent public fallback windows (day/week/month) for grounded context.")
+    lines.append("")
+
+    for source in payload.get("sources", []):
+        stats = source.get("stats", {})
+        lines.append(source.get("label", source.get("id", "Source")))
+        lines.append("Public activity (primary window):")
+        lines.append(f"- Commits: {stats.get('commit_count', 0)}")
+        lines.append(f"- Files changed: {stats.get('files_changed', 0)}")
+        lines.append(f"- Additions/deletions: +{stats.get('additions', 0)} / -{stats.get('deletions', 0)}")
+        lines.append("")
+
+        best = best_fallback_window(source)
+        if best:
+            bstats = best.get("stats", {})
+            lines.append(f"Fallback context ({best.get('label')} window):")
+            lines.append(f"- Commits: {bstats.get('commit_count', 0)}")
+            lines.append(f"- Files changed: {bstats.get('files_changed', 0)}")
+            lines.append(f"- Additions/deletions: +{bstats.get('additions', 0)} / -{bstats.get('deletions', 0)}")
+            lines.append("- Not new today; included for context only.")
+            lines.append("")
+            lines.append("Recent proof commits:")
+            commits = best.get("commits", [])
+            if not commits:
+                lines.append("- No commits captured in fallback sample.")
+            for commit in commits[:5]:
+                lines.append(f"- \"{commit.get('title')}\" - {commit.get('url')}")
+            lines.append("")
+        else:
+            lines.append("Fallback context:")
+            lines.append("- No fallback commit history captured.")
+            lines.append("")
+
+    lines.append("Public-work caveat:")
+    lines.append("This reflects visible public GitHub commits only, not everything the person may have worked on privately.")
+    return "\n".join(lines)
+
+
 def parse_args() -> RunConfig:
     parser = argparse.ArgumentParser(description="Send a daily GitHub progress brief by email.")
     parser.add_argument("--sources", default="sources.json", help="Path to sources.json")
@@ -651,7 +714,12 @@ def main() -> int:
     payload, commits_by_source = build_payload(sources, state, cfg, now)
     subject = email_subject(payload)
 
-    if all_sources_have_zero_new_commits(payload):
+    all_zero_new = all(
+        int(((source.get("stats") or {}).get("commit_count") or 0)) == 0
+        for source in payload.get("sources", [])
+    )
+
+    if all_zero_new:
         email_text, memory = fallback_email_with_windows(payload), {}
     else:
         try:
