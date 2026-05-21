@@ -463,6 +463,8 @@ def build_instructions() -> str:
         - Avoid "most people miss", "quietly becoming", "not the loudest", "boring machinery", and "this is the kind of work".
         - Do not say "runtime" without translating it. Prefer "the software layer that runs AO apps and processes".
         - Use short paragraphs and natural human wording.
+        - Use prior_memory to build context over time. Connect today's commits to the recent trajectory when the payload supports it.
+        - Do not include a public-work caveat section.
 
         Required email structure:
         AO Daily Build Brief
@@ -472,35 +474,32 @@ def build_instructions() -> str:
         One sentence that ties the day together in plain English. It should be specific, positive, and evidence-backed.
 
         <One section per source>
+        Plain-English read:
+        Start each source with the digestible read. Explain what changed, why it matters, and how it fits the recent context from prior_memory. Keep this before the proof section.
+
+        Why this matters for AO:
+        Tie it to the larger AO vision in one or two concrete implications. Examples: easier developer setup, safer message handling, cleaner operation, fewer edge cases, easier to build real AO apps.
+
+        If commit count is 0 in the primary tracked window, use fallback_windows in the payload to provide a grounded day/week/month context.
+        Clearly label that as fallback context, not new same-window activity.
+
+        What this suggests:
+        A tight, direct read on the work direction. Avoid distant phrasing like "the public activity points to" or "it looks like". Prefer direct wording such as "This is developer-experience cleanup around..." or "This keeps the focus on...". Keep it humble and evidence-backed.
+
         Public activity:
         - Commit count
         - Files changed
         - Additions and deletions, if available
         - Time window
 
-        If commit count is 0 in the primary tracked window, use fallback_windows in the payload to provide a grounded day/week/month context.
-        Clearly label that as fallback context, not new same-window activity.
-
         Proof from commits:
         List the most important commits with exact title, link, and a short practical translation.
 
-        Plain-English read:
-        Explain what this means without deep protocol jargon.
-
-        Why this matters for AO:
-        Tie it to the larger AO vision in one or two concrete implications. Examples: easier developer setup, safer message handling, cleaner operation, fewer edge cases, easier to build real AO apps.
-
-        What this suggests:
-        A restrained read on the current direction, such as release cleanup, developer experience, safety, maintenance, or architecture cleanup. Keep it humble.
-
         Suggested X post:
-        Write one polished post for X. It should sound human, positive, concise, and evidence-led. No thread unless there is enough substance.
+        Write one polished post for X. It should sound human, positive, concise, and evidence-led.
 
-        Optional thread:
-        Only include this if the commit evidence is strong enough for a short 2 to 4 post thread. Otherwise write: "No thread recommended today."
-
-        Public-work caveat:
-        One sentence noting that this reflects public GitHub commits, not everything the person may have worked on.
+        Thread:
+        Always write a short 2 to 4 post thread for every email. Use prior_memory to make the thread feel like part of an ongoing story, but keep every claim grounded in today's payload. Number the posts 1/ through 4/ as needed.
 
         At the very end, include a machine-readable memory update between these exact markers. Do not put these markers in the email body before the end.
         {MEMORY_START}
@@ -676,6 +675,15 @@ def fallback_email(payload: dict[str, Any]) -> str:
     for source in payload.get("sources", []):
         stats = source.get("stats", {})
         lines.append(source.get("label", source.get("id", "Source")))
+        lines.append("Plain-English read:")
+        lines.append("There are new commits to review. The fallback summary can list the evidence, but the OpenAI analysis step was not available to produce a fuller read.")
+        lines.append("")
+        lines.append("Why this matters for AO:")
+        lines.append("- The commits are new public evidence of work that may affect AO-related tooling, docs, setup, or implementation.")
+        lines.append("")
+        lines.append("What this suggests:")
+        lines.append("This is an update worth reviewing from the commit evidence below.")
+        lines.append("")
         lines.append("Public activity:")
         lines.append(f"- Commits: {stats.get('commit_count', 0)}")
         lines.append(f"- Files changed: {stats.get('files_changed', 0)}")
@@ -686,10 +694,15 @@ def fallback_email(payload: dict[str, Any]) -> str:
         if not commits:
             lines.append("- No new public commits in this window.")
         for commit in commits[:10]:
-            lines.append(f"- \"{commit.get('title')}\" - {commit.get('url')}")
+            repo = f" ({commit.get('repo')})" if commit.get("repo") else ""
+            lines.append(f"- \"{commit.get('title')}\"{repo} - {commit.get('url')}")
         lines.append("")
-    lines.append("Public-work caveat:")
-    lines.append("This reflects visible public GitHub commits only, not everything the person may have worked on privately.")
+    lines.append("Suggested X post:")
+    lines.append("New AO-related public GitHub activity landed today. The commit evidence is in the brief.")
+    lines.append("")
+    lines.append("Thread:")
+    lines.append("1/ New public commits landed today across the tracked AO-related sources.")
+    lines.append("2/ The useful thing to watch is the concrete evidence: commit titles, changed files, and how the work affects setup, docs, tooling, or implementation.")
     return "\n".join(lines)
 
 
@@ -752,6 +765,15 @@ def fallback_email_with_windows(payload: dict[str, Any]) -> str:
     for source in payload.get("sources", []):
         stats = source.get("stats", {})
         lines.append(source.get("label", source.get("id", "Source")))
+        lines.append("Plain-English read:")
+        lines.append("There were no new commits in the primary window. The notes below are context from the most recent fallback window, not fresh same-window activity.")
+        lines.append("")
+        lines.append("Why this matters for AO:")
+        lines.append("- Keeping recent context visible helps the next real update make sense instead of reading like an isolated commit list.")
+        lines.append("")
+        lines.append("What this suggests:")
+        lines.append("This is a pause in the tracked window, with recent context available below.")
+        lines.append("")
         lines.append("Public activity (primary window):")
         lines.append(f"- Commits: {stats.get('commit_count', 0)}")
         lines.append(f"- Files changed: {stats.get('files_changed', 0)}")
@@ -772,15 +794,20 @@ def fallback_email_with_windows(payload: dict[str, Any]) -> str:
             if not commits:
                 lines.append("- No commits captured in fallback sample.")
             for commit in commits[:3]:
-                lines.append(f"- \"{commit.get('title')}\" - {commit.get('url')}")
+                repo = f" ({commit.get('repo')})" if commit.get("repo") else ""
+                lines.append(f"- \"{commit.get('title')}\"{repo} - {commit.get('url')}")
             lines.append("")
         else:
             lines.append("Fallback context:")
             lines.append("- No fallback commit history captured.")
             lines.append("")
 
-    lines.append("Public-work caveat:")
-    lines.append("This reflects visible public GitHub commits only, not everything the person may have worked on privately.")
+    lines.append("Suggested X post:")
+    lines.append("No new tracked commits in the primary window today. Recent context is preserved for the next update.")
+    lines.append("")
+    lines.append("Thread:")
+    lines.append("1/ No new tracked commits landed in the primary window today.")
+    lines.append("2/ The useful move is to keep the recent context warm so the next commit-backed update has continuity.")
     return "\n".join(lines)
 
 

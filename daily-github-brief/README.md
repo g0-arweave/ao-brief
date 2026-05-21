@@ -15,8 +15,7 @@ It starts with Sam Williams on `permaweb/HyperBEAM`, but it is built so you can 
 - Simple explanation of what changed
 - Why it matters for AO
 - Suggested X post
-- Optional short thread when there is enough substance
-- Public-work caveat
+- Short X thread for every email
 
 The default tone is positive, realistic, and grounded in the commits. The goal is to show progress without sounding like hype.
 
