@@ -8,5 +8,16 @@
     "context_file": "repo_contexts/hyperbeam.md",
     "public_commits_url": "https://github.com/permaweb/HyperBEAM/commits?author=samcamwilliams",
     "audience_note": "Readers are AO-curious, but most are not Erlang or protocol engineers. Keep the explanation plain, concrete, and positive."
+  },
+  {
+    "id": "xylophonez-profile",
+    "label": "xylophonez public repos",
+    "profile": "xylophonez",
+    "author": "xylophonez",
+    "branch": null,
+    "max_repos": 20,
+    "context_file": "repo_contexts/xylophonez.md",
+    "public_commits_url": "https://github.com/xylophonez",
+    "audience_note": "Track public work by xylophonez across recently updated public repos, with extra attention to Arweave, AO, HyperBEAM, permaweb, and developer tooling."
   }
 ]

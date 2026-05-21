@@ -121,7 +121,7 @@ schedule:
 
 ## Add another GitHub source
 
-Add another object to `sources.json`:
+Add another object to `sources.json`. To track one author on one repo, use:
 
 ```json
 {
@@ -132,6 +132,22 @@ Add another object to `sources.json`:
   "branch": null,
   "context_file": "repo_contexts/example.md",
   "public_commits_url": "https://github.com/owner/repo/commits?author=github_username",
+  "audience_note": "Keep it plain and useful for non-engineers."
+}
+```
+
+To track a public profile across recently updated public repos, use:
+
+```json
+{
+  "id": "example-profile",
+  "label": "Example public repos",
+  "profile": "github_username",
+  "author": "github_username",
+  "branch": null,
+  "max_repos": 20,
+  "context_file": "repo_contexts/example.md",
+  "public_commits_url": "https://github.com/github_username",
   "audience_note": "Keep it plain and useful for non-engineers."
 }
 ```

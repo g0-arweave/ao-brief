@@ -209,6 +209,7 @@ def fetch_commits_for_source(
         stats = (detail or {}).get("stats", {})
         detailed.append(
             {
+                "repo": repo,
                 "sha": sha,
                 "short_sha": sha[:7] if sha else None,
                 "title": commit_title(message),
@@ -230,6 +231,98 @@ def fetch_commits_for_source(
     return detailed
 
 
+def fetch_repos_for_profile(
+    session: requests.Session,
+    profile: str,
+    max_repos: int,
+    include_archived: bool = False,
+) -> list[dict[str, Any]]:
+    repos: list[dict[str, Any]] = []
+    page = 1
+    while len(repos) < max_repos:
+        page_items = github_get(
+            session,
+            f"https://api.github.com/users/{profile}/repos",
+            params={
+                "sort": "updated",
+                "direction": "desc",
+                "per_page": min(100, max_repos),
+                "page": page,
+            },
+        )
+        if not page_items:
+            break
+
+        for item in page_items:
+            if not include_archived and item.get("archived"):
+                continue
+            full_name = item.get("full_name")
+            if full_name:
+                repos.append(
+                    {
+                        "repo": full_name,
+                        "branch": item.get("default_branch"),
+                    }
+                )
+            if len(repos) >= max_repos:
+                break
+
+        if len(page_items) < min(100, max_repos):
+            break
+        page += 1
+
+    return repos
+
+
+def resolve_source_targets(session: requests.Session, source: dict[str, Any]) -> list[dict[str, Any]]:
+    if source.get("repo"):
+        return [source]
+
+    profile = source.get("profile")
+    if not profile:
+        raise RuntimeError(f"Source {source.get('id', '<unknown>')} must define either repo or profile")
+
+    max_repos = int(source.get("max_repos") or os.environ.get("PROFILE_MAX_REPOS", "20"))
+    include_archived = bool(source.get("include_archived", False))
+    repos = fetch_repos_for_profile(session, profile, max_repos, include_archived)
+    author = source.get("author") or profile
+
+    targets: list[dict[str, Any]] = []
+    for repo in repos:
+        target = dict(source)
+        target["repo"] = repo["repo"]
+        target["author"] = author
+        target["branch"] = source.get("branch") or repo.get("branch")
+        targets.append(target)
+
+    return targets
+
+
+def fetch_commits_for_targets(
+    session: requests.Session,
+    targets: list[dict[str, Any]],
+    since: datetime,
+    until: datetime,
+    max_commit_details: int,
+    include_patch_snippets: bool,
+) -> list[dict[str, Any]]:
+    commits: list[dict[str, Any]] = []
+    for target in targets:
+        commits.extend(
+            fetch_commits_for_source(
+                session=session,
+                source=target,
+                since=since,
+                until=until,
+                max_commit_details=max_commit_details,
+                include_patch_snippets=include_patch_snippets,
+            )
+        )
+
+    commits.sort(key=lambda c: c.get("date") or "")
+    return commits
+
+
 def aggregate_stats(commits: list[dict[str, Any]]) -> dict[str, Any]:
     additions = sum(int(c.get("stats", {}).get("additions") or 0) for c in commits)
     deletions = sum(int(c.get("stats", {}).get("deletions") or 0) for c in commits)
@@ -246,7 +339,7 @@ def aggregate_stats(commits: list[dict[str, Any]]) -> dict[str, Any]:
 
 def build_fallback_windows(
     session: requests.Session,
-    source: dict[str, Any],
+    targets: list[dict[str, Any]],
     now: datetime,
     cfg: RunConfig,
 ) -> list[dict[str, Any]]:
@@ -254,9 +347,9 @@ def build_fallback_windows(
     out: list[dict[str, Any]] = []
     for label, hours in windows:
         since = now - timedelta(hours=hours)
-        commits = fetch_commits_for_source(
+        commits = fetch_commits_for_targets(
             session=session,
-            source=source,
+            targets=targets,
             since=since,
             until=now,
             max_commit_details=cfg.max_commit_details,
@@ -291,10 +384,11 @@ def build_payload(
         source_state = state.setdefault("sources", {}).setdefault(sid, {})
         since, until = source_window(source_state, now, cfg.lookback_hours, cfg.overlap_hours)
         seen_shas = set(source_state.get("last_seen_shas", []))
+        targets = resolve_source_targets(session, source)
 
-        commits = fetch_commits_for_source(
+        commits = fetch_commits_for_targets(
             session=session,
-            source=source,
+            targets=targets,
             since=since,
             until=until,
             max_commit_details=cfg.max_commit_details,
@@ -307,7 +401,7 @@ def build_payload(
         if not new_commits:
             fallback_windows = build_fallback_windows(
                 session=session,
-                source=source,
+                targets=targets,
                 now=now,
                 cfg=cfg,
             )
@@ -320,6 +414,8 @@ def build_payload(
                 "id": sid,
                 "label": source.get("label", sid),
                 "repo": source.get("repo"),
+                "profile": source.get("profile"),
+                "repos": [target.get("repo") for target in targets],
                 "author": source.get("author"),
                 "branch": source.get("branch"),
                 "public_commits_url": source.get("public_commits_url"),
