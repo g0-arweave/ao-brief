@@ -73,6 +73,8 @@ jobs:
           EMAIL_FROM_NAME: ${{ vars.EMAIL_FROM_NAME }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
           SENDGRID_API_BASE: ${{ vars.SENDGRID_API_BASE }}
+          PUBLIC_ARCHIVE_BASE_URL: ${{ vars.PUBLIC_ARCHIVE_BASE_URL }}
+          MAILING_LIST_URL: ${{ vars.MAILING_LIST_URL }}
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           if [ "${{ steps.mode.outputs.dry_run }}" = "1" ]; then
@@ -87,6 +89,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add daily-github-brief/state/weekly_brief_memory.json
+          git add docs/briefs
           if git diff --cached --quiet; then
             echo "No weekly memory changes to commit."
           else

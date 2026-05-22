@@ -32,6 +32,7 @@ MEMORY_END = "<<<END_MEMORY_UPDATE_JSON>>>"
 class RunConfig:
     sources_path: Path
     state_path: Path
+    archive_dir: Path | None
     dry_run: bool
     weekly_synthesis: bool
     lookback_hours: int
@@ -40,6 +41,8 @@ class RunConfig:
     include_patch_snippets: bool
     openai_model: str
     sendgrid_api_base: str
+    public_archive_base_url: str
+    mailing_list_url: str
 
 
 def utc_now() -> datetime:
@@ -496,19 +499,19 @@ def build_instructions(weekly_synthesis: bool = False) -> str:
         AO Weekly Synthesis
         Week ending: <date>
 
-        Top takeaway:
-        One punchy sentence that compresses the week into a plain-English signal. Prefer wording like "AO work this week...".
+        Short version:
+        One plain, useful sentence that compresses the week. It should sound like a person helping a busy reader understand the point quickly.
 
-        The week in plain English:
+        What happened:
         A compact 3 to 5 paragraph synthesis across sources. Lead with what the week unlocked for builders, operators, apps, or the broader AO/permaweb ecosystem. Do not simply summarize each source one by one.
 
         Main themes:
-        List 3 to 5 themes. Each theme should combine multiple pieces of evidence when possible. Keep each item short and readable.
+        List 3 to 5 themes. Each theme should combine multiple pieces of evidence when possible. Keep each item short, readable, and outcome-first.
 
         Source notes:
-        One short section per source with meaningful activity. Practical read first, then only the most important proof.
+        One short section per source with meaningful activity. Practical read first, then only the most important receipts.
 
-        Proof worth keeping:
+        Receipts:
         List the strongest commit/PR evidence across the week. Usually 5 to 8 bullets total is enough. Include exact commit titles and links.
 
         Suggested X post:
@@ -523,14 +526,14 @@ def build_instructions(weekly_synthesis: bool = False) -> str:
         AO Daily Build Brief
         Date: <date>
 
-        Top takeaway:
-        One punchy sentence that ties the day together in plain English. Avoid "visible work this window". Prefer wording like "AO work today..." or "AO work this week...".
+        Short version:
+        One plain, useful sentence that ties the day together. Avoid "visible work this window". Prefer wording like "AO work today..." or "AO work this week...".
 
         <One section per source>
-        Plain-English read:
-        Start each source with the digestible read. Put the practical implication first, then the technical explanation. Explain what changed, why normal builders/operators should care, and how it fits the recent context from prior_memory. Keep this to 2 or 3 short paragraphs before the proof section.
+        Quick read:
+        Start each source with the digestible read. Put the practical implication first, then the technical explanation. Explain what changed, why normal builders/operators should care, and how it fits the recent context from prior_memory. Keep this to 2 or 3 short paragraphs before the receipts section.
 
-        Why this matters for AO:
+        Why it matters:
         Tie it to the larger AO vision in one or two concrete implications. Keep this to 1 short paragraph or 2 bullets. Examples: faster developers, less fragile infrastructure, easier operation, more openness, cleaner coordination, more flexible service nodes, fewer edge cases, easier to build real AO apps.
 
         If commit count is 0 in the primary tracked window, use fallback_windows in the payload to provide a grounded day/week/month context.
@@ -539,14 +542,8 @@ def build_instructions(weekly_synthesis: bool = False) -> str:
         What stands out:
         A tight, direct read on the work direction in 1 or 2 sentences. Avoid distant phrasing like "the public activity points to" or "it looks like". Prefer direct wording such as "Good progress on reducing setup friction for..." or "The broader shift is...". Keep it humble and evidence-backed.
 
-        Public activity:
-        - Commit count
-        - Files changed
-        - Additions and deletions, if available
-        - Time window
-
-        Proof from commits:
-        List only the most important commits with exact title, link, PR context when available, and a short practical translation. Keep proof crisp; do not turn this into the main essay. Usually 2 to 4 bullets per source is enough.
+        Receipts:
+        List only the most important commits with exact title, link, PR context when available, and a short practical translation. Keep receipts crisp; do not turn this into the main essay. Usually 2 to 4 bullets per source is enough.
 
         Suggested X post:
         Write one polished post for X. It should sound human, positive, concise, and evidence-led. Do not summarize everything. Extract one implication, compress emotion, and imply significance without detail overload.
@@ -578,8 +575,12 @@ def build_instructions(weekly_synthesis: bool = False) -> str:
         - Prefer "local test flows" over "local compliance flows" unless the commit title requires the exact phrase.
         - Do not over-explain mechanics. Use roughly 15% technical proof, 55% practical implication, and 30% ecosystem framing.
         - Diff stats are supporting evidence, not the story. Mention additions/deletions only when unusually large or genuinely useful.
-        - Use short paragraphs and natural human wording. Keep the main read compact; the proof section can carry details.
+        - Use short paragraphs and natural human wording. Keep the main read compact; the receipts section can carry details.
         - Bias toward compression. If a sentence only explains a term and does not increase the reader's sense of why it matters, cut it.
+        - Make the brief feel written by a sharp human for another busy human. Prefer "what changed" and "what this unlocks" over technical completeness.
+        - Do not make the reader learn project slang before they get the point. Put plain-language outcomes in the sentence before any inside-baseball terms.
+        - Do not use "Proof from commits" as a heading. Use "Receipts".
+        - Avoid formal labels such as "Public activity" unless counts are genuinely useful for context.
         - Avoid essay-like transitions such as "This suggests" and "This matters because". Use more directional labels and wording: "What stands out", "The broader shift", "The direction here is", or plain direct sentences.
         - Let the evidence choose the theme. Do not force every update into the latest known narrative such as Forge, device packaging, or PermawebOS unless the commits clearly support it.
         - Remember AO is bigger than one repo or subsystem. HyperBEAM is important, but also watch for developer tools, reliability, performance, message handling, testing, security, service markets, app infrastructure, and onboarding.
@@ -648,6 +649,126 @@ def email_subject(payload: dict[str, Any]) -> str:
     if len(labels) == 1:
         return f"AO Daily: {labels[0]} - {payload.get('run_date_pt')}"
     return f"AO Daily: {len(labels)} GitHub sources - {payload.get('run_date_pt')}"
+
+
+def archive_filename(payload: dict[str, Any]) -> str:
+    kind = "weekly" if payload.get("brief_type") == "weekly_synthesis" else "daily"
+    date = str(payload.get("run_date_pt") or utc_now().astimezone(PT).strftime("%Y-%m-%d"))
+    return f"{date}-{kind}.md"
+
+
+def archive_url(cfg: RunConfig, filename: str | None) -> str:
+    if not cfg.public_archive_base_url or not filename:
+        return ""
+    return cfg.public_archive_base_url.rstrip("/") + "/" + filename
+
+
+def build_source_links(payload: dict[str, Any]) -> str:
+    lines: list[str] = []
+    active_sources = [
+        source
+        for source in payload.get("sources", [])
+        if int(((source.get("stats") or {}).get("commit_count") or 0)) > 0
+    ]
+    linked_sources = [
+        source
+        for source in active_sources
+        if source.get("public_commits_url")
+    ]
+    if not linked_sources:
+        return ""
+
+    lines.append("Source links:")
+    for source in linked_sources:
+        lines.append(f"- {source.get('label', source.get('id', 'Source'))}: {source.get('public_commits_url')}")
+    return "\n".join(lines)
+
+
+def append_useful_footer(
+    email_text: str,
+    payload: dict[str, Any],
+    cfg: RunConfig,
+    filename: str | None,
+) -> str:
+    sections = [email_text.strip()]
+
+    source_links = build_source_links(payload)
+    if source_links and "Source links:" not in email_text:
+        sections.append(source_links)
+
+    useful_links: list[str] = []
+    public_url = archive_url(cfg, filename)
+    if public_url:
+        useful_links.append(f"- Read/share this brief: {public_url}")
+    if cfg.mailing_list_url:
+        useful_links.append(f"- Join the list: {cfg.mailing_list_url}")
+    if useful_links:
+        sections.append("Useful links:\n" + "\n".join(useful_links))
+
+    return "\n\n".join(section for section in sections if section).strip()
+
+
+def archive_markdown(subject: str, email_text: str, payload: dict[str, Any], now: datetime) -> str:
+    front_matter = {
+        "title": subject,
+        "brief_type": payload.get("brief_type", "daily"),
+        "date_pt": payload.get("run_date_pt"),
+        "generated_at_utc": iso_z(now),
+    }
+    front_lines = ["---"]
+    for key, value in front_matter.items():
+        front_lines.append(f'{key}: "{str(value).replace(chr(34), chr(39))}"')
+    front_lines.append("---")
+    front_lines.append("")
+    front_lines.append(f"# {subject}")
+    front_lines.append("")
+    front_lines.append(email_text.strip())
+    front_lines.append("")
+    return "\n".join(front_lines)
+
+
+def write_archive_index(archive_dir: Path) -> None:
+    files = sorted(
+        [path for path in archive_dir.glob("*.md") if path.name != "index.md"],
+        key=lambda path: path.name,
+        reverse=True,
+    )
+    lines = [
+        "# AO Brief Archive",
+        "",
+        "Readable AO development briefs, backed by public GitHub receipts.",
+        "",
+        "## Briefs",
+        "",
+    ]
+    if not files:
+        lines.append("No archived briefs yet.")
+    for path in files:
+        title = path.stem.replace("-", " ")
+        text = read_text(path)
+        match = re.search(r"^#\s+(.+)$", text, re.MULTILINE)
+        if match:
+            title = match.group(1).strip()
+        lines.append(f"- [{title}]({path.name})")
+    lines.append("")
+    (archive_dir / "index.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+def write_brief_archive(
+    subject: str,
+    email_text: str,
+    payload: dict[str, Any],
+    cfg: RunConfig,
+    now: datetime,
+) -> Path | None:
+    if not cfg.archive_dir:
+        return None
+
+    cfg.archive_dir.mkdir(parents=True, exist_ok=True)
+    path = cfg.archive_dir / archive_filename(payload)
+    path.write_text(archive_markdown(subject, email_text, payload, now), encoding="utf-8")
+    write_archive_index(cfg.archive_dir)
+    return path
 
 
 def text_to_html(text: str) -> str:
@@ -760,27 +881,27 @@ def update_state(
 
 def fallback_email(payload: dict[str, Any]) -> str:
     lines = ["AO Daily Build Brief", f"Date: {payload.get('run_date_pt')}", ""]
-    lines.append("Top takeaway:")
+    lines.append("Short version:")
     lines.append("There was public GitHub activity to review, but the OpenAI analysis step was not available.")
     lines.append("")
     for source in payload.get("sources", []):
         stats = source.get("stats", {})
         lines.append(source.get("label", source.get("id", "Source")))
-        lines.append("Plain-English read:")
+        lines.append("Quick read:")
         lines.append("There are new commits to review. The fallback summary can list the evidence, but the OpenAI analysis step was not available to produce a fuller read.")
         lines.append("")
-        lines.append("Why this matters for AO:")
+        lines.append("Why it matters:")
         lines.append("- The commits are new public evidence of work that may affect AO-related tooling, docs, setup, or implementation.")
         lines.append("")
         lines.append("What stands out:")
         lines.append("This is an update worth reviewing from the commit evidence below.")
         lines.append("")
-        lines.append("Public activity:")
+        lines.append("Activity:")
         lines.append(f"- Commits: {stats.get('commit_count', 0)}")
         lines.append(f"- Files changed: {stats.get('files_changed', 0)}")
         lines.append(f"- Additions/deletions: +{stats.get('additions', 0)} / -{stats.get('deletions', 0)}")
         lines.append("")
-        lines.append("Proof from commits:")
+        lines.append("Receipts:")
         commits = source.get("commits", [])
         if not commits:
             lines.append("- No new public commits in this window.")
@@ -852,23 +973,23 @@ def best_fallback_window(source: dict[str, Any]) -> dict[str, Any] | None:
 
 def fallback_email_with_windows(payload: dict[str, Any]) -> str:
     lines = ["AO Daily Build Brief", f"Date: {payload.get('run_date_pt')}", ""]
-    lines.append("Top takeaway:")
+    lines.append("Short version:")
     lines.append("No new commits landed in the primary tracked window, so this brief uses the most recent non-empty fallback window (day, then week, then month) for grounded context.")
     lines.append("")
 
     for source in payload.get("sources", []):
         stats = source.get("stats", {})
         lines.append(source.get("label", source.get("id", "Source")))
-        lines.append("Plain-English read:")
+        lines.append("Quick read:")
         lines.append("There were no new commits in the primary window. The notes below are context from the most recent fallback window, not fresh same-window activity.")
         lines.append("")
-        lines.append("Why this matters for AO:")
+        lines.append("Why it matters:")
         lines.append("- Keeping recent context visible helps the next real update make sense instead of reading like an isolated commit list.")
         lines.append("")
         lines.append("What stands out:")
         lines.append("This is a pause in the tracked window, with recent context available below.")
         lines.append("")
-        lines.append("Public activity (primary window):")
+        lines.append("Activity (primary window):")
         lines.append(f"- Commits: {stats.get('commit_count', 0)}")
         lines.append(f"- Files changed: {stats.get('files_changed', 0)}")
         lines.append(f"- Additions/deletions: +{stats.get('additions', 0)} / -{stats.get('deletions', 0)}")
@@ -883,7 +1004,7 @@ def fallback_email_with_windows(payload: dict[str, Any]) -> str:
             lines.append(f"- Additions/deletions: +{bstats.get('additions', 0)} / -{bstats.get('deletions', 0)}")
             lines.append("- Not new today; included for context only.")
             lines.append("")
-            lines.append("Recent proof commits:")
+            lines.append("Recent receipts:")
             commits = best.get("commits", [])
             if not commits:
                 lines.append("- No commits captured in fallback sample.")
@@ -912,6 +1033,8 @@ def parse_args() -> RunConfig:
     parser = argparse.ArgumentParser(description="Send a daily GitHub progress brief by email.")
     parser.add_argument("--sources", default="sources.json", help="Path to sources.json")
     parser.add_argument("--state", default="state/brief_memory.json", help="Path to persistent state JSON")
+    parser.add_argument("--archive-dir", default=os.environ.get("ARCHIVE_DIR", "../docs/briefs"), help="Directory for public Markdown archives; use --no-archive to disable")
+    parser.add_argument("--no-archive", action="store_true", default=os.environ.get("NO_ARCHIVE", "0") == "1", help="Do not write a Markdown archive file")
     parser.add_argument("--dry-run", action="store_true", help="Print the email instead of sending it or updating state")
     parser.add_argument("--weekly-synthesis", action="store_true", default=os.environ.get("WEEKLY_SYNTHESIS", "0") == "1", help="Write a weekly synthesis digest instead of a daily brief")
     parser.add_argument("--lookback-hours", type=int, default=int(os.environ.get("LOOKBACK_HOURS", "30")))
@@ -921,10 +1044,15 @@ def parse_args() -> RunConfig:
     args = parser.parse_args()
 
     base_dir = Path(__file__).resolve().parent
+    archive_dir = None
+    if not args.no_archive and args.archive_dir.strip():
+        archive_path = Path(args.archive_dir)
+        archive_dir = archive_path if archive_path.is_absolute() else (base_dir / archive_path).resolve()
 
     return RunConfig(
         sources_path=(base_dir / args.sources).resolve() if not Path(args.sources).is_absolute() else Path(args.sources),
         state_path=(base_dir / args.state).resolve() if not Path(args.state).is_absolute() else Path(args.state),
+        archive_dir=archive_dir,
         dry_run=args.dry_run,
         weekly_synthesis=args.weekly_synthesis,
         lookback_hours=args.lookback_hours,
@@ -933,6 +1061,8 @@ def parse_args() -> RunConfig:
         include_patch_snippets=args.include_patch_snippets,
         openai_model=os.environ.get("OPENAI_MODEL") or "gpt-5.5",
         sendgrid_api_base=os.environ.get("SENDGRID_API_BASE") or "https://api.sendgrid.com",
+        public_archive_base_url=(os.environ.get("PUBLIC_ARCHIVE_BASE_URL") or "").strip(),
+        mailing_list_url=(os.environ.get("MAILING_LIST_URL") or os.environ.get("EMAIL_SIGNUP_URL") or "").strip(),
     )
 
 
@@ -963,15 +1093,21 @@ def main() -> int:
         print(f"Warning: OpenAI analysis failed, using fallback email: {exc}", file=sys.stderr)
         email_text, memory = fallback_email(payload), {}
 
+    filename = archive_filename(payload) if cfg.archive_dir else None
+    email_text = append_useful_footer(email_text, payload, cfg, filename)
+
     if cfg.dry_run:
         print(f"Subject: {subject}\n")
         print(email_text)
         return 0
 
     send_email(subject, email_text, cfg)
+    archive_path = write_brief_archive(subject, email_text, payload, cfg, now)
     update_state(state, payload, commits_by_source, memory, now)
     write_json(cfg.state_path, state)
     print(f"Sent: {subject}")
+    if archive_path:
+        print(f"Archived: {archive_path}")
     return 0
 
 

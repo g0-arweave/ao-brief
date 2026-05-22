@@ -6,13 +6,17 @@ If every configured source has zero new public commits, the run exits cleanly wi
 
 It starts with Sam Williams on `permaweb/HyperBEAM`, plus selected public GitHub profiles across the AO/permaweb ecosystem. Add or remove sources by editing `sources.json`.
 
+Each sent brief can also be archived as Markdown under `docs/briefs/`, so the project can become a public archive or mailing-list surface instead of only a private email.
+
 ## What the email includes
 
-- Top takeaway in plain English
+- Short version in plain English
+- Short, human-first summary before technical details
 - Practical implication before technical mechanics
 - Longitudinal context from prior brief memory
 - Why normal builders and operators should care
-- Crisp proof from exact commit titles, links, and PR context when available
+- Receipts from exact commit titles, links, and PR context when available
+- Source links for the active tracked sources
 - Suggested X post
 - Short X thread for every email
 
@@ -29,6 +33,10 @@ daily-github-brief/
   state/brief_memory.json       # rolling memory, updated after each run
   state/weekly_brief_memory.json # weekly synthesis memory
   requirements.txt
+
+docs/
+  index.md                       # lightweight public landing page
+  briefs/                        # generated Markdown archive
 
 .github/workflows/
   daily.yml                      # 7am PT GitHub Actions schedule
@@ -82,6 +90,8 @@ OPENAI_MODEL=gpt-5.5
 SENDGRID_API_BASE=https://api.sendgrid.com
 EMAIL_REPLY_TO=ops@yourdomain.com
 EMAIL_LIST_UNSUBSCRIBE=<mailto:unsubscribe@yourdomain.com>, <https://yourdomain.com/unsubscribe>
+PUBLIC_ARCHIVE_BASE_URL=https://yourdomain.com/briefs
+MAILING_LIST_URL=https://yourdomain.com/join
 ```
 
 For EU SendGrid regional subusers, use:
@@ -127,6 +137,31 @@ python daily-github-brief/brief.py --weekly-synthesis --lookback-hours 168 --sta
 ```
 
 It is intentionally more combinatory than the daily brief: it compresses the week into themes, source notes, the strongest proof, one suggested X post, and a short thread.
+
+## Public Archive And Mailing List
+
+Every non-dry-run email writes a Markdown copy to:
+
+```text
+docs/briefs/YYYY-MM-DD-daily.md
+docs/briefs/YYYY-MM-DD-weekly.md
+```
+
+The archive index at `docs/briefs/index.md` is regenerated automatically.
+
+To make this public, enable GitHub Pages for the repo and point it at the `docs/` folder. Then set:
+
+```text
+PUBLIC_ARCHIVE_BASE_URL=https://your-pages-domain/briefs
+```
+
+To let people join the list, create a signup page with your newsletter provider and set:
+
+```text
+MAILING_LIST_URL=https://your-signup-page
+```
+
+The script will add `Read/share this brief` and `Join the list` links to the bottom of each email when those variables are present. Avoid putting a SendGrid API key directly into any public signup form; use a newsletter provider form or a small backend endpoint.
 
 ## Add another GitHub source
 
