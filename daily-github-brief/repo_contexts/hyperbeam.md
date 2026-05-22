@@ -1,10 +1,10 @@
 # HyperBEAM context for the daily brief
 
-HyperBEAM is the node software for AO. In simple terms: it is the software layer that receives AO messages, checks them, routes them, runs the right work, and returns results.
+HyperBEAM is the node software for AO. In simple terms: it is the software layer that receives AO messages, checks them, routes them, runs the right work, and returns results. AO is larger than HyperBEAM alone: it includes the protocol model, developer tools, services, apps, economic flows, and the ecosystem of projects building on top.
 
-Recent ecosystem framing from AO positions HyperBEAM as the kernel for a broader PermawebOS model: a small common base that can run AO while node operators add specialized features as packages. Device forge is the toolchain that makes that practical. It helps functionality move out of one giant core repo and into packages that developers can publish and operators can choose to trust.
+Recent ecosystem framing from AO positions HyperBEAM as one important kernel-like layer in a broader PermawebOS model: a small common base that can run AO while node operators add specialized features as packages. Device forge is one toolchain that supports that direction, but it is not the whole AO story.
 
-When commit evidence touches Forge, device packaging, templates, specs, trusted signers, package loading, or docs around those flows, connect it to the larger practical shift: developers get a cleaner way to share and install features, operators get more explicit choice over what to trust, and AO can grow without every useful capability needing to live inside the core HyperBEAM repo.
+Let the commit evidence choose the theme. Forge, device packaging, templates, specs, trusted signers, package loading, and docs can point to modularity and operator choice. Other commits may point to reliability, performance, message handling, developer tooling, testing, security, service markets, app infrastructure, or easier onboarding. Do not force every HyperBEAM update into the Forge/device-packaging narrative.
 
 Keep the daily read understandable for people who care about AO progress but do not live in the codebase. The goal is not to teach Erlang or protocol internals. The goal is to show how the repo work makes AO easier to build on, operate, or trust.
 

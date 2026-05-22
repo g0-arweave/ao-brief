@@ -507,6 +507,8 @@ def build_instructions() -> str:
         - Use short paragraphs and natural human wording. Keep the main read compact; the proof section can carry details.
         - Bias toward compression. If a sentence only explains a term and does not increase the reader's sense of why it matters, cut it.
         - Avoid essay-like transitions such as "This suggests" and "This matters because". Use more directional labels and wording: "What stands out", "The broader shift", "The direction here is", or plain direct sentences.
+        - Let the evidence choose the theme. Do not force every update into the latest known narrative such as Forge, device packaging, or PermawebOS unless the commits clearly support it.
+        - Remember AO is bigger than one repo or subsystem. HyperBEAM is important, but also watch for developer tools, reliability, performance, message handling, testing, security, service markets, app infrastructure, and onboarding.
         - Use prior_memory to build context over time. Track recurring architectural themes, repeated priorities, momentum changes, release hardening, tooling focus, decentralization trends, and scaling work.
         - Do not include a public-work caveat section.
 
