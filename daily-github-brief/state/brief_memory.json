@@ -1,15 +1,11 @@
 {
   "global": {
-    "last_success_at": "2026-05-22T03:48:20Z"
+    "last_success_at": "2026-05-20T00:00:00Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-05-22T03:48:20Z",
-      "last_seen_shas": [
-        "75082bdb001f67d3fb14d372a027b74f619ae572",
-        "a51a93ce17d8d972e6b53c8743fc7d3e6dc1d319",
-        "8c19c6adb45fc658e1ac06e6555efd916fd305e5"
-      ],
+      "last_success_at": "2026-05-20T00:00:00Z",
+      "last_seen_shas": [],
       "last_public_activity_at": "2026-05-20T20:11:16Z",
       "recent_commit_titles": [
         "fix(forge): install templates where rebar3 reads them",
@@ -29,11 +25,8 @@
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-05-22T03:48:20Z",
-      "last_seen_shas": [
-        "9675cd4c48b360039c5474f80a2685835ed482c6",
-        "9a7b6249275594448f31d617cffbdb578fc5dd1f"
-      ],
+      "last_success_at": "2026-05-20T00:00:00Z",
+      "last_seen_shas": [],
       "last_public_activity_at": "2026-05-20T07:58:44Z",
       "recent_commit_titles": [
         "Port mystical devices to packaged HyperBEAM layout",
