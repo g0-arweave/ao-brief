@@ -1,39 +1,6 @@
 {
   "global": {
-    "last_success_at": "2026-05-21T22:05:29Z"
+    "last_success_at": null
   },
-  "sources": {
-    "sam-hyperbeam": {
-      "last_success_at": "2026-05-21T22:05:29Z",
-      "last_seen_shas": [
-        "75082bdb001f67d3fb14d372a027b74f619ae572",
-        "a51a93ce17d8d972e6b53c8743fc7d3e6dc1d319",
-        "8c19c6adb45fc658e1ac06e6555efd916fd305e5"
-      ],
-      "last_public_activity_at": "2026-05-20T20:11:16Z",
-      "recent_commit_titles": [
-        "fix(forge): install templates where rebar3 reads them",
-        "fix(forge): move template installer to repo root",
-        "Merge pull request #921 from permaweb/fix/install-template-commands"
-      ],
-      "rolling_context": "Sam's visible HyperBEAM activity on 2026-05-21 focused on Forge developer setup. The commits fixed where Forge templates are installed so they align with the folders rebar3 actually reads, including REBAR_TEMPLATE_DIR and rebar3 3.27 lookup behavior. Sam also moved the template installer to the HyperBEAM repo root as ./install-template, making the command easier to find from a fresh checkout. Documentation in the build docs was updated to match the new root-level installer workflow. The practical trajectory is cleanup around developer scaffolding and device packaging, reducing local setup friction for people building HyperBEAM devices.",
-      "current_phase": "Forge setup and device packaging cleanup",
-      "recent_themes": [
-        "developer setup",
-        "Forge templates",
-        "HyperBEAM device packaging"
-      ]
-    },
-    "xylophonez-profile": {
-      "last_success_at": "2026-05-21T22:05:29Z",
-      "last_seen_shas": [],
-      "rolling_context": "There were no new xylophonez commits in the primary 2026-05-21 tracked window. The fallback week context shows recent activity concentrated on paid AO request flows and HyperBEAM-related packaging. In hyperbalance, xylophonez added signed paid request orchestration, rb whisper examples, standalone example scripts, docs, and local paid whisper compliance flows. In mystical.computer, a large commit ported mystical devices to a packaged HyperBEAM layout with service overlay and deployment examples. The recent pattern is practical experimentation and tooling around paid requests, examples, tests, and packaging rather than a new same-window update today.",
-      "current_phase": "fallback week context: paid request examples and HyperBEAM packaging",
-      "recent_themes": [
-        "paid AO request flows",
-        "Whisper examples",
-        "HyperBEAM packaging"
-      ]
-    }
-  }
+  "sources": {}
 }
