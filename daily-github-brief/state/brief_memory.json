@@ -1,15 +1,55 @@
 {
   "global": {
-    "last_success_at": "2026-05-20T00:00:00Z"
+    "last_success_at": "2026-05-22T03:48:20Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-05-20T00:00:00Z",
-      "last_seen_shas": []
+      "last_success_at": "2026-05-22T03:48:20Z",
+      "last_seen_shas": [
+        "75082bdb001f67d3fb14d372a027b74f619ae572",
+        "a51a93ce17d8d972e6b53c8743fc7d3e6dc1d319",
+        "8c19c6adb45fc658e1ac06e6555efd916fd305e5"
+      ],
+      "last_public_activity_at": "2026-05-20T20:11:16Z",
+      "recent_commit_titles": [
+        "fix(forge): install templates where rebar3 reads them",
+        "fix(forge): move template installer to repo root",
+        "Merge pull request #921 from permaweb/fix/install-template-commands"
+      ],
+      "rolling_context": "Sam's visible HyperBEAM work in this window focused on Forge developer setup, especially making template installation easier and more reliable. The commits moved the Forge template installer to the repo root as `./install-template`, updated build docs, and fixed installation paths so templates land where rebar3 actually reads them. This supports the broader HyperBEAM direction of letting developers build and share installable pieces of functionality without every capability living inside the core repo. The practical theme is reduced setup friction: fewer hidden commands, fewer path mismatches, and clearer docs. PR #921 merged the root-level installer change, giving this small cleanup a concrete integration point. The current trajectory is toward making Forge feel more usable as a normal developer workflow rather than an internal packaging mechanism.",
+      "current_phase": "Forge setup friction reduction",
+      "recent_themes": [
+        "Forge template installation",
+        "developer setup cleanup",
+        "packaged HyperBEAM functionality"
+      ],
+      "narrative_threads": [
+        "HyperBEAM is moving toward cleaner ways to share and install functionality",
+        "Small tooling fixes are reducing friction for AO builders"
+      ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-05-20T00:00:00Z",
-      "last_seen_shas": []
+      "last_success_at": "2026-05-22T03:48:20Z",
+      "last_seen_shas": [
+        "9675cd4c48b360039c5474f80a2685835ed482c6",
+        "9a7b6249275594448f31d617cffbdb578fc5dd1f"
+      ],
+      "last_public_activity_at": "2026-05-20T07:58:44Z",
+      "recent_commit_titles": [
+        "Port mystical devices to packaged HyperBEAM layout",
+        "test: add local paid whisper compliance flows"
+      ],
+      "rolling_context": "xylophonez's visible public work in this window centered on making AO/HyperBEAM-adjacent projects more packaged, testable, and documented. In `mystical.computer`, a large commit ported mystical devices to a packaged HyperBEAM layout and added deployment/config examples for bundler, paid bundler, metered media, and whisper-style services. In `hyperbalance`, the work added local paid whisper compliance flows with README/docs updates and expanded example scripts. The practical trajectory is toward repeatable developer workflows: service overlays, deployment examples, and local tests that make complex service behavior easier to try. This aligns with the broader AO ecosystem theme of moving useful functionality into clearer, reusable packages. The current phase looks like experimental service infrastructure being organized into forms other builders can run and inspect.",
+      "current_phase": "packaged service workflow expansion",
+      "recent_themes": [
+        "packaged HyperBEAM layouts",
+        "local paid request testing",
+        "deployment and config examples"
+      ],
+      "narrative_threads": [
+        "External AO experiments are becoming more reusable and easier to operate",
+        "Paid and service-oriented flows are gaining clearer local examples"
+      ]
     }
   }
 }
