@@ -1,6 +1,124 @@
 {
   "global": {
-    "last_success_at": null
+    "last_success_at": "2026-05-22T21:22:11Z"
   },
-  "sources": {}
+  "sources": {
+    "sam-hyperbeam": {
+      "last_success_at": "2026-05-22T21:22:11Z",
+      "last_seen_shas": [
+        "b1923569b36e4303cb417f4a1f0b5222dbd8e533",
+        "a2bb7a7d275a9b19d08c376bae053008cf23b8e3",
+        "bbfdbcb832411e4a1774735fc0573d8ee13a49db",
+        "f4e24b88748f54dc1e38b325d3b20430d8b72164",
+        "aa565b1f92c113e42486fe7518508722c19d642d",
+        "b6efdee76e986707454541904743510f36043868",
+        "08bfd55b5862d0c8b0cb87992ae23bf8b5475e58",
+        "b3630f32e9248a10d69a1f7aab78f7971ca3e387",
+        "618be36cb4f37d0088070a69f4cc5f8955dcb6af",
+        "09e1c0afe2ae18f2d7c554f4ee3887a1829e3875",
+        "b15fd32e8556c456009865e58f7f521bff477d74",
+        "df1e237d2c9df0da24f48d1604f63b543e33d9cc",
+        "fd9fc6c9d1f5890962202a4955eb6795874199b8",
+        "286e1cdc9351263f1522e10bc7ecee321f332bb3",
+        "67cc2e7b90096e8106eb1acb30bcb47e3c1f153b",
+        "cff5b263b34807c6df1a8128abb82f0696a5e6a8",
+        "9a97b09a45ccd3c777f9753475756d4d83606999",
+        "765dcdaafa7e5b35c302a62f7afb47c3087d97fd",
+        "26219c9bead58d96fef5e3aa8b65ca0e5be8aa4b",
+        "7c99a66b7982bf5b086156a140969d312389a82c",
+        "ceeac7b70e5cd2526a2d05c7f20a3b235b3dd4d9",
+        "bfe36205dcb8cd24ea7ea01f59e7d2ba48640586",
+        "465928197e99e99ee2b35f9ca44143ed9f9bdbb4",
+        "ad285cd5c609e3d49766981d2c73b3aba64b7b88",
+        "3079f56f76f32dd05f3e92944694d65161ec2044",
+        "2c1d4b5bbebda6984db84434914b222836f36eaf",
+        "bd8a2f1478dd3473c17bc0af803bc7211c0848ac",
+        "df62acf0f2a5404822888f09c846d02a361f7fd2",
+        "7f912a4b8f74f5cd3cdf8fb64667b3e07948e7c7",
+        "379e84af797bd0f6a5f244cbd24eb600d28be00f",
+        "75082bdb001f67d3fb14d372a027b74f619ae572",
+        "a51a93ce17d8d972e6b53c8743fc7d3e6dc1d319",
+        "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
+        "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b",
+        "29e17b4cf148c38931155a552caf9ecbca18d059",
+        "6be1816357ee247c9aba73901fb6f530ce6d4697",
+        "cca5b4d416b012e11b080853cd35f303f8efeda4"
+      ],
+      "last_public_activity_at": "2026-05-22T19:59:06Z",
+      "recent_commit_titles": [
+        "refactor: add direct AO boundary execution",
+        "refactor: move shared helpers out of device modules",
+        "refactor: route message and codec helpers through public APIs",
+        "refactor: route runtime services across device boundaries",
+        "test: move shared fixtures out of device modules",
+        "fix: address device boundary review comments",
+        "fix: use direct structured decode in singleton",
+        "fix: require structured decode type",
+        "refactor: decode structured values in hb_util",
+        "impr: add forced device and key execution modes to hb_ao:direct",
+        "refactor: highlight non-cryptographically-linked nature of hb_ao:raw",
+        "refactor: use raw calls for kernel device helpers",
+        "refactor: use raw calls across device boundaries",
+        "chore: small clarity improvements in internal bundling flow",
+        "chore: remove unnecessary wrappers, leaving `hb_ao:raw` calls clearly marked",
+        "Merge pull request #913 from permaweb/feat/device-boundary-cleanup",
+        "feat: add device packaging pipeline",
+        "Merge pull request #904 from permaweb/fix/post-threshold-chunk-gap-fill",
+        "test: align index_ids_test with fixed ANS-104 tag boundary",
+        "Merge pull request #914 from permaweb/fix/ans104-strict-tag-boundary",
+        "Merge remote-tracking branch 'origin/pr-914' into pr-914",
+        "docs: document device packaging workflow",
+        "refactor: split core forge and preloaded devices",
+        "fix: enforce correct validation on `low-trust` load; remove unsafe `all`",
+        "impr: organize core modules by area",
+        "fix: matching build changes",
+        "Merge remote-tracking branch 'origin/impr/kernel-org-test-output' into rc/0.10",
+        "Merge pull request #915 from permaweb/rc/0.10",
+        "Merge pull request #919 from permaweb/fix/rm_tip_5",
+        "fix(forge): install templates where rebar3 reads them",
+        "fix(forge): move template installer to repo root",
+        "Merge pull request #921 from permaweb/fix/install-template-commands",
+        "Merge pull request #925 from permaweb/fix/load-remote-devices-flag",
+        "feat(forge): add device CLI filters",
+        "feat(forge): filter device tests",
+        "feat(forge): add device test timeouts"
+      ]
+    },
+    "xylophonez-profile": {
+      "last_success_at": "2026-05-22T21:22:11Z",
+      "last_seen_shas": [
+        "4ef50b5df77173e2426b27cec4366551657ee09a",
+        "f9f8b0d6d3fa028a5245ad6c11d0b0aeb00f287b",
+        "7f5ac23643502b4e207220c394e38bc4857e031d",
+        "d1f350cfff8cc28272435f9ef859300f70c53c91",
+        "f31fcf55e8b6aa2623ad77bad29443bdd48f2289",
+        "e47938f9fcece14dc98a307448f61e602a9c2063",
+        "9675cd4c48b360039c5474f80a2685835ed482c6",
+        "9a7b6249275594448f31d617cffbdb578fc5dd1f"
+      ],
+      "last_public_activity_at": "2026-05-20T07:58:44Z",
+      "recent_commit_titles": [
+        "feat: add signed paid request orchestration",
+        "feat: add rb whisper paid request example",
+        "docs: clarify rb whisper funding smoke",
+        "feat: add rb whisper ruby playground",
+        "feat: add minimal rb whisper transcript script",
+        "fix: make rb whisper examples standalone",
+        "Port mystical devices to packaged HyperBEAM layout",
+        "test: add local paid whisper compliance flows"
+      ]
+    },
+    "nickj202-profile": {
+      "last_success_at": "2026-05-22T21:22:11Z",
+      "last_seen_shas": []
+    },
+    "lucifer0x17-profile": {
+      "last_success_at": "2026-05-22T21:22:11Z",
+      "last_seen_shas": []
+    },
+    "jamespiechota-profile": {
+      "last_success_at": "2026-05-22T21:22:11Z",
+      "last_seen_shas": []
+    }
+  }
 }
