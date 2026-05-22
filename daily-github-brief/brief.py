@@ -500,33 +500,33 @@ def build_instructions(weekly_synthesis: bool = False) -> str:
         Week ending: <date>
 
         Short version:
-        One plain, useful sentence that compresses the week. It should sound like a person helping a busy reader understand the point quickly.
+        One simple sentence. Make the reader immediately know why the week mattered.
 
-        What happened:
-        A compact 3 to 5 paragraph synthesis across sources. Lead with what the week unlocked for builders, operators, apps, or the broader AO/permaweb ecosystem. Do not simply summarize each source one by one.
+        Why it matters:
+        2 or 3 very short paragraphs. Say what got easier, safer, faster, or more useful. Make it feel like a clear product insight, not a technical report. Keep each paragraph under 70 words.
 
         Main themes:
-        List 3 to 5 themes. Each theme should combine multiple pieces of evidence when possible. Keep each item short, readable, and outcome-first.
+        List 3 to 5 bullets. Each bullet must be plain and outcome-first. One sentence per bullet.
 
-        Source notes:
-        One short section per source with meaningful activity. Practical read first, then only the most important receipts.
+        Who moved it forward:
+        2 to 4 bullets max. Mention the people/repos with meaningful activity. Keep it human and useful, not exhaustive.
 
         Receipts:
-        List the strongest commit/PR evidence across the week. Usually 5 to 8 bullets total is enough. Include exact commit titles and links.
+        4 to 6 strongest links max. One line each. Only include the receipt and the plain thing it proves.
 
         Suggested X post:
-        Write one polished post for X. Extract one weekly implication, not everything that happened.
+        Write one polished post for X. Plain, useful, and easy to edit. No jargon pileups.
 
         Thread:
-        Always write a 3 to 5 post thread. Make it feel like weekly ecosystem intelligence: less daily log, more pattern recognition. Number the posts 1/ through 5/ as needed.
+        3 posts max. Make it readable by someone who understands crypto but does not follow every AO repo. Number the posts 1/ through 3/.
 
         Publishing kit:
         This section is for the human operator to reuse, not just read.
-        - Short tweet: 1 concise standalone tweet that sounds natural and can be posted with minimal editing.
-        - Thread: 3 to 5 numbered posts. Make it useful, direct, and readable by people who know crypto/blockchain but do not follow every AO repo.
-        - Punchy observations: 3 short observations. These should sound like things a sharp human noticed, not generic summaries.
-        - Source-backed claims: 3 claims with the commit, PR, or source link that supports each one. Keep the claim plain and the proof tight.
-        - Simple explanation: 1 paragraph for nontechnical readers. No repo jargon unless immediately translated.
+        - Short tweet: 1 concise standalone tweet.
+        - Thread: 3 numbered posts max.
+        - Punchy observations: 3 short observations. Make them sound like things a sharp human noticed.
+        - Source-backed claims: 3 short claims with the link that supports each one.
+        - Simple explanation: 1 paragraph under 90 words for nontechnical readers.
         """.strip()
     else:
         structure = """
@@ -565,27 +565,31 @@ def build_instructions(weekly_synthesis: bool = False) -> str:
         You write a {brief_kind}.
 
         Required style:
-        - Positive, realistic, and grounded. Default toward progress, momentum, maturation, builder leverage, and reduced friction when the evidence supports it.
-        - Make the reader feel, within 20 seconds: AO is actively progressing, the infrastructure is getting cleaner, and developers are getting more leverage.
+        - Positive, realistic, and grounded.
+        - Make the reader feel, within 20 seconds: "I get why this matters."
         - Lead with practical implication, then explain the technical mechanism only if it helps.
         - Use concrete proof from commits and pull request context: exact commit titles, commit links, PR titles/descriptions when available, changed files, and practical implications.
         - Write for a smart crypto/blockchain reader who knows the broad idea of decentralized infrastructure but does not live in the AO or HyperBEAM codebase.
-        - Keep the analysis approachable. Translate infra concepts into developer speed, reliability, openness, scalability, flexibility, or fewer coordination headaches.
+        - Keep the vocabulary simple. Use shorter words where they work. Prefer "use", "build", "run", "ship", "trust", "fix", "share", and "test" over abstract nouns.
+        - Translate infra concepts into: faster building, fewer bugs, easier setup, clearer trust, easier sharing, or better apps.
         - Do not overhype, shill, or make claims beyond the public commits.
         - Do not use generic filler like "foundational work that helps the ecosystem scale".
+        - Do not use polished consultant phrases like "developer surface", "coordination overhead", "service-market experiments", "durable trajectory", "ecosystem-relevant", or "high-signal".
         - Avoid contrast-template writing such as "people think X, but really Y".
         - Avoid "most people miss", "quietly becoming", "not the loudest", "boring machinery", and "this is the kind of work".
         - Avoid report-like phrases such as "visible work this window", "public activity points to", "the current phase", and "this suggests".
-        - Do not say "runtime" without translating it. Prefer "the software layer that runs AO apps and processes".
+        - Do not say "developer surface", "runtime", "kernelization", "ANS-104", "post-threshold", "boundary cleanup", or "orchestration" in the main read unless you immediately translate it in plain English.
         - Prefer "features a node can add without changing the core software" over "installable functionality" when that is clearer.
         - Prefer "a cleaner way for developers to share and install functionality" over "device packaging" unless the term is needed as proof.
         - Prefer "making the infrastructure less fragile and easier to operate" over "runtime cleanup".
         - Prefer "local test flows" over "local compliance flows" unless the commit title requires the exact phrase.
-        - Do not over-explain mechanics. Use roughly 15% technical proof, 55% practical implication, and 30% ecosystem framing.
+        - Do not over-explain mechanics. Use roughly 10% technical proof, 65% practical implication, and 25% ecosystem framing.
         - Diff stats are supporting evidence, not the story. Mention additions/deletions only when unusually large or genuinely useful.
         - Use short paragraphs and natural human wording. Keep the main read compact; the receipts section can carry details.
+        - Keep weekly emails under 1200 words before Source links. If there is a Publishing kit, still keep it tight.
         - Bias toward compression. If a sentence only explains a term and does not increase the reader's sense of why it matters, cut it.
-        - Make the brief feel written by a sharp human for another busy human. Prefer "what changed" and "what this unlocks" over technical completeness.
+        - Make the brief feel written by a sharp human for another busy human. Prefer "what changed" and "why that is useful" over technical completeness.
+        - The tone should feel like a practical builder note: simple, direct, a little excited, never fake.
         - Do not make the reader learn project slang before they get the point. Put plain-language outcomes in the sentence before any inside-baseball terms.
         - Do not use "Proof from commits" as a heading. Use "Receipts".
         - Avoid formal labels such as "Public activity" unless counts are genuinely useful for context.
@@ -598,11 +602,12 @@ def build_instructions(weekly_synthesis: bool = False) -> str:
         {structure}
 
         At the very end, include a machine-readable memory update between these exact markers. Do not put these markers in the email body before the end.
+        Keep the memory update compact. Only include sources with meaningful new activity.
         {MEMORY_START}
         {{
           "source_notes": {{
             "source_id": {{
-              "rolling_context": "5 to 8 sentence durable context about the source trajectory, updated with today's evidence.",
+              "rolling_context": "2 to 4 sentence durable context about the source trajectory, updated with today's evidence.",
               "current_phase": "short phrase",
               "recent_themes": ["theme 1", "theme 2", "theme 3"],
               "narrative_threads": ["recurring theme or trend 1", "recurring theme or trend 2"]
@@ -639,6 +644,9 @@ def strip_memory_update(text: str) -> tuple[str, dict[str, Any]]:
     )
     match = pattern.search(text)
     if not match:
+        if MEMORY_START in text:
+            email_text = text.split(MEMORY_START, 1)[0].strip()
+            return email_text, {}
         return text.strip(), {}
     email_text = pattern.sub("", text).strip()
     raw_json = match.group(1).strip()
