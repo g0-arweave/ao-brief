@@ -198,7 +198,13 @@ def fetch_commits_for_source(
     page = 1
     while True:
         params["page"] = page
-        page_items = github_get(session, base_url, params=params)
+        try:
+            page_items = github_get(session, base_url, params=params)
+        except RuntimeError as exc:
+            if "Git Repository is empty" in str(exc):
+                print(f"Warning: skipping empty repository {repo}", file=sys.stderr)
+                return []
+            raise
         if not page_items:
             break
         commits.extend(page_items)
