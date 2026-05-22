@@ -519,6 +519,14 @@ def build_instructions(weekly_synthesis: bool = False) -> str:
 
         Thread:
         Always write a 3 to 5 post thread. Make it feel like weekly ecosystem intelligence: less daily log, more pattern recognition. Number the posts 1/ through 5/ as needed.
+
+        Publishing kit:
+        This section is for the human operator to reuse, not just read.
+        - Short tweet: 1 concise standalone tweet that sounds natural and can be posted with minimal editing.
+        - Thread: 3 to 5 numbered posts. Make it useful, direct, and readable by people who know crypto/blockchain but do not follow every AO repo.
+        - Punchy observations: 3 short observations. These should sound like things a sharp human noticed, not generic summaries.
+        - Source-backed claims: 3 claims with the commit, PR, or source link that supports each one. Keep the claim plain and the proof tight.
+        - Simple explanation: 1 paragraph for nontechnical readers. No repo jargon unless immediately translated.
         """.strip()
     else:
         structure = """

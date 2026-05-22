@@ -19,6 +19,7 @@ Each sent brief can also be archived as Markdown under `docs/briefs/`, so the pr
 - Source links for the active tracked sources
 - Suggested X post
 - Short X thread for every email
+- Friday publishing kit with a short tweet, thread, punchy observations, source-backed claims, and a simple nontechnical explanation
 
 The default tone is optimistic, realistic, and grounded in the commits. The goal is narrative compression: show progress, momentum, and practical ecosystem meaning without sounding like hype.
 
