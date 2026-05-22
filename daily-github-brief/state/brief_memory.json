@@ -1,6 +1,15 @@
 {
   "global": {
-    "last_success_at": null
+    "last_success_at": "2026-05-20T00:00:00Z"
   },
-  "sources": {}
+  "sources": {
+    "sam-hyperbeam": {
+      "last_success_at": "2026-05-20T00:00:00Z",
+      "last_seen_shas": []
+    },
+    "xylophonez-profile": {
+      "last_success_at": "2026-05-20T00:00:00Z",
+      "last_seen_shas": []
+    }
+  }
 }
