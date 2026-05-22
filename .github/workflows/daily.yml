@@ -2,9 +2,10 @@ name: Daily GitHub Brief
 
 on:
   schedule:
-    # Run at both 15:00 and 16:00 UTC; gate to exactly 8am America/Los_Angeles below.
-    - cron: '0 15 * * *'
-    - cron: '0 16 * * *'
+    # Run away from the top of the hour, with a backup in the same hour.
+    # Gate below keeps only runs that occur during 8am America/Los_Angeles.
+    - cron: '7,37 15 * * *'
+    - cron: '7,37 16 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
