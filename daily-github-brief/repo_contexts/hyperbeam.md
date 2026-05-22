@@ -2,16 +2,16 @@
 
 HyperBEAM is the node software for AO. In simple terms: it is the software layer that receives AO messages, checks them, routes them, runs the right work, and returns results.
 
-Recent ecosystem framing from AO positions HyperBEAM as the kernel for a broader PermawebOS model: a minimal common substrate that runs AO-Core while operators hot-load devices like packages. Device forge is the tooling that makes that model practical. It lets devices move out of the monorepo path and into signed, permanent, spec-linked packages that operators can choose, trust, swap, upgrade, and compose.
+Recent ecosystem framing from AO positions HyperBEAM as the kernel for a broader PermawebOS model: a small common base that can run AO while node operators add specialized features as packages. Device forge is the toolchain that makes that practical. It helps functionality move out of one giant core repo and into packages that developers can publish and operators can choose to trust.
 
-When commit evidence touches Forge, device packaging, templates, specs, trusted signers, package loading, or docs around those flows, connect it to the larger practical shift: developers get a cleaner way to share and install functionality, operators get more explicit choice over what to trust, and AO can grow without every useful capability needing to live inside the core HyperBEAM repo.
+When commit evidence touches Forge, device packaging, templates, specs, trusted signers, package loading, or docs around those flows, connect it to the larger practical shift: developers get a cleaner way to share and install features, operators get more explicit choice over what to trust, and AO can grow without every useful capability needing to live inside the core HyperBEAM repo.
 
-Keep the daily read understandable for people who care about AO progress but do not live in the codebase. The goal is not to teach Erlang or protocol internals. The goal is to show that visible public work is moving the AO stack forward.
+Keep the daily read understandable for people who care about AO progress but do not live in the codebase. The goal is not to teach Erlang or protocol internals. The goal is to show how the repo work makes AO easier to build on, operate, or trust.
 
 Useful translations:
 
 - Runtime: say "the software layer that runs AO apps and processes."
-- Devices: say "installable pieces of functionality that let AO nodes do specialized work."
+- Devices: say "features a node can add without changing the core software."
 - Device packaging: say "a cleaner way for developers to share and install functionality."
 - Device forge: say "the build and packaging toolchain for those installable pieces."
 - Validation or low-trust: say "safer handling of inputs and messages the node should not blindly trust."

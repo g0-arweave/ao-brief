@@ -490,17 +490,22 @@ def build_instructions() -> str:
         - Make the reader feel, within 20 seconds: AO is actively progressing, the infrastructure is getting cleaner, and developers are getting more leverage.
         - Lead with practical implication, then explain the technical mechanism only if it helps.
         - Use concrete proof from commits and pull request context: exact commit titles, commit links, PR titles/descriptions when available, changed files, and practical implications.
-        - Keep the analysis simple enough for non-engineers. Translate infra concepts into developer speed, reliability, openness, scalability, flexibility, or coordination reduction.
+        - Write for a smart crypto/blockchain reader who knows the broad idea of decentralized infrastructure but does not live in the AO or HyperBEAM codebase.
+        - Keep the analysis approachable. Translate infra concepts into developer speed, reliability, openness, scalability, flexibility, or fewer coordination headaches.
         - Do not overhype, shill, or make claims beyond the public commits.
         - Do not use generic filler like "foundational work that helps the ecosystem scale".
         - Avoid contrast-template writing such as "people think X, but really Y".
         - Avoid "most people miss", "quietly becoming", "not the loudest", "boring machinery", and "this is the kind of work".
+        - Avoid report-like phrases such as "visible work this window", "public activity points to", "the current phase", and "this suggests".
         - Do not say "runtime" without translating it. Prefer "the software layer that runs AO apps and processes".
+        - Prefer "features a node can add without changing the core software" over "installable functionality" when that is clearer.
         - Prefer "a cleaner way for developers to share and install functionality" over "device packaging" unless the term is needed as proof.
         - Prefer "making the infrastructure less fragile and easier to operate" over "runtime cleanup".
-        - Do not over-explain mechanics. Use roughly 20% technical proof, 50% practical implication, and 30% ecosystem framing.
+        - Prefer "local test flows" over "local compliance flows" unless the commit title requires the exact phrase.
+        - Do not over-explain mechanics. Use roughly 15% technical proof, 55% practical implication, and 30% ecosystem framing.
         - Diff stats are supporting evidence, not the story. Mention additions/deletions only when unusually large or genuinely useful.
-        - Use short paragraphs and natural human wording.
+        - Use short paragraphs and natural human wording. Keep the main read compact; the proof section can carry details.
+        - Bias toward compression. If a sentence only explains a term and does not increase the reader's sense of why it matters, cut it.
         - Avoid essay-like transitions such as "This suggests" and "This matters because". Use more directional labels and wording: "What stands out", "The broader shift", "The direction here is", or plain direct sentences.
         - Use prior_memory to build context over time. Track recurring architectural themes, repeated priorities, momentum changes, release hardening, tooling focus, decentralization trends, and scaling work.
         - Do not include a public-work caveat section.
@@ -510,20 +515,20 @@ def build_instructions() -> str:
         Date: <date>
 
         Top takeaway:
-        One sentence that ties the day together in plain English. It should be specific, positive, and evidence-backed.
+        One punchy sentence that ties the day together in plain English. Avoid "visible work this window". Prefer wording like "AO work today..." or "AO work this week...".
 
         <One section per source>
         Plain-English read:
-        Start each source with the digestible read. Put the practical implication first, then the technical explanation. Explain what changed, why normal builders/operators should care, and how it fits the recent context from prior_memory. Keep this before the proof section.
+        Start each source with the digestible read. Put the practical implication first, then the technical explanation. Explain what changed, why normal builders/operators should care, and how it fits the recent context from prior_memory. Keep this to 2 or 3 short paragraphs before the proof section.
 
         Why this matters for AO:
-        Tie it to the larger AO vision in one or two concrete implications. Examples: faster developers, less fragile infrastructure, easier operation, more openness, cleaner coordination, more flexible service nodes, fewer edge cases, easier to build real AO apps.
+        Tie it to the larger AO vision in one or two concrete implications. Keep this to 1 short paragraph or 2 bullets. Examples: faster developers, less fragile infrastructure, easier operation, more openness, cleaner coordination, more flexible service nodes, fewer edge cases, easier to build real AO apps.
 
         If commit count is 0 in the primary tracked window, use fallback_windows in the payload to provide a grounded day/week/month context.
         Clearly label that as fallback context, not new same-window activity.
 
         What stands out:
-        A tight, direct read on the work direction. Avoid distant phrasing like "the public activity points to" or "it looks like". Prefer direct wording such as "Good progress on reducing setup friction for..." or "The broader shift is...". Keep it humble and evidence-backed.
+        A tight, direct read on the work direction in 1 or 2 sentences. Avoid distant phrasing like "the public activity points to" or "it looks like". Prefer direct wording such as "Good progress on reducing setup friction for..." or "The broader shift is...". Keep it humble and evidence-backed.
 
         Public activity:
         - Commit count
@@ -532,7 +537,7 @@ def build_instructions() -> str:
         - Time window
 
         Proof from commits:
-        List the most important commits with exact title, link, PR context when available, and a short practical translation. Keep proof crisp; do not turn this into the main essay.
+        List only the most important commits with exact title, link, PR context when available, and a short practical translation. Keep proof crisp; do not turn this into the main essay. Usually 2 to 4 bullets per source is enough.
 
         Suggested X post:
         Write one polished post for X. It should sound human, positive, concise, and evidence-led. Do not summarize everything. Extract one implication, compress emotion, and imply significance without detail overload.
