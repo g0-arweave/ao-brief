@@ -1,10 +1,10 @@
 # Daily GitHub Brief
 
-This repo sends one daily email that turns public GitHub commits into a simple, evidence-led progress brief.
+This repo sends one daily email that turns public GitHub commits into a simple, evidence-led progress brief. It also sends a Friday synthesis that combines the week across tracked AO, HyperBEAM, Arweave, and permaweb sources.
 
 If every configured source has zero new public commits, the run exits cleanly without sending an email.
 
-It starts with Sam Williams on `permaweb/HyperBEAM`, but it is built so you can add more sources later by editing `sources.json`.
+It starts with Sam Williams on `permaweb/HyperBEAM`, plus selected public GitHub profiles across the AO/permaweb ecosystem. Add or remove sources by editing `sources.json`.
 
 ## What the email includes
 
@@ -25,11 +25,14 @@ daily-github-brief/
   brief.py                      # fetch commits, analyze, email
   sources.json                  # sources to monitor
   repo_contexts/hyperbeam.md    # durable repo context for better analysis
+  repo_contexts/ao_ecosystem.md # broader AO/Arweave profile context
   state/brief_memory.json       # rolling memory, updated after each run
+  state/weekly_brief_memory.json # weekly synthesis memory
   requirements.txt
 
 .github/workflows/
-  daily.yml                      # 8am PT GitHub Actions schedule
+  daily.yml                      # 7am PT GitHub Actions schedule
+  friday-synthesis.yml           # Friday weekly synthesis schedule
 ```
 
 ## Setup
@@ -107,15 +110,23 @@ That sends the email.
 
 ## Schedule
 
-The workflow is set to run every day at 8am Pacific time:
+The daily workflow is set to run every day during the 7am Pacific hour, with a backup attempt in the same hour:
 
 ```yaml
 schedule:
-  - cron: '0 15 * * *'
-  - cron: '0 16 * * *'
+  - cron: '7,37 14 * * *'
+  - cron: '7,37 15 * * *'
 
-# Workflow gates execution to exactly 8:00am America/Los_Angeles.
+# Workflow gates execution to 7am America/Los_Angeles.
 ```
+
+The Friday synthesis workflow runs only on Fridays during the 7am Pacific hour and uses a 168-hour lookback:
+
+```bash
+python daily-github-brief/brief.py --weekly-synthesis --lookback-hours 168 --state state/weekly_brief_memory.json
+```
+
+It is intentionally more combinatory than the daily brief: it compresses the week into themes, source notes, the strongest proof, one suggested X post, and a short thread.
 
 ## Add another GitHub source
 

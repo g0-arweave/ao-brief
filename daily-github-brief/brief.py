@@ -33,6 +33,7 @@ class RunConfig:
     sources_path: Path
     state_path: Path
     dry_run: bool
+    weekly_synthesis: bool
     lookback_hours: int
     overlap_hours: int
     max_commit_details: int
@@ -469,6 +470,7 @@ def build_payload(
         )
 
     payload = {
+        "brief_type": "weekly_synthesis" if cfg.weekly_synthesis else "daily",
         "run_date_pt": now.astimezone(PT).strftime("%Y-%m-%d"),
         "run_time_pt": now.astimezone(PT).strftime("%Y-%m-%d %H:%M %Z"),
         "important_limits": [
@@ -480,38 +482,37 @@ def build_payload(
     return payload, commits_by_source
 
 
-def build_instructions() -> str:
-    return textwrap.dedent(
-        f"""
-        You write a daily AO GitHub progress email.
+def build_instructions(weekly_synthesis: bool = False) -> str:
+    brief_kind = "weekly AO GitHub synthesis digest" if weekly_synthesis else "daily AO GitHub progress email"
+    if weekly_synthesis:
+        structure = """
+        Required email structure:
+        AO Weekly Synthesis
+        Week ending: <date>
 
-        Required style:
-        - Positive, realistic, and grounded. Default toward progress, momentum, maturation, builder leverage, and reduced friction when the evidence supports it.
-        - Make the reader feel, within 20 seconds: AO is actively progressing, the infrastructure is getting cleaner, and developers are getting more leverage.
-        - Lead with practical implication, then explain the technical mechanism only if it helps.
-        - Use concrete proof from commits and pull request context: exact commit titles, commit links, PR titles/descriptions when available, changed files, and practical implications.
-        - Write for a smart crypto/blockchain reader who knows the broad idea of decentralized infrastructure but does not live in the AO or HyperBEAM codebase.
-        - Keep the analysis approachable. Translate infra concepts into developer speed, reliability, openness, scalability, flexibility, or fewer coordination headaches.
-        - Do not overhype, shill, or make claims beyond the public commits.
-        - Do not use generic filler like "foundational work that helps the ecosystem scale".
-        - Avoid contrast-template writing such as "people think X, but really Y".
-        - Avoid "most people miss", "quietly becoming", "not the loudest", "boring machinery", and "this is the kind of work".
-        - Avoid report-like phrases such as "visible work this window", "public activity points to", "the current phase", and "this suggests".
-        - Do not say "runtime" without translating it. Prefer "the software layer that runs AO apps and processes".
-        - Prefer "features a node can add without changing the core software" over "installable functionality" when that is clearer.
-        - Prefer "a cleaner way for developers to share and install functionality" over "device packaging" unless the term is needed as proof.
-        - Prefer "making the infrastructure less fragile and easier to operate" over "runtime cleanup".
-        - Prefer "local test flows" over "local compliance flows" unless the commit title requires the exact phrase.
-        - Do not over-explain mechanics. Use roughly 15% technical proof, 55% practical implication, and 30% ecosystem framing.
-        - Diff stats are supporting evidence, not the story. Mention additions/deletions only when unusually large or genuinely useful.
-        - Use short paragraphs and natural human wording. Keep the main read compact; the proof section can carry details.
-        - Bias toward compression. If a sentence only explains a term and does not increase the reader's sense of why it matters, cut it.
-        - Avoid essay-like transitions such as "This suggests" and "This matters because". Use more directional labels and wording: "What stands out", "The broader shift", "The direction here is", or plain direct sentences.
-        - Let the evidence choose the theme. Do not force every update into the latest known narrative such as Forge, device packaging, or PermawebOS unless the commits clearly support it.
-        - Remember AO is bigger than one repo or subsystem. HyperBEAM is important, but also watch for developer tools, reliability, performance, message handling, testing, security, service markets, app infrastructure, and onboarding.
-        - Use prior_memory to build context over time. Track recurring architectural themes, repeated priorities, momentum changes, release hardening, tooling focus, decentralization trends, and scaling work.
-        - Do not include a public-work caveat section.
+        Top takeaway:
+        One punchy sentence that compresses the week into a plain-English signal. Prefer wording like "AO work this week...".
 
+        The week in plain English:
+        A compact 3 to 5 paragraph synthesis across sources. Lead with what the week unlocked for builders, operators, apps, or the broader AO/permaweb ecosystem. Do not simply summarize each source one by one.
+
+        Main themes:
+        List 3 to 5 themes. Each theme should combine multiple pieces of evidence when possible. Keep each item short and readable.
+
+        Source notes:
+        One short section per source with meaningful activity. Practical read first, then only the most important proof.
+
+        Proof worth keeping:
+        List the strongest commit/PR evidence across the week. Usually 5 to 8 bullets total is enough. Include exact commit titles and links.
+
+        Suggested X post:
+        Write one polished post for X. Extract one weekly implication, not everything that happened.
+
+        Thread:
+        Always write a 3 to 5 post thread. Make it feel like weekly ecosystem intelligence: less daily log, more pattern recognition. Number the posts 1/ through 5/ as needed.
+        """.strip()
+    else:
+        structure = """
         Required email structure:
         AO Daily Build Brief
         Date: <date>
@@ -546,6 +547,40 @@ def build_instructions() -> str:
 
         Thread:
         Always write a short 2 to 4 post thread for every email. Use prior_memory to make the thread feel like part of an ongoing story, but keep every claim grounded in today's payload. Number the posts 1/ through 4/ as needed.
+        """.strip()
+
+    return textwrap.dedent(
+        f"""
+        You write a {brief_kind}.
+
+        Required style:
+        - Positive, realistic, and grounded. Default toward progress, momentum, maturation, builder leverage, and reduced friction when the evidence supports it.
+        - Make the reader feel, within 20 seconds: AO is actively progressing, the infrastructure is getting cleaner, and developers are getting more leverage.
+        - Lead with practical implication, then explain the technical mechanism only if it helps.
+        - Use concrete proof from commits and pull request context: exact commit titles, commit links, PR titles/descriptions when available, changed files, and practical implications.
+        - Write for a smart crypto/blockchain reader who knows the broad idea of decentralized infrastructure but does not live in the AO or HyperBEAM codebase.
+        - Keep the analysis approachable. Translate infra concepts into developer speed, reliability, openness, scalability, flexibility, or fewer coordination headaches.
+        - Do not overhype, shill, or make claims beyond the public commits.
+        - Do not use generic filler like "foundational work that helps the ecosystem scale".
+        - Avoid contrast-template writing such as "people think X, but really Y".
+        - Avoid "most people miss", "quietly becoming", "not the loudest", "boring machinery", and "this is the kind of work".
+        - Avoid report-like phrases such as "visible work this window", "public activity points to", "the current phase", and "this suggests".
+        - Do not say "runtime" without translating it. Prefer "the software layer that runs AO apps and processes".
+        - Prefer "features a node can add without changing the core software" over "installable functionality" when that is clearer.
+        - Prefer "a cleaner way for developers to share and install functionality" over "device packaging" unless the term is needed as proof.
+        - Prefer "making the infrastructure less fragile and easier to operate" over "runtime cleanup".
+        - Prefer "local test flows" over "local compliance flows" unless the commit title requires the exact phrase.
+        - Do not over-explain mechanics. Use roughly 15% technical proof, 55% practical implication, and 30% ecosystem framing.
+        - Diff stats are supporting evidence, not the story. Mention additions/deletions only when unusually large or genuinely useful.
+        - Use short paragraphs and natural human wording. Keep the main read compact; the proof section can carry details.
+        - Bias toward compression. If a sentence only explains a term and does not increase the reader's sense of why it matters, cut it.
+        - Avoid essay-like transitions such as "This suggests" and "This matters because". Use more directional labels and wording: "What stands out", "The broader shift", "The direction here is", or plain direct sentences.
+        - Let the evidence choose the theme. Do not force every update into the latest known narrative such as Forge, device packaging, or PermawebOS unless the commits clearly support it.
+        - Remember AO is bigger than one repo or subsystem. HyperBEAM is important, but also watch for developer tools, reliability, performance, message handling, testing, security, service markets, app infrastructure, and onboarding.
+        - Use prior_memory to build context over time. Track recurring architectural themes, repeated priorities, momentum changes, release hardening, tooling focus, decentralization trends, and scaling work.
+        - Do not include a public-work caveat section.
+
+        {structure}
 
         At the very end, include a machine-readable memory update between these exact markers. Do not put these markers in the email body before the end.
         {MEMORY_START}
@@ -572,7 +607,7 @@ def call_openai(payload: dict[str, Any], cfg: RunConfig) -> tuple[str, dict[str,
     client = OpenAI(api_key=api_key)
     response = client.responses.create(
         model=cfg.openai_model,
-        instructions=build_instructions(),
+        instructions=build_instructions(cfg.weekly_synthesis),
         input=json.dumps(payload, indent=2, ensure_ascii=False),
         max_output_tokens=int(os.environ.get("OPENAI_MAX_OUTPUT_TOKENS", "4500")),
     )
@@ -600,6 +635,9 @@ def strip_memory_update(text: str) -> tuple[str, dict[str, Any]]:
 
 
 def email_subject(payload: dict[str, Any]) -> str:
+    if payload.get("brief_type") == "weekly_synthesis":
+        return f"AO Weekly Synthesis - {payload.get('run_date_pt')}"
+
     labels = [s.get("label") for s in payload.get("sources", []) if s.get("label")]
     if len(labels) == 1:
         return f"AO Daily: {labels[0]} - {payload.get('run_date_pt')}"
@@ -869,6 +907,7 @@ def parse_args() -> RunConfig:
     parser.add_argument("--sources", default="sources.json", help="Path to sources.json")
     parser.add_argument("--state", default="state/brief_memory.json", help="Path to persistent state JSON")
     parser.add_argument("--dry-run", action="store_true", help="Print the email instead of sending it or updating state")
+    parser.add_argument("--weekly-synthesis", action="store_true", default=os.environ.get("WEEKLY_SYNTHESIS", "0") == "1", help="Write a weekly synthesis digest instead of a daily brief")
     parser.add_argument("--lookback-hours", type=int, default=int(os.environ.get("LOOKBACK_HOURS", "30")))
     parser.add_argument("--overlap-hours", type=int, default=int(os.environ.get("OVERLAP_HOURS", "2")))
     parser.add_argument("--max-commit-details", type=int, default=int(os.environ.get("MAX_COMMIT_DETAILS", "20")))
@@ -881,6 +920,7 @@ def parse_args() -> RunConfig:
         sources_path=(base_dir / args.sources).resolve() if not Path(args.sources).is_absolute() else Path(args.sources),
         state_path=(base_dir / args.state).resolve() if not Path(args.state).is_absolute() else Path(args.state),
         dry_run=args.dry_run,
+        weekly_synthesis=args.weekly_synthesis,
         lookback_hours=args.lookback_hours,
         overlap_hours=args.overlap_hours,
         max_commit_details=args.max_commit_details,

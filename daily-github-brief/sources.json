@@ -19,5 +19,38 @@
     "context_file": "repo_contexts/xylophonez.md",
     "public_commits_url": "https://github.com/xylophonez",
     "audience_note": "Track public work by xylophonez across recently updated public repos, with extra attention to Arweave, AO, HyperBEAM, permaweb, and developer tooling."
+  },
+  {
+    "id": "nickj202-profile",
+    "label": "NickJ202 public repos",
+    "profile": "NickJ202",
+    "author": "NickJ202",
+    "branch": null,
+    "max_repos": 20,
+    "context_file": "repo_contexts/ao_ecosystem.md",
+    "public_commits_url": "https://github.com/NickJ202",
+    "audience_note": "Track public work by NickJ202 across recently updated public repos, with attention to AO, Arweave, HyperBEAM, permaweb, app infrastructure, service experiments, and developer tooling. Let the commits decide the theme."
+  },
+  {
+    "id": "lucifer0x17-profile",
+    "label": "Lucifer0x17 public repos",
+    "profile": "Lucifer0x17",
+    "author": "Lucifer0x17",
+    "branch": null,
+    "max_repos": 20,
+    "context_file": "repo_contexts/ao_ecosystem.md",
+    "public_commits_url": "https://github.com/Lucifer0x17",
+    "audience_note": "Track public work by Lucifer0x17 across recently updated public repos, with attention to AO, Arweave, HyperBEAM, permaweb, app infrastructure, service experiments, and developer tooling. Keep the read approachable for crypto/blockchain readers."
+  },
+  {
+    "id": "jamespiechota-profile",
+    "label": "JamesPiechota public repos",
+    "profile": "JamesPiechota",
+    "author": "JamesPiechota",
+    "branch": null,
+    "max_repos": 20,
+    "context_file": "repo_contexts/ao_ecosystem.md",
+    "public_commits_url": "https://github.com/JamesPiechota",
+    "audience_note": "Track public work by JamesPiechota across recently updated public repos. He may skew more Arweave than AO; include that work when it helps readers understand the broader permaweb base AO depends on."
   }
 ]

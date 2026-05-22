@@ -1,0 +1,95 @@
+name: Friday AO Synthesis
+
+on:
+  schedule:
+    # Run after the daily brief, with DST-safe UTC entries gated below.
+    # Gate keeps only Friday runs that occur during 7am America/Los_Angeles.
+    - cron: '47 14 * * 5'
+    - cron: '47 15 * * 5'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Print the email in the workflow log instead of sending it'
+        required: true
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+
+permissions:
+  contents: write
+
+jobs:
+  send-weekly-synthesis:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Check Friday 7am PT window for scheduled runs
+        if: github.event_name == 'schedule'
+        id: pt_window
+        shell: bash
+        run: |
+          PT_DAY="$(TZ=America/Los_Angeles date +%u)"
+          PT_HOUR="$(TZ=America/Los_Angeles date +%H)"
+          if [ "$PT_DAY" = "5" ] && [ "$PT_HOUR" = "07" ]; then
+            echo "run_now=1" >> "$GITHUB_OUTPUT"
+          else
+            echo "run_now=0" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Stop if outside Friday 7am PT window
+        if: github.event_name == 'schedule' && steps.pt_window.outputs.run_now != '1'
+        run: |
+          echo "Not Friday 7am PT right now; exiting."
+          exit 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r daily-github-brief/requirements.txt
+
+      - name: Decide run mode
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
+            echo "dry_run=1" >> "$GITHUB_OUTPUT"
+          else
+            echo "dry_run=0" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run Friday synthesis
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          EMAIL_FROM_NAME: ${{ vars.EMAIL_FROM_NAME }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          SENDGRID_API_BASE: ${{ vars.SENDGRID_API_BASE }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ steps.mode.outputs.dry_run }}" = "1" ]; then
+            python daily-github-brief/brief.py --weekly-synthesis --lookback-hours 168 --state state/weekly_brief_memory.json --dry-run
+          else
+            python daily-github-brief/brief.py --weekly-synthesis --lookback-hours 168 --state state/weekly_brief_memory.json
+          fi
+
+      - name: Commit updated weekly memory
+        if: steps.mode.outputs.dry_run != '1'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add daily-github-brief/state/weekly_brief_memory.json
+          if git diff --cached --quiet; then
+            echo "No weekly memory changes to commit."
+          else
+            git commit -m "Update weekly brief memory"
+            git push
+          fi
