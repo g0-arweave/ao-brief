@@ -3,9 +3,9 @@ name: Daily GitHub Brief
 on:
   schedule:
     # Run away from the top of the hour, with a backup in the same hour.
-    # Gate below keeps only runs that occur during 8am America/Los_Angeles.
+    # Gate below keeps only runs that occur during 7am America/Los_Angeles.
+    - cron: '7,37 14 * * *'
     - cron: '7,37 15 * * *'
-    - cron: '7,37 16 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -28,22 +28,22 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v4
 
-      - name: Check 8am PT window for scheduled runs
+      - name: Check 7am PT window for scheduled runs
         if: github.event_name == 'schedule'
         id: pt_window
         shell: bash
         run: |
           PT_HOUR="$(TZ=America/Los_Angeles date +%H)"
-          if [ "$PT_HOUR" = "08" ]; then
+          if [ "$PT_HOUR" = "07" ]; then
             echo "run_now=1" >> "$GITHUB_OUTPUT"
           else
             echo "run_now=0" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Stop if outside 8am PT (schedule only)
+      - name: Stop if outside 7am PT (schedule only)
         if: github.event_name == 'schedule' && steps.pt_window.outputs.run_now != '1'
         run: |
-          echo "Not 8am PT right now; exiting." 
+          echo "Not 7am PT right now; exiting." 
           exit 0
 
       - name: Set up Python
