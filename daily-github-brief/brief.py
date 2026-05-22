@@ -122,6 +122,20 @@ def first_lines(message: str, limit: int = 6) -> str:
     return "\n".join(lines[:limit]).strip()
 
 
+def truncate_text(value: str | None, limit: int = 1400) -> str:
+    text = (value or "").strip()
+    if len(text) <= limit:
+        return text
+    return text[:limit].rsplit(" ", 1)[0].rstrip() + "..."
+
+
+def pull_request_number(message: str) -> int | None:
+    match = re.search(r"Merge pull request #(\d+)", message or "")
+    if not match:
+        return None
+    return int(match.group(1))
+
+
 def summarize_files(files: list[dict[str, Any]], max_files: int = 8) -> list[dict[str, Any]]:
     summarized: list[dict[str, Any]] = []
     for f in files[:max_files]:
@@ -198,12 +212,30 @@ def fetch_commits_for_source(
         sha = item.get("sha")
         message = item.get("commit", {}).get("message", "")
         detail: dict[str, Any] | None = None
+        pull_request: dict[str, Any] | None = None
         if sha and index < max_commit_details:
             detail_url = f"{base_url}/{sha}"
             try:
                 detail = github_get(session, detail_url)
             except Exception as exc:
                 print(f"Warning: could not fetch commit detail for {sha[:7]}: {exc}", file=sys.stderr)
+
+            pr_number = pull_request_number(message)
+            if pr_number:
+                try:
+                    pr = github_get(session, f"https://api.github.com/repos/{owner}/{repo_name}/pulls/{pr_number}")
+                    pull_request = {
+                        "number": pr_number,
+                        "title": pr.get("title"),
+                        "url": pr.get("html_url"),
+                        "body_excerpt": truncate_text(pr.get("body")),
+                        "merged_at": pr.get("merged_at"),
+                        "additions": pr.get("additions", 0),
+                        "deletions": pr.get("deletions", 0),
+                        "changed_files": pr.get("changed_files", 0),
+                    }
+                except Exception as exc:
+                    print(f"Warning: could not fetch PR detail for #{pr_number}: {exc}", file=sys.stderr)
 
         files = (detail or {}).get("files", [])
         stats = (detail or {}).get("stats", {})
@@ -223,6 +255,7 @@ def fetch_commits_for_source(
                     "total": stats.get("total", 0),
                     "files_changed": len(files),
                 },
+                "pull_request": pull_request,
                 "files": summarize_files(files),
                 "patch_snippets": patch_snippets(files) if include_patch_snippets else [],
             }
@@ -453,17 +486,23 @@ def build_instructions() -> str:
         You write a daily AO GitHub progress email.
 
         Required style:
-        - Positive, realistic, and grounded. Default toward progress when the commit evidence supports it.
-        - Make the reader feel: there is real progress happening on AO, and here is the proof.
-        - Use concrete proof from commits: exact commit titles, commit links, files changed, additions, deletions, and practical implications.
-        - Keep the analysis simple enough for non-engineers. Explain any technical term in normal language.
+        - Positive, realistic, and grounded. Default toward progress, momentum, maturation, builder leverage, and reduced friction when the evidence supports it.
+        - Make the reader feel, within 20 seconds: AO is actively progressing, the infrastructure is getting cleaner, and developers are getting more leverage.
+        - Lead with practical implication, then explain the technical mechanism only if it helps.
+        - Use concrete proof from commits and pull request context: exact commit titles, commit links, PR titles/descriptions when available, changed files, and practical implications.
+        - Keep the analysis simple enough for non-engineers. Translate infra concepts into developer speed, reliability, openness, scalability, flexibility, or coordination reduction.
         - Do not overhype, shill, or make claims beyond the public commits.
         - Do not use generic filler like "foundational work that helps the ecosystem scale".
         - Avoid contrast-template writing such as "people think X, but really Y".
         - Avoid "most people miss", "quietly becoming", "not the loudest", "boring machinery", and "this is the kind of work".
         - Do not say "runtime" without translating it. Prefer "the software layer that runs AO apps and processes".
+        - Prefer "a cleaner way for developers to share and install functionality" over "device packaging" unless the term is needed as proof.
+        - Prefer "making the infrastructure less fragile and easier to operate" over "runtime cleanup".
+        - Do not over-explain mechanics. Use roughly 20% technical proof, 50% practical implication, and 30% ecosystem framing.
+        - Diff stats are supporting evidence, not the story. Mention additions/deletions only when unusually large or genuinely useful.
         - Use short paragraphs and natural human wording.
-        - Use prior_memory to build context over time. Connect today's commits to the recent trajectory when the payload supports it.
+        - Avoid essay-like transitions such as "This suggests" and "This matters because". Use more directional labels and wording: "What stands out", "The broader shift", "The direction here is", or plain direct sentences.
+        - Use prior_memory to build context over time. Track recurring architectural themes, repeated priorities, momentum changes, release hardening, tooling focus, decentralization trends, and scaling work.
         - Do not include a public-work caveat section.
 
         Required email structure:
@@ -475,16 +514,16 @@ def build_instructions() -> str:
 
         <One section per source>
         Plain-English read:
-        Start each source with the digestible read. Explain what changed, why it matters, and how it fits the recent context from prior_memory. Keep this before the proof section.
+        Start each source with the digestible read. Put the practical implication first, then the technical explanation. Explain what changed, why normal builders/operators should care, and how it fits the recent context from prior_memory. Keep this before the proof section.
 
         Why this matters for AO:
-        Tie it to the larger AO vision in one or two concrete implications. Examples: easier developer setup, safer message handling, cleaner operation, fewer edge cases, easier to build real AO apps.
+        Tie it to the larger AO vision in one or two concrete implications. Examples: faster developers, less fragile infrastructure, easier operation, more openness, cleaner coordination, more flexible service nodes, fewer edge cases, easier to build real AO apps.
 
         If commit count is 0 in the primary tracked window, use fallback_windows in the payload to provide a grounded day/week/month context.
         Clearly label that as fallback context, not new same-window activity.
 
-        What this suggests:
-        A tight, direct read on the work direction. Avoid distant phrasing like "the public activity points to" or "it looks like". Prefer direct wording such as "This is developer-experience cleanup around..." or "This keeps the focus on...". Keep it humble and evidence-backed.
+        What stands out:
+        A tight, direct read on the work direction. Avoid distant phrasing like "the public activity points to" or "it looks like". Prefer direct wording such as "Good progress on reducing setup friction for..." or "The broader shift is...". Keep it humble and evidence-backed.
 
         Public activity:
         - Commit count
@@ -493,10 +532,10 @@ def build_instructions() -> str:
         - Time window
 
         Proof from commits:
-        List the most important commits with exact title, link, and a short practical translation.
+        List the most important commits with exact title, link, PR context when available, and a short practical translation. Keep proof crisp; do not turn this into the main essay.
 
         Suggested X post:
-        Write one polished post for X. It should sound human, positive, concise, and evidence-led.
+        Write one polished post for X. It should sound human, positive, concise, and evidence-led. Do not summarize everything. Extract one implication, compress emotion, and imply significance without detail overload.
 
         Thread:
         Always write a short 2 to 4 post thread for every email. Use prior_memory to make the thread feel like part of an ongoing story, but keep every claim grounded in today's payload. Number the posts 1/ through 4/ as needed.
@@ -508,7 +547,8 @@ def build_instructions() -> str:
             "source_id": {{
               "rolling_context": "5 to 8 sentence durable context about the source trajectory, updated with today's evidence.",
               "current_phase": "short phrase",
-              "recent_themes": ["theme 1", "theme 2", "theme 3"]
+              "recent_themes": ["theme 1", "theme 2", "theme 3"],
+              "narrative_threads": ["recurring theme or trend 1", "recurring theme or trend 2"]
             }}
           }}
         }}
@@ -662,7 +702,7 @@ def update_state(
 
         note = source_notes.get(sid) or source_notes.get(source_payload.get("label"))
         if isinstance(note, dict):
-            for key in ["rolling_context", "current_phase", "recent_themes"]:
+            for key in ["rolling_context", "current_phase", "recent_themes", "narrative_threads"]:
                 if key in note:
                     source_state[key] = note[key]
 
@@ -681,7 +721,7 @@ def fallback_email(payload: dict[str, Any]) -> str:
         lines.append("Why this matters for AO:")
         lines.append("- The commits are new public evidence of work that may affect AO-related tooling, docs, setup, or implementation.")
         lines.append("")
-        lines.append("What this suggests:")
+        lines.append("What stands out:")
         lines.append("This is an update worth reviewing from the commit evidence below.")
         lines.append("")
         lines.append("Public activity:")
@@ -696,13 +736,16 @@ def fallback_email(payload: dict[str, Any]) -> str:
         for commit in commits[:10]:
             repo = f" ({commit.get('repo')})" if commit.get("repo") else ""
             lines.append(f"- \"{commit.get('title')}\"{repo} - {commit.get('url')}")
+            pr = commit.get("pull_request")
+            if isinstance(pr, dict) and pr.get("title"):
+                lines.append(f"  PR context: {pr.get('title')} - {pr.get('url')}")
         lines.append("")
     lines.append("Suggested X post:")
     lines.append("New AO-related public GitHub activity landed today. The commit evidence is in the brief.")
     lines.append("")
     lines.append("Thread:")
     lines.append("1/ New public commits landed today across the tracked AO-related sources.")
-    lines.append("2/ The useful thing to watch is the concrete evidence: commit titles, changed files, and how the work affects setup, docs, tooling, or implementation.")
+    lines.append("2/ The useful thing to watch is what the work unlocks: faster setup, cleaner tooling, less fragile infrastructure, or more room for builders.")
     return "\n".join(lines)
 
 
@@ -771,7 +814,7 @@ def fallback_email_with_windows(payload: dict[str, Any]) -> str:
         lines.append("Why this matters for AO:")
         lines.append("- Keeping recent context visible helps the next real update make sense instead of reading like an isolated commit list.")
         lines.append("")
-        lines.append("What this suggests:")
+        lines.append("What stands out:")
         lines.append("This is a pause in the tracked window, with recent context available below.")
         lines.append("")
         lines.append("Public activity (primary window):")
@@ -796,6 +839,9 @@ def fallback_email_with_windows(payload: dict[str, Any]) -> str:
             for commit in commits[:3]:
                 repo = f" ({commit.get('repo')})" if commit.get("repo") else ""
                 lines.append(f"- \"{commit.get('title')}\"{repo} - {commit.get('url')}")
+                pr = commit.get("pull_request")
+                if isinstance(pr, dict) and pr.get("title"):
+                    lines.append(f"  PR context: {pr.get('title')} - {pr.get('url')}")
             lines.append("")
         else:
             lines.append("Fallback context:")

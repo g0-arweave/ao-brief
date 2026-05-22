@@ -9,15 +9,14 @@ It starts with Sam Williams on `permaweb/HyperBEAM`, but it is built so you can 
 ## What the email includes
 
 - Top takeaway in plain English
-- Public activity count
-- Proof from exact commit titles and links
-- Files changed plus additions/deletions when available
-- Simple explanation of what changed
-- Why it matters for AO
+- Practical implication before technical mechanics
+- Longitudinal context from prior brief memory
+- Why normal builders and operators should care
+- Crisp proof from exact commit titles, links, and PR context when available
 - Suggested X post
 - Short X thread for every email
 
-The default tone is positive, realistic, and grounded in the commits. The goal is to show progress without sounding like hype.
+The default tone is optimistic, realistic, and grounded in the commits. The goal is narrative compression: show progress, momentum, and practical ecosystem meaning without sounding like hype.
 
 ## Files
 
