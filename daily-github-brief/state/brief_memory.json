@@ -1,38 +1,44 @@
 {
   "global": {
-    "last_success_at": "2026-05-22T17:13:11Z"
+    "last_success_at": "2026-05-23T15:16:19Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-05-22T17:13:11Z",
+      "last_success_at": "2026-05-23T15:16:19Z",
       "last_seen_shas": [
+        "29e17b4cf148c38931155a552caf9ecbca18d059",
+        "6be1816357ee247c9aba73901fb6f530ce6d4697",
+        "cca5b4d416b012e11b080853cd35f303f8efeda4",
         "75082bdb001f67d3fb14d372a027b74f619ae572",
         "a51a93ce17d8d972e6b53c8743fc7d3e6dc1d319",
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-05-22T15:33:43Z",
+      "last_public_activity_at": "2026-05-22T19:59:06Z",
       "recent_commit_titles": [
+        "feat(forge): add device CLI filters",
+        "feat(forge): filter device tests",
+        "feat(forge): add device test timeouts",
         "fix(forge): install templates where rebar3 reads them",
         "fix(forge): move template installer to repo root",
         "Merge pull request #921 from permaweb/fix/install-template-commands",
         "Merge pull request #925 from permaweb/fix/load-remote-devices-flag"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to focus on making Forge and installable HyperBEAM functionality easier to use and safer to operate. Recent commits moved the Forge template installer to the repo root as `./install-template`, refreshed docs, and fixed template install paths so they land where `rebar3` actually reads them. PR #921 merged that setup cleanup, giving developers a simpler and more discoverable workflow from a HyperBEAM checkout. The latest merged PR #925 fixed the device loader so `load-remote-devices` is honored: local cache is checked, and gateway lookup only happens when explicitly enabled. That adds clearer operator control over remote fetching while preserving the path toward installable, shareable functionality. The durable theme is reduced friction plus fewer surprising defaults in the software layer that runs AO apps and processes.",
-      "current_phase": "Forge usability and explicit device-loading controls",
+      "rolling_context": "Sam's visible HyperBEAM work continues to make Forge more usable as a daily build and test tool for shareable node features. After recent cleanup around template installation and explicit remote device loading, the latest commits add CLI filters, filtered device tests, and test timeouts. The durable theme is lower setup friction, clearer controls, and faster local test loops for HyperBEAM feature packages.",
+      "current_phase": "Forge test filtering and timeout controls",
       "recent_themes": [
-        "Forge template installation",
-        "developer setup cleanup",
-        "explicit remote loading controls",
+        "Forge CLI filters",
+        "targeted device tests",
+        "test timeout handling",
         "packaged HyperBEAM functionality"
       ],
       "narrative_threads": [
-        "HyperBEAM is making installable functionality easier for developers to create and share",
-        "operator controls are becoming more explicit around what nodes fetch and trust"
+        "Forge moving from setup cleanup toward practical daily developer workflows",
+        "HyperBEAM feature packages becoming easier to build, test, and operate safely"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-05-22T17:13:11Z",
+      "last_success_at": "2026-05-23T15:16:19Z",
       "last_seen_shas": [
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
@@ -54,6 +60,18 @@
         "experimental AO services are being organized into reusable project structures",
         "paid request and bundler flows are getting clearer docs and local examples"
       ]
+    },
+    "nickj202-profile": {
+      "last_success_at": "2026-05-23T15:16:19Z",
+      "last_seen_shas": []
+    },
+    "lucifer0x17-profile": {
+      "last_success_at": "2026-05-23T15:16:19Z",
+      "last_seen_shas": []
+    },
+    "jamespiechota-profile": {
+      "last_success_at": "2026-05-23T15:16:19Z",
+      "last_seen_shas": []
     }
   }
 }
