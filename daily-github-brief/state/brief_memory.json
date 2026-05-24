@@ -1,11 +1,24 @@
 {
   "global": {
-    "last_success_at": "2026-05-23T16:07:59Z"
+    "last_success_at": "2026-05-24T15:19:15Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-05-23T16:07:59Z",
+      "last_success_at": "2026-05-24T15:19:15Z",
       "last_seen_shas": [
+        "6146be53eac6bcbc3d12aa01c318e4dfa1a84cd9",
+        "8a79a31e9b85606c7b79da8b56ecb10f21b994e0",
+        "dfeb564461f572903203e878bfcdecddb8099bde",
+        "b0c38075e1b69b0cd391a4ab53fe4c3fdc170d4e",
+        "885d6266df6afcf2e6f8398c1895d0d61b7368c2",
+        "f22430d16e520f97f0cd2da120602e054f020144",
+        "e8d50eb8f8bc8ee177f14d83f6da5834b42f6651",
+        "4057000a0ae28ac78aa2564702322d524ef4a548",
+        "5e6934f4c407319351251232a08a1352de008d9f",
+        "3be21118359be9af436ae25e8ae75b588aabed4a",
+        "d2197bd705333dbfe3fa17cdb42b4b66b07462a8",
+        "0927fa50aca4debcd007ca988f96e7eae7e45ef4",
+        "4f4de6106745f880f0fd00b64b93c6fed80d2ea1",
         "29e17b4cf148c38931155a552caf9ecbca18d059",
         "6be1816357ee247c9aba73901fb6f530ce6d4697",
         "cca5b4d416b012e11b080853cd35f303f8efeda4",
@@ -14,31 +27,42 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-05-22T19:59:06Z",
+      "last_public_activity_at": "2026-05-24T04:21:02Z",
       "recent_commit_titles": [
         "feat(forge): add device CLI filters",
         "feat(forge): filter device tests",
         "feat(forge): add device test timeouts",
+        "perf(hook): slim hot path",
+        "feat(event): add guarded hook",
+        "fix(hook): strip current hook during handlers",
+        "feat(event): record events from counter path",
+        "feat(events): add events device",
+        "feat(forge): add device test event reports",
+        "fix(hook): keep recursion guard step-local",
+        "perf(event): keep record opts off default message",
+        "revert: restore edge before accidental pushes",
+        "Merge pull request #928 from permaweb/impr/test-flags",
         "fix(forge): install templates where rebar3 reads them",
         "fix(forge): move template installer to repo root",
         "Merge pull request #921 from permaweb/fix/install-template-commands",
         "Merge pull request #925 from permaweb/fix/load-remote-devices-flag"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to make Forge more usable as a daily build and test tool for shareable node features. After recent cleanup around template installation and explicit remote device loading, the latest commits add CLI filters, filtered device tests, and test timeouts. The durable theme is lower setup friction, clearer controls, and faster local test loops for HyperBEAM feature packages.",
-      "current_phase": "Forge test filtering and timeout controls",
+      "rolling_context": "Sam's visible HyperBEAM work continues to make Forge more usable as a daily build and test tool for shareable node features. The latest landed work is PR #928, which adds targeted module/test filters, timeout controls, contextual help, and source-name mapping for Forge device tests. Visible hook/event work appeared during the window but was reverted as accidental direct pushes before the test-flags PR was merged, so the durable update is cleaner local test control plus branch hygiene.",
+      "current_phase": "Merged Forge test flags and cleanup after accidental direct pushes",
       "recent_themes": [
-        "Forge CLI filters",
-        "targeted device tests",
+        "targeted Forge tests",
         "test timeout handling",
-        "packaged HyperBEAM functionality"
+        "contextual CLI help",
+        "cleaner branch hygiene"
       ],
       "narrative_threads": [
-        "Forge moving from setup cleanup toward practical daily developer workflows",
-        "HyperBEAM feature packages becoming easier to build, test, and operate safely"
+        "lower setup friction for HyperBEAM feature packages",
+        "faster local test loops for AO builders",
+        "clearer controls before broader package sharing"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-05-23T16:07:59Z",
+      "last_success_at": "2026-05-24T15:19:15Z",
       "last_seen_shas": [
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
@@ -62,15 +86,15 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-05-23T16:07:59Z",
+      "last_success_at": "2026-05-24T15:19:15Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-05-23T16:07:59Z",
+      "last_success_at": "2026-05-24T15:19:15Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-05-23T16:07:59Z",
+      "last_success_at": "2026-05-24T15:19:15Z",
       "last_seen_shas": []
     }
   }
