@@ -1,11 +1,15 @@
 {
   "global": {
-    "last_success_at": "2026-05-24T16:09:42Z"
+    "last_success_at": "2026-05-25T16:30:32Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-05-24T16:09:42Z",
+      "last_success_at": "2026-05-25T16:30:32Z",
       "last_seen_shas": [
+        "d4b04cda7b6fe9a0908e4221c63b9f3a6db54d4e",
+        "2ac316d19fcbbc4f984eeda48df60c0d54b019c8",
+        "fa1a64c91e9ec7fab117ec42db4d2a31e9d42d8d",
+        "23948616a33af6418b003179b932bc098dd23e0e",
         "6146be53eac6bcbc3d12aa01c318e4dfa1a84cd9",
         "8a79a31e9b85606c7b79da8b56ecb10f21b994e0",
         "dfeb564461f572903203e878bfcdecddb8099bde",
@@ -27,8 +31,11 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-05-24T04:21:02Z",
+      "last_public_activity_at": "2026-05-25T01:57:05Z",
       "recent_commit_titles": [
+        "impr(recorder): refine flight recorder UI",
+        "fix(recorder): redact private event fields",
+        "Merge pull request #929 from permaweb/feat/event-recorder",
         "feat(forge): add device CLI filters",
         "feat(forge): filter device tests",
         "feat(forge): add device test timeouts",
@@ -47,22 +54,21 @@
         "Merge pull request #921 from permaweb/fix/install-template-commands",
         "Merge pull request #925 from permaweb/fix/load-remote-devices-flag"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to make Forge more usable as a daily build and test tool for shareable node features. The latest landed work is PR #928, which adds targeted module/test filters, timeout controls, contextual help, and source-name mapping for Forge device tests. Visible hook/event work appeared during the window but was reverted as accidental direct pushes before the test-flags PR was merged, so the durable update is cleaner local test control plus branch hygiene.",
-      "current_phase": "Merged Forge test flags and cleanup after accidental direct pushes",
+      "rolling_context": "Sam's visible HyperBEAM work moved from Forge test control into better test debugging. PR #929 merged a flight recorder for Forge tests, producing static browser-readable event bundles for failed or full runs. Follow-up recorder commits refined the UI and redacted private event fields, making debug output easier to inspect and safer to share.",
+      "current_phase": "Merged Forge flight recorder for test debugging",
       "recent_themes": [
-        "targeted Forge tests",
-        "test timeout handling",
-        "contextual CLI help",
-        "cleaner branch hygiene"
+        "browser-readable test records",
+        "faster failed-test debugging",
+        "private event field redaction",
+        "Forge usability"
       ],
       "narrative_threads": [
-        "lower setup friction for HyperBEAM feature packages",
-        "faster local test loops for AO builders",
-        "clearer controls before broader package sharing"
+        "Forge becoming a more useful daily build and test tool",
+        "HyperBEAM debug workflows becoming easier to inspect and share safely"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-05-24T16:09:42Z",
+      "last_success_at": "2026-05-25T16:30:32Z",
       "last_seen_shas": [
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
@@ -86,15 +92,15 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-05-24T16:09:42Z",
+      "last_success_at": "2026-05-25T16:30:32Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-05-24T16:09:42Z",
+      "last_success_at": "2026-05-25T16:30:32Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-05-24T16:09:42Z",
+      "last_success_at": "2026-05-25T16:30:32Z",
       "last_seen_shas": []
     }
   }
