@@ -4,7 +4,9 @@ This repo sends one daily email that turns public GitHub commits into a simple, 
 
 If every configured source has zero new public commits, the run exits cleanly without sending an email.
 
-It starts with Sam Williams on `permaweb/HyperBEAM`, plus selected public GitHub profiles across the AO/permaweb ecosystem. Add or remove sources by editing `sources.json`.
+It starts with Sam Williams on `permaweb/HyperBEAM`, `permaweb/os`, plus selected public GitHub profiles across the AO/permaweb ecosystem. Add or remove sources by editing `sources.json`.
+
+When at least one source has new commits, the email only includes sources that were active in the primary tracked window. Inactive people or repos are still checked and have their state updated, but they do not get empty sections in the email.
 
 Each sent brief can also be archived as Markdown under `docs/briefs/`, so the project can become a public archive or mailing-list surface instead of only a private email.
 

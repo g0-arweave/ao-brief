@@ -965,6 +965,16 @@ def all_sources_have_zero_new_commits(payload: dict[str, Any]) -> bool:
     return True
 
 
+def payload_for_email(payload: dict[str, Any]) -> dict[str, Any]:
+    """Keep the state payload complete, but only ask for active source sections."""
+    active_sources = [
+        source
+        for source in payload.get("sources", [])
+        if int((source.get("stats") or {}).get("commit_count") or 0) > 0
+    ]
+    return {**payload, "sources": active_sources}
+
+
 def best_fallback_window(source: dict[str, Any]) -> dict[str, Any] | None:
     windows = source.get("fallback_windows") or []
     if not isinstance(windows, list):
@@ -1090,7 +1100,6 @@ def main() -> int:
     now = utc_now()
 
     payload, commits_by_source = build_payload(sources, state, cfg, now)
-    subject = email_subject(payload)
 
     if all_sources_have_zero_new_commits(payload):
         message = "No new public commits found; email not sent."
@@ -1103,14 +1112,17 @@ def main() -> int:
         print(message)
         return 0
 
+    email_payload = payload_for_email(payload)
+    subject = email_subject(email_payload)
+
     try:
-        email_text, memory = call_openai(payload, cfg)
+        email_text, memory = call_openai(email_payload, cfg)
     except Exception as exc:
         print(f"Warning: OpenAI analysis failed, using fallback email: {exc}", file=sys.stderr)
-        email_text, memory = fallback_email(payload), {}
+        email_text, memory = fallback_email(email_payload), {}
 
-    filename = archive_filename(payload) if cfg.archive_dir else None
-    email_text = append_useful_footer(email_text, payload, cfg, filename)
+    filename = archive_filename(email_payload) if cfg.archive_dir else None
+    email_text = append_useful_footer(email_text, email_payload, cfg, filename)
 
     if cfg.dry_run:
         print(f"Subject: {subject}\n")
@@ -1118,7 +1130,7 @@ def main() -> int:
         return 0
 
     send_email(subject, email_text, cfg)
-    archive_path = write_brief_archive(subject, email_text, payload, cfg, now)
+    archive_path = write_brief_archive(subject, email_text, email_payload, cfg, now)
     update_state(state, payload, commits_by_source, memory, now)
     write_json(cfg.state_path, state)
     print(f"Sent: {subject}")

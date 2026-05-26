@@ -10,6 +10,15 @@
     "audience_note": "Readers are AO-curious, but most are not Erlang or protocol engineers. Keep the explanation plain, concrete, and positive."
   },
   {
+    "id": "permaweb-os",
+    "label": "permaweb/os",
+    "repo": "permaweb/os",
+    "branch": null,
+    "context_file": "repo_contexts/permaweb_os.md",
+    "public_commits_url": "https://github.com/permaweb/os/commits",
+    "audience_note": "Track the permaweb operating-system layer around AO, HyperBEAM, apps, services, docs, and developer-facing workflows. Explain why the work helps builders or operators without assuming the reader knows the repo."
+  },
+  {
     "id": "xylophonez-profile",
     "label": "xylophonez public repos",
     "profile": "xylophonez",
