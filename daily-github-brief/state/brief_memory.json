@@ -1,11 +1,13 @@
 {
   "global": {
-    "last_success_at": "2026-05-26T01:46:10Z"
+    "last_success_at": "2026-05-26T17:34:25Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-05-26T01:46:10Z",
+      "last_success_at": "2026-05-26T17:34:25Z",
       "last_seen_shas": [
+        "0469976418e5a97c4f0aacbe4d94b5139bc6333a",
+        "4135280da75df443dacaf44f9aa675baabc6d3bb",
         "509458e053cda7240c62d7fbd489f520858cfb3f",
         "f6782fc43c703fa37245916a0fad0377f4fba426",
         "a21aeb73ab8272085e4494abc84869654e8b4e03",
@@ -36,8 +38,10 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-05-26T01:23:18Z",
+      "last_public_activity_at": "2026-05-26T03:22:03Z",
       "recent_commit_titles": [
+        "Fix device publish runtime setup",
+        "Fix device publish codec bootstrap",
         "Merge pull request #933 from permaweb/fix/run-parallel-generator-tests",
         "Merge pull request #931 from permaweb/fix/redact-priv",
         "Merge pull request #934 from permaweb/fix/redact-priv-followup",
@@ -64,21 +68,20 @@
         "Merge pull request #921 from permaweb/fix/install-template-commands",
         "Merge pull request #925 from permaweb/fix/load-remote-devices-flag"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work is moving from Forge test visibility into tighter reliability around the test and release loop. After the Forge flight recorder landed, follow-up commits redacted more private event fields so debug records are safer to share. Today's work also fixed parallel generator tests that had been falsely returning ok, plus publish and release fixes for add-on node features.",
-      "current_phase": "test reliability and safer debug sharing",
+      "rolling_context": "Sam's visible HyperBEAM work continues to harden the build-test-publish loop around Forge and add-on node features. After recent fixes for safer debug sharing, parallel test correctness, and release packaging, today's commits fixed publish setup and codec bootstrap paths in Forge. The practical direction is fewer fragile steps when builders package and share node functionality.",
+      "current_phase": "Forge publish path hardening",
       "recent_themes": [
-        "parallel test correctness",
-        "private event field redaction",
-        "Forge publish fixes",
-        "release packaging fixes"
+        "publish setup fixes",
+        "codec bootstrap fixes",
+        "release and packaging reliability"
       ],
       "narrative_threads": [
-        "debug records becoming easier and safer to share",
-        "HyperBEAM add-on feature workflow getting more reliable"
+        "making add-on node features easier to share",
+        "reducing fragile setup steps in HyperBEAM workflows"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-05-26T01:46:10Z",
+      "last_success_at": "2026-05-26T17:34:25Z",
       "last_seen_shas": [
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
@@ -102,15 +105,15 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-05-26T01:46:10Z",
+      "last_success_at": "2026-05-26T17:34:25Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-05-26T01:46:10Z",
+      "last_success_at": "2026-05-26T17:34:25Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-05-26T01:46:10Z",
+      "last_success_at": "2026-05-26T17:34:25Z",
       "last_seen_shas": []
     }
   }

@@ -4,6 +4,7 @@ Readable AO development briefs, backed by public GitHub receipts.
 
 ## Briefs
 
+- [AO Daily: 5 GitHub sources - 2026-05-26](2026-05-26-daily.md)
 - [AO Daily: 5 GitHub sources - 2026-05-25](2026-05-25-daily.md)
 - [AO Weekly Synthesis - 2026-05-24](2026-05-24-weekly.md)
 - [AO Daily: 5 GitHub sources - 2026-05-24](2026-05-24-daily.md)
