@@ -1,11 +1,16 @@
 {
   "global": {
-    "last_success_at": "2026-05-25T17:12:12Z"
+    "last_success_at": "2026-05-26T01:46:10Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-05-25T17:12:12Z",
+      "last_success_at": "2026-05-26T01:46:10Z",
       "last_seen_shas": [
+        "509458e053cda7240c62d7fbd489f520858cfb3f",
+        "f6782fc43c703fa37245916a0fad0377f4fba426",
+        "a21aeb73ab8272085e4494abc84869654e8b4e03",
+        "10d0d6a5a586aa2b9d133d73d179c2464e5515d5",
+        "e705e9a2428e4ac878cd862c8f81a4bd6e332553",
         "d4b04cda7b6fe9a0908e4221c63b9f3a6db54d4e",
         "2ac316d19fcbbc4f984eeda48df60c0d54b019c8",
         "fa1a64c91e9ec7fab117ec42db4d2a31e9d42d8d",
@@ -31,8 +36,13 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-05-25T01:57:05Z",
+      "last_public_activity_at": "2026-05-26T01:23:18Z",
       "recent_commit_titles": [
+        "Merge pull request #933 from permaweb/fix/run-parallel-generator-tests",
+        "Merge pull request #931 from permaweb/fix/redact-priv",
+        "Merge pull request #934 from permaweb/fix/redact-priv-followup",
+        "Fix device publish uploads",
+        "Merge pull request #935 from permaweb/fix/release-lmdb",
         "impr(recorder): refine flight recorder UI",
         "fix(recorder): redact private event fields",
         "Merge pull request #929 from permaweb/feat/event-recorder",
@@ -54,21 +64,21 @@
         "Merge pull request #921 from permaweb/fix/install-template-commands",
         "Merge pull request #925 from permaweb/fix/load-remote-devices-flag"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work moved from Forge test control into better test debugging. PR #929 merged a flight recorder for Forge tests, producing static browser-readable event bundles for failed or full runs. Follow-up recorder commits refined the UI and redacted private event fields, making debug output easier to inspect and safer to share.",
-      "current_phase": "Merged Forge flight recorder for test debugging",
+      "rolling_context": "Sam's visible HyperBEAM work is moving from Forge test visibility into tighter reliability around the test and release loop. After the Forge flight recorder landed, follow-up commits redacted more private event fields so debug records are safer to share. Today's work also fixed parallel generator tests that had been falsely returning ok, plus publish and release fixes for add-on node features.",
+      "current_phase": "test reliability and safer debug sharing",
       "recent_themes": [
-        "browser-readable test records",
-        "faster failed-test debugging",
+        "parallel test correctness",
         "private event field redaction",
-        "Forge usability"
+        "Forge publish fixes",
+        "release packaging fixes"
       ],
       "narrative_threads": [
-        "Forge becoming a more useful daily build and test tool",
-        "HyperBEAM debug workflows becoming easier to inspect and share safely"
+        "debug records becoming easier and safer to share",
+        "HyperBEAM add-on feature workflow getting more reliable"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-05-25T17:12:12Z",
+      "last_success_at": "2026-05-26T01:46:10Z",
       "last_seen_shas": [
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
@@ -92,15 +102,15 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-05-25T17:12:12Z",
+      "last_success_at": "2026-05-26T01:46:10Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-05-25T17:12:12Z",
+      "last_success_at": "2026-05-26T01:46:10Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-05-25T17:12:12Z",
+      "last_success_at": "2026-05-26T01:46:10Z",
       "last_seen_shas": []
     }
   }
