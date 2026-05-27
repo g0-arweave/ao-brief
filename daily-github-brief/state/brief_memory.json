@@ -1,11 +1,12 @@
 {
   "global": {
-    "last_success_at": "2026-05-27T17:31:49Z"
+    "last_success_at": "2026-05-27T18:06:41Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-05-27T17:31:49Z",
+      "last_success_at": "2026-05-27T18:06:41Z",
       "last_seen_shas": [
+        "6d2eb59c2aa349ef336e8a2b4c2dcc3981f8df64",
         "0469976418e5a97c4f0aacbe4d94b5139bc6333a",
         "4135280da75df443dacaf44f9aa675baabc6d3bb",
         "509458e053cda7240c62d7fbd489f520858cfb3f",
@@ -38,8 +39,9 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-05-26T03:22:03Z",
+      "last_public_activity_at": "2026-05-27T17:45:29Z",
       "recent_commit_titles": [
+        "feat(forge): gate system architecture metadata",
         "Fix device publish runtime setup",
         "Fix device publish codec bootstrap",
         "Merge pull request #933 from permaweb/fix/run-parallel-generator-tests",
@@ -68,20 +70,20 @@
         "Merge pull request #921 from permaweb/fix/install-template-commands",
         "Merge pull request #925 from permaweb/fix/load-remote-devices-flag"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to harden the build-test-publish loop around Forge and add-on node features. After recent fixes for safer debug sharing, parallel test correctness, and release packaging, today's commits fixed publish setup and codec bootstrap paths in Forge. The practical direction is fewer fragile steps when builders package and share node functionality.",
-      "current_phase": "Forge publish path hardening",
+      "rolling_context": "Sam's visible HyperBEAM work continues to harden Forge, the build and packaging path for features nodes can add without changing the core software. After recent publish setup and codec bootstrap fixes, today's commit added a gate around system architecture metadata and carried it through packaging, preload, publish, verify, tests, and docs. The practical direction remains fewer fragile package steps and clearer install/share behavior for builders and operators.",
+      "current_phase": "Forge package metadata hardening",
       "recent_themes": [
-        "publish setup fixes",
-        "codec bootstrap fixes",
-        "release and packaging reliability"
+        "package metadata gating",
+        "publish and verify path cleanup",
+        "Forge packaging reliability"
       ],
       "narrative_threads": [
-        "making add-on node features easier to share",
-        "reducing fragile setup steps in HyperBEAM workflows"
+        "cleaner sharing and install of node functionality",
+        "less fragile build-test-publish flow"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-05-27T17:31:49Z",
+      "last_success_at": "2026-05-27T18:06:41Z",
       "last_seen_shas": [
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
@@ -105,19 +107,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-05-27T17:31:49Z",
+      "last_success_at": "2026-05-27T18:06:41Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-05-27T17:31:49Z",
+      "last_success_at": "2026-05-27T18:06:41Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-05-27T17:31:49Z",
+      "last_success_at": "2026-05-27T18:06:41Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-05-27T17:31:49Z",
+      "last_success_at": "2026-05-27T18:06:41Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
