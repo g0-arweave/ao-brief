@@ -1,11 +1,17 @@
 {
   "global": {
-    "last_success_at": "2026-06-02T18:49:07Z"
+    "last_success_at": "2026-06-03T15:24:49Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-06-02T18:49:07Z",
+      "last_success_at": "2026-06-03T15:24:49Z",
       "last_seen_shas": [
+        "7414cd7d1a8f32148294eddd810d7aa5faa6f31e",
+        "7dd7a053d2a55f8143033de597441e0d02c25f9d",
+        "e884dd2a04954afffc9d352d29537a8713cb4a56",
+        "0b64d6121d76da28b9cf7243ad885d9ab99aeb6d",
+        "01754d7a0989b0ff93340e8f3f6409fc523fb7aa",
+        "b2e60c1fd53d562164885ce9a912fb7b1ac621c4",
         "9b1345df489c37ab52337ffaba2630fd00515042",
         "3f284081a8ddd5ae05479c7d5e7a0417c345a341",
         "5699d81613beba616a38fb4e0e1e0955287e1772",
@@ -52,8 +58,14 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-05-31T17:04:01Z",
+      "last_public_activity_at": "2026-06-03T02:30:11Z",
       "recent_commit_titles": [
+        "fix: ignore zero-arity device key functions",
+        "Merge pull request #945 from permaweb/fix/key-arity",
+        "Improve cookie source loading",
+        "Merge pull request #946 from permaweb/impr/cookie-loading",
+        "Keep reply headers shallow",
+        "Merge pull request #947 from permaweb/impr/reply-perf",
         "Merge pull request #922 from permaweb/feat/config-script",
         "impr: terminate early when forge bootstrap lacks required device",
         "Merge pull request #939 from permaweb/agent/forge-bootstrap-exclusive",
@@ -96,21 +108,21 @@
         "Merge pull request #921 from permaweb/fix/install-template-commands",
         "Merge pull request #925 from permaweb/fix/load-remote-devices-flag"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to focus on making packages and Forge-generated projects easier to build, test, and keep aligned with the main node software. Today's PR #922 moved shared dependency overrides into shared_rebar.config and wired both HyperBEAM and the Forge template to use it, reducing config drift for generated projects. This follows recent hardening around package startup, message bundling, template cleanliness, and reusable helpers.",
-      "current_phase": "builder setup and package template cleanup",
+      "rolling_context": "Sam's visible HyperBEAM work recently moved from builder setup and Forge-generated project cleanup into practical node hardening. Today's commits reduced surprise work in key lookup, cookie loading, and reply encoding: zero-arity key functions are filtered, cookie handling loads only needed fields, and replies avoid forced linked header loads that could cause 5xx failures. The broader thread is making HyperBEAM easier to build around and less fragile to operate.",
+      "current_phase": "node reliability and request-path hardening",
       "recent_themes": [
-        "shared build config",
-        "cleaner Forge-generated repos",
-        "lower setup drift",
-        "package tooling hardening"
+        "safer key handling",
+        "lighter cookie loading",
+        "reply-path reliability",
+        "fewer avoidable node failures"
       ],
       "narrative_threads": [
-        "making features a node can add easier to share and install",
-        "reducing fragile setup paths between HyperBEAM and generated projects"
+        "cleaner setup followed by harder reliability work",
+        "load only what is needed on message and reply paths"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-06-02T18:49:07Z",
+      "last_success_at": "2026-06-03T15:24:49Z",
       "last_seen_shas": [
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
@@ -134,19 +146,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-06-02T18:49:07Z",
+      "last_success_at": "2026-06-03T15:24:49Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-06-02T18:49:07Z",
+      "last_success_at": "2026-06-03T15:24:49Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-06-02T18:49:07Z",
+      "last_success_at": "2026-06-03T15:24:49Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-06-02T18:49:07Z",
+      "last_success_at": "2026-06-03T15:24:49Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
