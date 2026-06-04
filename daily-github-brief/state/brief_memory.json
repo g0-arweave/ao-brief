@@ -1,11 +1,20 @@
 {
   "global": {
-    "last_success_at": "2026-06-03T18:53:10Z"
+    "last_success_at": "2026-06-04T17:20:26Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-06-03T18:53:10Z",
+      "last_success_at": "2026-06-04T17:20:26Z",
       "last_seen_shas": [
+        "6e74bc79f8720db727ed097f1777e29e643be9c9",
+        "6508ef4b22ab45f094a449fc52e7c9f33685f40c",
+        "0501efae6a575f40ef554f0707a68f45d90b1a35",
+        "62b79d37ddce6e5a150f7e6be10adcad0908f72c",
+        "68bdf155753a62f45a63ebb45f6c0a88044e999d",
+        "1ff9508845432fc19cd19bbb3b6146528910493a",
+        "4efd10dccd71d76a91fa8a309675edc79db28759",
+        "1b6683975effaaabf67aa11d67e388dd841ff33f",
+        "5db912e3f173230abc16bc389819e8f7791bc75d",
         "7414cd7d1a8f32148294eddd810d7aa5faa6f31e",
         "7dd7a053d2a55f8143033de597441e0d02c25f9d",
         "e884dd2a04954afffc9d352d29537a8713cb4a56",
@@ -58,8 +67,17 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-06-03T02:30:11Z",
+      "last_public_activity_at": "2026-06-04T02:15:50Z",
       "recent_commit_titles": [
+        "fix: forward `NodeOpts` in `remote`-style store lookups",
+        "impr: avoid unnecessary dev key write when already in pdict/global cache",
+        "Merge pull request #948 from permaweb/impr/device-cache-lookup",
+        "Merge pull request #887 from permaweb/impr/volatile_ordered_edge",
+        "fix(manifest): preserve remote scope for linked paths",
+        "fix(store): utilize store `Opts` along during `local-store` read",
+        "chore: fix `%`ing",
+        "impr: add shared volatile store as device resolution cache",
+        "Merge pull request #949 from permaweb/fix/manifest-scope",
         "fix: ignore zero-arity device key functions",
         "Merge pull request #945 from permaweb/fix/key-arity",
         "Improve cookie source loading",
@@ -108,21 +126,21 @@
         "Merge pull request #921 from permaweb/fix/install-template-commands",
         "Merge pull request #925 from permaweb/fix/load-remote-devices-flag"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work recently moved from builder setup and Forge-generated project cleanup into practical node hardening. Today's commits reduced surprise work in key lookup, cookie loading, and reply encoding: zero-arity key functions are filtered, cookie handling loads only needed fields, and replies avoid forced linked header loads that could cause 5xx failures. The broader thread is making HyperBEAM easier to build around and less fragile to operate.",
-      "current_phase": "node reliability and request-path hardening",
+      "rolling_context": "Sam's visible HyperBEAM work continues to focus on making nodes less fragile and cheaper to operate. After recent fixes around key lookup, cookie loading, and reply encoding, today's commits improved repeated feature loading with shared caching and avoided redundant writes. Store reads also now carry the right options through remote-style and local-store paths, while the short-lived store was simplified into a single ordered table.",
+      "current_phase": "lookup efficiency and store read consistency",
       "recent_themes": [
-        "safer key handling",
-        "lighter cookie loading",
-        "reply-path reliability",
-        "fewer avoidable node failures"
+        "shared caching for reusable node features",
+        "store option propagation",
+        "fewer redundant reads and writes",
+        "simpler in-memory store structure"
       ],
       "narrative_threads": [
-        "cleaner setup followed by harder reliability work",
-        "load only what is needed on message and reply paths"
+        "making HyperBEAM less fragile and easier to operate",
+        "reducing repeated work on common node paths"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-06-03T18:53:10Z",
+      "last_success_at": "2026-06-04T17:20:26Z",
       "last_seen_shas": [
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
@@ -146,19 +164,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-06-03T18:53:10Z",
+      "last_success_at": "2026-06-04T17:20:26Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-06-03T18:53:10Z",
+      "last_success_at": "2026-06-04T17:20:26Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-06-03T18:53:10Z",
+      "last_success_at": "2026-06-04T17:20:26Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-06-03T18:53:10Z",
+      "last_success_at": "2026-06-04T17:20:26Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
