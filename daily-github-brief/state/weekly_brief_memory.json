@@ -1,11 +1,34 @@
 {
   "global": {
-    "last_success_at": "2026-05-29T18:23:20Z"
+    "last_success_at": "2026-06-05T17:03:58Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-05-29T18:23:20Z",
+      "last_success_at": "2026-06-05T17:03:58Z",
       "last_seen_shas": [
+        "9b1345df489c37ab52337ffaba2630fd00515042",
+        "7414cd7d1a8f32148294eddd810d7aa5faa6f31e",
+        "7dd7a053d2a55f8143033de597441e0d02c25f9d",
+        "e884dd2a04954afffc9d352d29537a8713cb4a56",
+        "0b64d6121d76da28b9cf7243ad885d9ab99aeb6d",
+        "01754d7a0989b0ff93340e8f3f6409fc523fb7aa",
+        "b2e60c1fd53d562164885ce9a912fb7b1ac621c4",
+        "6e74bc79f8720db727ed097f1777e29e643be9c9",
+        "6508ef4b22ab45f094a449fc52e7c9f33685f40c",
+        "0501efae6a575f40ef554f0707a68f45d90b1a35",
+        "62b79d37ddce6e5a150f7e6be10adcad0908f72c",
+        "68bdf155753a62f45a63ebb45f6c0a88044e999d",
+        "1ff9508845432fc19cd19bbb3b6146528910493a",
+        "4efd10dccd71d76a91fa8a309675edc79db28759",
+        "1b6683975effaaabf67aa11d67e388dd841ff33f",
+        "5db912e3f173230abc16bc389819e8f7791bc75d",
+        "1c83f2586bd3c4fdfbc1396212bdfe2b7e1b7aca",
+        "1c87fef90462a47ee94852790ef57a5f67134180",
+        "5112ff7c77e937760ca5d3e63d58492919dfb2bd",
+        "b1bc9d9e901c8bab6752cafe934314740241987f",
+        "3fb758a5d908aa3926e4b9f8218f2e5e6a7cbe42",
+        "d7c2a811385c0e2bacb60bd479aafc58af4b0b23",
+        "c6a16a26dc4ddca55c57db2fd7be6b898d105bb3",
         "d4b04cda7b6fe9a0908e4221c63b9f3a6db54d4e",
         "2ac316d19fcbbc4f984eeda48df60c0d54b019c8",
         "fa1a64c91e9ec7fab117ec42db4d2a31e9d42d8d",
@@ -86,8 +109,31 @@
         "6be1816357ee247c9aba73901fb6f530ce6d4697",
         "cca5b4d416b012e11b080853cd35f303f8efeda4"
       ],
-      "last_public_activity_at": "2026-05-29T14:48:15Z",
+      "last_public_activity_at": "2026-06-05T07:14:09Z",
       "recent_commit_titles": [
+        "Merge pull request #922 from permaweb/feat/config-script",
+        "fix: ignore zero-arity device key functions",
+        "Merge pull request #945 from permaweb/fix/key-arity",
+        "Improve cookie source loading",
+        "Merge pull request #946 from permaweb/impr/cookie-loading",
+        "Keep reply headers shallow",
+        "Merge pull request #947 from permaweb/impr/reply-perf",
+        "fix: forward `NodeOpts` in `remote`-style store lookups",
+        "impr: avoid unnecessary dev key write when already in pdict/global cache",
+        "Merge pull request #948 from permaweb/impr/device-cache-lookup",
+        "Merge pull request #887 from permaweb/impr/volatile_ordered_edge",
+        "fix(manifest): preserve remote scope for linked paths",
+        "fix(store): utilize store `Opts` along during `local-store` read",
+        "chore: fix `%`ing",
+        "impr: add shared volatile store as device resolution cache",
+        "Merge pull request #949 from permaweb/fix/manifest-scope",
+        "fix(http): avoid duplicate multirequest refill",
+        "Merge pull request #950 from permaweb/fix/hb-http-multi-stop-after",
+        "fix: cache arweave chunk downloads",
+        "fix: avoid loading blacklist scan links",
+        "debug: report arweave chunk cache hits",
+        "fix: remove arweave chunk cache",
+        "Merge pull request #951 from permaweb/fix/arweave-edge-normalized",
         "impr(recorder): refine flight recorder UI",
         "fix(recorder): redact private event fields",
         "Merge pull request #929 from permaweb/feat/event-recorder",
@@ -144,40 +190,22 @@
         "refactor: use raw calls across device boundaries",
         "chore: small clarity improvements in internal bundling flow",
         "chore: remove unnecessary wrappers, leaving `hb_ao:raw` calls clearly marked",
-        "Merge pull request #913 from permaweb/feat/device-boundary-cleanup",
-        "feat: add device packaging pipeline",
-        "Merge pull request #904 from permaweb/fix/post-threshold-chunk-gap-fill",
-        "test: align index_ids_test with fixed ANS-104 tag boundary",
-        "Merge pull request #914 from permaweb/fix/ans104-strict-tag-boundary",
-        "Merge remote-tracking branch 'origin/pr-914' into pr-914",
-        "docs: document device packaging workflow",
-        "refactor: split core forge and preloaded devices",
-        "fix: enforce correct validation on `low-trust` load; remove unsafe `all`",
-        "impr: organize core modules by area",
-        "fix: matching build changes",
-        "Merge remote-tracking branch 'origin/impr/kernel-org-test-output' into rc/0.10",
-        "Merge pull request #915 from permaweb/rc/0.10",
-        "Merge pull request #919 from permaweb/fix/rm_tip_5",
-        "fix(forge): install templates where rebar3 reads them",
-        "fix(forge): move template installer to repo root",
-        "Merge pull request #921 from permaweb/fix/install-template-commands",
-        "Merge pull request #925 from permaweb/fix/load-remote-devices-flag"
+        "Merge pull request #913 from permaweb/feat/device-boundary-cleanup"
       ],
-      "rolling_context": "HyperBEAM moved from Forge test-tooling work into a broader cleanup and hardening pass. PR #929 landed flight recorders for Forge tests, while PR #937 removed SNP and Green Zone from the base distribution and pointed that work toward permaweb/os. Additional commits fixed Forge publish/release paths, restored parallel generator tests, added nested message matching, and started the 0.10 series.",
-      "current_phase": "debug tooling, Forge hardening, and core simplification",
+      "rolling_context": "HyperBEAM continued its cleanup and hardening pass with a strong focus on reducing needless work in node paths. This week’s commits optimized cookie loading, reply header encoding, feature lookup caching, store option propagation, volatile store layout, and multi-request HTTP handling. Forge setup also improved through shared dependency config between HyperBEAM and generated feature projects.",
+      "current_phase": "performance fixes, store cleanup, and setup polish",
       "recent_themes": [
-        "flight recorder debugging",
-        "Forge publish and packaging fixes",
-        "SNP and Green Zone moved out of base HyperBEAM"
+        "avoiding unnecessary loads and cache reads",
+        "feature lookup caching and store option propagation",
+        "Forge template dependency config cleanup"
       ],
       "narrative_threads": [
-        "faster local feedback for builders",
-        "smaller HyperBEAM core with specialized features split out",
-        "release-line hardening"
+        "making HyperBEAM less fragile and easier to operate",
+        "cleaner sharing and install paths for node-added features"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-05-29T18:23:20Z",
+      "last_success_at": "2026-06-05T17:03:58Z",
       "last_seen_shas": [
         "4ef50b5df77173e2426b27cec4366551657ee09a",
         "f9f8b0d6d3fa028a5245ad6c11d0b0aeb00f287b",
@@ -212,19 +240,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-05-29T18:23:20Z",
+      "last_success_at": "2026-06-05T17:03:58Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-05-29T18:23:20Z",
+      "last_success_at": "2026-06-05T17:03:58Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-05-29T18:23:20Z",
+      "last_success_at": "2026-06-05T17:03:58Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-05-29T18:23:20Z",
+      "last_success_at": "2026-06-05T17:03:58Z",
       "last_seen_shas": [
         "2348a9dbef90b207303c14b025607453c02b3e57",
         "46a7cdf2abeca0380cd5c612a6abad1e3993e8ae",
