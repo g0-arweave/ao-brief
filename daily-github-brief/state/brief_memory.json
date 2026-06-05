@@ -1,11 +1,18 @@
 {
   "global": {
-    "last_success_at": "2026-06-04T17:49:24Z"
+    "last_success_at": "2026-06-05T16:37:51Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-06-04T17:49:24Z",
+      "last_success_at": "2026-06-05T16:37:51Z",
       "last_seen_shas": [
+        "1c83f2586bd3c4fdfbc1396212bdfe2b7e1b7aca",
+        "1c87fef90462a47ee94852790ef57a5f67134180",
+        "5112ff7c77e937760ca5d3e63d58492919dfb2bd",
+        "b1bc9d9e901c8bab6752cafe934314740241987f",
+        "3fb758a5d908aa3926e4b9f8218f2e5e6a7cbe42",
+        "d7c2a811385c0e2bacb60bd479aafc58af4b0b23",
+        "c6a16a26dc4ddca55c57db2fd7be6b898d105bb3",
         "6e74bc79f8720db727ed097f1777e29e643be9c9",
         "6508ef4b22ab45f094a449fc52e7c9f33685f40c",
         "0501efae6a575f40ef554f0707a68f45d90b1a35",
@@ -67,8 +74,15 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-06-04T02:15:50Z",
+      "last_public_activity_at": "2026-06-05T07:14:09Z",
       "recent_commit_titles": [
+        "fix(http): avoid duplicate multirequest refill",
+        "Merge pull request #950 from permaweb/fix/hb-http-multi-stop-after",
+        "fix: cache arweave chunk downloads",
+        "fix: avoid loading blacklist scan links",
+        "debug: report arweave chunk cache hits",
+        "fix: remove arweave chunk cache",
+        "Merge pull request #951 from permaweb/fix/arweave-edge-normalized",
         "fix: forward `NodeOpts` in `remote`-style store lookups",
         "impr: avoid unnecessary dev key write when already in pdict/global cache",
         "Merge pull request #948 from permaweb/impr/device-cache-lookup",
@@ -126,21 +140,21 @@
         "Merge pull request #921 from permaweb/fix/install-template-commands",
         "Merge pull request #925 from permaweb/fix/load-remote-devices-flag"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to focus on making nodes less fragile and cheaper to operate. After recent fixes around key lookup, cookie loading, and reply encoding, today's commits improved repeated feature loading with shared caching and avoided redundant writes. Store reads also now carry the right options through remote-style and local-store paths, while the short-lived store was simplified into a single ordered table.",
-      "current_phase": "lookup efficiency and store read consistency",
+      "rolling_context": "Sam's visible HyperBEAM work continues to reduce wasted node work and make request paths less fragile. After recent fixes around key lookup, cookie loading, reply encoding, shared caching, and store option propagation, today's commits targeted duplicate HTTP multi-request refill, Arweave/blacklist request load, and a cache experiment that was quickly removed. The pattern is small, direct fixes that make nodes cheaper and easier to operate.",
+      "current_phase": "request-path load reduction",
       "recent_themes": [
-        "shared caching for reusable node features",
-        "store option propagation",
-        "fewer redundant reads and writes",
-        "simpler in-memory store structure"
+        "fewer duplicate HTTP requests",
+        "lower Arweave and blacklist request load",
+        "quick cache testing and rollback",
+        "less wasted node work"
       ],
       "narrative_threads": [
-        "making HyperBEAM less fragile and easier to operate",
-        "reducing repeated work on common node paths"
+        "making HyperBEAM less fragile through small request-path fixes",
+        "reducing repeated reads, writes, and network work for easier AO node operation"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-06-04T17:49:24Z",
+      "last_success_at": "2026-06-05T16:37:51Z",
       "last_seen_shas": [
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
@@ -164,19 +178,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-06-04T17:49:24Z",
+      "last_success_at": "2026-06-05T16:37:51Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-06-04T17:49:24Z",
+      "last_success_at": "2026-06-05T16:37:51Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-06-04T17:49:24Z",
+      "last_success_at": "2026-06-05T16:37:51Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-06-04T17:49:24Z",
+      "last_success_at": "2026-06-05T16:37:51Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
