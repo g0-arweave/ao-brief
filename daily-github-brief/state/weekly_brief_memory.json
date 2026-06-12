@@ -1,10 +1,10 @@
 {
   "global": {
-    "last_success_at": "2026-06-05T17:33:06Z"
+    "last_success_at": "2026-06-12T17:27:42Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-06-05T17:33:06Z",
+      "last_success_at": "2026-06-12T17:27:42Z",
       "last_seen_shas": [
         "9b1345df489c37ab52337ffaba2630fd00515042",
         "7414cd7d1a8f32148294eddd810d7aa5faa6f31e",
@@ -205,8 +205,14 @@
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-06-05T17:33:06Z",
+      "last_success_at": "2026-06-12T17:27:42Z",
       "last_seen_shas": [
+        "90c84c400ae78ab66dfb5f5fc7ad7b6ea059b5d4",
+        "75463a4e92cc72830496d03d7b31af4d474dd69b",
+        "bd527e78f82d2b9872cac18dd30fac39cfd88dc6",
+        "b487a3d83dc280e0ff99703c74fa47dfcbc20f89",
+        "812c0fe9d399a48addd7ef058eec52bbde65228f",
+        "bb181990924d2654fe4f652c6947c849f1f3c049",
         "4ef50b5df77173e2426b27cec4366551657ee09a",
         "f9f8b0d6d3fa028a5245ad6c11d0b0aeb00f287b",
         "7f5ac23643502b4e207220c394e38bc4857e031d",
@@ -216,8 +222,14 @@
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
       ],
-      "last_public_activity_at": "2026-05-20T07:58:44Z",
+      "last_public_activity_at": "2026-06-10T12:34:35Z",
       "recent_commit_titles": [
+        "Add reference-backed zine CLI",
+        "Remove AO manifest workflow",
+        "Initial poolcat device",
+        "Add poolcat index loop and bounds",
+        "Avoid newer ar_tx type helper",
+        "Return hook-safe start result",
         "feat: add signed paid request orchestration",
         "feat: add rb whisper paid request example",
         "docs: clarify rb whisper funding smoke",
@@ -227,32 +239,34 @@
         "Port mystical devices to packaged HyperBEAM layout",
         "test: add local paid whisper compliance flows"
       ],
-      "rolling_context": "xylophonez kept building AO-adjacent paid service examples in hyperbalance, including signed paid request orchestration, Whisper payment scripts, standalone examples, and local paid Whisper test flows. mystical.computer was also ported to a packaged HyperBEAM layout, showing app-side adoption of the newer packaging path.",
-      "current_phase": "paid service examples and packaged app adaptation",
+      "rolling_context": "xylophonez shifted from prior paid service examples into smaller AO and HyperBEAM-adjacent tooling. This week added a reference-backed zine CLI, then removed the AO manifest workflow to simplify it. poolcat also appeared as a new HyperBEAM add-on with docs, a spec, Erlang implementation, indexing bounds, compatibility cleanup, and safer start behavior.",
+      "current_phase": "tool simplification and HyperBEAM add-on prototyping",
       "recent_themes": [
-        "signed paid requests",
-        "local paid Whisper test flows",
-        "packaged HyperBEAM layout"
+        "reference-backed zine CLI",
+        "simpler AO-adjacent publishing flow",
+        "poolcat HyperBEAM add-on",
+        "index bounds and startup safety"
       ],
       "narrative_threads": [
-        "paid AO service workflows are becoming repeatable",
-        "app repos are adapting to packaged HyperBEAM features"
+        "making AO-adjacent tools easier to try locally",
+        "turning HyperBEAM add-ons into documented, testable repos",
+        "quick follow-up fixes after initial prototypes"
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-06-05T17:33:06Z",
+      "last_success_at": "2026-06-12T17:27:42Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-06-05T17:33:06Z",
+      "last_success_at": "2026-06-12T17:27:42Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-06-05T17:33:06Z",
+      "last_success_at": "2026-06-12T17:27:42Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-06-05T17:33:06Z",
+      "last_success_at": "2026-06-12T17:27:42Z",
       "last_seen_shas": [
         "2348a9dbef90b207303c14b025607453c02b3e57",
         "46a7cdf2abeca0380cd5c612a6abad1e3993e8ae",
