@@ -2,10 +2,9 @@ name: Daily GitHub Brief
 
 on:
   schedule:
-    # Run away from the top of the hour, with a backup in the same hour.
-    # Gate below keeps only runs that occur during 7am America/Los_Angeles.
-    - cron: '7,37 14 * * *'
-    - cron: '7,37 15 * * *'
+    # Run once at 7:17am America/Los_Angeles.
+    - cron: '17 7 * * *'
+      timezone: "America/Los_Angeles"
   workflow_dispatch:
     inputs:
       dry_run:
@@ -23,33 +22,31 @@ permissions:
 jobs:
   send-brief:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
 
-      - name: Check 7am PT window for scheduled runs
+      - name: Check for tracked updates
         if: github.event_name == 'schedule'
-        id: pt_window
-        shell: bash
-        run: |
-          PT_HOUR="$(TZ=America/Los_Angeles date +%H)"
-          if [ "$PT_HOUR" = "07" ]; then
-            echo "run_now=1" >> "$GITHUB_OUTPUT"
-          else
-            echo "run_now=0" >> "$GITHUB_OUTPUT"
-          fi
+        id: preflight
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 daily-github-brief/preflight.py
 
-      - name: Stop if outside 7am PT (schedule only)
-        if: github.event_name == 'schedule' && steps.pt_window.outputs.run_now != '1'
+      - name: Stop if no tracked updates
+        if: github.event_name == 'schedule' && steps.preflight.outputs.has_updates != '1'
         run: |
-          echo "Not 7am PT right now; exiting." 
+          echo "No new tracked commits; skipping dependency setup and email generation."
           exit 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          cache: 'pip'
+          cache-dependency-path: daily-github-brief/requirements.txt
 
       - name: Install dependencies
         run: pip install -r daily-github-brief/requirements.txt
@@ -82,16 +79,16 @@ jobs:
             python daily-github-brief/brief.py
           fi
 
-      - name: Commit updated memory
+      - name: Commit updated memory and archive
         if: steps.mode.outputs.dry_run != '1'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add daily-github-brief/state/brief_memory.json
           git add docs/briefs
-          if git diff --cached --quiet; then
-            echo "No memory changes to commit."
+          if git diff --cached --quiet -- docs/briefs; then
+            echo "No archived brief changes; skipping memory-only commit."
           else
+            git add daily-github-brief/state/brief_memory.json
             git commit -m "Update brief memory"
             git push
           fi
