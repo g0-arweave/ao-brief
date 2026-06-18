@@ -1,11 +1,16 @@
 {
   "global": {
-    "last_success_at": "2026-06-17T17:26:29Z"
+    "last_success_at": "2026-06-18T17:31:57Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-06-17T17:26:29Z",
+      "last_success_at": "2026-06-18T17:31:57Z",
       "last_seen_shas": [
+        "93796bee7bd57435710d196cb73fa6989c415e01",
+        "d31a5764a77c9e43bf21bcadfe7e3376e4fb58ca",
+        "5900d8399605cd2a679f230de5ad45ef6c15a8a8",
+        "0dd4be4db0808b902980c0d49ebc6a936ba2b4d3",
+        "855017648c1abf87f7c3c3b4c28b95d36ec9d574",
         "55410c97e0aa990a120daa84f49db47c01199fee",
         "e6a081739a601710b4bbcfc808f6c98d08369c81",
         "14d34094553f361a6b1214efd9fcc006199b70cf",
@@ -90,8 +95,13 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-06-16T18:58:39Z",
+      "last_public_activity_at": "2026-06-18T14:27:35Z",
       "recent_commit_titles": [
+        "Improve GraphQL ID matching performance",
+        "Merge pull request #966 from permaweb/impr/gql-perf",
+        "Merge pull request #965 from permaweb/re/copycat-gql-impr",
+        "fix: rename signer package scope to devices",
+        "Merge pull request #956 from permaweb/fix/forge-publish",
         "fix(arweave-store): load pending indexed txs",
         "fix(arweave-offset): encode pending offsets",
         "feat(copycat): index nested bundles",
@@ -166,28 +176,25 @@
         "fix(hook): keep recursion guard step-local",
         "perf(event): keep record opts off default message",
         "revert: restore edge before accidental pushes",
-        "Merge pull request #928 from permaweb/impr/test-flags",
-        "fix(forge): install templates where rebar3 reads them",
-        "fix(forge): move template installer to repo root",
-        "Merge pull request #921 from permaweb/fix/install-template-commands",
-        "Merge pull request #925 from permaweb/fix/load-remote-devices-flag"
+        "Merge pull request #928 from permaweb/impr/test-flags"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work shifted from reducing duplicate request load into making Arweave-backed query and indexing flows more complete. Today's commits and merges added deeper indexing for confirmed and pending Arweave data, nested bundle handling, pending range/offset fixes, and pagination for IDs not yet uploaded or indexed. PR #961 also hardened pending root /raw handling and skipped bad bundle children instead of crashing indexing workers.",
-      "current_phase": "Arweave query and indexing hardening",
+      "rolling_context": "Sam's visible HyperBEAM work continues to harden Arweave-backed query flows while improving how node add-ons are published and trusted. Today's commits merged faster GraphQL ID matching, pagination and block-range fixes, and Forge publish fixes with more precise trusted-signer policy support. The durable pattern is practical reliability: faster reads, fewer query edge cases, and safer/easier add-on sharing.",
+      "current_phase": "query performance and add-on publishing hardening",
       "recent_themes": [
-        "confirmed and pending Arweave indexing",
-        "nested bundle indexing",
-        "GraphQL query support",
-        "fewer pending-data edge cases"
+        "GraphQL query performance",
+        "pagination edge-case fixes",
+        "trusted signer policy",
+        "Forge publish flow"
       ],
       "narrative_threads": [
-        "making AO app data fresher and easier to query",
-        "reducing fragile node behavior around pending Arweave data"
+        "making AO data access faster and less fragile",
+        "making node add-ons easier to share and trust"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-06-17T17:26:29Z",
+      "last_success_at": "2026-06-18T17:31:57Z",
       "last_seen_shas": [
+        "c019c82b76aad3d0ba4ae11d07c9cf8282756704",
         "bd527e78f82d2b9872cac18dd30fac39cfd88dc6",
         "b487a3d83dc280e0ff99703c74fa47dfcbc20f89",
         "812c0fe9d399a48addd7ef058eec52bbde65228f",
@@ -195,8 +202,9 @@
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
       ],
-      "last_public_activity_at": "2026-06-10T12:34:35Z",
+      "last_public_activity_at": "2026-06-18T10:35:33Z",
       "recent_commit_titles": [
+        "Add trundler-aware bundler quote metadata",
         "Initial poolcat device",
         "Add poolcat index loop and bounds",
         "Avoid newer ar_tx type helper",
@@ -204,33 +212,32 @@
         "Port mystical devices to packaged HyperBEAM layout",
         "test: add local paid whisper compliance flows"
       ],
-      "rolling_context": "xylophonez's visible public work continues to turn AO/HyperBEAM-adjacent ideas into packaged, documented, and testable units. Today's `poolcat` work added a new documented HyperBEAM device project, then quickly added indexing bounds, compatibility cleanup, and safer hook startup behavior. This extends the recent pattern seen in `mystical.computer` and `hyperbalance`: service behavior is being shaped into reusable examples and small packages that builders can run and inspect.",
-      "current_phase": "packaged HyperBEAM device hardening",
+      "rolling_context": "xylophonez's visible public work remains focused on packaging AO/HyperBEAM-adjacent service behavior into reusable, documented code. Today's hyperbalance commit added trundler-aware bundler quote metadata across docs, client code, conventions, exports, and types. The pattern is clearer service integration: typed data, documented conventions, and code builders can inspect.",
+      "current_phase": "service metadata and integration polish",
       "recent_themes": [
-        "documented node add-ons",
-        "bounds and startup safety",
-        "compatibility cleanup",
-        "repeatable AO service workflows"
+        "bundler quote metadata",
+        "typed client APIs",
+        "documented conventions"
       ],
       "narrative_threads": [
-        "moving AO/HyperBEAM service ideas into shareable packages",
-        "reducing setup friction through docs, specs, and runnable examples"
+        "turning service flows into reusable developer tools",
+        "making AO-adjacent infrastructure easier to integrate"
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-06-17T17:26:29Z",
+      "last_success_at": "2026-06-18T17:31:57Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-06-17T17:26:29Z",
+      "last_success_at": "2026-06-18T17:31:57Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-06-17T17:26:29Z",
+      "last_success_at": "2026-06-18T17:31:57Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-06-17T17:26:29Z",
+      "last_success_at": "2026-06-18T17:31:57Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
