@@ -1,11 +1,32 @@
 {
   "global": {
-    "last_success_at": "2026-06-12T17:53:58Z"
+    "last_success_at": "2026-06-19T17:04:43Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-06-12T17:53:58Z",
+      "last_success_at": "2026-06-19T17:04:43Z",
       "last_seen_shas": [
+        "55410c97e0aa990a120daa84f49db47c01199fee",
+        "e6a081739a601710b4bbcfc808f6c98d08369c81",
+        "14d34094553f361a6b1214efd9fcc006199b70cf",
+        "a6076785c5d44da25871462c2f40c63ad2cb25f0",
+        "3bdc9ee89add0e208292cd2f2c73097a94f61fa8",
+        "623af02a1dd049307e3af1211b585c0273fd6909",
+        "3764d25a2a797fc26a51c67d4cd4c7e164d8605e",
+        "aa959248baec51e376e781e55008c51c2c2006a2",
+        "ec3710db74a8e9b1012fcf220f65eb216d8c6993",
+        "5666f73eec7363d24c66843cfe13aa486d7817ce",
+        "1016dacd6c120f074bf51a49b1edd51236d92437",
+        "2869f4b892fdbeae3bca345ff40004bd76a6db72",
+        "2855d4ecb98fdbc485c7ac041f96e300c823e18f",
+        "7e5a6df60d2531eda417529a6a814cb7b7b676d6",
+        "f4611cd833cc1caf7cce655daea27329c45dbd8e",
+        "0b8bce56ff250c4f3b8bc9f60296ad7a47aaf774",
+        "93796bee7bd57435710d196cb73fa6989c415e01",
+        "d31a5764a77c9e43bf21bcadfe7e3376e4fb58ca",
+        "5900d8399605cd2a679f230de5ad45ef6c15a8a8",
+        "0dd4be4db0808b902980c0d49ebc6a936ba2b4d3",
+        "855017648c1abf87f7c3c3b4c28b95d36ec9d574",
         "9b1345df489c37ab52337ffaba2630fd00515042",
         "7414cd7d1a8f32148294eddd810d7aa5faa6f31e",
         "7dd7a053d2a55f8143033de597441e0d02c25f9d",
@@ -109,8 +130,29 @@
         "6be1816357ee247c9aba73901fb6f530ce6d4697",
         "cca5b4d416b012e11b080853cd35f303f8efeda4"
       ],
-      "last_public_activity_at": "2026-06-05T07:14:09Z",
+      "last_public_activity_at": "2026-06-18T14:27:35Z",
       "recent_commit_titles": [
+        "fix(arweave-store): load pending indexed txs",
+        "fix(arweave-offset): encode pending offsets",
+        "feat(copycat): index nested bundles",
+        "fix(query-arweave): order pending offsets",
+        "fix(arweave): read pending chunk ranges",
+        "feat(copycat): index pending arweave txs",
+        "feat(copycat): simplify arweave index modes",
+        "fix(copycat): allow pending index upgrades",
+        "docs(copycat): describe shallow indexing mode",
+        "fix(copycat): honor shallow legacy indexes",
+        "fix(copycat): include pending in default ranges",
+        "fix(copycat): simplify arweave range handling",
+        "fix(query): add ephemeral cursors",
+        "Merge pull request #961 from permaweb/re/l3-cleanup-160626",
+        "Merge pull request #962 from permaweb/fix/ephem-cursors",
+        "Merge pull request #964 from permaweb/impr/l3-cleanup",
+        "Improve GraphQL ID matching performance",
+        "Merge pull request #966 from permaweb/impr/gql-perf",
+        "Merge pull request #965 from permaweb/re/copycat-gql-impr",
+        "fix: rename signer package scope to devices",
+        "Merge pull request #956 from permaweb/fix/forge-publish",
         "Merge pull request #922 from permaweb/feat/config-script",
         "fix: ignore zero-arity device key functions",
         "Merge pull request #945 from permaweb/fix/key-arity",
@@ -169,28 +211,7 @@
         "feat(event): add guarded hook",
         "fix(hook): strip current hook during handlers",
         "feat(event): record events from counter path",
-        "feat(events): add events device",
-        "feat(forge): add device test event reports",
-        "fix(hook): keep recursion guard step-local",
-        "perf(event): keep record opts off default message",
-        "revert: restore edge before accidental pushes",
-        "Merge pull request #928 from permaweb/impr/test-flags",
-        "refactor: add direct AO boundary execution",
-        "refactor: move shared helpers out of device modules",
-        "refactor: route message and codec helpers through public APIs",
-        "refactor: route runtime services across device boundaries",
-        "test: move shared fixtures out of device modules",
-        "fix: address device boundary review comments",
-        "fix: use direct structured decode in singleton",
-        "fix: require structured decode type",
-        "refactor: decode structured values in hb_util",
-        "impr: add forced device and key execution modes to hb_ao:direct",
-        "refactor: highlight non-cryptographically-linked nature of hb_ao:raw",
-        "refactor: use raw calls for kernel device helpers",
-        "refactor: use raw calls across device boundaries",
-        "chore: small clarity improvements in internal bundling flow",
-        "chore: remove unnecessary wrappers, leaving `hb_ao:raw` calls clearly marked",
-        "Merge pull request #913 from permaweb/feat/device-boundary-cleanup"
+        "feat(events): add events device"
       ],
       "rolling_context": "HyperBEAM continued its cleanup and hardening pass with a strong focus on reducing needless work in node paths. This week’s commits optimized cookie loading, reply header encoding, feature lookup caching, store option propagation, volatile store layout, and multi-request HTTP handling. Forge setup also improved through shared dependency config between HyperBEAM and generated feature projects.",
       "current_phase": "performance fixes, store cleanup, and setup polish",
@@ -205,8 +226,11 @@
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-06-12T17:53:58Z",
+      "last_success_at": "2026-06-19T17:04:43Z",
       "last_seen_shas": [
+        "c019c82b76aad3d0ba4ae11d07c9cf8282756704",
+        "8545a17984451ada81ffc605d783463859ea04bf",
+        "1df59723b70becc58ebd98dc2660a2340418dad1",
         "90c84c400ae78ab66dfb5f5fc7ad7b6ea059b5d4",
         "75463a4e92cc72830496d03d7b31af4d474dd69b",
         "bd527e78f82d2b9872cac18dd30fac39cfd88dc6",
@@ -222,8 +246,11 @@
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
       ],
-      "last_public_activity_at": "2026-06-10T12:34:35Z",
+      "last_public_activity_at": "2026-06-19T15:34:34Z",
       "recent_commit_titles": [
+        "Add trundler-aware bundler quote metadata",
+        "feat: add exact bundler preflight",
+        "Merge pull request #3 from xylophonez/feat/bundler-preflight",
         "Add reference-backed zine CLI",
         "Remove AO manifest workflow",
         "Initial poolcat device",
@@ -254,19 +281,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-06-12T17:53:58Z",
+      "last_success_at": "2026-06-19T17:04:43Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-06-12T17:53:58Z",
+      "last_success_at": "2026-06-19T17:04:43Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-06-12T17:53:58Z",
+      "last_success_at": "2026-06-19T17:04:43Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-06-12T17:53:58Z",
+      "last_success_at": "2026-06-19T17:04:43Z",
       "last_seen_shas": [
         "2348a9dbef90b207303c14b025607453c02b3e57",
         "46a7cdf2abeca0380cd5c612a6abad1e3993e8ae",
