@@ -1,10 +1,10 @@
 {
   "global": {
-    "last_success_at": "2026-06-18T17:31:57Z"
+    "last_success_at": "2026-06-19T16:42:20Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-06-18T17:31:57Z",
+      "last_success_at": "2026-06-19T16:42:20Z",
       "last_seen_shas": [
         "93796bee7bd57435710d196cb73fa6989c415e01",
         "d31a5764a77c9e43bf21bcadfe7e3376e4fb58ca",
@@ -192,8 +192,10 @@
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-06-18T17:31:57Z",
+      "last_success_at": "2026-06-19T16:42:20Z",
       "last_seen_shas": [
+        "8545a17984451ada81ffc605d783463859ea04bf",
+        "1df59723b70becc58ebd98dc2660a2340418dad1",
         "c019c82b76aad3d0ba4ae11d07c9cf8282756704",
         "bd527e78f82d2b9872cac18dd30fac39cfd88dc6",
         "b487a3d83dc280e0ff99703c74fa47dfcbc20f89",
@@ -202,8 +204,10 @@
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
       ],
-      "last_public_activity_at": "2026-06-18T10:35:33Z",
+      "last_public_activity_at": "2026-06-19T15:34:34Z",
       "recent_commit_titles": [
+        "feat: add exact bundler preflight",
+        "Merge pull request #3 from xylophonez/feat/bundler-preflight",
         "Add trundler-aware bundler quote metadata",
         "Initial poolcat device",
         "Add poolcat index loop and bounds",
@@ -225,19 +229,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-06-18T17:31:57Z",
+      "last_success_at": "2026-06-19T16:42:20Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-06-18T17:31:57Z",
+      "last_success_at": "2026-06-19T16:42:20Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-06-18T17:31:57Z",
+      "last_success_at": "2026-06-19T16:42:20Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-06-18T17:31:57Z",
+      "last_success_at": "2026-06-19T16:42:20Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
