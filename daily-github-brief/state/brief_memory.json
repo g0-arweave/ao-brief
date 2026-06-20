@@ -1,11 +1,13 @@
 {
   "global": {
-    "last_success_at": "2026-06-19T16:42:20Z"
+    "last_success_at": "2026-06-20T15:55:48Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-06-19T16:42:20Z",
+      "last_success_at": "2026-06-20T15:55:48Z",
       "last_seen_shas": [
+        "013cd75bbdccda11fe78ddacc0dc0f3940bdd854",
+        "97987801dc3393f765a9ac954f480af887884624",
         "93796bee7bd57435710d196cb73fa6989c415e01",
         "d31a5764a77c9e43bf21bcadfe7e3376e4fb58ca",
         "5900d8399605cd2a679f230de5ad45ef6c15a8a8",
@@ -95,8 +97,10 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-06-18T14:27:35Z",
+      "last_public_activity_at": "2026-06-20T00:53:32Z",
       "recent_commit_titles": [
+        "Precompute store benchmark requests",
+        "Merge pull request #969 from permaweb/impr/store-benchmarks",
         "Improve GraphQL ID matching performance",
         "Merge pull request #966 from permaweb/impr/gql-perf",
         "Merge pull request #965 from permaweb/re/copycat-gql-impr",
@@ -174,25 +178,23 @@
         "feat(events): add events device",
         "feat(forge): add device test event reports",
         "fix(hook): keep recursion guard step-local",
-        "perf(event): keep record opts off default message",
-        "revert: restore edge before accidental pushes",
-        "Merge pull request #928 from permaweb/impr/test-flags"
+        "perf(event): keep record opts off default message"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to harden Arweave-backed query flows while improving how node add-ons are published and trusted. Today's commits merged faster GraphQL ID matching, pagination and block-range fixes, and Forge publish fixes with more precise trusted-signer policy support. The durable pattern is practical reliability: faster reads, fewer query edge cases, and safer/easier add-on sharing.",
-      "current_phase": "query performance and add-on publishing hardening",
+      "rolling_context": "Sam's visible HyperBEAM work continues to harden performance and reliability in practical ways. After recent query performance, pagination, trusted signer, and Forge publish fixes, today's work improved `hb_store` benchmark accuracy by precomputing read and write requests before timing. The durable pattern is still cleaner measurement, fewer edge cases, and more trustworthy infrastructure work.",
+      "current_phase": "store benchmark accuracy and performance measurement",
       "recent_themes": [
-        "GraphQL query performance",
-        "pagination edge-case fixes",
-        "trusted signer policy",
-        "Forge publish flow"
+        "store performance benchmarks",
+        "cleaner measurement",
+        "node reliability",
+        "performance tuning support"
       ],
       "narrative_threads": [
-        "making AO data access faster and less fragile",
-        "making node add-ons easier to share and trust"
+        "making HyperBEAM performance work easier to trust",
+        "tightening low-level node behavior before larger improvements"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-06-19T16:42:20Z",
+      "last_success_at": "2026-06-20T15:55:48Z",
       "last_seen_shas": [
         "8545a17984451ada81ffc605d783463859ea04bf",
         "1df59723b70becc58ebd98dc2660a2340418dad1",
@@ -229,19 +231,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-06-19T16:42:20Z",
+      "last_success_at": "2026-06-20T15:55:48Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-06-19T16:42:20Z",
+      "last_success_at": "2026-06-20T15:55:48Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-06-19T16:42:20Z",
+      "last_success_at": "2026-06-20T15:55:48Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-06-19T16:42:20Z",
+      "last_success_at": "2026-06-20T15:55:48Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
