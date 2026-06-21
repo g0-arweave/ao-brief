@@ -1,11 +1,30 @@
 {
   "global": {
-    "last_success_at": "2026-06-20T15:55:48Z"
+    "last_success_at": "2026-06-21T16:13:02Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-06-20T15:55:48Z",
+      "last_success_at": "2026-06-21T16:13:02Z",
       "last_seen_shas": [
+        "9f9c93994c8c02ce48ea8ead250d39d1e6247eb5",
+        "81f0e4e80f65c3d66101542e4d028874053c989f",
+        "3118d11ef987f5a5656c0e9967c78a31ee8b28f3",
+        "e4a6f379712f9bb4cc142f20207a98eb41bbe168",
+        "eedfdfcb5c9a967b5ec51dbee22fb87d1aa31dd2",
+        "f2a335c6035b3e82f8bb66c5bfb10c0d253c02b4",
+        "f5819d055e7dd0a024b429b5f8e2e9d8059b1858",
+        "6708ff103a3f628720adc397e42ec229b161163c",
+        "4f14f90d0de5461dbdb4987491f1f0ac2bbb144a",
+        "ff59383ae8a2ddaf0531d0d7fd338dba063f037b",
+        "e7c732f47647633d923b062257d577f131676cf2",
+        "fe3326768a173ef739d539f71ce431d7a72107c0",
+        "416f08439796c1d60fcab9068939d39c151368ca",
+        "63b46f4e0bd5a610f538d1b9fbdeea1da5123ea8",
+        "74bf82d18af196d92e997e0bfa7f286a243faa81",
+        "87f9aa58a23c19720adc52dad9e0dbd22033e90d",
+        "bfde8b013f5b4ff4c7d00a0c2fecf59e8dacab0e",
+        "66e50d30ea7121cb0d195a2bab275df0bd338d32",
+        "9bfc4975a3f37df343a2cc6445d199d9b8e32975",
         "013cd75bbdccda11fe78ddacc0dc0f3940bdd854",
         "97987801dc3393f765a9ac954f480af887884624",
         "93796bee7bd57435710d196cb73fa6989c415e01",
@@ -97,8 +116,27 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-06-20T00:53:32Z",
+      "last_public_activity_at": "2026-06-21T14:47:37Z",
       "recent_commit_titles": [
+        "Format device package compile errors",
+        "Merge pull request #970 from permaweb/fix/device-compile-error-format",
+        "Fix recorder tests using forge bootstrap",
+        "Merge pull request #971 from permaweb/fix/recorder-tests",
+        "feat: add bundler await support",
+        "fix: restore hyperbuddy browser rendering",
+        "fix: show all hyperbuddy format keys by default",
+        "Merge pull request #972 from permaweb/fix/hyperbuddy-format-truncate-keys",
+        "chore: add confirmed bundler routing test",
+        "feat(query): GraphQL fallback cursors",
+        "test(query): cover gateway fallback to legacy GraphQL",
+        "impr: verify bundler routing fallback by bundle signer",
+        "Merge pull request #973 from permaweb/feat/GraphQL-fallback-routing",
+        "chore: reduce bundler routing test to the signer assertion",
+        "Merge pull request #974 from permaweb/feat/bundler-await",
+        "Merge pull request #967 from permaweb/impr/enabling-load-remote-devices",
+        "impr: replace b64rs with b64veryfast",
+        "Merge pull request #975 from permaweb/impr/b64veryfast",
+        "Merge pull request #976 from permaweb/impr/redactions-revisit",
         "Precompute store benchmark requests",
         "Merge pull request #969 from permaweb/impr/store-benchmarks",
         "Improve GraphQL ID matching performance",
@@ -159,42 +197,26 @@
         "Merge pull request #938 from permaweb/feat/flex-match",
         "feat(forge): gate system architecture metadata",
         "Fix device publish runtime setup",
-        "Fix device publish codec bootstrap",
-        "Merge pull request #933 from permaweb/fix/run-parallel-generator-tests",
-        "Merge pull request #931 from permaweb/fix/redact-priv",
-        "Merge pull request #934 from permaweb/fix/redact-priv-followup",
-        "Fix device publish uploads",
-        "Merge pull request #935 from permaweb/fix/release-lmdb",
-        "impr(recorder): refine flight recorder UI",
-        "fix(recorder): redact private event fields",
-        "Merge pull request #929 from permaweb/feat/event-recorder",
-        "feat(forge): add device CLI filters",
-        "feat(forge): filter device tests",
-        "feat(forge): add device test timeouts",
-        "perf(hook): slim hot path",
-        "feat(event): add guarded hook",
-        "fix(hook): strip current hook during handlers",
-        "feat(event): record events from counter path",
-        "feat(events): add events device",
-        "feat(forge): add device test event reports",
-        "fix(hook): keep recursion guard step-local",
-        "perf(event): keep record opts off default message"
+        "Fix device publish codec bootstrap"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to harden performance and reliability in practical ways. After recent query performance, pagination, trusted signer, and Forge publish fixes, today's work improved `hb_store` benchmark accuracy by precomputing read and write requests before timing. The durable pattern is still cleaner measurement, fewer edge cases, and more trustworthy infrastructure work.",
-      "current_phase": "store benchmark accuracy and performance measurement",
+      "rolling_context": "Sam's visible HyperBEAM work broadened from store benchmark accuracy into practical reliability across uploads, queries, packaging, trust settings, performance, and safer logs. Today's commits added bundler await support, GraphQL fallback cursors, explicit trusted signer control for remote feature loading, clearer compile errors, faster Base64 handling, and more conservative recorder redactions. The durable pattern is fewer brittle handoffs and easier operation for mixed HyperBEAM plus legacy infrastructure.",
+      "current_phase": "reliability hardening across uploads, queries, and operator trust",
       "recent_themes": [
-        "store performance benchmarks",
-        "cleaner measurement",
-        "node reliability",
-        "performance tuning support"
+        "upload fallback",
+        "GraphQL paging compatibility",
+        "clearer feature packaging errors",
+        "operator trust controls",
+        "performance and toolchain cleanup",
+        "safer event redaction"
       ],
       "narrative_threads": [
-        "making HyperBEAM performance work easier to trust",
-        "tightening low-level node behavior before larger improvements"
+        "making HyperBEAM easier to run under real failure cases",
+        "supporting mixed infrastructure while AO nodes take on more work",
+        "reducing setup friction and hidden edge cases for builders"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-06-20T15:55:48Z",
+      "last_success_at": "2026-06-21T16:13:02Z",
       "last_seen_shas": [
         "8545a17984451ada81ffc605d783463859ea04bf",
         "1df59723b70becc58ebd98dc2660a2340418dad1",
@@ -231,19 +253,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-06-20T15:55:48Z",
+      "last_success_at": "2026-06-21T16:13:02Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-06-20T15:55:48Z",
+      "last_success_at": "2026-06-21T16:13:02Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-06-20T15:55:48Z",
+      "last_success_at": "2026-06-21T16:13:02Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-06-20T15:55:48Z",
+      "last_success_at": "2026-06-21T16:13:02Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
