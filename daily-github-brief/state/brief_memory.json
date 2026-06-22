@@ -1,11 +1,27 @@
 {
   "global": {
-    "last_success_at": "2026-06-21T16:13:02Z"
+    "last_success_at": "2026-06-22T18:19:28Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-06-21T16:13:02Z",
+      "last_success_at": "2026-06-22T18:19:28Z",
       "last_seen_shas": [
+        "b9272f060976d26630106a2722a76a86383acfd5",
+        "0396dcbc5349d369fb1ad12cfa4dd080665221de",
+        "2bde1b719134b5c9efef5e9e09a952cdf3cf2161",
+        "73f9be85755651b163a6bfd61c110a1d29571a46",
+        "fd5a62928aa3b00e0dcbfb3001c419342747d7a9",
+        "90fc23a77df49c5460bb1001adf1d0c33247a95e",
+        "e66d678f354bbba873dba986a12167bad0c0a36a",
+        "d4c34e6582a9da9d3e9713332e54a095ee568242",
+        "50ef50accd35acd921ecb1fa1f06039070f517a5",
+        "b3e1da5507a71c3636f11cb39aa25e2419960876",
+        "fa3cc5d93d5013b8eff4e52a4d3c8ae238c3ed2f",
+        "018789b38be07a34dca35f535019c00e7613f8aa",
+        "a24cba8d5950c66a71fb8e4fe5c85fe4bd7ece7a",
+        "81814adb1f6dca7fcf2ee2655fd6ff50bf851194",
+        "85b94067142ce08f15f877c580901bcdcfc82026",
+        "3e610d0326e8c8e3faeb730323879b7656378568",
         "9f9c93994c8c02ce48ea8ead250d39d1e6247eb5",
         "81f0e4e80f65c3d66101542e4d028874053c989f",
         "3118d11ef987f5a5656c0e9967c78a31ee8b28f3",
@@ -116,8 +132,24 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-06-21T14:47:37Z",
+      "last_public_activity_at": "2026-06-22T04:17:43Z",
       "recent_commit_titles": [
+        "feat: NIF-accelerate hb_util ASCII key/string transforms",
+        "feat: NIF-accelerate hb_opts canonical_key",
+        "chore: ignore hb_util_string NIF build artifacts",
+        "chore: capitalization; formatting",
+        "Merge pull request #977 from permaweb/feat/forge-commands",
+        "perf: resolve hb_opts config once into a static map; delete the env dispatch",
+        "Improve incremental build flow",
+        "perf: route hb_util:decode type normalization through the to_lower NIF",
+        "perf: build hb_util_string NIF at -O3",
+        "perf: NIF-accelerate hb_path:to_binary path normalization",
+        "chore: document normalize_path in NIF header, align comment style",
+        "Merge pull request #978 from permaweb/perf/opts",
+        "Merge pull request #980 from permaweb/feat/hb-util-string",
+        "Merge pull request #979 from permaweb/impr/build-speed",
+        "feat: add ?event_debug compile-gated trace macro",
+        "perf: route hot-path debug traces through ?event_debug",
         "Format device package compile errors",
         "Merge pull request #970 from permaweb/fix/device-compile-error-format",
         "Fix recorder tests using forge bootstrap",
@@ -181,42 +213,25 @@
         "Improve cookie source loading",
         "Merge pull request #946 from permaweb/impr/cookie-loading",
         "Keep reply headers shallow",
-        "Merge pull request #947 from permaweb/impr/reply-perf",
-        "Merge pull request #922 from permaweb/feat/config-script",
-        "impr: terminate early when forge bootstrap lacks required device",
-        "Merge pull request #939 from permaweb/agent/forge-bootstrap-exclusive",
-        "Merge pull request #940 from permaweb/impr/trie-reserved-keys",
-        "Merge pull request #924 from permaweb/fix/forge-template-gitignore",
-        "Merge pull request #930 from permaweb/fix/index_ids",
-        "Merge pull request #916 from permaweb/fix/bundler-corruption-20260518",
-        "Revert \"fix: include default release config\"",
-        "chore: revert documentation changes",
-        "Merge pull request #937 from permaweb/chore/remove-snp",
-        "Merge pull request #936 from permaweb/chore/0.10-release-line",
-        "feat: Support flexible, nested matching modes in `hb_message`",
-        "Merge pull request #938 from permaweb/feat/flex-match",
-        "feat(forge): gate system architecture metadata",
-        "Fix device publish runtime setup",
-        "Fix device publish codec bootstrap"
+        "Merge pull request #947 from permaweb/impr/reply-perf"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work broadened from store benchmark accuracy into practical reliability across uploads, queries, packaging, trust settings, performance, and safer logs. Today's commits added bundler await support, GraphQL fallback cursors, explicit trusted signer control for remote feature loading, clearer compile errors, faster Base64 handling, and more conservative recorder redactions. The durable pattern is fewer brittle handoffs and easier operation for mixed HyperBEAM plus legacy infrastructure.",
-      "current_phase": "reliability hardening across uploads, queries, and operator trust",
+      "rolling_context": "Sam's visible HyperBEAM work is now strongly focused on practical speed and build-loop improvements, after recent reliability work across uploads, queries, trust controls, and packaging errors. Today's commits merged faster string/path handling, faster config lookup, incremental build improvements, Forge dry-run and verbose flags, and compile-gated debug traces. The durable pattern is making HyperBEAM easier to run, faster to rebuild, and less costly on common AO message paths.",
+      "current_phase": "performance and build-loop hardening",
       "recent_themes": [
-        "upload fallback",
-        "GraphQL paging compatibility",
-        "clearer feature packaging errors",
-        "operator trust controls",
-        "performance and toolchain cleanup",
-        "safer event redaction"
+        "hot-path performance",
+        "incremental builds",
+        "Forge test flags",
+        "debug trace cost reduction",
+        "faster config lookup"
       ],
       "narrative_threads": [
-        "making HyperBEAM easier to run under real failure cases",
-        "supporting mixed infrastructure while AO nodes take on more work",
-        "reducing setup friction and hidden edge cases for builders"
+        "fewer brittle handoffs for builders and operators",
+        "cleaner sharing of node features",
+        "less wasted work in common AO node paths"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-06-21T16:13:02Z",
+      "last_success_at": "2026-06-22T18:19:28Z",
       "last_seen_shas": [
         "8545a17984451ada81ffc605d783463859ea04bf",
         "1df59723b70becc58ebd98dc2660a2340418dad1",
@@ -253,19 +268,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-06-21T16:13:02Z",
+      "last_success_at": "2026-06-22T18:19:28Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-06-21T16:13:02Z",
+      "last_success_at": "2026-06-22T18:19:28Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-06-21T16:13:02Z",
+      "last_success_at": "2026-06-22T18:19:28Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-06-21T16:13:02Z",
+      "last_success_at": "2026-06-22T18:19:28Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
