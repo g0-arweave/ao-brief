@@ -1,11 +1,14 @@
 {
   "global": {
-    "last_success_at": "2026-06-22T18:19:28Z"
+    "last_success_at": "2026-06-23T16:44:13Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-06-22T18:19:28Z",
+      "last_success_at": "2026-06-23T16:44:13Z",
       "last_seen_shas": [
+        "80a0f3a74ee6ef96dce56fc7b4f36bcc1cd9d3c5",
+        "8798a3dbccac637885d103fa6394a46e13a13f5c",
+        "e49eb6c6f634e8b4cb86ef5712ae5b7e49f57f81",
         "b9272f060976d26630106a2722a76a86383acfd5",
         "0396dcbc5349d369fb1ad12cfa4dd080665221de",
         "2bde1b719134b5c9efef5e9e09a952cdf3cf2161",
@@ -132,8 +135,11 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-06-22T04:17:43Z",
+      "last_public_activity_at": "2026-06-22T22:23:47Z",
       "recent_commit_titles": [
+        "Fix header dependency rebuilds",
+        "Use include paths for header hash keys",
+        "Merge pull request #983 from permaweb/impr/header-deps",
         "feat: NIF-accelerate hb_util ASCII key/string transforms",
         "feat: NIF-accelerate hb_opts canonical_key",
         "chore: ignore hb_util_string NIF build artifacts",
@@ -210,28 +216,23 @@
         "Merge pull request #949 from permaweb/fix/manifest-scope",
         "fix: ignore zero-arity device key functions",
         "Merge pull request #945 from permaweb/fix/key-arity",
-        "Improve cookie source loading",
-        "Merge pull request #946 from permaweb/impr/cookie-loading",
-        "Keep reply headers shallow",
-        "Merge pull request #947 from permaweb/impr/reply-perf"
+        "Improve cookie source loading"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work is now strongly focused on practical speed and build-loop improvements, after recent reliability work across uploads, queries, trust controls, and packaging errors. Today's commits merged faster string/path handling, faster config lookup, incremental build improvements, Forge dry-run and verbose flags, and compile-gated debug traces. The durable pattern is making HyperBEAM easier to run, faster to rebuild, and less costly on common AO message paths.",
-      "current_phase": "performance and build-loop hardening",
+      "rolling_context": "Sam's visible HyperBEAM work continues to focus on making the build and packaging path faster, clearer, and less fragile. After recent speed and build-loop improvements, today's commits fixed header dependency tracking so C/C++ and Erlang header changes trigger rebuilds and affect package source IDs. The durable pattern is improving trust in what HyperBEAM builds and runs, especially for shareable node functionality.",
+      "current_phase": "package build reliability hardening",
       "recent_themes": [
-        "hot-path performance",
-        "incremental builds",
-        "Forge test flags",
-        "debug trace cost reduction",
-        "faster config lookup"
+        "header dependency tracking",
+        "package source ID correctness",
+        "Forge packaging reliability"
       ],
       "narrative_threads": [
-        "fewer brittle handoffs for builders and operators",
-        "cleaner sharing of node features",
-        "less wasted work in common AO node paths"
+        "fewer stale build artifacts",
+        "clearer package identity",
+        "easier HyperBEAM build loops"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-06-22T18:19:28Z",
+      "last_success_at": "2026-06-23T16:44:13Z",
       "last_seen_shas": [
         "8545a17984451ada81ffc605d783463859ea04bf",
         "1df59723b70becc58ebd98dc2660a2340418dad1",
@@ -268,19 +269,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-06-22T18:19:28Z",
+      "last_success_at": "2026-06-23T16:44:13Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-06-22T18:19:28Z",
+      "last_success_at": "2026-06-23T16:44:13Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-06-22T18:19:28Z",
+      "last_success_at": "2026-06-23T16:44:13Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-06-22T18:19:28Z",
+      "last_success_at": "2026-06-23T16:44:13Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
