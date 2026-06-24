@@ -1,11 +1,16 @@
 {
   "global": {
-    "last_success_at": "2026-06-23T16:44:13Z"
+    "last_success_at": "2026-06-24T16:34:34Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-06-23T16:44:13Z",
+      "last_success_at": "2026-06-24T16:34:34Z",
       "last_seen_shas": [
+        "04b7b2b749cd0936c4673b57b2c0baa577635b38",
+        "26b39c7067a34a2e4338404646a68ef7847a0a6f",
+        "35deea8d75cfdb6e2a00e4b1596fafe2ea3ca4e3",
+        "daef0df9a36b728afb1f00e21da6efc9c2039f52",
+        "6c9a0c97640e8991ea9c40210e49fe1aa06a4636",
         "80a0f3a74ee6ef96dce56fc7b4f36bcc1cd9d3c5",
         "8798a3dbccac637885d103fa6394a46e13a13f5c",
         "e49eb6c6f634e8b4cb86ef5712ae5b7e49f57f81",
@@ -135,8 +140,13 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-06-22T22:23:47Z",
+      "last_public_activity_at": "2026-06-24T01:02:52Z",
       "recent_commit_titles": [
+        "Optimize codec ID generation hot paths",
+        "impr: clean LMDB message write path",
+        "impr: lower Erlang stack depth param, avoiding occasional heavy perf penalty",
+        "Merge pull request #986 from permaweb/impr/write-cleaned",
+        "Merge pull request #987 from permaweb/impr/codec-id-generation-hot-path",
         "Fix header dependency rebuilds",
         "Use include paths for header hash keys",
         "Merge pull request #983 from permaweb/impr/header-deps",
@@ -211,28 +221,24 @@
         "Merge pull request #887 from permaweb/impr/volatile_ordered_edge",
         "fix(manifest): preserve remote scope for linked paths",
         "fix(store): utilize store `Opts` along during `local-store` read",
-        "chore: fix `%`ing",
-        "impr: add shared volatile store as device resolution cache",
-        "Merge pull request #949 from permaweb/fix/manifest-scope",
-        "fix: ignore zero-arity device key functions",
-        "Merge pull request #945 from permaweb/fix/key-arity",
-        "Improve cookie source loading"
+        "chore: fix `%`ing"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to focus on making the build and packaging path faster, clearer, and less fragile. After recent speed and build-loop improvements, today's commits fixed header dependency tracking so C/C++ and Erlang header changes trigger rebuilds and affect package source IDs. The durable pattern is improving trust in what HyperBEAM builds and runs, especially for shareable node functionality.",
-      "current_phase": "package build reliability hardening",
+      "rolling_context": "Sam's visible HyperBEAM work shifted from recent build and package reliability hardening into performance and storage-path cleanup. Today's commits improved common node paths: batched cache writes, cleaner LMDB message writes, faster structured/signed message ID generation, and a small setting change to avoid occasional heavy slowdowns. The durable pattern is still practical hardening: make HyperBEAM faster, simpler to operate, and easier to trust through benchmarks and cleaner code.",
+      "current_phase": "performance and storage-path hardening",
       "recent_themes": [
-        "header dependency tracking",
-        "package source ID correctness",
-        "Forge packaging reliability"
+        "batched cache writes",
+        "LMDB message write cleanup",
+        "codec ID hot-path optimization",
+        "benchmark-backed performance tuning"
       ],
       "narrative_threads": [
-        "fewer stale build artifacts",
-        "clearer package identity",
-        "easier HyperBEAM build loops"
+        "moving from package build reliability into node performance work",
+        "reducing fragile special cases in storage and message handling",
+        "using benchmarks to keep speed changes grounded"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-06-23T16:44:13Z",
+      "last_success_at": "2026-06-24T16:34:34Z",
       "last_seen_shas": [
         "8545a17984451ada81ffc605d783463859ea04bf",
         "1df59723b70becc58ebd98dc2660a2340418dad1",
@@ -269,19 +275,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-06-23T16:44:13Z",
+      "last_success_at": "2026-06-24T16:34:34Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-06-23T16:44:13Z",
+      "last_success_at": "2026-06-24T16:34:34Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-06-23T16:44:13Z",
+      "last_success_at": "2026-06-24T16:34:34Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-06-23T16:44:13Z",
+      "last_success_at": "2026-06-24T16:34:34Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
