@@ -1,11 +1,12 @@
 {
   "global": {
-    "last_success_at": "2026-06-24T16:34:34Z"
+    "last_success_at": "2026-06-26T16:29:28Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-06-24T16:34:34Z",
+      "last_success_at": "2026-06-26T16:29:28Z",
       "last_seen_shas": [
+        "a9812e021c05092fbd7332612b33b5ed9392a770",
         "04b7b2b749cd0936c4673b57b2c0baa577635b38",
         "26b39c7067a34a2e4338404646a68ef7847a0a6f",
         "35deea8d75cfdb6e2a00e4b1596fafe2ea3ca4e3",
@@ -140,8 +141,9 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-06-24T01:02:52Z",
+      "last_public_activity_at": "2026-06-25T19:18:38Z",
       "recent_commit_titles": [
+        "Merge pull request #991 from permaweb/chore/b64veryfast-dep",
         "Optimize codec ID generation hot paths",
         "impr: clean LMDB message write path",
         "impr: lower Erlang stack depth param, avoiding occasional heavy perf penalty",
@@ -220,25 +222,22 @@
         "Merge pull request #948 from permaweb/impr/device-cache-lookup",
         "Merge pull request #887 from permaweb/impr/volatile_ordered_edge",
         "fix(manifest): preserve remote scope for linked paths",
-        "fix(store): utilize store `Opts` along during `local-store` read",
-        "chore: fix `%`ing"
+        "fix(store): utilize store `Opts` along during `local-store` read"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work shifted from recent build and package reliability hardening into performance and storage-path cleanup. Today's commits improved common node paths: batched cache writes, cleaner LMDB message writes, faster structured/signed message ID generation, and a small setting change to avoid occasional heavy slowdowns. The durable pattern is still practical hardening: make HyperBEAM faster, simpler to operate, and easier to trust through benchmarks and cleaner code.",
-      "current_phase": "performance and storage-path hardening",
+      "rolling_context": "Sam's visible HyperBEAM work remains focused on practical node hardening after recent performance and storage-path cleanup. Today's merge bumped the b64veryfast dependency through PR #991, touching rebar.config and rebar.lock. The durable pattern is continued cleanup around common low-level paths so HyperBEAM stays faster, easier to operate, and less fragile.",
+      "current_phase": "performance-path maintenance",
       "recent_themes": [
-        "batched cache writes",
-        "LMDB message write cleanup",
-        "codec ID hot-path optimization",
-        "benchmark-backed performance tuning"
+        "dependency freshness",
+        "low-level encoding path upkeep",
+        "node reliability maintenance"
       ],
       "narrative_threads": [
-        "moving from package build reliability into node performance work",
-        "reducing fragile special cases in storage and message handling",
-        "using benchmarks to keep speed changes grounded"
+        "performance hardening through small concrete changes",
+        "keeping HyperBEAM easier to run by reducing stale package edges"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-06-24T16:34:34Z",
+      "last_success_at": "2026-06-26T16:29:28Z",
       "last_seen_shas": [
         "8545a17984451ada81ffc605d783463859ea04bf",
         "1df59723b70becc58ebd98dc2660a2340418dad1",
@@ -275,19 +274,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-06-24T16:34:34Z",
+      "last_success_at": "2026-06-26T16:29:28Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-06-24T16:34:34Z",
+      "last_success_at": "2026-06-26T16:29:28Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-06-24T16:34:34Z",
+      "last_success_at": "2026-06-26T16:29:28Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-06-24T16:34:34Z",
+      "last_success_at": "2026-06-26T16:29:28Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
