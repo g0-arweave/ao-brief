@@ -1,10 +1,10 @@
 {
   "global": {
-    "last_success_at": "2026-06-29T17:13:04Z"
+    "last_success_at": "2026-06-30T16:33:14Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-06-29T17:13:04Z",
+      "last_success_at": "2026-06-30T16:33:14Z",
       "last_seen_shas": [
         "a9812e021c05092fbd7332612b33b5ed9392a770",
         "04b7b2b749cd0936c4673b57b2c0baa577635b38",
@@ -237,8 +237,12 @@
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-06-29T17:13:04Z",
+      "last_success_at": "2026-06-30T16:33:14Z",
       "last_seen_shas": [
+        "9d254a24f0fbd61ac72db8585ba2336f7ddba457",
+        "767a364de8ba11beff72c01f72862ed43a59d67c",
+        "11b9f350aca43b10adf4a6a8787eb003d4cac4f7",
+        "2e2d7ec18838034563e6d4af8ff68195d42e7ca1",
         "09832367cb459643ce70f7ba7a878729baf32994",
         "42237f22a56695db6c84303c1dc087a5a4459011",
         "31155a76f1eedef73a85f120cdb0e4e208c5cabe",
@@ -257,8 +261,12 @@
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
       ],
-      "last_public_activity_at": "2026-06-29T16:12:42Z",
+      "last_public_activity_at": "2026-06-30T08:05:48Z",
       "recent_commit_titles": [
+        "fix: sign settlement withdrawals with node wallet",
+        "feat: auto-withdraw native p4 charges",
+        "feat: enable ao payment p4 auto-withdraw",
+        "Add native p4 bundler profile",
         "Initial standalone HyperBEAM docs device",
         "feat: publish standalone ao payment device",
         "Initial standalone device package",
@@ -272,33 +280,33 @@
         "Port mystical devices to packaged HyperBEAM layout",
         "test: add local paid whisper compliance flows"
       ],
-      "rolling_context": "xylophonez's visible public work is moving AO/HyperBEAM-adjacent service behavior into focused standalone repos with docs, build config, and integration notes. After recent hyperbalance work on typed bundler quote metadata, today's commits published separate packages for HyperBEAM docs, AO payments, pricing, oracle, bundler cleanup, bundler settlement, routing, and bootstrap flows. The durable pattern is clearer sharing and testing of node features without forcing everything into one large codebase.",
-      "current_phase": "standalone service package publishing",
+      "rolling_context": "xylophonez's visible public work continues to move AO/HyperBEAM-adjacent service behavior into focused standalone repos with docs, build config, and integration notes. Today's commits focused on payment-backed bundler operation: auto-withdraw for native p4 charges, enabling that flow in the p4 setup device, signing settlement withdrawals with the node wallet, and adding a native p4 bundler profile. The durable pattern is clearer sharing and testing of node features without forcing everything into one large codebase.",
+      "current_phase": "payment-enabled bundler setup hardening",
       "recent_themes": [
         "standalone node features",
-        "service docs and integration notes",
-        "pricing and bundler support",
-        "AO payment flow packaging"
+        "AO payment auto-withdraw",
+        "bundler settlement signing",
+        "native p4 bundler profile"
       ],
       "narrative_threads": [
-        "making AO service behavior easier to inspect and reuse",
-        "splitting docs, payment, pricing, and bundler helpers into focused packages"
+        "small shareable repos for node features",
+        "reducing manual operator steps around bundler payments"
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-06-29T17:13:04Z",
+      "last_success_at": "2026-06-30T16:33:14Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-06-29T17:13:04Z",
+      "last_success_at": "2026-06-30T16:33:14Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-06-29T17:13:04Z",
+      "last_success_at": "2026-06-30T16:33:14Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-06-29T17:13:04Z",
+      "last_success_at": "2026-06-30T16:33:14Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
