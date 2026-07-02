@@ -4,6 +4,7 @@ Readable AO development briefs, backed by public GitHub receipts.
 
 ## Briefs
 
+- [AO Daily: xylophonez public repos - 2026-07-02](2026-07-02-daily.md)
 - [AO Daily: xylophonez public repos - 2026-07-01](2026-07-01-daily.md)
 - [AO Daily: xylophonez public repos - 2026-06-30](2026-06-30-daily.md)
 - [AO Daily: xylophonez public repos - 2026-06-29](2026-06-29-daily.md)
