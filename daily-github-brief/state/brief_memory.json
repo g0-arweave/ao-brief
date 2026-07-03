@@ -1,10 +1,10 @@
 {
   "global": {
-    "last_success_at": "2026-07-02T16:16:53Z"
+    "last_success_at": "2026-07-03T16:01:26Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-07-02T16:16:53Z",
+      "last_success_at": "2026-07-03T16:01:26Z",
       "last_seen_shas": [
         "a9812e021c05092fbd7332612b33b5ed9392a770",
         "04b7b2b749cd0936c4673b57b2c0baa577635b38",
@@ -237,8 +237,13 @@
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-07-02T16:16:53Z",
+      "last_success_at": "2026-07-03T16:01:26Z",
       "last_seen_shas": [
+        "1fa0843e947a60779b5075a3a1ea453fb7575176",
+        "0a0467f4286db95ebd6a0a076e6a381206ecd56f",
+        "bdcc15b1e5b2926baba1690336301b9b76f74631",
+        "6b3b928a6ea0c4bf075a0c4db7d7e2b161be7683",
+        "12ae5dd163b57934e965217dff4f734ff8784fd4",
         "379e6dc99a09ba4e496a7fb116d54ce9e56e8c2d",
         "ac239012fcb0f7ae39c83df3635c1254caec7b2b",
         "ee8ce010189cbb32f419755d2d92b43a5cfd45eb",
@@ -270,8 +275,13 @@
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
       ],
-      "last_public_activity_at": "2026-07-02T11:47:06Z",
+      "last_public_activity_at": "2026-07-03T13:04:46Z",
       "recent_commit_titles": [
+        "Merge pull request #1 from charmful0x/feat/fallback-ledgers",
+        "Merge pull request #4 from charmful0x/patch-2",
+        "Import deployed OS node configurator",
+        "Document AndEE APK configuration path",
+        "Add AndEE APK source mode",
         "Merge pull request #1 from charmful0x/main",
         "Add paid remote bundler profile",
         "Merge pull request #2 from charmful0x/patch-1",
@@ -298,34 +308,33 @@
         "Port mystical devices to packaged HyperBEAM layout",
         "test: add local paid whisper compliance flows"
       ],
-      "rolling_context": "xylophonez's visible public work continues to harden payment-backed bundler operation through small, shareable AO/HyperBEAM-adjacent profiles. After recent recharging waterfall, ledger fallback, pinned device versions, and p4 charge estimation fixes, today's work added and merged a paid-only remote bundler profile while also tightening the recharging profile with a 24h grace fix and updated ledger IDs. The durable pattern is clearer separation between paid and recharge-backed bundling, backed by pinned JSON config and smoke-test notes.",
-      "current_phase": "paid and recharging bundler profile hardening",
+      "rolling_context": "xylophonez's visible public work continues to harden payment-backed bundler operation through small, shareable AO/HyperBEAM-adjacent profiles. Today's commits added dynamic fallback ledger support and top-up route discovery to the lapee P4 bootstrap device, then updated the recharging bundler profile to use the newer deployments. Work also expanded into AndEE APK setup with an imported configurator, docs, and source mode, pointing toward more repeatable node/app configuration.",
+      "current_phase": "payment route hardening and AndEE APK configurator setup",
       "recent_themes": [
-        "paid remote bundler profile",
-        "zero free-byte paid uploads",
-        "recharging cycle grace fix",
-        "updated recharging ledger IDs"
+        "dynamic fallback ledgers",
+        "discoverable top-up routes",
+        "recharging bundler profile updates",
+        "AndEE APK configuration tooling"
       ],
       "narrative_threads": [
-        "cleaner payment-backed bundler operation",
-        "shareable profiles for node features",
-        "more testable AO upload payment flows"
+        "paid and recharging bundler profiles are becoming more flexible and less brittle",
+        "configuration is moving into visible repos with docs and source-based setup paths"
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-07-02T16:16:53Z",
+      "last_success_at": "2026-07-03T16:01:26Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-07-02T16:16:53Z",
+      "last_success_at": "2026-07-03T16:01:26Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-07-02T16:16:53Z",
+      "last_success_at": "2026-07-03T16:01:26Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-07-02T16:16:53Z",
+      "last_success_at": "2026-07-03T16:01:26Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
