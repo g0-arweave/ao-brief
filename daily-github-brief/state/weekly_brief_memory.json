@@ -1,10 +1,10 @@
 {
   "global": {
-    "last_success_at": "2026-06-26T17:25:09Z"
+    "last_success_at": "2026-07-03T16:13:58Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-06-26T17:25:09Z",
+      "last_success_at": "2026-07-03T16:13:58Z",
       "last_seen_shas": [
         "013cd75bbdccda11fe78ddacc0dc0f3940bdd854",
         "97987801dc3393f765a9ac954f480af887884624",
@@ -276,8 +276,34 @@
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-06-26T17:25:09Z",
+      "last_success_at": "2026-07-03T16:13:58Z",
       "last_seen_shas": [
+        "09832367cb459643ce70f7ba7a878729baf32994",
+        "42237f22a56695db6c84303c1dc087a5a4459011",
+        "ae318f30af8054dbff0bfb4d02f3ba833b96ba2b",
+        "31155a76f1eedef73a85f120cdb0e4e208c5cabe",
+        "1605d699a16f941cfb429ebac6dd866651642cf0",
+        "99b5a30df11c8cc51deb2f4636d0b87d1bfe2cd0",
+        "bdd44b41630b38feedbff34559483e86e1dd21a0",
+        "444b4a462b128c7c9b95ca6ec5dda6520cf5861b",
+        "11b9f350aca43b10adf4a6a8787eb003d4cac4f7",
+        "9d254a24f0fbd61ac72db8585ba2336f7ddba457",
+        "767a364de8ba11beff72c01f72862ed43a59d67c",
+        "2e2d7ec18838034563e6d4af8ff68195d42e7ca1",
+        "9678efb0bd740fc4f075f6eaa7cfa8739e0c3c36",
+        "aee465d5d6303355d5c7a88a248b69bfdfbe8f71",
+        "3422230d433772359cb49f9795453454fb42e9bc",
+        "29c5d4f0148e14c6889ba03350650e8cc95ad457",
+        "221c8509d136dafb4bc1641cbc36b20d9b9dfe6e",
+        "379e6dc99a09ba4e496a7fb116d54ce9e56e8c2d",
+        "ac239012fcb0f7ae39c83df3635c1254caec7b2b",
+        "ee8ce010189cbb32f419755d2d92b43a5cfd45eb",
+        "818846a3ddcf0d56bb61e0d1e4d33a820719da4b",
+        "1fa0843e947a60779b5075a3a1ea453fb7575176",
+        "0a0467f4286db95ebd6a0a076e6a381206ecd56f",
+        "bdcc15b1e5b2926baba1690336301b9b76f74631",
+        "6b3b928a6ea0c4bf075a0c4db7d7e2b161be7683",
+        "12ae5dd163b57934e965217dff4f734ff8784fd4",
         "c019c82b76aad3d0ba4ae11d07c9cf8282756704",
         "8545a17984451ada81ffc605d783463859ea04bf",
         "1df59723b70becc58ebd98dc2660a2340418dad1",
@@ -296,8 +322,29 @@
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
       ],
-      "last_public_activity_at": "2026-06-19T15:34:34Z",
+      "last_public_activity_at": "2026-07-03T13:04:46Z",
       "recent_commit_titles": [
+        "Initial standalone HyperBEAM docs device",
+        "feat: publish standalone ao payment device",
+        "Initial standalone device package",
+        "feat: enable ao payment p4 auto-withdraw",
+        "fix: sign settlement withdrawals with node wallet",
+        "feat: auto-withdraw native p4 charges",
+        "Add native p4 bundler profile",
+        "Add recharging waterfall profile",
+        "Support recharging ledger fallback",
+        "Pin explicit recharging profile devices",
+        "Pin patched recharging ledger",
+        "Merge pull request #4 from charmful0x/fix/p4-waterfall",
+        "Merge pull request #1 from charmful0x/main",
+        "Add paid remote bundler profile",
+        "Merge pull request #2 from charmful0x/patch-1",
+        "Merge pull request #3 from xylophonez/agent/paid-remote-profile-20260702",
+        "Merge pull request #1 from charmful0x/feat/fallback-ledgers",
+        "Merge pull request #4 from charmful0x/patch-2",
+        "Import deployed OS node configurator",
+        "Document AndEE APK configuration path",
+        "Add AndEE APK source mode",
         "Add trundler-aware bundler quote metadata",
         "feat: add exact bundler preflight",
         "Merge pull request #3 from xylophonez/feat/bundler-preflight",
@@ -316,34 +363,34 @@
         "Port mystical devices to packaged HyperBEAM layout",
         "test: add local paid whisper compliance flows"
       ],
-      "rolling_context": "xylophonez shifted from prior paid service examples into smaller AO and HyperBEAM-adjacent tooling. This week added a reference-backed zine CLI, then removed the AO manifest workflow to simplify it. poolcat also appeared as a new HyperBEAM add-on with docs, a spec, Erlang implementation, indexing bounds, compatibility cleanup, and safer start behavior.",
-      "current_phase": "tool simplification and HyperBEAM add-on prototyping",
+      "rolling_context": "xylophonez moved from earlier HyperBEAM add-on prototyping into broader standalone packaging across docs, AO payment, settlement, pricing, oracle, and bundler helper repos. The week also hardened paid bundler flows with auto-withdraw support, node-wallet settlement signing, recharging and paid remote profiles, dynamic fallback top-up routes, and pinned deployments. AndEE APK configurator work added a deployed OS node configurator import, docs, research notes, and source mode support.",
+      "current_phase": "standalone add-ons and paid bundler setup hardening",
       "recent_themes": [
-        "reference-backed zine CLI",
-        "simpler AO-adjacent publishing flow",
-        "poolcat HyperBEAM add-on",
-        "index bounds and startup safety"
+        "standalone HyperBEAM and AO node add-ons",
+        "paid bundler profiles and auto-withdraw flows",
+        "fallback top-up route discovery",
+        "AndEE APK configuration tooling"
       ],
       "narrative_threads": [
-        "making AO-adjacent tools easier to try locally",
-        "turning HyperBEAM add-ons into documented, testable repos",
-        "quick follow-up fixes after initial prototypes"
+        "making node features easier to share and install without changing core software",
+        "turning paid bundling into a tested operator flow",
+        "reducing brittle setup through pinned profiles and route discovery"
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-06-26T17:25:09Z",
+      "last_success_at": "2026-07-03T16:13:58Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-06-26T17:25:09Z",
+      "last_success_at": "2026-07-03T16:13:58Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-06-26T17:25:09Z",
+      "last_success_at": "2026-07-03T16:13:58Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-06-26T17:25:09Z",
+      "last_success_at": "2026-07-03T16:13:58Z",
       "last_seen_shas": [
         "2348a9dbef90b207303c14b025607453c02b3e57",
         "46a7cdf2abeca0380cd5c612a6abad1e3993e8ae",
