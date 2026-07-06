@@ -4,6 +4,7 @@ Readable AO development briefs, backed by public GitHub receipts.
 
 ## Briefs
 
+- [AO Daily: Sam on HyperBEAM - 2026-07-06](2026-07-06-daily.md)
 - [AO Weekly Synthesis - 2026-07-03](2026-07-03-weekly.md)
 - [AO Daily: xylophonez public repos - 2026-07-03](2026-07-03-daily.md)
 - [AO Daily: xylophonez public repos - 2026-07-02](2026-07-02-daily.md)
