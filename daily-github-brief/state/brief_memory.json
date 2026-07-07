@@ -1,11 +1,15 @@
 {
   "global": {
-    "last_success_at": "2026-07-06T17:16:56Z"
+    "last_success_at": "2026-07-07T16:42:28Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-07-06T17:16:56Z",
+      "last_success_at": "2026-07-07T16:42:28Z",
       "last_seen_shas": [
+        "1d6ec7e21892c9efb506546d6945df01db9b5f19",
+        "274d0ed965888f97103ddb4a926e8845fd11f42f",
+        "df83858fdda16803c1f1ccc93bfe340d0efd257c",
+        "ac5072a8784fd453dfa7318f252342abd3d2b88b",
         "b3fc711860abb50794cfdee31025811b15b543d0",
         "d1b6122ea05f1de4d3f5d761f52c60c1ea8036a9",
         "a9812e021c05092fbd7332612b33b5ed9392a770",
@@ -143,8 +147,12 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-07-06T16:45:43Z",
+      "last_public_activity_at": "2026-07-06T20:42:29Z",
       "recent_commit_titles": [
+        "feat: add push_result and http_result paranoid-verify topics",
+        "Merge pull request #1004 from permaweb/impr/paranoid-mode",
+        "fix: preserve provenance, policy and hint-strip on push 307 redirects",
+        "Merge pull request #1005 from permaweb/fix/push-307-redirect",
         "impr: `~lua@5.3a` default minimum sandbox from node `Opts`.",
         "Merge pull request #1002 from permaweb/fix/lua-default-safe-sandbox",
         "Merge pull request #991 from permaweb/chore/b64veryfast-dep",
@@ -220,26 +228,22 @@
         "fix: avoid loading blacklist scan links",
         "debug: report arweave chunk cache hits",
         "fix: remove arweave chunk cache",
-        "Merge pull request #951 from permaweb/fix/arweave-edge-normalized",
-        "fix: forward `NodeOpts` in `remote`-style store lookups",
-        "impr: avoid unnecessary dev key write when already in pdict/global cache",
-        "Merge pull request #948 from permaweb/impr/device-cache-lookup",
-        "Merge pull request #887 from permaweb/impr/volatile_ordered_edge"
+        "Merge pull request #951 from permaweb/fix/arweave-edge-normalized"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to focus on practical node hardening. After recent dependency and low-level encoding upkeep, today's merged PR #1002 added a node-configurable minimum Lua sandbox, letting operators set a default safety floor while messages can layer their own sandbox rules on top. The durable pattern is making common node paths safer, easier to operate, and less dependent on repeated per-message setup.",
-      "current_phase": "Lua execution safety and operator controls",
+      "rolling_context": "Sam's visible HyperBEAM work continues to focus on safer node operation and less fragile message paths. After recent Lua sandbox controls, today's merged PR #1004 added opt-in verification for outgoing HTTP and push results, while PR #1005 fixed redirected push messages so they preserve provenance and target security policy. The durable pattern is stronger checks around the places where AO messages are executed, signed, sent, or forwarded between nodes.",
+      "current_phase": "message delivery safety and operator checks",
       "recent_themes": [
-        "node operator configuration",
-        "Lua sandbox safety",
-        "less fragile execution defaults"
+        "opt-in outbound verification",
+        "push redirect correctness",
+        "provenance and security policy preservation"
       ],
       "narrative_threads": [
-        "HyperBEAM hardening around common low-level paths",
-        "clearer trust controls for AO node operators"
+        "making node operation safer without forcing extra checks on every path",
+        "reducing edge cases in cross-node AO message flow"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-07-06T17:16:56Z",
+      "last_success_at": "2026-07-07T16:42:28Z",
       "last_seen_shas": [
         "1fa0843e947a60779b5075a3a1ea453fb7575176",
         "0a0467f4286db95ebd6a0a076e6a381206ecd56f",
@@ -324,19 +328,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-07-06T17:16:56Z",
+      "last_success_at": "2026-07-07T16:42:28Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-07-06T17:16:56Z",
+      "last_success_at": "2026-07-07T16:42:28Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-07-06T17:16:56Z",
+      "last_success_at": "2026-07-07T16:42:28Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-07-06T17:16:56Z",
+      "last_success_at": "2026-07-07T16:42:28Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
