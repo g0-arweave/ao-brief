@@ -1,11 +1,20 @@
 {
   "global": {
-    "last_success_at": "2026-07-03T17:05:33Z"
+    "last_success_at": "2026-07-10T16:47:31Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-07-03T17:05:33Z",
+      "last_success_at": "2026-07-10T16:47:31Z",
       "last_seen_shas": [
+        "b3fc711860abb50794cfdee31025811b15b543d0",
+        "d1b6122ea05f1de4d3f5d761f52c60c1ea8036a9",
+        "1d6ec7e21892c9efb506546d6945df01db9b5f19",
+        "274d0ed965888f97103ddb4a926e8845fd11f42f",
+        "df83858fdda16803c1f1ccc93bfe340d0efd257c",
+        "ac5072a8784fd453dfa7318f252342abd3d2b88b",
+        "c0756c53eeddadc91014c4eecfb75b1c6b0b3ee9",
+        "84f00205dec24696e448a741f49826d0221648bb",
+        "a0bb76ccda9fdbbc5e82008e6794e588c28d2c18",
         "013cd75bbdccda11fe78ddacc0dc0f3940bdd854",
         "97987801dc3393f765a9ac954f480af887884624",
         "9f9c93994c8c02ce48ea8ead250d39d1e6247eb5",
@@ -178,8 +187,17 @@
         "6be1816357ee247c9aba73901fb6f530ce6d4697",
         "cca5b4d416b012e11b080853cd35f303f8efeda4"
       ],
-      "last_public_activity_at": "2026-06-25T19:18:38Z",
+      "last_public_activity_at": "2026-07-09T18:19:32Z",
       "recent_commit_titles": [
+        "impr: `~lua@5.3a` default minimum sandbox from node `Opts`.",
+        "Merge pull request #1002 from permaweb/fix/lua-default-safe-sandbox",
+        "feat: add push_result and http_result paranoid-verify topics",
+        "Merge pull request #1004 from permaweb/impr/paranoid-mode",
+        "fix: preserve provenance, policy and hint-strip on push 307 redirects",
+        "Merge pull request #1005 from permaweb/fix/push-307-redirect",
+        "chore: clarify",
+        "Merge pull request #1006 from permaweb/impr/relay",
+        "Merge pull request #1012 from permaweb/impr/arweave_tip_offsets",
         "Precompute store benchmark requests",
         "Merge pull request #969 from permaweb/impr/store-benchmarks",
         "Format device package compile errors",
@@ -250,33 +268,24 @@
         "fix: rename signer package scope to devices",
         "Merge pull request #956 from permaweb/fix/forge-publish",
         "Merge pull request #922 from permaweb/feat/config-script",
-        "fix: ignore zero-arity device key functions",
-        "Merge pull request #945 from permaweb/fix/key-arity",
-        "Improve cookie source loading",
-        "Merge pull request #946 from permaweb/impr/cookie-loading",
-        "Keep reply headers shallow",
-        "Merge pull request #947 from permaweb/impr/reply-perf",
-        "fix: forward `NodeOpts` in `remote`-style store lookups",
-        "impr: avoid unnecessary dev key write when already in pdict/global cache",
-        "Merge pull request #948 from permaweb/impr/device-cache-lookup",
-        "Merge pull request #887 from permaweb/impr/volatile_ordered_edge"
+        "fix: ignore zero-arity device key functions"
       ],
-      "rolling_context": "HyperBEAM moved from general cleanup into a strong reliability and performance push. This week added bundler await support for confirmed uploads, GraphQL fallback pagination for worker-style query routing, explicit trusted-signer gating for remote feature loading, and better Forge compile errors. A large hot-path pass also targeted Base64, string transforms, config lookup, path normalization, LMDB reads/writes, debug traces, cache writes, and codec ID generation.",
-      "current_phase": "upload/query reliability plus hot-path performance hardening",
+      "rolling_context": "HyperBEAM continued its reliability and safety push with practical node-operator controls and edge-case fixes. This week added configurable minimum Lua sandbox rules, opt-in verification for outbound HTTP and push results, safer push redirects that preserve provenance and policy, outbound relay request sanitization, and updated Arweave tip offsets for rolling index nodes.",
+      "current_phase": "node safety and ops hardening",
       "recent_themes": [
-        "confirmed bundler uploads and fallback routing",
-        "GraphQL pagination fallback and cursor safety",
-        "hot-path speed work across config, strings, cache, codecs, and storage",
-        "Forge debugging and trusted remote feature loading"
+        "configurable Lua sandbox safety",
+        "outbound message verification",
+        "redirect and relay trust handling",
+        "Arweave indexing config fixes"
       ],
       "narrative_threads": [
-        "making AO node behavior easier for app builders to rely on",
-        "reducing repeated work inside message and storage paths",
-        "clearer trust controls for features a node can add without changing core software"
+        "making HyperBEAM less fragile to operate",
+        "clearer trust handling at message handoff points",
+        "operator control over node safety defaults"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-07-03T17:05:33Z",
+      "last_success_at": "2026-07-10T16:47:31Z",
       "last_seen_shas": [
         "09832367cb459643ce70f7ba7a878729baf32994",
         "42237f22a56695db6c84303c1dc087a5a4459011",
@@ -378,19 +387,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-07-03T17:05:33Z",
+      "last_success_at": "2026-07-10T16:47:31Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-07-03T17:05:33Z",
+      "last_success_at": "2026-07-10T16:47:31Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-07-03T17:05:33Z",
+      "last_success_at": "2026-07-10T16:47:31Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-07-03T17:05:33Z",
+      "last_success_at": "2026-07-10T16:47:31Z",
       "last_seen_shas": [
         "2348a9dbef90b207303c14b025607453c02b3e57",
         "46a7cdf2abeca0380cd5c612a6abad1e3993e8ae",
