@@ -1,11 +1,14 @@
 {
   "global": {
-    "last_success_at": "2026-07-07T16:42:28Z"
+    "last_success_at": "2026-07-10T16:34:48Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-07-07T16:42:28Z",
+      "last_success_at": "2026-07-10T16:34:48Z",
       "last_seen_shas": [
+        "c0756c53eeddadc91014c4eecfb75b1c6b0b3ee9",
+        "84f00205dec24696e448a741f49826d0221648bb",
+        "a0bb76ccda9fdbbc5e82008e6794e588c28d2c18",
         "1d6ec7e21892c9efb506546d6945df01db9b5f19",
         "274d0ed965888f97103ddb4a926e8845fd11f42f",
         "df83858fdda16803c1f1ccc93bfe340d0efd257c",
@@ -147,8 +150,11 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-07-06T20:42:29Z",
+      "last_public_activity_at": "2026-07-09T18:19:32Z",
       "recent_commit_titles": [
+        "chore: clarify",
+        "Merge pull request #1006 from permaweb/impr/relay",
+        "Merge pull request #1012 from permaweb/impr/arweave_tip_offsets",
         "feat: add push_result and http_result paranoid-verify topics",
         "Merge pull request #1004 from permaweb/impr/paranoid-mode",
         "fix: preserve provenance, policy and hint-strip on push 307 redirects",
@@ -225,25 +231,22 @@
         "fix(http): avoid duplicate multirequest refill",
         "Merge pull request #950 from permaweb/fix/hb-http-multi-stop-after",
         "fix: cache arweave chunk downloads",
-        "fix: avoid loading blacklist scan links",
-        "debug: report arweave chunk cache hits",
-        "fix: remove arweave chunk cache",
-        "Merge pull request #951 from permaweb/fix/arweave-edge-normalized"
+        "fix: avoid loading blacklist scan links"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to focus on safer node operation and less fragile message paths. After recent Lua sandbox controls, today's merged PR #1004 added opt-in verification for outgoing HTTP and push results, while PR #1005 fixed redirected push messages so they preserve provenance and target security policy. The durable pattern is stronger checks around the places where AO messages are executed, signed, sent, or forwarded between nodes.",
-      "current_phase": "message delivery safety and operator checks",
+      "rolling_context": "Sam's visible HyperBEAM work remains focused on safer node operation and less fragile message paths. After recent opt-in outbound verification and push redirect fixes, PR #1006 sanitized outbound relay requests and added hostname utility work, while PR #1012 adjusted Arweave tip offsets to avoid rolling index stalls. The repeated pattern is tighter checks around request/message handoffs plus small operator fixes that help nodes stay current.",
+      "current_phase": "relay safety and Arweave indexing reliability",
       "recent_themes": [
-        "opt-in outbound verification",
-        "push redirect correctness",
-        "provenance and security policy preservation"
+        "outbound request sanitization",
+        "relay path cleanup",
+        "Arweave tip indexing reliability"
       ],
       "narrative_threads": [
-        "making node operation safer without forcing extra checks on every path",
-        "reducing edge cases in cross-node AO message flow"
+        "stronger checks around messages and requests leaving a node",
+        "making AO node operation less fragile through targeted fixes"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-07-07T16:42:28Z",
+      "last_success_at": "2026-07-10T16:34:48Z",
       "last_seen_shas": [
         "1fa0843e947a60779b5075a3a1ea453fb7575176",
         "0a0467f4286db95ebd6a0a076e6a381206ecd56f",
@@ -328,19 +331,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-07-07T16:42:28Z",
+      "last_success_at": "2026-07-10T16:34:48Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-07-07T16:42:28Z",
+      "last_success_at": "2026-07-10T16:34:48Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-07-07T16:42:28Z",
+      "last_success_at": "2026-07-10T16:34:48Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-07-07T16:42:28Z",
+      "last_success_at": "2026-07-10T16:34:48Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
