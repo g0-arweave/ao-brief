@@ -1,11 +1,14 @@
 {
   "global": {
-    "last_success_at": "2026-07-10T16:34:48Z"
+    "last_success_at": "2026-07-11T15:17:51Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-07-10T16:34:48Z",
+      "last_success_at": "2026-07-11T15:17:51Z",
       "last_seen_shas": [
+        "d58cd37678aebc5445c498fdc7ec4afd7b9891a7",
+        "3fd1c5ca78dbdfb4230e3ed35f6674081773b041",
+        "452e24ef98ed2b4ec77eb2bd071ee15b43b2c6da",
         "c0756c53eeddadc91014c4eecfb75b1c6b0b3ee9",
         "84f00205dec24696e448a741f49826d0221648bb",
         "a0bb76ccda9fdbbc5e82008e6794e588c28d2c18",
@@ -150,8 +153,11 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-07-09T18:19:32Z",
+      "last_public_activity_at": "2026-07-10T19:36:47Z",
       "recent_commit_titles": [
+        "wip: fixes, simplification",
+        "Merge pull request #1013 from permaweb/feat/http-reply-sigs",
+        "Merge pull request #1011 from permaweb/impr/task-status",
         "chore: clarify",
         "Merge pull request #1006 from permaweb/impr/relay",
         "Merge pull request #1012 from permaweb/impr/arweave_tip_offsets",
@@ -228,25 +234,22 @@
         "Merge pull request #961 from permaweb/re/l3-cleanup-160626",
         "Merge pull request #962 from permaweb/fix/ephem-cursors",
         "Merge pull request #964 from permaweb/impr/l3-cleanup",
-        "fix(http): avoid duplicate multirequest refill",
-        "Merge pull request #950 from permaweb/fix/hb-http-multi-stop-after",
-        "fix: cache arweave chunk downloads",
-        "fix: avoid loading blacklist scan links"
+        "fix(http): avoid duplicate multirequest refill"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work remains focused on safer node operation and less fragile message paths. After recent opt-in outbound verification and push redirect fixes, PR #1006 sanitized outbound relay requests and added hostname utility work, while PR #1012 adjusted Arweave tip offsets to avoid rolling index stalls. The repeated pattern is tighter checks around request/message handoffs plus small operator fixes that help nodes stay current.",
-      "current_phase": "relay safety and Arweave indexing reliability",
+      "rolling_context": "Sam's visible HyperBEAM work continues to focus on safer node operation and clearer trust at message and HTTP handoff points. Today's merges added clearer HTTP reply signature handling through PR #1013 and direct task status checks for dev_cron through PR #1011. Alongside simplification in HTTP, message, remote store, signature, and test files, the pattern remains less fragile node behavior and easier debugging for operators.",
+      "current_phase": "reply trust and operator status checks",
       "recent_themes": [
-        "outbound request sanitization",
-        "relay path cleanup",
-        "Arweave tip indexing reliability"
+        "HTTP reply signature clarity",
+        "task status inspection",
+        "message and store path simplification"
       ],
       "narrative_threads": [
-        "stronger checks around messages and requests leaving a node",
-        "making AO node operation less fragile through targeted fixes"
+        "tightening how nodes handle and expose trust in responses",
+        "making HyperBEAM easier to operate through small status and reliability fixes"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-07-10T16:34:48Z",
+      "last_success_at": "2026-07-11T15:17:51Z",
       "last_seen_shas": [
         "1fa0843e947a60779b5075a3a1ea453fb7575176",
         "0a0467f4286db95ebd6a0a076e6a381206ecd56f",
@@ -331,19 +334,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-07-10T16:34:48Z",
+      "last_success_at": "2026-07-11T15:17:51Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-07-10T16:34:48Z",
+      "last_success_at": "2026-07-11T15:17:51Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-07-10T16:34:48Z",
+      "last_success_at": "2026-07-11T15:17:51Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-07-10T16:34:48Z",
+      "last_success_at": "2026-07-11T15:17:51Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
