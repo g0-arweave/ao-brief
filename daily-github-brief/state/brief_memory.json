@@ -1,11 +1,12 @@
 {
   "global": {
-    "last_success_at": "2026-07-11T15:17:51Z"
+    "last_success_at": "2026-07-12T15:18:11Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-07-11T15:17:51Z",
+      "last_success_at": "2026-07-12T15:18:11Z",
       "last_seen_shas": [
+        "0c68a148ea2fbafa143df6db57323bd9729c882e",
         "d58cd37678aebc5445c498fdc7ec4afd7b9891a7",
         "3fd1c5ca78dbdfb4230e3ed35f6674081773b041",
         "452e24ef98ed2b4ec77eb2bd071ee15b43b2c6da",
@@ -153,8 +154,9 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-07-10T19:36:47Z",
+      "last_public_activity_at": "2026-07-11T15:18:53Z",
       "recent_commit_titles": [
+        "Merge pull request #1015 from permaweb/fix/manifest-route-scaling",
         "wip: fixes, simplification",
         "Merge pull request #1013 from permaweb/feat/http-reply-sigs",
         "Merge pull request #1011 from permaweb/impr/task-status",
@@ -233,23 +235,22 @@
         "fix(query): add ephemeral cursors",
         "Merge pull request #961 from permaweb/re/l3-cleanup-160626",
         "Merge pull request #962 from permaweb/fix/ephem-cursors",
-        "Merge pull request #964 from permaweb/impr/l3-cleanup",
-        "fix(http): avoid duplicate multirequest refill"
+        "Merge pull request #964 from permaweb/impr/l3-cleanup"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to focus on safer node operation and clearer trust at message and HTTP handoff points. Today's merges added clearer HTTP reply signature handling through PR #1013 and direct task status checks for dev_cron through PR #1011. Alongside simplification in HTTP, message, remote store, signature, and test files, the pattern remains less fragile node behavior and easier debugging for operators.",
-      "current_phase": "reply trust and operator status checks",
+      "rolling_context": "Sam's visible HyperBEAM work has recently focused on safer node operation, clearer trust at HTTP/message handoff points, and easier operator checks. Today's merge adds a performance fix for large manifest route handling through PR #1015, avoiding expansion of unrelated paths and cutting lookup time and memory use in the PR benchmark. The trajectory is still practical hardening: fewer slow edge cases, less wasted node work, and easier operation for apps with larger route maps.",
+      "current_phase": "manifest route performance and node efficiency",
       "recent_themes": [
-        "HTTP reply signature clarity",
-        "task status inspection",
-        "message and store path simplification"
+        "large manifest route scaling",
+        "less wasted node work",
+        "HTTP and message path hardening"
       ],
       "narrative_threads": [
-        "tightening how nodes handle and expose trust in responses",
-        "making HyperBEAM easier to operate through small status and reliability fixes"
+        "making AO node behavior less fragile under real app loads",
+        "turning edge-case fixes into better builder and operator experience"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-07-11T15:17:51Z",
+      "last_success_at": "2026-07-12T15:18:11Z",
       "last_seen_shas": [
         "1fa0843e947a60779b5075a3a1ea453fb7575176",
         "0a0467f4286db95ebd6a0a076e6a381206ecd56f",
@@ -334,19 +335,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-07-11T15:17:51Z",
+      "last_success_at": "2026-07-12T15:18:11Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-07-11T15:17:51Z",
+      "last_success_at": "2026-07-12T15:18:11Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-07-11T15:17:51Z",
+      "last_success_at": "2026-07-12T15:18:11Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-07-11T15:17:51Z",
+      "last_success_at": "2026-07-12T15:18:11Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
