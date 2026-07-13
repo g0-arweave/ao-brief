@@ -1,10 +1,10 @@
 {
   "global": {
-    "last_success_at": "2026-07-12T15:18:11Z"
+    "last_success_at": "2026-07-13T16:43:53Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-07-12T15:18:11Z",
+      "last_success_at": "2026-07-13T16:43:53Z",
       "last_seen_shas": [
         "0c68a148ea2fbafa143df6db57323bd9729c882e",
         "d58cd37678aebc5445c498fdc7ec4afd7b9891a7",
@@ -250,8 +250,16 @@
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-07-12T15:18:11Z",
+      "last_success_at": "2026-07-13T16:43:53Z",
       "last_seen_shas": [
+        "5d22ac8727db466f3654986a1333b55618146ecc",
+        "4bfdde8d62c061e3e8ea58e337be4c3efd319611",
+        "dfaaf6b7b0a2fa2a509e850b5f0be1c78416a7c8",
+        "c7be16c5a9c8269774e171065a4c05fd9e45bc92",
+        "0069f35c8adbcaf8a83769cd5329cb6a26924aaa",
+        "3d837745403754489c742785b3d39e63a2b25172",
+        "a8557e6dc9ea3da890424bd1e8623d3b3a15be56",
+        "a711b6093155c3f0e9fb2fa852e6197d04237dc6",
         "1fa0843e947a60779b5075a3a1ea453fb7575176",
         "0a0467f4286db95ebd6a0a076e6a381206ecd56f",
         "bdcc15b1e5b2926baba1690336301b9b76f74631",
@@ -288,8 +296,16 @@
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
       ],
-      "last_public_activity_at": "2026-07-03T13:04:46Z",
+      "last_public_activity_at": "2026-07-13T15:34:55Z",
       "recent_commit_titles": [
+        "tunnel-broker: self-hostable reverse HTTP tunnel broker for HyperBEAM nodes",
+        "Add real Namecheap+VPS deploy recipe (proven on tunnel.permaweb.space)",
+        "Prove device+config broker; add LapEE topology, config profiles",
+        "Clarify LapEE-native config (merge fragments) vs standalone launcher",
+        "Make repo device-first (LapEE semantics only); drop standalone launcher",
+        "Pin published tunnel@1.0 impl ID (Arweave dataitem u3K9cV05...)",
+        "docs: add changes-from-v1.md",
+        "acme@1.0 M1: self-contained ACME DNS-01 wildcard issuance",
         "Merge pull request #1 from charmful0x/feat/fallback-ledgers",
         "Merge pull request #4 from charmful0x/patch-2",
         "Import deployed OS node configurator",
@@ -321,33 +337,34 @@
         "Port mystical devices to packaged HyperBEAM layout",
         "test: add local paid whisper compliance flows"
       ],
-      "rolling_context": "xylophonez's visible public work continues to harden payment-backed bundler operation through small, shareable AO/HyperBEAM-adjacent profiles. Today's commits added dynamic fallback ledger support and top-up route discovery to the lapee P4 bootstrap device, then updated the recharging bundler profile to use the newer deployments. Work also expanded into AndEE APK setup with an imported configurator, docs, and source mode, pointing toward more repeatable node/app configuration.",
-      "current_phase": "payment route hardening and AndEE APK configurator setup",
+      "rolling_context": "xylophonez's visible public work moved from payment route hardening and AndEE config setup into practical HyperBEAM node access. Today's commits built a self-hostable reverse HTTP tunnel, added real deploy docs, proved a device+config broker path, removed the standalone launcher, pinned a published tunnel@1.0 Arweave data item ID, and added a self-contained ACME DNS-01 wildcard cert tool. The recurring direction is easier node operation through shareable config and published components instead of one-off local glue.",
+      "current_phase": "HyperBEAM tunnel and certificate setup hardening",
       "recent_themes": [
-        "dynamic fallback ledgers",
-        "discoverable top-up routes",
-        "recharging bundler profile updates",
-        "AndEE APK configuration tooling"
+        "self-hostable node tunneling",
+        "config-first node features",
+        "pinned Arweave implementation IDs",
+        "automated wildcard HTTPS certs"
       ],
       "narrative_threads": [
-        "paid and recharging bundler profiles are becoming more flexible and less brittle",
-        "configuration is moving into visible repos with docs and source-based setup paths"
+        "making node features easier to share and install",
+        "reducing fragile operator setup",
+        "turning useful infrastructure into repeatable deploy paths"
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-07-12T15:18:11Z",
+      "last_success_at": "2026-07-13T16:43:53Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-07-12T15:18:11Z",
+      "last_success_at": "2026-07-13T16:43:53Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-07-12T15:18:11Z",
+      "last_success_at": "2026-07-13T16:43:53Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-07-12T15:18:11Z",
+      "last_success_at": "2026-07-13T16:43:53Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
