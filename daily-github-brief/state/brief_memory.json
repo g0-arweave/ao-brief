@@ -1,10 +1,10 @@
 {
   "global": {
-    "last_success_at": "2026-07-13T16:43:53Z"
+    "last_success_at": "2026-07-14T15:48:48Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-07-13T16:43:53Z",
+      "last_success_at": "2026-07-14T15:48:48Z",
       "last_seen_shas": [
         "0c68a148ea2fbafa143df6db57323bd9729c882e",
         "d58cd37678aebc5445c498fdc7ec4afd7b9891a7",
@@ -250,8 +250,22 @@
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-07-13T16:43:53Z",
+      "last_success_at": "2026-07-14T15:48:48Z",
       "last_seen_shas": [
+        "df798370cf68471af070c5a3001d2b52e0de00e4",
+        "060176fa60a5c3be51a7db4584a7edc710e05f81",
+        "88c08eb43fd88e29e0c7bbbb87d3433ab014945e",
+        "d26269981a512ce391fb3b88c676f65877c74561",
+        "7272a54cfebb61c0e9b8f87c7187ed576416c0f5",
+        "6188034b1601861018e576370ee1bb80fd117b14",
+        "74820349adc5347a18235c0e925d38e4673230ce",
+        "0fa13d1746ec29e6c7d89a8c441bd14f2d3cf4a4",
+        "25013e424095f8c6112380b5ed882e3f17dd892a",
+        "95d9712ed1d0baa2b505a2a5a1eba812c373b980",
+        "92193b48b5d933b5b825a4d4e88ad3f230dcc801",
+        "b3663beec18411232c33307923e431f0318d2468",
+        "76f1ec2d543103f2700da3901d288f845e4d76f8",
+        "39053e06219be0a7b44622d993a973c7048de4a5",
         "5d22ac8727db466f3654986a1333b55618146ecc",
         "4bfdde8d62c061e3e8ea58e337be4c3efd319611",
         "dfaaf6b7b0a2fa2a509e850b5f0be1c78416a7c8",
@@ -296,8 +310,22 @@
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
       ],
-      "last_public_activity_at": "2026-07-13T15:34:55Z",
+      "last_public_activity_at": "2026-07-14T13:21:40Z",
       "recent_commit_titles": [
+        "M2 (device-only termination): cert->TLS core proven; terminator + device written",
+        "M2 termination PROVEN in-node against the live HyperBEAM broker",
+        "M3: renewal loop, A-record self-publish, dev_acme wiring",
+        "Rename library modules to lib_acme_* for forge device packaging",
+        "Publish acme@1.0 device to Arweave + pin in config fragment",
+        "Staged prod cutover proof scripts",
+        "proxy: raise upstream timeout above the tunnel's hold windows",
+        "terminator: ensure ssl app started before cowboy:start_tls",
+        "dev_acme: never crash node boot; run bring-up in spawned proc with catch",
+        "dev_acme: export info/1 declaring exports so the device is dispatchable",
+        "dev_acme: place info/1 after attributes (packager lint rejects attr-after-fn)",
+        "dev_acme: rename hook fn start->run ('start' path collides with hb dispatch)",
+        "config: fix on/start hook (path run + result ignore) and pin to working device",
+        "Ship prep: remove debug log, document on/start gotchas + production status",
         "tunnel-broker: self-hostable reverse HTTP tunnel broker for HyperBEAM nodes",
         "Add real Namecheap+VPS deploy recipe (proven on tunnel.permaweb.space)",
         "Prove device+config broker; add LapEE topology, config profiles",
@@ -337,34 +365,33 @@
         "Port mystical devices to packaged HyperBEAM layout",
         "test: add local paid whisper compliance flows"
       ],
-      "rolling_context": "xylophonez's visible public work moved from payment route hardening and AndEE config setup into practical HyperBEAM node access. Today's commits built a self-hostable reverse HTTP tunnel, added real deploy docs, proved a device+config broker path, removed the standalone launcher, pinned a published tunnel@1.0 Arweave data item ID, and added a self-contained ACME DNS-01 wildcard cert tool. The recurring direction is easier node operation through shareable config and published components instead of one-off local glue.",
-      "current_phase": "HyperBEAM tunnel and certificate setup hardening",
+      "rolling_context": "xylophonez's visible public work continues to focus on making HyperBEAM nodes easier to expose and operate. After recent reverse tunnel and config work, today's hyperbeam-acme commits turned HTTPS cert handling into a packaged, Arweave-pinned ACME device with proof scripts, renewal logic, config wiring, and boot/dispatch fixes. The recurring direction is moving node access features out of local glue and into shareable config plus published components.",
+      "current_phase": "HyperBEAM ACME HTTPS device packaging and ship hardening",
       "recent_themes": [
-        "self-hostable node tunneling",
+        "trusted HTTPS for HyperBEAM nodes",
         "config-first node features",
-        "pinned Arweave implementation IDs",
-        "automated wildcard HTTPS certs"
+        "Arweave-pinned devices",
+        "boot and dispatch hardening"
       ],
       "narrative_threads": [
-        "making node features easier to share and install",
-        "reducing fragile operator setup",
-        "turning useful infrastructure into repeatable deploy paths"
+        "easier node operation through reusable published components",
+        "less fragile public access for HyperBEAM services"
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-07-13T16:43:53Z",
+      "last_success_at": "2026-07-14T15:48:48Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-07-13T16:43:53Z",
+      "last_success_at": "2026-07-14T15:48:48Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-07-13T16:43:53Z",
+      "last_success_at": "2026-07-14T15:48:48Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-07-13T16:43:53Z",
+      "last_success_at": "2026-07-14T15:48:48Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
