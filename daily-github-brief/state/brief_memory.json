@@ -1,11 +1,23 @@
 {
   "global": {
-    "last_success_at": "2026-07-14T15:48:48Z"
+    "last_success_at": "2026-07-16T15:48:36Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-07-14T15:48:48Z",
+      "last_success_at": "2026-07-16T15:48:36Z",
       "last_seen_shas": [
+        "6f252a3beed358bb8a12390ba434f6fe15fe7704",
+        "a6193f3a5d7370e45bd44bc52735146c64cefb02",
+        "043ca1ffa1648207ca129d1c79cd6586fb3b041c",
+        "73f77051228e0eaa706bb555d7004bb2e5abe506",
+        "53f48a5ad32b43b4a3e07f3ea3cc7ab22127e5f8",
+        "9698bf38bd8d7f79dfcb057fb25cd85118eb992c",
+        "3b9f7e658ec1e0a83cc4a6e28e198ac901ed0c47",
+        "3a7642c0da932dea062378b75f6983380a2b2b80",
+        "e445aad9da2a3017023ce99bd934540729e3b872",
+        "31e73dd6bea1adb0a470e424414ce373c6a99066",
+        "26121204c553a1e75648760d3e3a9bd3f1891f99",
+        "fcdf5867686c64a8abe79e04e10f3590fbd62b7f",
         "0c68a148ea2fbafa143df6db57323bd9729c882e",
         "d58cd37678aebc5445c498fdc7ec4afd7b9891a7",
         "3fd1c5ca78dbdfb4230e3ed35f6674081773b041",
@@ -154,8 +166,20 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-07-11T15:18:53Z",
+      "last_public_activity_at": "2026-07-16T14:20:33Z",
       "recent_commit_titles": [
+        "fix(codec): preserve commitment bundle hints",
+        "fix(http): preserve structured HTTPSig messages",
+        "fix(http): skip bodies for bodyless responses",
+        "test(meta): use default HTTP options in hook test",
+        "feat(copycat): cache L1 transaction headers during block indexing",
+        "Merge pull request #1020 from permaweb/fix/httpsig-bundle-hint",
+        "Merge pull request #1018 from permaweb/fix/dev_cron_report_url",
+        "feat(copycat): skip already-indexed blocks unless reindex is requested",
+        "Merge pull request #1021 from permaweb/impr/copycat-cache-tx-headers",
+        "chore: docs; speeling",
+        "impr: log ordering",
+        "Merge pull request #794 from permaweb/impr/log_host",
         "Merge pull request #1015 from permaweb/fix/manifest-route-scaling",
         "wip: fixes, simplification",
         "Merge pull request #1013 from permaweb/feat/http-reply-sigs",
@@ -223,34 +247,22 @@
         "fix(arweave-store): load pending indexed txs",
         "fix(arweave-offset): encode pending offsets",
         "feat(copycat): index nested bundles",
-        "fix(query-arweave): order pending offsets",
-        "fix(arweave): read pending chunk ranges",
-        "feat(copycat): index pending arweave txs",
-        "feat(copycat): simplify arweave index modes",
-        "fix(copycat): allow pending index upgrades",
-        "docs(copycat): describe shallow indexing mode",
-        "fix(copycat): honor shallow legacy indexes",
-        "fix(copycat): include pending in default ranges",
-        "fix(copycat): simplify arweave range handling",
-        "fix(query): add ephemeral cursors",
-        "Merge pull request #961 from permaweb/re/l3-cleanup-160626",
-        "Merge pull request #962 from permaweb/fix/ephem-cursors",
-        "Merge pull request #964 from permaweb/impr/l3-cleanup"
+        "fix(query-arweave): order pending offsets"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work has recently focused on safer node operation, clearer trust at HTTP/message handoff points, and easier operator checks. Today's merge adds a performance fix for large manifest route handling through PR #1015, avoiding expansion of unrelated paths and cutting lookup time and memory use in the PR benchmark. The trajectory is still practical hardening: fewer slow edge cases, less wasted node work, and easier operation for apps with larger route maps.",
-      "current_phase": "manifest route performance and node efficiency",
+      "rolling_context": "Sam's visible HyperBEAM work is continuing a practical hardening run after recent manifest route performance fixes. Today's merges focused on preserving bundled signed messages across codec and HTTP handling, avoiding invalid bodies on 204/304 HTTP responses, improving Arweave block indexing efficiency, and adding host data to request logs for easier manifest debugging. The work points to fewer message-format edge cases, less repeated node work, and clearer operator checks.",
+      "current_phase": "HTTP/message hardening and Arweave indexing efficiency",
       "recent_themes": [
-        "large manifest route scaling",
-        "less wasted node work",
-        "HTTP and message path hardening"
+        "signed bundled message preservation",
+        "less repeated Arweave indexing work",
+        "clearer HTTP and manifest debugging"
       ],
       "narrative_threads": [
-        "making AO node behavior less fragile under real app loads",
-        "turning edge-case fixes into better builder and operator experience"
+        "making HyperBEAM less fragile under real app traffic",
+        "reducing wasted node work while improving operator visibility"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-07-14T15:48:48Z",
+      "last_success_at": "2026-07-16T15:48:36Z",
       "last_seen_shas": [
         "df798370cf68471af070c5a3001d2b52e0de00e4",
         "060176fa60a5c3be51a7db4584a7edc710e05f81",
@@ -379,19 +391,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-07-14T15:48:48Z",
+      "last_success_at": "2026-07-16T15:48:36Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-07-14T15:48:48Z",
+      "last_success_at": "2026-07-16T15:48:36Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-07-14T15:48:48Z",
+      "last_success_at": "2026-07-16T15:48:36Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-07-14T15:48:48Z",
+      "last_success_at": "2026-07-16T15:48:36Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
