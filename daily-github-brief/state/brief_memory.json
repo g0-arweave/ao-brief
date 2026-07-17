@@ -1,11 +1,16 @@
 {
   "global": {
-    "last_success_at": "2026-07-16T15:48:36Z"
+    "last_success_at": "2026-07-17T15:43:33Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-07-16T15:48:36Z",
+      "last_success_at": "2026-07-17T15:43:33Z",
       "last_seen_shas": [
+        "689284574646bbbb94ac3bed3738ee697996a56a",
+        "9cda600ae3cdaab08493d79c9224bbcc2dc522b6",
+        "a3485a95a3a3de57d1d4a7276e8445292e9871df",
+        "50401cff2da0b0b188dcd29958e8481d8004c3e0",
+        "2aee6a7eb8979076d49cf7ba06eff3bb18de36f2",
         "6f252a3beed358bb8a12390ba434f6fe15fe7704",
         "a6193f3a5d7370e45bd44bc52735146c64cefb02",
         "043ca1ffa1648207ca129d1c79cd6586fb3b041c",
@@ -166,8 +171,13 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-07-16T14:20:33Z",
+      "last_public_activity_at": "2026-07-17T03:17:07Z",
       "recent_commit_titles": [
+        "fix: preserve opaque arweave offset keys",
+        "test: cover arweave offset store discovery",
+        "Merge pull request #1024 from permaweb/fix/arweave-store-slashes",
+        "fix: make arweave tx indexing configurable",
+        "Merge pull request #1025 from permaweb/fix/arweave-index-txs-option",
         "fix(codec): preserve commitment bundle hints",
         "fix(http): preserve structured HTTPSig messages",
         "fix(http): skip bodies for bodyless responses",
@@ -242,27 +252,22 @@
         "Improve GraphQL ID matching performance",
         "Merge pull request #966 from permaweb/impr/gql-perf",
         "Merge pull request #965 from permaweb/re/copycat-gql-impr",
-        "fix: rename signer package scope to devices",
-        "Merge pull request #956 from permaweb/fix/forge-publish",
-        "fix(arweave-store): load pending indexed txs",
-        "fix(arweave-offset): encode pending offsets",
-        "feat(copycat): index nested bundles",
-        "fix(query-arweave): order pending offsets"
+        "fix: rename signer package scope to devices"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work is continuing a practical hardening run after recent manifest route performance fixes. Today's merges focused on preserving bundled signed messages across codec and HTTP handling, avoiding invalid bodies on 204/304 HTTP responses, improving Arweave block indexing efficiency, and adding host data to request logs for easier manifest debugging. The work points to fewer message-format edge cases, less repeated node work, and clearer operator checks.",
-      "current_phase": "HTTP/message hardening and Arweave indexing efficiency",
+      "rolling_context": "Sam's visible HyperBEAM work continues to harden Arweave-linked storage and indexing paths after recent HTTP/message fixes and Arweave indexing efficiency work. Today's commits fixed Arweave offset key handling for IDs containing `/`, added test coverage for offset store discovery, and introduced an `arweave-index-txs` option so operators can disable caching of small `~tx@1.0` messages when desired. The durable direction is fewer rare data-path failures and more explicit node configuration.",
+      "current_phase": "Arweave storage reliability and cache control",
       "recent_themes": [
-        "signed bundled message preservation",
-        "less repeated Arweave indexing work",
-        "clearer HTTP and manifest debugging"
+        "Arweave ID encoding edge cases",
+        "offset store test coverage",
+        "operator control over transaction caching"
       ],
       "narrative_threads": [
-        "making HyperBEAM less fragile under real app traffic",
-        "reducing wasted node work while improving operator visibility"
+        "making node data handling less fragile",
+        "turning indexing and caching behavior into clear operator choices"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-07-16T15:48:36Z",
+      "last_success_at": "2026-07-17T15:43:33Z",
       "last_seen_shas": [
         "df798370cf68471af070c5a3001d2b52e0de00e4",
         "060176fa60a5c3be51a7db4584a7edc710e05f81",
@@ -391,19 +396,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-07-16T15:48:36Z",
+      "last_success_at": "2026-07-17T15:43:33Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-07-16T15:48:36Z",
+      "last_success_at": "2026-07-17T15:43:33Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-07-16T15:48:36Z",
+      "last_success_at": "2026-07-17T15:43:33Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-07-16T15:48:36Z",
+      "last_success_at": "2026-07-17T15:43:33Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
