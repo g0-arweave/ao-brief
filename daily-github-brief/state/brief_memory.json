@@ -1,11 +1,13 @@
 {
   "global": {
-    "last_success_at": "2026-07-17T15:43:33Z"
+    "last_success_at": "2026-07-19T15:16:45Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-07-17T15:43:33Z",
+      "last_success_at": "2026-07-19T15:16:45Z",
       "last_seen_shas": [
+        "daa72d0f3ebee3b4cf3c477fd4c867917ac9c839",
+        "a572d76eb07c023a627823f3731d8961b3ff8285",
         "689284574646bbbb94ac3bed3738ee697996a56a",
         "9cda600ae3cdaab08493d79c9224bbcc2dc522b6",
         "a3485a95a3a3de57d1d4a7276e8445292e9871df",
@@ -171,8 +173,10 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-07-17T03:17:07Z",
+      "last_public_activity_at": "2026-07-18T19:00:34Z",
       "recent_commit_titles": [
+        "impr: honor `store-all-signed` for messages committed via `~auth-hook@1.0`",
+        "Merge pull request #1027 from permaweb/fix/store-hook-signed-requests",
         "fix: preserve opaque arweave offset keys",
         "test: cover arweave offset store discovery",
         "Merge pull request #1024 from permaweb/fix/arweave-store-slashes",
@@ -250,24 +254,22 @@
         "Precompute store benchmark requests",
         "Merge pull request #969 from permaweb/impr/store-benchmarks",
         "Improve GraphQL ID matching performance",
-        "Merge pull request #966 from permaweb/impr/gql-perf",
-        "Merge pull request #965 from permaweb/re/copycat-gql-impr",
-        "fix: rename signer package scope to devices"
+        "Merge pull request #966 from permaweb/impr/gql-perf"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to harden Arweave-linked storage and indexing paths after recent HTTP/message fixes and Arweave indexing efficiency work. Today's commits fixed Arweave offset key handling for IDs containing `/`, added test coverage for offset store discovery, and introduced an `arweave-index-txs` option so operators can disable caching of small `~tx@1.0` messages when desired. The durable direction is fewer rare data-path failures and more explicit node configuration.",
-      "current_phase": "Arweave storage reliability and cache control",
+      "rolling_context": "Sam's visible HyperBEAM work continues to tighten storage and message-handling reliability around paths that affect real AO app flows. Today's merged PR made `store-all-signed` apply to messages committed through `~auth-hook@1.0`, with the PR noting hosted-wallet style messages protected by `~secret@1.0` can now be committed to disk and read back later. This extends the recent focus on fewer rare data-path failures and more consistent operator configuration.",
+      "current_phase": "Signed-message storage consistency",
       "recent_themes": [
-        "Arweave ID encoding edge cases",
-        "offset store test coverage",
-        "operator control over transaction caching"
+        "auth-hook signed message storage",
+        "operator config consistency",
+        "read-back reliability"
       ],
       "narrative_threads": [
-        "making node data handling less fragile",
-        "turning indexing and caching behavior into clear operator choices"
+        "making node behavior match operator settings",
+        "reducing edge-case failures in storage and message paths"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-07-17T15:43:33Z",
+      "last_success_at": "2026-07-19T15:16:45Z",
       "last_seen_shas": [
         "df798370cf68471af070c5a3001d2b52e0de00e4",
         "060176fa60a5c3be51a7db4584a7edc710e05f81",
@@ -396,19 +398,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-07-17T15:43:33Z",
+      "last_success_at": "2026-07-19T15:16:45Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-07-17T15:43:33Z",
+      "last_success_at": "2026-07-19T15:16:45Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-07-17T15:43:33Z",
+      "last_success_at": "2026-07-19T15:16:45Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-07-17T15:43:33Z",
+      "last_success_at": "2026-07-19T15:16:45Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
