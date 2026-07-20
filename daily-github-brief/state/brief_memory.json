@@ -1,11 +1,14 @@
 {
   "global": {
-    "last_success_at": "2026-07-19T15:16:45Z"
+    "last_success_at": "2026-07-20T16:02:48Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-07-19T15:16:45Z",
+      "last_success_at": "2026-07-20T16:02:48Z",
       "last_seen_shas": [
+        "c94af88dc1270d7d3d77fd04e60a0929afe932ff",
+        "562d62f03038776f163f310f286c8e6a9cc0bbe1",
+        "8b9105d7c1a8b2bd93fc050dfd093fa49b80b0be",
         "daa72d0f3ebee3b4cf3c477fd4c867917ac9c839",
         "a572d76eb07c023a627823f3731d8961b3ff8285",
         "689284574646bbbb94ac3bed3738ee697996a56a",
@@ -173,8 +176,11 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-07-18T19:00:34Z",
+      "last_public_activity_at": "2026-07-19T20:48:01Z",
       "recent_commit_titles": [
+        "fix: preserve application upload targets",
+        "fix(httpsig): preserve nested content-disposition",
+        "Merge pull request #1028 from permaweb/fix/andee-tunnel-runtime",
         "impr: honor `store-all-signed` for messages committed via `~auth-hook@1.0`",
         "Merge pull request #1027 from permaweb/fix/store-hook-signed-requests",
         "fix: preserve opaque arweave offset keys",
@@ -251,25 +257,23 @@
         "impr: replace b64rs with b64veryfast",
         "Merge pull request #975 from permaweb/impr/b64veryfast",
         "Merge pull request #976 from permaweb/impr/redactions-revisit",
-        "Precompute store benchmark requests",
-        "Merge pull request #969 from permaweb/impr/store-benchmarks",
-        "Improve GraphQL ID matching performance",
-        "Merge pull request #966 from permaweb/impr/gql-perf"
+        "Precompute store benchmark requests"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to tighten storage and message-handling reliability around paths that affect real AO app flows. Today's merged PR made `store-all-signed` apply to messages committed through `~auth-hook@1.0`, with the PR noting hosted-wallet style messages protected by `~secret@1.0` can now be committed to disk and read back later. This extends the recent focus on fewer rare data-path failures and more consistent operator configuration.",
-      "current_phase": "Signed-message storage consistency",
+      "rolling_context": "Sam's visible HyperBEAM work continues to tighten reliability around the paths real AO apps use to upload, encode, read, and store messages. After recent signed-message storage and read-back fixes, today's merged PR #1028 fixed codec edge cases for application upload targets, nested signed-message headers, and Arweave transaction reads through the node's own Arweave-reading feature. The durable theme is fewer rare data-path failures and more consistent behavior for builders and operators.",
+      "current_phase": "Codec and upload path reliability",
       "recent_themes": [
-        "auth-hook signed message storage",
-        "operator config consistency",
-        "read-back reliability"
+        "message upload target preservation",
+        "nested signed-message header handling",
+        "Arweave transaction read consistency"
       ],
       "narrative_threads": [
-        "making node behavior match operator settings",
-        "reducing edge-case failures in storage and message paths"
+        "reducing real-app message edge cases",
+        "making HyperBEAM less fragile to operate",
+        "improving read-back and encoding consistency"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-07-19T15:16:45Z",
+      "last_success_at": "2026-07-20T16:02:48Z",
       "last_seen_shas": [
         "df798370cf68471af070c5a3001d2b52e0de00e4",
         "060176fa60a5c3be51a7db4584a7edc710e05f81",
@@ -398,19 +402,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-07-19T15:16:45Z",
+      "last_success_at": "2026-07-20T16:02:48Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-07-19T15:16:45Z",
+      "last_success_at": "2026-07-20T16:02:48Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-07-19T15:16:45Z",
+      "last_success_at": "2026-07-20T16:02:48Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-07-19T15:16:45Z",
+      "last_success_at": "2026-07-20T16:02:48Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
