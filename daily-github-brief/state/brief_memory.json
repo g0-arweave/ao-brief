@@ -1,11 +1,14 @@
 {
   "global": {
-    "last_success_at": "2026-07-23T16:03:10Z"
+    "last_success_at": "2026-07-25T15:30:05Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-07-23T16:03:10Z",
+      "last_success_at": "2026-07-25T15:30:05Z",
       "last_seen_shas": [
+        "175bed5c2f4bce92257cf3b36c6f9d04bbb63255",
+        "b6923b65857c6fb44928efa2bbff5c2473b93e1c",
+        "a5c39818a6cb67905845f8fe2281193f7f82567d",
         "2b32b24513ef62222183820be1a0c8d2358829ca",
         "c25a8183e159fd861245019761630e38b3d04088",
         "c94af88dc1270d7d3d77fd04e60a0929afe932ff",
@@ -178,8 +181,11 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-07-22T16:08:54Z",
+      "last_public_activity_at": "2026-07-24T22:05:35Z",
       "recent_commit_titles": [
+        "fix: resolve current scheduler locations",
+        "Merge pull request #1041 from permaweb/fix/location-tag-variants-20260724",
+        "Merge pull request #1042 from permaweb/fix/not_load_empty_device",
         "fix: maintain node message `Opts` in read/cache calls for remote stores",
         "Merge pull request #1032 from permaweb/fix/gateway-node-options",
         "fix: preserve application upload targets",
@@ -256,25 +262,22 @@
         "impr: verify bundler routing fallback by bundle signer",
         "Merge pull request #973 from permaweb/feat/GraphQL-fallback-routing",
         "chore: reduce bundler routing test to the signer assertion",
-        "Merge pull request #974 from permaweb/feat/bundler-await",
-        "Merge pull request #967 from permaweb/impr/enabling-load-remote-devices",
-        "impr: replace b64rs with b64veryfast",
-        "Merge pull request #975 from permaweb/impr/b64veryfast"
+        "Merge pull request #974 from permaweb/feat/bundler-await"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to focus on reliability in the paths real AO apps use to upload, read, cache, and store messages. After recent fixes around upload targets, nested signed-message headers, and Arweave transaction reads, PR #1032 fixed cases where node message options could be lost during remote store read/cache calls. The durable theme is fewer rare data-path failures and more consistent behavior for builders and operators.",
-      "current_phase": "Remote store and cache path reliability",
+      "rolling_context": "Sam's visible HyperBEAM work continues to focus on reliability in paths real AO apps and node operators use. After recent fixes around remote store/cache option preservation and gateway reads, today's commits improved scheduler location lookup across mainnet and legacy tag formats and added a guard against loading an empty feature module. The durable theme is fewer edge-case failures in message movement, gateway access, and node operation.",
+      "current_phase": "Gateway lookup and node load-path hardening",
       "recent_themes": [
-        "remote store option preservation",
+        "scheduler location compatibility",
         "gateway read consistency",
-        "less fragile message storage paths"
+        "safer feature loading"
       ],
       "narrative_threads": [
-        "tightening AO message paths used by real apps",
-        "reducing edge-case failures across local, gateway, and remote-node storage"
+        "fewer rare failures in common AO app paths",
+        "making node operation less fragile"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-07-23T16:03:10Z",
+      "last_success_at": "2026-07-25T15:30:05Z",
       "last_seen_shas": [
         "df798370cf68471af070c5a3001d2b52e0de00e4",
         "060176fa60a5c3be51a7db4584a7edc710e05f81",
@@ -403,19 +406,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-07-23T16:03:10Z",
+      "last_success_at": "2026-07-25T15:30:05Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-07-23T16:03:10Z",
+      "last_success_at": "2026-07-25T15:30:05Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-07-23T16:03:10Z",
+      "last_success_at": "2026-07-25T15:30:05Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-07-23T16:03:10Z",
+      "last_success_at": "2026-07-25T15:30:05Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
