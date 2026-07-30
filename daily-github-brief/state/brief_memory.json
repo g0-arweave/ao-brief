@@ -1,11 +1,12 @@
 {
   "global": {
-    "last_success_at": "2026-07-27T16:34:46Z"
+    "last_success_at": "2026-07-30T16:01:17Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-07-27T16:34:46Z",
+      "last_success_at": "2026-07-30T16:01:17Z",
       "last_seen_shas": [
+        "7135fdba50821979880ab21179c21536621ce807",
         "1b3fa07be2b92c27fee9c28a990c58cbe93d9b9e",
         "05a5979038f4a313126b4cc65c2f74edf5ebe6a5",
         "eff086c153b643d4314675a2e5f9e68f026c8f33",
@@ -184,8 +185,9 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-07-26T22:30:52Z",
+      "last_public_activity_at": "2026-07-30T14:16:22Z",
       "recent_commit_titles": [
+        "Merge pull request #1055 from permaweb/feat/name-reserved-hosts",
         "Merge pull request #1045 from permaweb/codex/fix-lua-module-loading-recursion",
         "chore: tidy flow and test",
         "Merge pull request #1044 from permaweb/codex/fix-remote-response-link-loads",
@@ -264,23 +266,22 @@
         "Merge pull request #972 from permaweb/fix/hyperbuddy-format-truncate-keys",
         "chore: add confirmed bundler routing test",
         "feat(query): GraphQL fallback cursors",
-        "test(query): cover gateway fallback to legacy GraphQL",
-        "impr: verify bundler routing fallback by bundle signer"
+        "test(query): cover gateway fallback to legacy GraphQL"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to focus on reliability in paths real AO apps and node operators use. Recent commits improved linked response reads from remote peers while keeping local stores authoritative, and fixed recursive Lua module loading when inline module source is stored in message data. The durable theme is fewer edge-case failures in message movement, code loading, gateway access, and node operation.",
-      "current_phase": "Linked response reads and Lua loading hardening",
+      "rolling_context": "Sam's visible HyperBEAM work continues to focus on reliability in paths real AO apps and node operators use. Recent commits improved linked response reads from remote peers, fixed recursive Lua module loading, and now clarified reserved host label naming in the name-handling path. The durable theme is fewer edge-case failures in message movement, code loading, gateway access, naming, and node operation.",
+      "current_phase": "Name handling and edge-case hardening",
       "recent_themes": [
+        "reserved host label naming",
         "remote response link loading",
-        "Lua module loading safety",
-        "HTTP flow testing"
+        "Lua module loading safety"
       ],
       "narrative_threads": [
-        "fewer edge-case failures in app and node paths",
-        "more reliable cross-peer message and data reads"
+        "making common AO node flows less fragile",
+        "turning implicit edge cases into clearer behavior"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-07-27T16:34:46Z",
+      "last_success_at": "2026-07-30T16:01:17Z",
       "last_seen_shas": [
         "df798370cf68471af070c5a3001d2b52e0de00e4",
         "060176fa60a5c3be51a7db4584a7edc710e05f81",
@@ -409,19 +410,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-07-27T16:34:46Z",
+      "last_success_at": "2026-07-30T16:01:17Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-07-27T16:34:46Z",
+      "last_success_at": "2026-07-30T16:01:17Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-07-27T16:34:46Z",
+      "last_success_at": "2026-07-30T16:01:17Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-07-27T16:34:46Z",
+      "last_success_at": "2026-07-30T16:01:17Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
