@@ -1,11 +1,18 @@
 {
   "global": {
-    "last_success_at": "2026-07-24T17:13:32Z"
+    "last_success_at": "2026-07-31T16:23:52Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-07-24T17:13:32Z",
+      "last_success_at": "2026-07-31T16:23:52Z",
       "last_seen_shas": [
+        "175bed5c2f4bce92257cf3b36c6f9d04bbb63255",
+        "b6923b65857c6fb44928efa2bbff5c2473b93e1c",
+        "a5c39818a6cb67905845f8fe2281193f7f82567d",
+        "1b3fa07be2b92c27fee9c28a990c58cbe93d9b9e",
+        "05a5979038f4a313126b4cc65c2f74edf5ebe6a5",
+        "eff086c153b643d4314675a2e5f9e68f026c8f33",
+        "7135fdba50821979880ab21179c21536621ce807",
         "daa72d0f3ebee3b4cf3c477fd4c867917ac9c839",
         "a572d76eb07c023a627823f3731d8961b3ff8285",
         "4142f732ac7e6b648d0f4f0d8329aad5efb26863",
@@ -217,8 +224,15 @@
         "6be1816357ee247c9aba73901fb6f530ce6d4697",
         "cca5b4d416b012e11b080853cd35f303f8efeda4"
       ],
-      "last_public_activity_at": "2026-07-22T16:08:54Z",
+      "last_public_activity_at": "2026-07-30T14:16:22Z",
       "recent_commit_titles": [
+        "fix: resolve current scheduler locations",
+        "Merge pull request #1041 from permaweb/fix/location-tag-variants-20260724",
+        "Merge pull request #1042 from permaweb/fix/not_load_empty_device",
+        "Merge pull request #1045 from permaweb/codex/fix-lua-module-loading-recursion",
+        "chore: tidy flow and test",
+        "Merge pull request #1044 from permaweb/codex/fix-remote-response-link-loads",
+        "Merge pull request #1055 from permaweb/feat/name-reserved-hosts",
         "impr: honor `store-all-signed` for messages committed via `~auth-hook@1.0`",
         "Merge pull request #1027 from permaweb/fix/store-hook-signed-requests",
         "fix: preserve L1 gateway commitments",
@@ -291,30 +305,24 @@
         "perf: NIF-accelerate hb_path:to_binary path normalization",
         "chore: document normalize_path in NIF header, align comment style",
         "Merge pull request #978 from permaweb/perf/opts",
-        "Merge pull request #980 from permaweb/feat/hb-util-string",
-        "Merge pull request #979 from permaweb/impr/build-speed",
-        "impr: single read_prefix scan for LMDB composite reads + commitments inline-value",
-        "feat: add ?event_debug compile-gated trace macro",
-        "perf: route hot-path debug traces through ?event_debug",
-        "Optimize LMDB cache message writes",
-        "Fix header dependency rebuilds",
-        "Use include paths for header hash keys"
+        "Merge pull request #980 from permaweb/feat/hb-util-string"
       ],
-      "rolling_context": "HyperBEAM continued its reliability push with a clear focus on preserving message data across node handoffs. This week added fixes for hosted-wallet signed messages committed through auth hooks, L1 gateway commitment preservation, upload target preservation, nested content header encoding, and remote-store option retention. The work extends the prior pattern of hardening HTTP, codec, gateway, and storage paths so AO messages remain trustworthy when stored, read, uploaded, or cached.",
-      "current_phase": "message preservation and node hardening",
+      "rolling_context": "HyperBEAM continued its node-hardening run with fixes around scheduler lookup, remote response-link loading, Lua module loading, and empty add-on feature handling. The strongest new evidence is PR #1044 preserving response-peer provenance and adding remote fallback reads, plus PR #1041 supporting both mainnet lowercase and legacy scheduler location tags. The work extends the prior message-preservation theme into peer-linked data access and safer load paths.",
+      "current_phase": "node reliability and linked-data hardening",
       "recent_themes": [
-        "signed message storage",
-        "gateway commitment preservation",
-        "upload and header encoding fixes",
-        "remote-store cache option retention"
+        "scheduler location lookup",
+        "remote response-link loading",
+        "Lua module load safety",
+        "empty feature load prevention",
+        "reserved host label naming"
       ],
       "narrative_threads": [
-        "fewer data-loss edge cases across AO node paths",
-        "clearer trust as messages move between signing, storage, gateways, uploads, and caches"
+        "AO messages and linked data retaining enough context to be trusted across node handoffs",
+        "making HyperBEAM less fragile for operators and app builders through focused edge-case fixes"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-07-24T17:13:32Z",
+      "last_success_at": "2026-07-31T16:23:52Z",
       "last_seen_shas": [
         "5d22ac8727db466f3654986a1333b55618146ecc",
         "4bfdde8d62c061e3e8ea58e337be4c3efd319611",
@@ -460,19 +468,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-07-24T17:13:32Z",
+      "last_success_at": "2026-07-31T16:23:52Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-07-24T17:13:32Z",
+      "last_success_at": "2026-07-31T16:23:52Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-07-24T17:13:32Z",
+      "last_success_at": "2026-07-31T16:23:52Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-07-24T17:13:32Z",
+      "last_success_at": "2026-07-31T16:23:52Z",
       "last_seen_shas": [
         "2348a9dbef90b207303c14b025607453c02b3e57",
         "46a7cdf2abeca0380cd5c612a6abad1e3993e8ae",
