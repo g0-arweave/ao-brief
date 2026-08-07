@@ -1,10 +1,10 @@
 {
   "global": {
-    "last_success_at": "2026-07-30T16:01:17Z"
+    "last_success_at": "2026-08-07T15:10:32Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-07-30T16:01:17Z",
+      "last_success_at": "2026-08-07T15:10:32Z",
       "last_seen_shas": [
         "7135fdba50821979880ab21179c21536621ce807",
         "1b3fa07be2b92c27fee9c28a990c58cbe93d9b9e",
@@ -281,8 +281,10 @@
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-07-30T16:01:17Z",
+      "last_success_at": "2026-08-07T15:10:32Z",
       "last_seen_shas": [
+        "5a8f0fe67837c19d426c0e527b312bb6f4c24d4e",
+        "892906d074fb5d22c3f112c91661b5e63874c925",
         "df798370cf68471af070c5a3001d2b52e0de00e4",
         "060176fa60a5c3be51a7db4584a7edc710e05f81",
         "88c08eb43fd88e29e0c7bbbb87d3433ab014945e",
@@ -341,8 +343,10 @@
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
       ],
-      "last_public_activity_at": "2026-07-14T13:21:40Z",
+      "last_public_activity_at": "2026-08-06T13:01:30Z",
       "recent_commit_titles": [
+        "Preserve request authority when proxying: HTTP/2 has no host header",
+        "fix: keep the TLS listener open for slow tunnelled responses",
         "M2 (device-only termination): cert->TLS core proven; terminator + device written",
         "M2 termination PROVEN in-node against the live HyperBEAM broker",
         "M3: renewal loop, A-record self-publish, dev_acme wiring",
@@ -396,33 +400,33 @@
         "Port mystical devices to packaged HyperBEAM layout",
         "test: add local paid whisper compliance flows"
       ],
-      "rolling_context": "xylophonez's visible public work continues to focus on making HyperBEAM nodes easier to expose and operate. After recent reverse tunnel and config work, today's hyperbeam-acme commits turned HTTPS cert handling into a packaged, Arweave-pinned ACME device with proof scripts, renewal logic, config wiring, and boot/dispatch fixes. The recurring direction is moving node access features out of local glue and into shareable config plus published components.",
-      "current_phase": "HyperBEAM ACME HTTPS device packaging and ship hardening",
+      "rolling_context": "xylophonez's visible public work remains focused on making HyperBEAM nodes easier to expose and operate over standard HTTPS. After earlier ACME packaging, Arweave-pinned device work, and config wiring, the latest hyperbeam-acme commits fixed practical reliability issues in browser HTTP/2 proxy routing and slow tunnelled responses. The durable trend is turning node access features into reusable pieces that are less fragile in normal web conditions.",
+      "current_phase": "HyperBEAM HTTPS proxy reliability hardening",
       "recent_themes": [
         "trusted HTTPS for HyperBEAM nodes",
-        "config-first node features",
-        "Arweave-pinned devices",
-        "boot and dispatch hardening"
+        "browser-compatible proxy routing",
+        "slow tunnel response reliability",
+        "shareable node access features"
       ],
       "narrative_threads": [
-        "easier node operation through reusable published components",
-        "less fragile public access for HyperBEAM services"
+        "moving node access from local glue into reusable HyperBEAM components",
+        "hardening HTTPS and tunnel paths for real browser and operator use"
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-07-30T16:01:17Z",
+      "last_success_at": "2026-08-07T15:10:32Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-07-30T16:01:17Z",
+      "last_success_at": "2026-08-07T15:10:32Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-07-30T16:01:17Z",
+      "last_success_at": "2026-08-07T15:10:32Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-07-30T16:01:17Z",
+      "last_success_at": "2026-08-07T15:10:32Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
