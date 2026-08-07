@@ -1,10 +1,10 @@
 {
   "global": {
-    "last_success_at": "2026-07-31T17:11:56Z"
+    "last_success_at": "2026-08-07T15:36:28Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-07-31T17:11:56Z",
+      "last_success_at": "2026-08-07T15:36:28Z",
       "last_seen_shas": [
         "175bed5c2f4bce92257cf3b36c6f9d04bbb63255",
         "b6923b65857c6fb44928efa2bbff5c2473b93e1c",
@@ -322,8 +322,10 @@
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-07-31T17:11:56Z",
+      "last_success_at": "2026-08-07T15:36:28Z",
       "last_seen_shas": [
+        "5a8f0fe67837c19d426c0e527b312bb6f4c24d4e",
+        "892906d074fb5d22c3f112c91661b5e63874c925",
         "5d22ac8727db466f3654986a1333b55618146ecc",
         "4bfdde8d62c061e3e8ea58e337be4c3efd319611",
         "dfaaf6b7b0a2fa2a509e850b5f0be1c78416a7c8",
@@ -390,8 +392,10 @@
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
       ],
-      "last_public_activity_at": "2026-07-14T13:21:40Z",
+      "last_public_activity_at": "2026-08-06T13:01:30Z",
       "recent_commit_titles": [
+        "Preserve request authority when proxying: HTTP/2 has no host header",
+        "fix: keep the TLS listener open for slow tunnelled responses",
         "tunnel-broker: self-hostable reverse HTTP tunnel broker for HyperBEAM nodes",
         "Add real Namecheap+VPS deploy recipe (proven on tunnel.permaweb.space)",
         "Prove device+config broker; add LapEE topology, config profiles",
@@ -453,34 +457,32 @@
         "Port mystical devices to packaged HyperBEAM layout",
         "test: add local paid whisper compliance flows"
       ],
-      "rolling_context": "xylophonez focused on reusable HyperBEAM add-ons for node exposure and HTTPS setup. `hyperbeam-tunnel` added a self-hostable reverse HTTP tunnel, deploy recipes, config fragments, proof tests, and a pinned published `tunnel@1.0` implementation. `hyperbeam-acme` added ACME DNS-01 wildcard issuance, TLS termination, renewal, production proof scripts, forge packaging changes, and a pinned published `acme@1.0` config fragment.",
-      "current_phase": "HyperBEAM add-on packaging and deployment proofs",
+      "rolling_context": "xylophonez continues to focus public work on HyperBEAM add-ons that make nodes easier to expose over the web. After earlier tunnel and ACME HTTPS packaging work, this week tightened `hyperbeam-acme` reliability with fixes for browser HTTP/2 host routing and slow tunneled response timeouts.",
+      "current_phase": "HyperBEAM HTTPS tunnel reliability fixes",
       "recent_themes": [
-        "self-hostable HyperBEAM tunnels",
-        "ACME HTTPS certificate automation",
-        "config fragments and pinned packages",
-        "live proof scripts and deployment docs"
+        "browser-safe HTTPS proxying",
+        "slow tunneled response handling",
+        "HyperBEAM web exposure reliability"
       ],
       "narrative_threads": [
-        "turning node capabilities into shareable add-ons",
-        "making exposed HyperBEAM nodes easier to run",
-        "pairing code with deploy proof and operator docs"
+        "turning HyperBEAM add-ons into easier-to-run web-facing tools",
+        "finding and fixing real traffic edge cases after packaging work"
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-07-31T17:11:56Z",
+      "last_success_at": "2026-08-07T15:36:28Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-07-31T17:11:56Z",
+      "last_success_at": "2026-08-07T15:36:28Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-07-31T17:11:56Z",
+      "last_success_at": "2026-08-07T15:36:28Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-07-31T17:11:56Z",
+      "last_success_at": "2026-08-07T15:36:28Z",
       "last_seen_shas": [
         "2348a9dbef90b207303c14b025607453c02b3e57",
         "46a7cdf2abeca0380cd5c612a6abad1e3993e8ae",
