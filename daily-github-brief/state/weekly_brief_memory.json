@@ -1,11 +1,12 @@
 {
   "global": {
-    "last_success_at": "2026-08-07T15:36:28Z"
+    "last_success_at": "2026-08-07T16:36:14Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-08-07T15:36:28Z",
+      "last_success_at": "2026-08-07T16:36:14Z",
       "last_seen_shas": [
+        "bde12b0852fb12c343e7c44a0c88ea7c3d165435",
         "175bed5c2f4bce92257cf3b36c6f9d04bbb63255",
         "b6923b65857c6fb44928efa2bbff5c2473b93e1c",
         "a5c39818a6cb67905845f8fe2281193f7f82567d",
@@ -224,8 +225,9 @@
         "6be1816357ee247c9aba73901fb6f530ce6d4697",
         "cca5b4d416b012e11b080853cd35f303f8efeda4"
       ],
-      "last_public_activity_at": "2026-07-30T14:16:22Z",
+      "last_public_activity_at": "2026-08-07T16:01:29Z",
       "recent_commit_titles": [
+        "Merge pull request #1061 from permaweb/fix/forge-spec-body",
         "fix: resolve current scheduler locations",
         "Merge pull request #1041 from permaweb/fix/location-tag-variants-20260724",
         "Merge pull request #1042 from permaweb/fix/not_load_empty_device",
@@ -304,25 +306,22 @@
         "perf: build hb_util_string NIF at -O3",
         "perf: NIF-accelerate hb_path:to_binary path normalization",
         "chore: document normalize_path in NIF header, align comment style",
-        "Merge pull request #978 from permaweb/perf/opts",
-        "Merge pull request #980 from permaweb/feat/hb-util-string"
+        "Merge pull request #978 from permaweb/perf/opts"
       ],
-      "rolling_context": "HyperBEAM continued its node-hardening run with fixes around scheduler lookup, remote response-link loading, Lua module loading, and empty add-on feature handling. The strongest new evidence is PR #1044 preserving response-peer provenance and adding remote fallback reads, plus PR #1041 supporting both mainnet lowercase and legacy scheduler location tags. The work extends the prior message-preservation theme into peer-linked data access and safer load paths.",
-      "current_phase": "node reliability and linked-data hardening",
+      "rolling_context": "HyperBEAM continued its reliability and tooling cleanup with PR #1061, which rejects empty Forge specs before publishing. The change prevents a confusing later `invalid_ans104_signature` failure by adding earlier validation in the Forge packager and publish path. This extends the recent pattern of making AO node tooling less fragile and easier for builders to debug.",
+      "current_phase": "Forge publish-path hardening",
       "recent_themes": [
-        "scheduler location lookup",
-        "remote response-link loading",
-        "Lua module load safety",
-        "empty feature load prevention",
-        "reserved host label naming"
+        "Forge spec validation",
+        "clearer publish errors",
+        "package sharing reliability"
       ],
       "narrative_threads": [
-        "AO messages and linked data retaining enough context to be trusted across node handoffs",
-        "making HyperBEAM less fragile for operators and app builders through focused edge-case fixes"
+        "making infrastructure less fragile and easier to operate",
+        "cleaner ways for developers to share and install node functionality"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-08-07T15:36:28Z",
+      "last_success_at": "2026-08-07T16:36:14Z",
       "last_seen_shas": [
         "5a8f0fe67837c19d426c0e527b312bb6f4c24d4e",
         "892906d074fb5d22c3f112c91661b5e63874c925",
@@ -470,19 +469,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-08-07T15:36:28Z",
+      "last_success_at": "2026-08-07T16:36:14Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-08-07T15:36:28Z",
+      "last_success_at": "2026-08-07T16:36:14Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-08-07T15:36:28Z",
+      "last_success_at": "2026-08-07T16:36:14Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-08-07T15:36:28Z",
+      "last_success_at": "2026-08-07T16:36:14Z",
       "last_seen_shas": [
         "2348a9dbef90b207303c14b025607453c02b3e57",
         "46a7cdf2abeca0380cd5c612a6abad1e3993e8ae",
