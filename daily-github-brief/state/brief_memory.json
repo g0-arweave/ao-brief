@@ -1,11 +1,12 @@
 {
   "global": {
-    "last_success_at": "2026-08-07T15:10:32Z"
+    "last_success_at": "2026-08-08T14:51:01Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-08-07T15:10:32Z",
+      "last_success_at": "2026-08-08T14:51:01Z",
       "last_seen_shas": [
+        "bde12b0852fb12c343e7c44a0c88ea7c3d165435",
         "7135fdba50821979880ab21179c21536621ce807",
         "1b3fa07be2b92c27fee9c28a990c58cbe93d9b9e",
         "05a5979038f4a313126b4cc65c2f74edf5ebe6a5",
@@ -185,8 +186,9 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-07-30T14:16:22Z",
+      "last_public_activity_at": "2026-08-07T16:01:29Z",
       "recent_commit_titles": [
+        "Merge pull request #1061 from permaweb/fix/forge-spec-body",
         "Merge pull request #1055 from permaweb/feat/name-reserved-hosts",
         "Merge pull request #1045 from permaweb/codex/fix-lua-module-loading-recursion",
         "chore: tidy flow and test",
@@ -265,23 +267,22 @@
         "fix: show all hyperbuddy format keys by default",
         "Merge pull request #972 from permaweb/fix/hyperbuddy-format-truncate-keys",
         "chore: add confirmed bundler routing test",
-        "feat(query): GraphQL fallback cursors",
-        "test(query): cover gateway fallback to legacy GraphQL"
+        "feat(query): GraphQL fallback cursors"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to focus on reliability in paths real AO apps and node operators use. Recent commits improved linked response reads from remote peers, fixed recursive Lua module loading, and now clarified reserved host label naming in the name-handling path. The durable theme is fewer edge-case failures in message movement, code loading, gateway access, naming, and node operation.",
-      "current_phase": "Name handling and edge-case hardening",
+      "rolling_context": "Sam's visible HyperBEAM work continues to focus on reducing edge-case failures in paths real AO builders and node operators use. Today's PR #1061 added an early Forge publish check that rejects empty specs with a clearer error instead of failing later during bundle verification. This extends the recent pattern of small reliability fixes across message reads, Lua module loading, name handling, and now Forge publishing.",
+      "current_phase": "Forge publish validation and edge-case hardening",
       "recent_themes": [
-        "reserved host label naming",
-        "remote response link loading",
-        "Lua module loading safety"
+        "clearer Forge publish errors",
+        "empty spec validation",
+        "operator and builder setup friction"
       ],
       "narrative_threads": [
-        "making common AO node flows less fragile",
-        "turning implicit edge cases into clearer behavior"
+        "fewer confusing failures in AO node tooling",
+        "cleaner path for sharing node functionality"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-08-07T15:10:32Z",
+      "last_success_at": "2026-08-08T14:51:01Z",
       "last_seen_shas": [
         "5a8f0fe67837c19d426c0e527b312bb6f4c24d4e",
         "892906d074fb5d22c3f112c91661b5e63874c925",
@@ -414,19 +415,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-08-07T15:10:32Z",
+      "last_success_at": "2026-08-08T14:51:01Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-08-07T15:10:32Z",
+      "last_success_at": "2026-08-08T14:51:01Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-08-07T15:10:32Z",
+      "last_success_at": "2026-08-08T14:51:01Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-08-07T15:10:32Z",
+      "last_success_at": "2026-08-08T14:51:01Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
