@@ -1,11 +1,15 @@
 {
   "global": {
-    "last_success_at": "2026-08-08T14:51:01Z"
+    "last_success_at": "2026-08-09T14:54:20Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-08-08T14:51:01Z",
+      "last_success_at": "2026-08-09T14:54:20Z",
       "last_seen_shas": [
+        "73a8f610499ab3899461737536f604d54aa1586b",
+        "7131ffd29d9d47b3e8962c0f393a8f7669169169",
+        "e34ecb88c581fb0a791df58a1431187de69095fb",
+        "54016d67ed482b1bc7bc0942034d945f1c001011",
         "bde12b0852fb12c343e7c44a0c88ea7c3d165435",
         "7135fdba50821979880ab21179c21536621ce807",
         "1b3fa07be2b92c27fee9c28a990c58cbe93d9b9e",
@@ -186,8 +190,12 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-08-07T16:01:29Z",
+      "last_public_activity_at": "2026-08-09T02:46:31Z",
       "recent_commit_titles": [
+        "impr: support cross-node cron pushes",
+        "fix: load bare ID bases before execution",
+        "Merge pull request #1066 from permaweb/fix/bare-id-resolution",
+        "Merge pull request #1067 from permaweb/impr/now-with-push",
         "Merge pull request #1061 from permaweb/fix/forge-spec-body",
         "Merge pull request #1055 from permaweb/feat/name-reserved-hosts",
         "Merge pull request #1045 from permaweb/codex/fix-lua-module-loading-recursion",
@@ -263,26 +271,22 @@
         "Fix recorder tests using forge bootstrap",
         "Merge pull request #971 from permaweb/fix/recorder-tests",
         "feat: add bundler await support",
-        "fix: restore hyperbuddy browser rendering",
-        "fix: show all hyperbuddy format keys by default",
-        "Merge pull request #972 from permaweb/fix/hyperbuddy-format-truncate-keys",
-        "chore: add confirmed bundler routing test",
-        "feat(query): GraphQL fallback cursors"
+        "fix: restore hyperbuddy browser rendering"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to focus on reducing edge-case failures in paths real AO builders and node operators use. Today's PR #1061 added an early Forge publish check that rejects empty specs with a clearer error instead of failing later during bundle verification. This extends the recent pattern of small reliability fixes across message reads, Lua module loading, name handling, and now Forge publishing.",
-      "current_phase": "Forge publish validation and edge-case hardening",
+      "rolling_context": "Sam's visible HyperBEAM work continues to reduce edge-case failures in paths real AO builders and node operators use. After recent Forge publish validation work, today's activity moved into live process behavior: PR #1067 added cross-node cron push support and node-scoped scheduler registrations for more realistic isolated tests, while PR #1066 fixed cached-message handling so ID-derived keys are loaded before execution.",
+      "current_phase": "multi-node scheduling tests and cached-message hardening",
       "recent_themes": [
-        "clearer Forge publish errors",
-        "empty spec validation",
-        "operator and builder setup friction"
+        "cross-node scheduled message pushes",
+        "scheduler isolation by node wallet identity",
+        "cached-message execution fixes"
       ],
       "narrative_threads": [
-        "fewer confusing failures in AO node tooling",
-        "cleaner path for sharing node functionality"
+        "reducing hidden state and edge-case failures",
+        "making local test flows closer to real AO node behavior"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-08-08T14:51:01Z",
+      "last_success_at": "2026-08-09T14:54:20Z",
       "last_seen_shas": [
         "5a8f0fe67837c19d426c0e527b312bb6f4c24d4e",
         "892906d074fb5d22c3f112c91661b5e63874c925",
@@ -415,19 +419,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-08-08T14:51:01Z",
+      "last_success_at": "2026-08-09T14:54:20Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-08-08T14:51:01Z",
+      "last_success_at": "2026-08-09T14:54:20Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-08-08T14:51:01Z",
+      "last_success_at": "2026-08-09T14:54:20Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-08-08T14:51:01Z",
+      "last_success_at": "2026-08-09T14:54:20Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
