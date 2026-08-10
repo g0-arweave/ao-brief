@@ -1,11 +1,18 @@
 {
   "global": {
-    "last_success_at": "2026-08-09T14:54:20Z"
+    "last_success_at": "2026-08-10T15:18:28Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-08-09T14:54:20Z",
+      "last_success_at": "2026-08-10T15:18:28Z",
       "last_seen_shas": [
+        "cda39174b33c88324576be85fec661e0b334157b",
+        "054f53f14b809b226826806c6c3ee1b5dee02343",
+        "5cbeb06aa1bb72155e00e61ef9aa715d0abace3f",
+        "36cf7f42651f9c94e9cc5428f87691e70fab21fb",
+        "bb951760620b44b92915dc64f281e5113713476a",
+        "65320d403c6b3634ffd03da08a38126ca9808b7f",
+        "1f2115ea8239b3669ff02a78375cb692e2c27f26",
         "73a8f610499ab3899461737536f604d54aa1586b",
         "7131ffd29d9d47b3e8962c0f393a8f7669169169",
         "e34ecb88c581fb0a791df58a1431187de69095fb",
@@ -190,8 +197,15 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-08-09T02:46:31Z",
+      "last_public_activity_at": "2026-08-09T19:34:41Z",
       "recent_commit_titles": [
+        "chore: improve `CONTRIBUTING.md` with details of current canon.",
+        "chore: add `anti-patterns` section to `CONTRIBUTING.md`",
+        "chore: update `README.md`",
+        "chore: update `AGENTS.md` with suggestions for building on HyperBEAM",
+        "Merge pull request #1068 from permaweb/docs/canon-comments-and-commits-v2",
+        "fix: `README.md` header logo",
+        "Merge pull request #1069 from permaweb/fix/readme-header-logo",
         "impr: support cross-node cron pushes",
         "fix: load bare ID bases before execution",
         "Merge pull request #1066 from permaweb/fix/bare-id-resolution",
@@ -264,30 +278,24 @@
         "Merge pull request #978 from permaweb/perf/opts",
         "Merge pull request #980 from permaweb/feat/hb-util-string",
         "Merge pull request #979 from permaweb/impr/build-speed",
-        "feat: add ?event_debug compile-gated trace macro",
-        "perf: route hot-path debug traces through ?event_debug",
-        "Format device package compile errors",
-        "Merge pull request #970 from permaweb/fix/device-compile-error-format",
-        "Fix recorder tests using forge bootstrap",
-        "Merge pull request #971 from permaweb/fix/recorder-tests",
-        "feat: add bundler await support",
-        "fix: restore hyperbuddy browser rendering"
+        "feat: add ?event_debug compile-gated trace macro"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to reduce edge-case failures in paths real AO builders and node operators use. After recent Forge publish validation work, today's activity moved into live process behavior: PR #1067 added cross-node cron push support and node-scoped scheduler registrations for more realistic isolated tests, while PR #1066 fixed cached-message handling so ID-derived keys are loaded before execution.",
-      "current_phase": "multi-node scheduling tests and cached-message hardening",
+      "rolling_context": "Sam's visible HyperBEAM work moved from recent message-handling and multi-node scheduling fixes into contribution quality. PR #1068 updated CONTRIBUTING.md, AGENTS.md, and README.md to make the project's shared coding rules clearer for both humans and coding agents, with the PR text tying this directly to reducing bounced PRs and unmaintainable changes.",
+      "current_phase": "contribution quality and maintainer workflow cleanup",
       "recent_themes": [
-        "cross-node scheduled message pushes",
-        "scheduler isolation by node wallet identity",
-        "cached-message execution fixes"
+        "clearer contribution rules",
+        "agent guidance",
+        "review friction reduction"
       ],
       "narrative_threads": [
-        "reducing hidden state and edge-case failures",
-        "making local test flows closer to real AO node behavior"
+        "making HyperBEAM easier to contribute to without adding maintenance burden",
+        "pairing protocol reliability work with clearer engineering standards"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-08-09T14:54:20Z",
+      "last_success_at": "2026-08-10T15:18:28Z",
       "last_seen_shas": [
+        "7fdf901d09d96d3a4a6ca6afbb6220130089c653",
         "5a8f0fe67837c19d426c0e527b312bb6f4c24d4e",
         "892906d074fb5d22c3f112c91661b5e63874c925",
         "df798370cf68471af070c5a3001d2b52e0de00e4",
@@ -348,8 +356,9 @@
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
       ],
-      "last_public_activity_at": "2026-08-06T13:01:30Z",
+      "last_public_activity_at": "2026-08-10T13:48:17Z",
       "recent_commit_titles": [
+        "feat: discover tunnels in the tunnel picker",
         "Preserve request authority when proxying: HTTP/2 has no host header",
         "fix: keep the TLS listener open for slow tunnelled responses",
         "M2 (device-only termination): cert->TLS core proven; terminator + device written",
@@ -405,33 +414,32 @@
         "Port mystical devices to packaged HyperBEAM layout",
         "test: add local paid whisper compliance flows"
       ],
-      "rolling_context": "xylophonez's visible public work remains focused on making HyperBEAM nodes easier to expose and operate over standard HTTPS. After earlier ACME packaging, Arweave-pinned device work, and config wiring, the latest hyperbeam-acme commits fixed practical reliability issues in browser HTTP/2 proxy routing and slow tunnelled responses. The durable trend is turning node access features into reusable pieces that are less fragile in normal web conditions.",
-      "current_phase": "HyperBEAM HTTPS proxy reliability hardening",
+      "rolling_context": "xylophonez's visible public work continues to improve practical setup around HyperBEAM-related access paths. After HTTPS proxy and tunnel reliability fixes, today's andee-configurator commit added tunnel discovery to the tunnel picker and updated tests, moving the work into the operator-facing setup flow.",
+      "current_phase": "tunnel setup usability",
       "recent_themes": [
-        "trusted HTTPS for HyperBEAM nodes",
-        "browser-compatible proxy routing",
-        "slow tunnel response reliability",
-        "shareable node access features"
+        "tunnel discovery",
+        "operator setup flow",
+        "tested configurator changes"
       ],
       "narrative_threads": [
-        "moving node access from local glue into reusable HyperBEAM components",
-        "hardening HTTPS and tunnel paths for real browser and operator use"
+        "making node access easier to configure",
+        "turning HyperBEAM access features into reusable operator tooling"
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-08-09T14:54:20Z",
+      "last_success_at": "2026-08-10T15:18:28Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-08-09T14:54:20Z",
+      "last_success_at": "2026-08-10T15:18:28Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-08-09T14:54:20Z",
+      "last_success_at": "2026-08-10T15:18:28Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-08-09T14:54:20Z",
+      "last_success_at": "2026-08-10T15:18:28Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
