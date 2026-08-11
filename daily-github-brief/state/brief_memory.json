@@ -1,11 +1,15 @@
 {
   "global": {
-    "last_success_at": "2026-08-10T15:18:28Z"
+    "last_success_at": "2026-08-11T15:17:30Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-08-10T15:18:28Z",
+      "last_success_at": "2026-08-11T15:17:30Z",
       "last_seen_shas": [
+        "83ea76fcd412d330d922c3b8848cf52bdec94733",
+        "92336df90812c95d2ead9b9ed4d1ba2439662409",
+        "5f0d273327a17fa9dee6163cebe15248b26319da",
+        "2208327f82e522135fcf104a280e69d9a7f79343",
         "cda39174b33c88324576be85fec661e0b334157b",
         "054f53f14b809b226826806c6c3ee1b5dee02343",
         "5cbeb06aa1bb72155e00e61ef9aa715d0abace3f",
@@ -197,8 +201,12 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-08-09T19:34:41Z",
+      "last_public_activity_at": "2026-08-10T21:23:31Z",
       "recent_commit_titles": [
+        "Merge pull request #1071 from xylophonez/fix/p4-multi-hook-edge",
+        "Merge pull request #1072 from xylophonez/fix/hyperbuddy-metrics-content-type",
+        "fix: improve constraint of FS store paths",
+        "Merge pull request #1075 from permaweb/fix/store-fs-path-confinement",
         "chore: improve `CONTRIBUTING.md` with details of current canon.",
         "chore: add `anti-patterns` section to `CONTRIBUTING.md`",
         "chore: update `README.md`",
@@ -274,26 +282,22 @@
         "perf: route hb_util:decode type normalization through the to_lower NIF",
         "perf: build hb_util_string NIF at -O3",
         "perf: NIF-accelerate hb_path:to_binary path normalization",
-        "chore: document normalize_path in NIF header, align comment style",
-        "Merge pull request #978 from permaweb/perf/opts",
-        "Merge pull request #980 from permaweb/feat/hb-util-string",
-        "Merge pull request #979 from permaweb/impr/build-speed",
-        "feat: add ?event_debug compile-gated trace macro"
+        "chore: document normalize_path in NIF header, align comment style"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work moved from recent message-handling and multi-node scheduling fixes into contribution quality. PR #1068 updated CONTRIBUTING.md, AGENTS.md, and README.md to make the project's shared coding rules clearer for both humans and coding agents, with the PR text tying this directly to reducing bounced PRs and unmaintainable changes.",
-      "current_phase": "contribution quality and maintainer workflow cleanup",
+      "rolling_context": "Sam's visible HyperBEAM work moved from contribution quality cleanup back into operator-facing reliability fixes. Today's commits addressed paid request routing with p4 and tunnel hooks, metrics content-type handling for Hyperbuddy, and tighter filesystem store path constraints.",
+      "current_phase": "operator reliability and edge-case hardening",
       "recent_themes": [
-        "clearer contribution rules",
-        "agent guidance",
-        "review friction reduction"
+        "paid routing fixes",
+        "monitoring compatibility",
+        "safer file-store path handling"
       ],
       "narrative_threads": [
-        "making HyperBEAM easier to contribute to without adding maintenance burden",
-        "pairing protocol reliability work with clearer engineering standards"
+        "reducing silent node failure modes",
+        "making HyperBEAM easier to run and debug"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-08-10T15:18:28Z",
+      "last_success_at": "2026-08-11T15:17:30Z",
       "last_seen_shas": [
         "7fdf901d09d96d3a4a6ca6afbb6220130089c653",
         "5a8f0fe67837c19d426c0e527b312bb6f4c24d4e",
@@ -427,19 +431,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-08-10T15:18:28Z",
+      "last_success_at": "2026-08-11T15:17:30Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-08-10T15:18:28Z",
+      "last_success_at": "2026-08-11T15:17:30Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-08-10T15:18:28Z",
+      "last_success_at": "2026-08-11T15:17:30Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-08-10T15:18:28Z",
+      "last_success_at": "2026-08-11T15:17:30Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
