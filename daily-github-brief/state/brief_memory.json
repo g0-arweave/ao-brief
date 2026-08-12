@@ -1,11 +1,14 @@
 {
   "global": {
-    "last_success_at": "2026-08-11T15:17:30Z"
+    "last_success_at": "2026-08-12T15:16:15Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-08-11T15:17:30Z",
+      "last_success_at": "2026-08-12T15:16:15Z",
       "last_seen_shas": [
+        "74aea8644823a868a6c466499351f3dda4ec5352",
+        "b5594ebcf7707ecf93c9fa3a5a60ce38306dfb00",
+        "2a39d2e7ded1819790415d1ccf21a7ef8edb4248",
         "83ea76fcd412d330d922c3b8848cf52bdec94733",
         "92336df90812c95d2ead9b9ed4d1ba2439662409",
         "5f0d273327a17fa9dee6163cebe15248b26319da",
@@ -201,8 +204,11 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-08-10T21:23:31Z",
+      "last_public_activity_at": "2026-08-11T23:17:17Z",
       "recent_commit_titles": [
+        "fix: preserve Arweave ao-types tags",
+        "Merge pull request #1078 from permaweb/fix/arweave-ao-types-metadata",
+        "Merge pull request #1073 from xylophonez/feat/meter-request-response-bytes",
         "Merge pull request #1071 from xylophonez/fix/p4-multi-hook-edge",
         "Merge pull request #1072 from xylophonez/fix/hyperbuddy-metrics-content-type",
         "fix: improve constraint of FS store paths",
@@ -279,25 +285,24 @@
         "Merge pull request #977 from permaweb/feat/forge-commands",
         "perf: resolve hb_opts config once into a static map; delete the env dispatch",
         "Improve incremental build flow",
-        "perf: route hb_util:decode type normalization through the to_lower NIF",
-        "perf: build hb_util_string NIF at -O3",
-        "perf: NIF-accelerate hb_path:to_binary path normalization",
-        "chore: document normalize_path in NIF header, align comment style"
+        "perf: route hb_util:decode type normalization through the to_lower NIF"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work moved from contribution quality cleanup back into operator-facing reliability fixes. Today's commits addressed paid request routing with p4 and tunnel hooks, metrics content-type handling for Hyperbuddy, and tighter filesystem store path constraints.",
-      "current_phase": "operator reliability and edge-case hardening",
+      "rolling_context": "Sam's visible HyperBEAM work continues to focus on operator reliability and edge-case hardening. Today's commits preserved `ao-types` metadata in Arweave transaction messages and merged byte-level metering for requests and responses, extending the recent paid-routing and monitoring-related work with clearer usage measurement.",
+      "current_phase": "operator measurement and message compatibility hardening",
       "recent_themes": [
-        "paid routing fixes",
-        "monitoring compatibility",
-        "safer file-store path handling"
+        "AO metadata preservation",
+        "request and response byte metering",
+        "paid service measurement",
+        "message edge-case fixes"
       ],
       "narrative_threads": [
-        "reducing silent node failure modes",
-        "making HyperBEAM easier to run and debug"
+        "making node operation easier to measure and price",
+        "reducing fragile message-handling edge cases",
+        "supporting more reliable paid AO service flows"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-08-11T15:17:30Z",
+      "last_success_at": "2026-08-12T15:16:15Z",
       "last_seen_shas": [
         "7fdf901d09d96d3a4a6ca6afbb6220130089c653",
         "5a8f0fe67837c19d426c0e527b312bb6f4c24d4e",
@@ -431,19 +436,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-08-11T15:17:30Z",
+      "last_success_at": "2026-08-12T15:16:15Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-08-11T15:17:30Z",
+      "last_success_at": "2026-08-12T15:16:15Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-08-11T15:17:30Z",
+      "last_success_at": "2026-08-12T15:16:15Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-08-11T15:17:30Z",
+      "last_success_at": "2026-08-12T15:16:15Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
