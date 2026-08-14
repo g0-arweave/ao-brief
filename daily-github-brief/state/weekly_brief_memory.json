@@ -1,11 +1,34 @@
 {
   "global": {
-    "last_success_at": "2026-08-07T16:36:14Z"
+    "last_success_at": "2026-08-14T15:32:52Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-08-07T16:36:14Z",
+      "last_success_at": "2026-08-14T15:32:52Z",
       "last_seen_shas": [
+        "73a8f610499ab3899461737536f604d54aa1586b",
+        "7131ffd29d9d47b3e8962c0f393a8f7669169169",
+        "e34ecb88c581fb0a791df58a1431187de69095fb",
+        "54016d67ed482b1bc7bc0942034d945f1c001011",
+        "cda39174b33c88324576be85fec661e0b334157b",
+        "054f53f14b809b226826806c6c3ee1b5dee02343",
+        "5cbeb06aa1bb72155e00e61ef9aa715d0abace3f",
+        "36cf7f42651f9c94e9cc5428f87691e70fab21fb",
+        "bb951760620b44b92915dc64f281e5113713476a",
+        "65320d403c6b3634ffd03da08a38126ca9808b7f",
+        "1f2115ea8239b3669ff02a78375cb692e2c27f26",
+        "83ea76fcd412d330d922c3b8848cf52bdec94733",
+        "92336df90812c95d2ead9b9ed4d1ba2439662409",
+        "5f0d273327a17fa9dee6163cebe15248b26319da",
+        "2208327f82e522135fcf104a280e69d9a7f79343",
+        "74aea8644823a868a6c466499351f3dda4ec5352",
+        "b5594ebcf7707ecf93c9fa3a5a60ce38306dfb00",
+        "2a39d2e7ded1819790415d1ccf21a7ef8edb4248",
+        "65c0d305ce7f7357fe685cfc72bb0e46abe13f34",
+        "35a365f8597640f384bef74420d7a99025f0f42e",
+        "3108b8d3cbce560ce6844bc1b6b5448939abfc09",
+        "85a6cfb4432f785c2b7dd96147f05bfb6e9742b0",
+        "631bf7dd1d24ed1287c94b267857431342fd6af6",
         "bde12b0852fb12c343e7c44a0c88ea7c3d165435",
         "175bed5c2f4bce92257cf3b36c6f9d04bbb63255",
         "b6923b65857c6fb44928efa2bbff5c2473b93e1c",
@@ -225,8 +248,31 @@
         "6be1816357ee247c9aba73901fb6f530ce6d4697",
         "cca5b4d416b012e11b080853cd35f303f8efeda4"
       ],
-      "last_public_activity_at": "2026-08-07T16:01:29Z",
+      "last_public_activity_at": "2026-08-13T22:43:07Z",
       "recent_commit_titles": [
+        "impr: support cross-node cron pushes",
+        "fix: load bare ID bases before execution",
+        "Merge pull request #1066 from permaweb/fix/bare-id-resolution",
+        "Merge pull request #1067 from permaweb/impr/now-with-push",
+        "chore: improve `CONTRIBUTING.md` with details of current canon.",
+        "chore: add `anti-patterns` section to `CONTRIBUTING.md`",
+        "chore: update `README.md`",
+        "chore: update `AGENTS.md` with suggestions for building on HyperBEAM",
+        "Merge pull request #1068 from permaweb/docs/canon-comments-and-commits-v2",
+        "fix: `README.md` header logo",
+        "Merge pull request #1069 from permaweb/fix/readme-header-logo",
+        "Merge pull request #1071 from xylophonez/fix/p4-multi-hook-edge",
+        "Merge pull request #1072 from xylophonez/fix/hyperbuddy-metrics-content-type",
+        "fix: improve constraint of FS store paths",
+        "Merge pull request #1075 from permaweb/fix/store-fs-path-confinement",
+        "fix: preserve Arweave ao-types tags",
+        "Merge pull request #1078 from permaweb/fix/arweave-ao-types-metadata",
+        "Merge pull request #1073 from xylophonez/feat/meter-request-response-bytes",
+        "test: minimize offset collision regression",
+        "Merge pull request #1057 from permaweb/fix/arweave_offset_partial_key",
+        "fix: preserve signed TX fields during parsing",
+        "Merge pull request #1082 from permaweb/impr/tx-parsing",
+        "Merge pull request #1079 from permaweb/fix/lua53a-module",
         "Merge pull request #1061 from permaweb/fix/forge-spec-body",
         "fix: resolve current scheduler locations",
         "Merge pull request #1041 from permaweb/fix/location-tag-variants-20260724",
@@ -283,46 +329,27 @@
         "feat: add bundler await support",
         "fix: restore hyperbuddy browser rendering",
         "fix: show all hyperbuddy format keys by default",
-        "Merge pull request #972 from permaweb/fix/hyperbuddy-format-truncate-keys",
-        "chore: add confirmed bundler routing test",
-        "feat(query): GraphQL fallback cursors",
-        "test(query): cover gateway fallback to legacy GraphQL",
-        "impr: verify bundler routing fallback by bundle signer",
-        "Merge pull request #973 from permaweb/feat/GraphQL-fallback-routing",
-        "chore: reduce bundler routing test to the signer assertion",
-        "Merge pull request #974 from permaweb/feat/bundler-await",
-        "Merge pull request #967 from permaweb/impr/enabling-load-remote-devices",
-        "impr: replace b64rs with b64veryfast",
-        "Merge pull request #975 from permaweb/impr/b64veryfast",
-        "feat: NIF-accelerate hb_util ASCII key/string transforms",
-        "feat: NIF-accelerate hb_opts canonical_key",
-        "Merge pull request #976 from permaweb/impr/redactions-revisit",
-        "chore: ignore hb_util_string NIF build artifacts",
-        "chore: capitalization; formatting",
-        "Merge pull request #977 from permaweb/feat/forge-commands",
-        "perf: resolve hb_opts config once into a static map; delete the env dispatch",
-        "Improve incremental build flow",
-        "perf: route hb_util:decode type normalization through the to_lower NIF",
-        "perf: build hb_util_string NIF at -O3",
-        "perf: NIF-accelerate hb_path:to_binary path normalization",
-        "chore: document normalize_path in NIF header, align comment style",
-        "Merge pull request #978 from permaweb/perf/opts"
+        "Merge pull request #972 from permaweb/fix/hyperbuddy-format-truncate-keys"
       ],
-      "rolling_context": "HyperBEAM continued its reliability and tooling cleanup with PR #1061, which rejects empty Forge specs before publishing. The change prevents a confusing later `invalid_ans104_signature` failure by adding earlier validation in the Forge packager and publish path. This extends the recent pattern of making AO node tooling less fragile and easier for builders to debug.",
-      "current_phase": "Forge publish-path hardening",
+      "rolling_context": "HyperBEAM moved from Forge publish-path hardening into broader node reliability and operator-readiness work. PR #1067 added cross-node scheduled push support with two-node tests, while PRs #1071 and #1073 improved payment/tunnel behavior and traffic byte metering. Signed transaction parsing and Arweave metadata preservation also received fixes, continuing the pattern of reducing edge-case failures.",
+      "current_phase": "node reliability and operator tooling",
       "recent_themes": [
-        "Forge spec validation",
-        "clearer publish errors",
-        "package sharing reliability"
+        "cross-node scheduled pushes",
+        "payment and metering fixes",
+        "signed data preservation"
       ],
       "narrative_threads": [
-        "making infrastructure less fragile and easier to operate",
-        "cleaner ways for developers to share and install node functionality"
+        "making AO nodes less fragile in real deployments",
+        "turning edge-case fixes into test-backed behavior",
+        "clearer contributor rules for human and AI-assisted code"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-08-07T16:36:14Z",
+      "last_success_at": "2026-08-14T15:32:52Z",
       "last_seen_shas": [
+        "34f2fb2773311c4eb07091debea198da457f25c0",
+        "271469c22e0d6e2d7b6f7a5d75759fde596fdf18",
+        "7fdf901d09d96d3a4a6ca6afbb6220130089c653",
         "5a8f0fe67837c19d426c0e527b312bb6f4c24d4e",
         "892906d074fb5d22c3f112c91661b5e63874c925",
         "5d22ac8727db466f3654986a1333b55618146ecc",
@@ -391,8 +418,11 @@
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
       ],
-      "last_public_activity_at": "2026-08-06T13:01:30Z",
+      "last_public_activity_at": "2026-08-10T13:48:17Z",
       "recent_commit_titles": [
+        "feat: tell a usable router from a published claim",
+        "feat: discover routers, hard-code one, describe none",
+        "feat: discover tunnels in the tunnel picker",
         "Preserve request authority when proxying: HTTP/2 has no host header",
         "fix: keep the TLS listener open for slow tunnelled responses",
         "tunnel-broker: self-hostable reverse HTTP tunnel broker for HyperBEAM nodes",
@@ -456,32 +486,33 @@
         "Port mystical devices to packaged HyperBEAM layout",
         "test: add local paid whisper compliance flows"
       ],
-      "rolling_context": "xylophonez continues to focus public work on HyperBEAM add-ons that make nodes easier to expose over the web. After earlier tunnel and ACME HTTPS packaging work, this week tightened `hyperbeam-acme` reliability with fixes for browser HTTP/2 host routing and slow tunneled response timeouts.",
-      "current_phase": "HyperBEAM HTTPS tunnel reliability fixes",
+      "rolling_context": "xylophonez continued practical HyperBEAM-adjacent tooling work, centered this week on `andee-configurator`. Commits added router and tunnel discovery, plus checks to distinguish usable routers from weak published claims. In HyperBEAM PRs, xylophonez also contributed payment hook, metrics, and byte metering improvements that support more reliable node operation.",
+      "current_phase": "router/tunnel discovery and operator reliability",
       "recent_themes": [
-        "browser-safe HTTPS proxying",
-        "slow tunneled response handling",
-        "HyperBEAM web exposure reliability"
+        "usable router checks",
+        "tunnel discovery",
+        "payment and metering support"
       ],
       "narrative_threads": [
-        "turning HyperBEAM add-ons into easier-to-run web-facing tools",
-        "finding and fixing real traffic edge cases after packaging work"
+        "making node setup less manual",
+        "improving trust in discovered infrastructure",
+        "tightening service/payment paths around HyperBEAM"
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-08-07T16:36:14Z",
+      "last_success_at": "2026-08-14T15:32:52Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-08-07T16:36:14Z",
+      "last_success_at": "2026-08-14T15:32:52Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-08-07T16:36:14Z",
+      "last_success_at": "2026-08-14T15:32:52Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-08-07T16:36:14Z",
+      "last_success_at": "2026-08-14T15:32:52Z",
       "last_seen_shas": [
         "2348a9dbef90b207303c14b025607453c02b3e57",
         "46a7cdf2abeca0380cd5c612a6abad1e3993e8ae",
