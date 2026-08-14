@@ -1,11 +1,14 @@
 {
   "global": {
-    "last_success_at": "2026-08-13T15:17:11Z"
+    "last_success_at": "2026-08-14T15:08:24Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-08-13T15:17:11Z",
+      "last_success_at": "2026-08-14T15:08:24Z",
       "last_seen_shas": [
+        "3108b8d3cbce560ce6844bc1b6b5448939abfc09",
+        "85a6cfb4432f785c2b7dd96147f05bfb6e9742b0",
+        "631bf7dd1d24ed1287c94b267857431342fd6af6",
         "65c0d305ce7f7357fe685cfc72bb0e46abe13f34",
         "35a365f8597640f384bef74420d7a99025f0f42e",
         "74aea8644823a868a6c466499351f3dda4ec5352",
@@ -206,8 +209,11 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-08-12T17:54:23Z",
+      "last_public_activity_at": "2026-08-13T22:43:07Z",
       "recent_commit_titles": [
+        "fix: preserve signed TX fields during parsing",
+        "Merge pull request #1082 from permaweb/impr/tx-parsing",
+        "Merge pull request #1079 from permaweb/fix/lua53a-module",
         "test: minimize offset collision regression",
         "Merge pull request #1057 from permaweb/fix/arweave_offset_partial_key",
         "fix: preserve Arweave ao-types tags",
@@ -284,25 +290,23 @@
         "Merge pull request #983 from permaweb/impr/header-deps",
         "feat: NIF-accelerate hb_util ASCII key/string transforms",
         "feat: NIF-accelerate hb_opts canonical_key",
-        "chore: ignore hb_util_string NIF build artifacts",
-        "chore: capitalization; formatting",
-        "Merge pull request #977 from permaweb/feat/forge-commands",
-        "perf: resolve hb_opts config once into a static map; delete the env dispatch"
+        "chore: ignore hb_util_string NIF build artifacts"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to focus on making AO node behavior less fragile around message and data handling. After recent commits on AO metadata preservation and byte-level usage measurement, today's work fixed an Arweave offset matching edge case where a TXID-shaped subdomain could partially match offset logic.",
-      "current_phase": "request parsing and Arweave data-path hardening",
+      "rolling_context": "Sam's visible HyperBEAM work continues to focus on making AO node behavior less fragile around signed data, message parsing, and Arweave transaction handling. Today's main change fixed signed TX parsing so structural fields and colliding normalized tag keys do not alter the exact data needed for verification. A small Lua 5.3a docs cleanup also kept feature documentation aligned with current keys.",
+      "current_phase": "signed transaction parsing and docs cleanup",
       "recent_themes": [
-        "Arweave offset matching fixes",
+        "signed Arweave transaction preservation",
         "message and data handling reliability",
-        "focused regression testing"
+        "focused regression testing",
+        "docs drift cleanup"
       ],
       "narrative_threads": [
-        "tightening edge cases in AO node request handling",
-        "making HyperBEAM easier to operate and debug"
+        "tightening trust-sensitive parsing paths",
+        "making HyperBEAM less fragile for AO builders and operators"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-08-13T15:17:11Z",
+      "last_success_at": "2026-08-14T15:08:24Z",
       "last_seen_shas": [
         "7fdf901d09d96d3a4a6ca6afbb6220130089c653",
         "5a8f0fe67837c19d426c0e527b312bb6f4c24d4e",
@@ -436,19 +440,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-08-13T15:17:11Z",
+      "last_success_at": "2026-08-14T15:08:24Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-08-13T15:17:11Z",
+      "last_success_at": "2026-08-14T15:08:24Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-08-13T15:17:11Z",
+      "last_success_at": "2026-08-14T15:08:24Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-08-13T15:17:11Z",
+      "last_success_at": "2026-08-14T15:08:24Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
