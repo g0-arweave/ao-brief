@@ -1,11 +1,13 @@
 {
   "global": {
-    "last_success_at": "2026-08-14T15:08:24Z"
+    "last_success_at": "2026-08-16T14:41:35Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-08-14T15:08:24Z",
+      "last_success_at": "2026-08-16T14:41:35Z",
       "last_seen_shas": [
+        "47e5014bb0420a57a92a543398a896ba8cf77fcd",
+        "cfb9c75b1a5fcaaf426ec17cc24f0b8b87d09796",
         "3108b8d3cbce560ce6844bc1b6b5448939abfc09",
         "85a6cfb4432f785c2b7dd96147f05bfb6e9742b0",
         "631bf7dd1d24ed1287c94b267857431342fd6af6",
@@ -209,8 +211,10 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-08-13T22:43:07Z",
+      "last_public_activity_at": "2026-08-16T12:37:05Z",
       "recent_commit_titles": [
+        "fix: limit codec response headers",
+        "Merge pull request #1084 from permaweb/fix/http-codec-extra-headers",
         "fix: preserve signed TX fields during parsing",
         "Merge pull request #1082 from permaweb/impr/tx-parsing",
         "Merge pull request #1079 from permaweb/fix/lua53a-module",
@@ -288,25 +292,23 @@
         "Fix header dependency rebuilds",
         "Use include paths for header hash keys",
         "Merge pull request #983 from permaweb/impr/header-deps",
-        "feat: NIF-accelerate hb_util ASCII key/string transforms",
-        "feat: NIF-accelerate hb_opts canonical_key",
-        "chore: ignore hb_util_string NIF build artifacts"
+        "feat: NIF-accelerate hb_util ASCII key/string transforms"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to focus on making AO node behavior less fragile around signed data, message parsing, and Arweave transaction handling. Today's main change fixed signed TX parsing so structural fields and colliding normalized tag keys do not alter the exact data needed for verification. A small Lua 5.3a docs cleanup also kept feature documentation aligned with current keys.",
-      "current_phase": "signed transaction parsing and docs cleanup",
+      "rolling_context": "Sam's visible HyperBEAM work continues to reduce fragile edge cases in how AO nodes handle messages, signed data, and HTTP responses. After recent fixes around preserving signed transaction data during parsing, today's merged PR cleaned up codec response handling so non-HTTPSig responses are returned as encoded, without merged-in HTTPSig headers. The practical direction is clearer trust, fewer client surprises, and easier operation.",
+      "current_phase": "HTTP response header cleanup",
       "recent_themes": [
-        "signed Arweave transaction preservation",
+        "cleaner HTTP response handling",
         "message and data handling reliability",
-        "focused regression testing",
-        "docs drift cleanup"
+        "signed data trust clarity",
+        "removing confusing edge cases"
       ],
       "narrative_threads": [
-        "tightening trust-sensitive parsing paths",
-        "making HyperBEAM less fragile for AO builders and operators"
+        "HyperBEAM is tightening how nodes handle data that clients and apps must trust",
+        "Small protocol-facing fixes are making AO app infrastructure less fragile"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-08-14T15:08:24Z",
+      "last_success_at": "2026-08-16T14:41:35Z",
       "last_seen_shas": [
         "7fdf901d09d96d3a4a6ca6afbb6220130089c653",
         "5a8f0fe67837c19d426c0e527b312bb6f4c24d4e",
@@ -440,19 +442,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-08-14T15:08:24Z",
+      "last_success_at": "2026-08-16T14:41:35Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-08-14T15:08:24Z",
+      "last_success_at": "2026-08-16T14:41:35Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-08-14T15:08:24Z",
+      "last_success_at": "2026-08-16T14:41:35Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-08-14T15:08:24Z",
+      "last_success_at": "2026-08-16T14:41:35Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
