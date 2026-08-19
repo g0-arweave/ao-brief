@@ -1,11 +1,15 @@
 {
   "global": {
-    "last_success_at": "2026-08-16T14:41:35Z"
+    "last_success_at": "2026-08-19T14:54:25Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-08-16T14:41:35Z",
+      "last_success_at": "2026-08-19T14:54:25Z",
       "last_seen_shas": [
+        "2393c28a0f80eaf93283d0fe3dff1ad8da816a3c",
+        "df23b20547734066efa63018f6727f42ef0130fb",
+        "cecf6ff461d9136013096a57d63f7280b364d687",
+        "4db6c5072d97aa66d00e8e1f6681c091e6da80b8",
         "47e5014bb0420a57a92a543398a896ba8cf77fcd",
         "cfb9c75b1a5fcaaf426ec17cc24f0b8b87d09796",
         "3108b8d3cbce560ce6844bc1b6b5448939abfc09",
@@ -211,8 +215,12 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-08-16T12:37:05Z",
+      "last_public_activity_at": "2026-08-18T18:28:31Z",
       "recent_commit_titles": [
+        "fix(hyperbuddy): bound link expansion",
+        "Merge pull request #1086 from permaweb/impr/hyperbuddy-link-choices",
+        "fix: escape HTTP header values",
+        "Merge pull request #1087 from permaweb/fix/httpsig-header-escape",
         "fix: limit codec response headers",
         "Merge pull request #1084 from permaweb/fix/http-codec-extra-headers",
         "fix: preserve signed TX fields during parsing",
@@ -288,27 +296,23 @@
         "impr: clean LMDB message write path",
         "impr: lower Erlang stack depth param, avoiding occasional heavy perf penalty",
         "Merge pull request #986 from permaweb/impr/write-cleaned",
-        "Merge pull request #987 from permaweb/impr/codec-id-generation-hot-path",
-        "Fix header dependency rebuilds",
-        "Use include paths for header hash keys",
-        "Merge pull request #983 from permaweb/impr/header-deps",
-        "feat: NIF-accelerate hb_util ASCII key/string transforms"
+        "Merge pull request #987 from permaweb/impr/codec-id-generation-hot-path"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to reduce fragile edge cases in how AO nodes handle messages, signed data, and HTTP responses. After recent fixes around preserving signed transaction data during parsing, today's merged PR cleaned up codec response handling so non-HTTPSig responses are returned as encoded, without merged-in HTTPSig headers. The practical direction is clearer trust, fewer client surprises, and easier operation.",
-      "current_phase": "HTTP response header cleanup",
+      "rolling_context": "Sam's visible HyperBEAM work continues to reduce fragile edge cases in how AO nodes inspect messages, encode signed data, and handle HTTP-style paths. After recent cleanup around signed transaction parsing and codec response headers, today's merged PRs bounded Hyperbuddy link expansion and escaped HTTPSig header values during encoding. The practical direction is safer node inspection, clearer signed-data handling, and fewer client or operator surprises.",
+      "current_phase": "message inspection and signed header reliability",
       "recent_themes": [
-        "cleaner HTTP response handling",
-        "message and data handling reliability",
+        "bounded debug link expansion",
+        "cleaner HTTP header encoding",
         "signed data trust clarity",
         "removing confusing edge cases"
       ],
       "narrative_threads": [
-        "HyperBEAM is tightening how nodes handle data that clients and apps must trust",
-        "Small protocol-facing fixes are making AO app infrastructure less fragile"
+        "HyperBEAM reliability work is tightening message and header handling at the edges",
+        "node tooling is becoming safer to use during inspection and debugging"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-08-16T14:41:35Z",
+      "last_success_at": "2026-08-19T14:54:25Z",
       "last_seen_shas": [
         "7fdf901d09d96d3a4a6ca6afbb6220130089c653",
         "5a8f0fe67837c19d426c0e527b312bb6f4c24d4e",
@@ -442,19 +446,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-08-16T14:41:35Z",
+      "last_success_at": "2026-08-19T14:54:25Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-08-16T14:41:35Z",
+      "last_success_at": "2026-08-19T14:54:25Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-08-16T14:41:35Z",
+      "last_success_at": "2026-08-19T14:54:25Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-08-16T14:41:35Z",
+      "last_success_at": "2026-08-19T14:54:25Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
