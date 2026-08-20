@@ -1,11 +1,13 @@
 {
   "global": {
-    "last_success_at": "2026-08-19T14:54:25Z"
+    "last_success_at": "2026-08-20T14:57:00Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-08-19T14:54:25Z",
+      "last_success_at": "2026-08-20T14:57:00Z",
       "last_seen_shas": [
+        "ad6f5f55d6a6caba9ef9df3e15cbd8bb67cca4cb",
+        "43d40acd40729f81bb77958c243aa8b0d392183d",
         "2393c28a0f80eaf93283d0fe3dff1ad8da816a3c",
         "df23b20547734066efa63018f6727f42ef0130fb",
         "cecf6ff461d9136013096a57d63f7280b364d687",
@@ -215,8 +217,10 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-08-18T18:28:31Z",
+      "last_public_activity_at": "2026-08-19T19:05:22Z",
       "recent_commit_titles": [
+        "Merge pull request #1091 from permaweb/feat/normalize-gateway-links",
+        "Merge pull request #1092 from permaweb/fix/store-scope-opts",
         "fix(hyperbuddy): bound link expansion",
         "Merge pull request #1086 from permaweb/impr/hyperbuddy-link-choices",
         "fix: escape HTTP header values",
@@ -294,25 +298,23 @@
         "Merge pull request #991 from permaweb/chore/b64veryfast-dep",
         "Optimize codec ID generation hot paths",
         "impr: clean LMDB message write path",
-        "impr: lower Erlang stack depth param, avoiding occasional heavy perf penalty",
-        "Merge pull request #986 from permaweb/impr/write-cleaned",
-        "Merge pull request #987 from permaweb/impr/codec-id-generation-hot-path"
+        "impr: lower Erlang stack depth param, avoiding occasional heavy perf penalty"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to reduce fragile edge cases in how AO nodes inspect messages, encode signed data, and handle HTTP-style paths. After recent cleanup around signed transaction parsing and codec response headers, today's merged PRs bounded Hyperbuddy link expansion and escaped HTTPSig header values during encoding. The practical direction is safer node inspection, clearer signed-data handling, and fewer client or operator surprises.",
-      "current_phase": "message inspection and signed header reliability",
+      "rolling_context": "Sam's visible HyperBEAM work continues to remove small but important edge cases in how AO nodes handle links, signed data, message inspection, and storage paths. Today's merged PRs normalized gateway links and added a safer check before using store scope options. The practical direction remains fewer client surprises, clearer node behavior, and less fragile operation.",
+      "current_phase": "link normalization and store handling reliability",
       "recent_themes": [
-        "bounded debug link expansion",
-        "cleaner HTTP header encoding",
-        "signed data trust clarity",
-        "removing confusing edge cases"
+        "normalized gateway links",
+        "safer store scope checks",
+        "fewer node edge cases",
+        "more predictable app infrastructure"
       ],
       "narrative_threads": [
-        "HyperBEAM reliability work is tightening message and header handling at the edges",
-        "node tooling is becoming safer to use during inspection and debugging"
+        "making HyperBEAM easier to operate by reducing fragile edge cases",
+        "cleaning up the paths where apps interact with node data and links"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-08-19T14:54:25Z",
+      "last_success_at": "2026-08-20T14:57:00Z",
       "last_seen_shas": [
         "7fdf901d09d96d3a4a6ca6afbb6220130089c653",
         "5a8f0fe67837c19d426c0e527b312bb6f4c24d4e",
@@ -446,19 +448,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-08-19T14:54:25Z",
+      "last_success_at": "2026-08-20T14:57:00Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-08-19T14:54:25Z",
+      "last_success_at": "2026-08-20T14:57:00Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-08-19T14:54:25Z",
+      "last_success_at": "2026-08-20T14:57:00Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-08-19T14:54:25Z",
+      "last_success_at": "2026-08-20T14:57:00Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
