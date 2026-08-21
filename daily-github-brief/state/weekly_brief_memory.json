@@ -1,11 +1,19 @@
 {
   "global": {
-    "last_success_at": "2026-08-14T16:35:39Z"
+    "last_success_at": "2026-08-21T15:14:02Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-08-14T16:35:39Z",
+      "last_success_at": "2026-08-21T15:14:02Z",
       "last_seen_shas": [
+        "47e5014bb0420a57a92a543398a896ba8cf77fcd",
+        "cfb9c75b1a5fcaaf426ec17cc24f0b8b87d09796",
+        "2393c28a0f80eaf93283d0fe3dff1ad8da816a3c",
+        "df23b20547734066efa63018f6727f42ef0130fb",
+        "cecf6ff461d9136013096a57d63f7280b364d687",
+        "4db6c5072d97aa66d00e8e1f6681c091e6da80b8",
+        "ad6f5f55d6a6caba9ef9df3e15cbd8bb67cca4cb",
+        "43d40acd40729f81bb77958c243aa8b0d392183d",
         "73a8f610499ab3899461737536f604d54aa1586b",
         "7131ffd29d9d47b3e8962c0f393a8f7669169169",
         "e34ecb88c581fb0a791df58a1431187de69095fb",
@@ -248,8 +256,16 @@
         "6be1816357ee247c9aba73901fb6f530ce6d4697",
         "cca5b4d416b012e11b080853cd35f303f8efeda4"
       ],
-      "last_public_activity_at": "2026-08-13T22:43:07Z",
+      "last_public_activity_at": "2026-08-19T19:05:22Z",
       "recent_commit_titles": [
+        "fix: limit codec response headers",
+        "Merge pull request #1084 from permaweb/fix/http-codec-extra-headers",
+        "fix(hyperbuddy): bound link expansion",
+        "Merge pull request #1086 from permaweb/impr/hyperbuddy-link-choices",
+        "fix: escape HTTP header values",
+        "Merge pull request #1087 from permaweb/fix/httpsig-header-escape",
+        "Merge pull request #1091 from permaweb/feat/normalize-gateway-links",
+        "Merge pull request #1092 from permaweb/fix/store-scope-opts",
         "impr: support cross-node cron pushes",
         "fix: load bare ID bases before execution",
         "Merge pull request #1066 from permaweb/fix/bare-id-resolution",
@@ -321,31 +337,23 @@
         "Merge pull request #1006 from permaweb/impr/relay",
         "Merge pull request #1012 from permaweb/impr/arweave_tip_offsets",
         "Precompute store benchmark requests",
-        "Merge pull request #969 from permaweb/impr/store-benchmarks",
-        "Format device package compile errors",
-        "Merge pull request #970 from permaweb/fix/device-compile-error-format",
-        "Fix recorder tests using forge bootstrap",
-        "Merge pull request #971 from permaweb/fix/recorder-tests",
-        "feat: add bundler await support",
-        "fix: restore hyperbuddy browser rendering",
-        "fix: show all hyperbuddy format keys by default",
-        "Merge pull request #972 from permaweb/fix/hyperbuddy-format-truncate-keys"
+        "Merge pull request #969 from permaweb/impr/store-benchmarks"
       ],
-      "rolling_context": "HyperBEAM moved from Forge publish-path hardening into broader node reliability and operator-readiness work. PR #1067 added cross-node scheduled push support with two-node tests, while PRs #1071 and #1073 improved payment/tunnel behavior and traffic byte metering. Signed transaction parsing and Arweave metadata preservation also received fixes, continuing the pattern of reducing edge-case failures.",
-      "current_phase": "node reliability and operator tooling",
+      "rolling_context": "HyperBEAM continued its node reliability and operator-readiness track. This week Sam focused on edge handling: cleaner HTTP response headers, safer header value escaping, bounded Hyperbuddy link expansion, normalized gateway links, and a store-scope option guard. The pattern is still fewer edge-case failures where AO nodes handle outside inputs, linked messages, and storage settings.",
+      "current_phase": "edge-case hardening and operator reliability",
       "recent_themes": [
-        "cross-node scheduled pushes",
-        "payment and metering fixes",
-        "signed data preservation"
+        "HTTP and header safety",
+        "bounded debug link expansion",
+        "gateway and store behavior fixes"
       ],
       "narrative_threads": [
-        "making AO nodes less fragile in real deployments",
-        "turning edge-case fixes into test-backed behavior",
-        "clearer contributor rules for human and AI-assisted code"
+        "making AO node behavior more predictable for operators",
+        "tightening message and HTTP handling at trust boundaries",
+        "reducing fragile edge cases after broader cross-node and payment work"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-08-14T16:35:39Z",
+      "last_success_at": "2026-08-21T15:14:02Z",
       "last_seen_shas": [
         "34f2fb2773311c4eb07091debea198da457f25c0",
         "271469c22e0d6e2d7b6f7a5d75759fde596fdf18",
@@ -500,19 +508,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-08-14T16:35:39Z",
+      "last_success_at": "2026-08-21T15:14:02Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-08-14T16:35:39Z",
+      "last_success_at": "2026-08-21T15:14:02Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-08-14T16:35:39Z",
+      "last_success_at": "2026-08-21T15:14:02Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-08-14T16:35:39Z",
+      "last_success_at": "2026-08-21T15:14:02Z",
       "last_seen_shas": [
         "2348a9dbef90b207303c14b025607453c02b3e57",
         "46a7cdf2abeca0380cd5c612a6abad1e3993e8ae",
