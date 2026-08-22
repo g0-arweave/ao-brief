@@ -1,11 +1,15 @@
 {
   "global": {
-    "last_success_at": "2026-08-20T14:57:00Z"
+    "last_success_at": "2026-08-22T14:40:45Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-08-20T14:57:00Z",
+      "last_success_at": "2026-08-22T14:40:45Z",
       "last_seen_shas": [
+        "aa74037a7d7448add43a3c223f0dcb75f29f3abb",
+        "5e5186fe896956c500e56a0726d7f09715fac38d",
+        "4238094a81e32ed999bc80f47cf87227aa56a055",
+        "6e6a9bc9543ea4954ab41e8d2e7321b4b39f00b0",
         "ad6f5f55d6a6caba9ef9df3e15cbd8bb67cca4cb",
         "43d40acd40729f81bb77958c243aa8b0d392183d",
         "2393c28a0f80eaf93283d0fe3dff1ad8da816a3c",
@@ -217,8 +221,12 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-08-19T19:05:22Z",
+      "last_public_activity_at": "2026-08-22T04:23:33Z",
       "recent_commit_titles": [
+        "feat: source Arweave offsets from the ~arweave@2.9 routes",
+        "Merge pull request #1098 from permaweb/feat/remote-arweave-offsets",
+        "chore: add local store cacheing of derived Arweave data",
+        "Merge pull request #1099 from permaweb/chore/arweave-local-store",
         "Merge pull request #1091 from permaweb/feat/normalize-gateway-links",
         "Merge pull request #1092 from permaweb/fix/store-scope-opts",
         "fix(hyperbuddy): bound link expansion",
@@ -294,27 +302,24 @@
         "fix: preserve provenance, policy and hint-strip on push 307 redirects",
         "Merge pull request #1005 from permaweb/fix/push-307-redirect",
         "impr: `~lua@5.3a` default minimum sandbox from node `Opts`.",
-        "Merge pull request #1002 from permaweb/fix/lua-default-safe-sandbox",
-        "Merge pull request #991 from permaweb/chore/b64veryfast-dep",
-        "Optimize codec ID generation hot paths",
-        "impr: clean LMDB message write path",
-        "impr: lower Erlang stack depth param, avoiding occasional heavy perf penalty"
+        "Merge pull request #1002 from permaweb/fix/lua-default-safe-sandbox"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to remove small but important edge cases in how AO nodes handle links, signed data, message inspection, and storage paths. Today's merged PRs normalized gateway links and added a safer check before using store scope options. The practical direction remains fewer client surprises, clearer node behavior, and less fragile operation.",
-      "current_phase": "link normalization and store handling reliability",
+      "rolling_context": "Sam's visible HyperBEAM work continues to make AO node storage behavior more predictable and less fragile. Today added optional remote Arweave index reads so fresh nodes can locate data before they have fully indexed it locally, then added default local caching for downloaded Arweave messages. This extends the recent focus on normalized links and safer store handling into faster cold starts and cheaper repeat reads.",
+      "current_phase": "Arweave-backed data reads and local caching",
       "recent_themes": [
-        "normalized gateway links",
-        "safer store scope checks",
-        "fewer node edge cases",
-        "more predictable app infrastructure"
+        "faster fresh-node reads",
+        "remote Arweave index lookup",
+        "local caching of downloaded messages",
+        "less fragile store behavior"
       ],
       "narrative_threads": [
-        "making HyperBEAM easier to operate by reducing fragile edge cases",
-        "cleaning up the paths where apps interact with node data and links"
+        "reducing node cold-start friction",
+        "making AO storage paths more predictable",
+        "using better defaults to cut repeated network work"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-08-20T14:57:00Z",
+      "last_success_at": "2026-08-22T14:40:45Z",
       "last_seen_shas": [
         "7fdf901d09d96d3a4a6ca6afbb6220130089c653",
         "5a8f0fe67837c19d426c0e527b312bb6f4c24d4e",
@@ -448,19 +453,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-08-20T14:57:00Z",
+      "last_success_at": "2026-08-22T14:40:45Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-08-20T14:57:00Z",
+      "last_success_at": "2026-08-22T14:40:45Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-08-20T14:57:00Z",
+      "last_success_at": "2026-08-22T14:40:45Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-08-20T14:57:00Z",
+      "last_success_at": "2026-08-22T14:40:45Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
