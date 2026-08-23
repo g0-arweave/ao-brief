@@ -1,11 +1,13 @@
 {
   "global": {
-    "last_success_at": "2026-08-22T14:40:45Z"
+    "last_success_at": "2026-08-23T14:42:32Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-08-22T14:40:45Z",
+      "last_success_at": "2026-08-23T14:42:32Z",
       "last_seen_shas": [
+        "34c3f876ed16d10f9cbd10df77fc304eee47bf2f",
+        "2d90c17dc73b2909b5bbd647b05bb50013c7ab22",
         "aa74037a7d7448add43a3c223f0dcb75f29f3abb",
         "5e5186fe896956c500e56a0726d7f09715fac38d",
         "4238094a81e32ed999bc80f47cf87227aa56a055",
@@ -221,8 +223,10 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-08-22T04:23:33Z",
+      "last_public_activity_at": "2026-08-22T20:43:39Z",
       "recent_commit_titles": [
+        "fix(cookie): ignore malformed request pairs",
+        "Merge pull request #1100 from permaweb/fix/cookie-pair-parse",
         "feat: source Arweave offsets from the ~arweave@2.9 routes",
         "Merge pull request #1098 from permaweb/feat/remote-arweave-offsets",
         "chore: add local store cacheing of derived Arweave data",
@@ -300,26 +304,23 @@
         "feat: add push_result and http_result paranoid-verify topics",
         "Merge pull request #1004 from permaweb/impr/paranoid-mode",
         "fix: preserve provenance, policy and hint-strip on push 307 redirects",
-        "Merge pull request #1005 from permaweb/fix/push-307-redirect",
-        "impr: `~lua@5.3a` default minimum sandbox from node `Opts`.",
-        "Merge pull request #1002 from permaweb/fix/lua-default-safe-sandbox"
+        "Merge pull request #1005 from permaweb/fix/push-307-redirect"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to make AO node storage behavior more predictable and less fragile. Today added optional remote Arweave index reads so fresh nodes can locate data before they have fully indexed it locally, then added default local caching for downloaded Arweave messages. This extends the recent focus on normalized links and safer store handling into faster cold starts and cheaper repeat reads.",
-      "current_phase": "Arweave-backed data reads and local caching",
+      "rolling_context": "Sam's visible HyperBEAM work continues to focus on making AO node behavior more predictable under real network conditions. After recent work on remote Arweave index reads and local caching for downloaded messages, today's change filtered malformed cookie request parameters and added test vectors. The pattern is safer data handling at the points where nodes read, parse, and reuse outside inputs.",
+      "current_phase": "safer inbound request handling",
       "recent_themes": [
-        "faster fresh-node reads",
-        "remote Arweave index lookup",
-        "local caching of downloaded messages",
-        "less fragile store behavior"
+        "malformed input filtering",
+        "cookie request parsing",
+        "test-backed reliability fixes",
+        "less fragile node behavior"
       ],
       "narrative_threads": [
-        "reducing node cold-start friction",
-        "making AO storage paths more predictable",
-        "using better defaults to cut repeated network work"
+        "making node data paths safer and easier to operate",
+        "reducing edge-case failures from external inputs"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-08-22T14:40:45Z",
+      "last_success_at": "2026-08-23T14:42:32Z",
       "last_seen_shas": [
         "7fdf901d09d96d3a4a6ca6afbb6220130089c653",
         "5a8f0fe67837c19d426c0e527b312bb6f4c24d4e",
@@ -453,19 +454,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-08-22T14:40:45Z",
+      "last_success_at": "2026-08-23T14:42:32Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-08-22T14:40:45Z",
+      "last_success_at": "2026-08-23T14:42:32Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-08-22T14:40:45Z",
+      "last_success_at": "2026-08-23T14:42:32Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-08-22T14:40:45Z",
+      "last_success_at": "2026-08-23T14:42:32Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
