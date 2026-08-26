@@ -1,11 +1,13 @@
 {
   "global": {
-    "last_success_at": "2026-08-23T14:42:32Z"
+    "last_success_at": "2026-08-26T15:54:56Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-08-23T14:42:32Z",
+      "last_success_at": "2026-08-26T15:54:56Z",
       "last_seen_shas": [
+        "861a3ca6b69105030c140414eb6f7f52f601718f",
+        "14e9f68a62c86e8422afdda14a74d3e33b7ebbf4",
         "34c3f876ed16d10f9cbd10df77fc304eee47bf2f",
         "2d90c17dc73b2909b5bbd647b05bb50013c7ab22",
         "aa74037a7d7448add43a3c223f0dcb75f29f3abb",
@@ -223,8 +225,10 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-08-22T20:43:39Z",
+      "last_public_activity_at": "2026-08-25T22:24:29Z",
       "recent_commit_titles": [
+        "fix(device-load): refuse circular device resolutions",
+        "Merge pull request #1103 from permaweb/fix/invalid-preloaded-store-boot-spin",
         "fix(cookie): ignore malformed request pairs",
         "Merge pull request #1100 from permaweb/fix/cookie-pair-parse",
         "feat: source Arweave offsets from the ~arweave@2.9 routes",
@@ -302,25 +306,23 @@
         "Merge pull request #1006 from permaweb/impr/relay",
         "Merge pull request #1012 from permaweb/impr/arweave_tip_offsets",
         "feat: add push_result and http_result paranoid-verify topics",
-        "Merge pull request #1004 from permaweb/impr/paranoid-mode",
-        "fix: preserve provenance, policy and hint-strip on push 307 redirects",
-        "Merge pull request #1005 from permaweb/fix/push-307-redirect"
+        "Merge pull request #1004 from permaweb/impr/paranoid-mode"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to focus on making AO node behavior more predictable under real network conditions. After recent work on remote Arweave index reads and local caching for downloaded messages, today's change filtered malformed cookie request parameters and added test vectors. The pattern is safer data handling at the points where nodes read, parse, and reuse outside inputs.",
-      "current_phase": "safer inbound request handling",
+      "rolling_context": "Sam's visible HyperBEAM work continues to focus on making AO node behavior more predictable under real setup and network conditions. After recent malformed input filtering and cookie parsing tests, today's merged PR refused circular feature loading when a misconfigured preloaded store causes recursive bootstrap resolution. The pattern is safer failure handling at the points where nodes read local state, config, and outside inputs.",
+      "current_phase": "safer startup and config failure handling",
       "recent_themes": [
-        "malformed input filtering",
-        "cookie request parsing",
-        "test-backed reliability fixes",
+        "circular load prevention",
+        "clearer startup errors",
+        "misconfigured preloaded store handling",
         "less fragile node behavior"
       ],
       "narrative_threads": [
-        "making node data paths safer and easier to operate",
-        "reducing edge-case failures from external inputs"
+        "HyperBEAM is reducing confusing operator failure modes",
+        "AO node work is hardening the handoff between config, local stores, and loaded features"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-08-23T14:42:32Z",
+      "last_success_at": "2026-08-26T15:54:56Z",
       "last_seen_shas": [
         "7fdf901d09d96d3a4a6ca6afbb6220130089c653",
         "5a8f0fe67837c19d426c0e527b312bb6f4c24d4e",
@@ -454,19 +456,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-08-23T14:42:32Z",
+      "last_success_at": "2026-08-26T15:54:56Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-08-23T14:42:32Z",
+      "last_success_at": "2026-08-26T15:54:56Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-08-23T14:42:32Z",
+      "last_success_at": "2026-08-26T15:54:56Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-08-23T14:42:32Z",
+      "last_success_at": "2026-08-26T15:54:56Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
