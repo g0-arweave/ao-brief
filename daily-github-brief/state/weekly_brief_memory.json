@@ -1,11 +1,19 @@
 {
   "global": {
-    "last_success_at": "2026-08-21T16:13:16Z"
+    "last_success_at": "2026-08-28T23:41:44Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-08-21T16:13:16Z",
+      "last_success_at": "2026-08-28T23:41:44Z",
       "last_seen_shas": [
+        "aa74037a7d7448add43a3c223f0dcb75f29f3abb",
+        "5e5186fe896956c500e56a0726d7f09715fac38d",
+        "4238094a81e32ed999bc80f47cf87227aa56a055",
+        "6e6a9bc9543ea4954ab41e8d2e7321b4b39f00b0",
+        "34c3f876ed16d10f9cbd10df77fc304eee47bf2f",
+        "2d90c17dc73b2909b5bbd647b05bb50013c7ab22",
+        "861a3ca6b69105030c140414eb6f7f52f601718f",
+        "14e9f68a62c86e8422afdda14a74d3e33b7ebbf4",
         "47e5014bb0420a57a92a543398a896ba8cf77fcd",
         "cfb9c75b1a5fcaaf426ec17cc24f0b8b87d09796",
         "2393c28a0f80eaf93283d0fe3dff1ad8da816a3c",
@@ -256,8 +264,16 @@
         "6be1816357ee247c9aba73901fb6f530ce6d4697",
         "cca5b4d416b012e11b080853cd35f303f8efeda4"
       ],
-      "last_public_activity_at": "2026-08-19T19:05:22Z",
+      "last_public_activity_at": "2026-08-25T22:24:29Z",
       "recent_commit_titles": [
+        "feat: source Arweave offsets from the ~arweave@2.9 routes",
+        "Merge pull request #1098 from permaweb/feat/remote-arweave-offsets",
+        "chore: add local store cacheing of derived Arweave data",
+        "Merge pull request #1099 from permaweb/chore/arweave-local-store",
+        "fix(cookie): ignore malformed request pairs",
+        "Merge pull request #1100 from permaweb/fix/cookie-pair-parse",
+        "fix(device-load): refuse circular device resolutions",
+        "Merge pull request #1103 from permaweb/fix/invalid-preloaded-store-boot-spin",
         "fix: limit codec response headers",
         "Merge pull request #1084 from permaweb/fix/http-codec-extra-headers",
         "fix(hyperbuddy): bound link expansion",
@@ -329,31 +345,24 @@
         "Merge pull request #1025 from permaweb/fix/arweave-index-txs-option",
         "impr: `~lua@5.3a` default minimum sandbox from node `Opts`.",
         "Merge pull request #1002 from permaweb/fix/lua-default-safe-sandbox",
-        "feat: add push_result and http_result paranoid-verify topics",
-        "Merge pull request #1004 from permaweb/impr/paranoid-mode",
-        "fix: preserve provenance, policy and hint-strip on push 307 redirects",
-        "Merge pull request #1005 from permaweb/fix/push-307-redirect",
-        "chore: clarify",
-        "Merge pull request #1006 from permaweb/impr/relay",
-        "Merge pull request #1012 from permaweb/impr/arweave_tip_offsets",
-        "Precompute store benchmark requests",
-        "Merge pull request #969 from permaweb/impr/store-benchmarks"
+        "feat: add push_result and http_result paranoid-verify topics"
       ],
-      "rolling_context": "HyperBEAM continued its node reliability and operator-readiness track. This week Sam focused on edge handling: cleaner HTTP response headers, safer header value escaping, bounded Hyperbuddy link expansion, normalized gateway links, and a store-scope option guard. The pattern is still fewer edge-case failures where AO nodes handle outside inputs, linked messages, and storage settings.",
-      "current_phase": "edge-case hardening and operator reliability",
+      "rolling_context": "HyperBEAM continued its operator reliability track, with a stronger focus on Arweave read readiness for fresh nodes. Sam added optional remote Arweave index reads and local caching for downloaded Arweave messages, reducing wait time and repeated network work. He also hardened inbound cookie parsing and made circular feature-loading failures clearer when preloaded stores are misconfigured.",
+      "current_phase": "Arweave read reliability and startup hardening",
       "recent_themes": [
-        "HTTP and header safety",
-        "bounded debug link expansion",
-        "gateway and store behavior fixes"
+        "remote Arweave index reads",
+        "local caching of downloaded Arweave data",
+        "safer malformed input handling",
+        "clearer startup failure modes"
       ],
       "narrative_threads": [
-        "making AO node behavior more predictable for operators",
-        "tightening message and HTTP handling at trust boundaries",
-        "reducing fragile edge cases after broader cross-node and payment work"
+        "making fresh nodes useful sooner",
+        "making infrastructure less fragile and easier to operate",
+        "turning edge-case failures into clear operator feedback"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-08-21T16:13:16Z",
+      "last_success_at": "2026-08-28T23:41:44Z",
       "last_seen_shas": [
         "34f2fb2773311c4eb07091debea198da457f25c0",
         "271469c22e0d6e2d7b6f7a5d75759fde596fdf18",
@@ -508,19 +517,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-08-21T16:13:16Z",
+      "last_success_at": "2026-08-28T23:41:44Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-08-21T16:13:16Z",
+      "last_success_at": "2026-08-28T23:41:44Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-08-21T16:13:16Z",
+      "last_success_at": "2026-08-28T23:41:44Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-08-21T16:13:16Z",
+      "last_success_at": "2026-08-28T23:41:44Z",
       "last_seen_shas": [
         "2348a9dbef90b207303c14b025607453c02b3e57",
         "46a7cdf2abeca0380cd5c612a6abad1e3993e8ae",
