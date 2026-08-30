@@ -1,11 +1,19 @@
 {
   "global": {
-    "last_success_at": "2026-08-26T15:54:56Z"
+    "last_success_at": "2026-08-30T18:04:51Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-08-26T15:54:56Z",
+      "last_success_at": "2026-08-30T18:04:51Z",
       "last_seen_shas": [
+        "90f521a8ac220025ac0281a51c701b645603ac15",
+        "d9d2617bb1a2cd9e4cd94a07dacbf045f27a7655",
+        "f41a7f2d8db99b5450f0933aaeb93bb84c28def5",
+        "044733cc2ed620d5421f6d35a733da651b37bb49",
+        "d3f470427f89f051d7c07741fd26ce3cab3f91ce",
+        "07ba1ddcfe8f5c30987ad6935c486997be637645",
+        "6439bcfde63ead50f74f3b89135904efeff32539",
+        "c0d81469e9106089961a605e5301edc9349fe727",
         "861a3ca6b69105030c140414eb6f7f52f601718f",
         "14e9f68a62c86e8422afdda14a74d3e33b7ebbf4",
         "34c3f876ed16d10f9cbd10df77fc304eee47bf2f",
@@ -225,8 +233,16 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-08-25T22:24:29Z",
+      "last_public_activity_at": "2026-08-29T23:46:32Z",
       "recent_commit_titles": [
+        "feat(store): read published Arweave offset indexes in place",
+        "impr(store_arlmdb): retain fetched chunks between reads",
+        "impr(opts): resolve Arweave offsets from the published index by default",
+        "impr: unify offset read handling",
+        "impr(bits): type bit fields as floats, atoms and enums",
+        "impr(store_arlmdb): key retained chunks by the device's own address",
+        "feat(store_arlmdb): list bounded prefix runs",
+        "Merge pull request #1108 from permaweb/feat/arlmdb",
         "fix(device-load): refuse circular device resolutions",
         "Merge pull request #1103 from permaweb/fix/invalid-preloaded-store-boot-spin",
         "fix(cookie): ignore malformed request pairs",
@@ -298,31 +314,23 @@
         "chore: docs; speeling",
         "impr: log ordering",
         "Merge pull request #794 from permaweb/impr/log_host",
-        "Merge pull request #1015 from permaweb/fix/manifest-route-scaling",
-        "wip: fixes, simplification",
-        "Merge pull request #1013 from permaweb/feat/http-reply-sigs",
-        "Merge pull request #1011 from permaweb/impr/task-status",
-        "chore: clarify",
-        "Merge pull request #1006 from permaweb/impr/relay",
-        "Merge pull request #1012 from permaweb/impr/arweave_tip_offsets",
-        "feat: add push_result and http_result paranoid-verify topics",
-        "Merge pull request #1004 from permaweb/impr/paranoid-mode"
+        "Merge pull request #1015 from permaweb/fix/manifest-route-scaling"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to focus on making AO node behavior more predictable under real setup and network conditions. After recent malformed input filtering and cookie parsing tests, today's merged PR refused circular feature loading when a misconfigured preloaded store causes recursive bootstrap resolution. The pattern is safer failure handling at the points where nodes read local state, config, and outside inputs.",
-      "current_phase": "safer startup and config failure handling",
+      "rolling_context": "Sam's visible HyperBEAM work moved from recent startup/config safety into Arweave-backed storage access. Today's merged PR added support for streaming LMDB stores directly from Arweave in place, with published offset indexes used by default and fetched chunks retained across reads. The durable pattern is making AO node operation less fragile by improving how nodes read local state, config, outside inputs, and now large remote stored indexes.",
+      "current_phase": "direct Arweave-backed store reads",
       "recent_themes": [
-        "circular load prevention",
-        "clearer startup errors",
-        "misconfigured preloaded store handling",
-        "less fragile node behavior"
+        "streaming LMDB stores from Arweave",
+        "published offset indexes",
+        "retained chunk reuse",
+        "less reliance on gateway index lookups"
       ],
       "narrative_threads": [
-        "HyperBEAM is reducing confusing operator failure modes",
-        "AO node work is hardening the handoff between config, local stores, and loaded features"
+        "safer and simpler AO node operation",
+        "more direct use of Arweave data inside HyperBEAM"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-08-26T15:54:56Z",
+      "last_success_at": "2026-08-30T18:04:51Z",
       "last_seen_shas": [
         "7fdf901d09d96d3a4a6ca6afbb6220130089c653",
         "5a8f0fe67837c19d426c0e527b312bb6f4c24d4e",
@@ -456,19 +464,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-08-26T15:54:56Z",
+      "last_success_at": "2026-08-30T18:04:51Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-08-26T15:54:56Z",
+      "last_success_at": "2026-08-30T18:04:51Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-08-26T15:54:56Z",
+      "last_success_at": "2026-08-30T18:04:51Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-08-26T15:54:56Z",
+      "last_success_at": "2026-08-30T18:04:51Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
