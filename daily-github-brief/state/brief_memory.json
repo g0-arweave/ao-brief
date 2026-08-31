@@ -1,11 +1,13 @@
 {
   "global": {
-    "last_success_at": "2026-08-30T18:04:51Z"
+    "last_success_at": "2026-08-31T20:08:33Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-08-30T18:04:51Z",
+      "last_success_at": "2026-08-31T20:08:33Z",
       "last_seen_shas": [
+        "72ac3cba326bcbaaa67a836ea886cc8cebad2387",
+        "c58436df665ddebb368d1469ea23bf0ffdb91c77",
         "90f521a8ac220025ac0281a51c701b645603ac15",
         "d9d2617bb1a2cd9e4cd94a07dacbf045f27a7655",
         "f41a7f2d8db99b5450f0933aaeb93bb84c28def5",
@@ -233,8 +235,10 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-08-29T23:46:32Z",
+      "last_public_activity_at": "2026-08-30T20:59:29Z",
       "recent_commit_titles": [
+        "feat(ao): raw execution mode for full resolutions",
+        "Merge pull request #1109 from permaweb/feat/resolve-many-raw",
         "feat(store): read published Arweave offset indexes in place",
         "impr(store_arlmdb): retain fetched chunks between reads",
         "impr(opts): resolve Arweave offsets from the published index by default",
@@ -312,25 +316,22 @@
         "feat(copycat): skip already-indexed blocks unless reindex is requested",
         "Merge pull request #1021 from permaweb/impr/copycat-cache-tx-headers",
         "chore: docs; speeling",
-        "impr: log ordering",
-        "Merge pull request #794 from permaweb/impr/log_host",
-        "Merge pull request #1015 from permaweb/fix/manifest-route-scaling"
+        "impr: log ordering"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work moved from recent startup/config safety into Arweave-backed storage access. Today's merged PR added support for streaming LMDB stores directly from Arweave in place, with published offset indexes used by default and fetched chunks retained across reads. The durable pattern is making AO node operation less fragile by improving how nodes read local state, config, outside inputs, and now large remote stored indexes.",
-      "current_phase": "direct Arweave-backed store reads",
+      "rolling_context": "Sam's visible HyperBEAM work has been making specific AO node paths more direct and easier to reason about. After recent Arweave-backed LMDB store reads, today's merged PR added raw mode across full AO resolution sequences, with test vectors updated to run under raw opts where appropriate. The durable pattern is reducing extra moving parts in targeted paths while keeping the normal checked path separate.",
+      "current_phase": "direct raw execution path for AO resolutions",
       "recent_themes": [
-        "streaming LMDB stores from Arweave",
-        "published offset indexes",
-        "retained chunk reuse",
-        "less reliance on gateway index lookups"
+        "raw full-sequence resolution",
+        "cleaner pure execution tests",
+        "direct paths for targeted AO flows"
       ],
       "narrative_threads": [
-        "safer and simpler AO node operation",
-        "more direct use of Arweave data inside HyperBEAM"
+        "making AO node behavior easier to test and debug",
+        "separating normal checked execution from explicit direct modes"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-08-30T18:04:51Z",
+      "last_success_at": "2026-08-31T20:08:33Z",
       "last_seen_shas": [
         "7fdf901d09d96d3a4a6ca6afbb6220130089c653",
         "5a8f0fe67837c19d426c0e527b312bb6f4c24d4e",
@@ -464,19 +465,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-08-30T18:04:51Z",
+      "last_success_at": "2026-08-31T20:08:33Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-08-30T18:04:51Z",
+      "last_success_at": "2026-08-31T20:08:33Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-08-30T18:04:51Z",
+      "last_success_at": "2026-08-31T20:08:33Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-08-30T18:04:51Z",
+      "last_success_at": "2026-08-31T20:08:33Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
