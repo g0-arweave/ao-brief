@@ -1,10 +1,10 @@
 {
   "global": {
-    "last_success_at": "2026-08-31T20:08:33Z"
+    "last_success_at": "2026-09-03T17:52:57Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-08-31T20:08:33Z",
+      "last_success_at": "2026-09-03T17:52:57Z",
       "last_seen_shas": [
         "72ac3cba326bcbaaa67a836ea886cc8cebad2387",
         "c58436df665ddebb368d1469ea23bf0ffdb91c77",
@@ -331,8 +331,9 @@
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-08-31T20:08:33Z",
+      "last_success_at": "2026-09-03T17:52:57Z",
       "last_seen_shas": [
+        "a799860c4a75e5360425b96682716268cd1d34ad",
         "7fdf901d09d96d3a4a6ca6afbb6220130089c653",
         "5a8f0fe67837c19d426c0e527b312bb6f4c24d4e",
         "892906d074fb5d22c3f112c91661b5e63874c925",
@@ -394,8 +395,9 @@
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
       ],
-      "last_public_activity_at": "2026-08-10T13:48:17Z",
+      "last_public_activity_at": "2026-09-03T08:40:14Z",
       "recent_commit_titles": [
+        "Merge pull request #1 from jajablinky/codex/modernize-permaweb-wiki",
         "feat: discover tunnels in the tunnel picker",
         "Preserve request authority when proxying: HTTP/2 has no host header",
         "fix: keep the TLS listener open for slow tunnelled responses",
@@ -452,32 +454,32 @@
         "Port mystical devices to packaged HyperBEAM layout",
         "test: add local paid whisper compliance flows"
       ],
-      "rolling_context": "xylophonez's visible public work continues to improve practical setup around HyperBEAM-related access paths. After HTTPS proxy and tunnel reliability fixes, today's andee-configurator commit added tunnel discovery to the tunnel picker and updated tests, moving the work into the operator-facing setup flow.",
-      "current_phase": "tunnel setup usability",
+      "rolling_context": "xylophonez's visible public work continues to focus on practical paths for AO, HyperBEAM, and permaweb builders. After recent tunnel setup usability work, the latest activity modernized permaweb deployment and AO guidance in permaweb-llm-wiki, including clearer local-vs-permanent write rules and updated @permaweb/deploy 7.0.0 docs.",
+      "current_phase": "permaweb and AO guidance cleanup",
       "recent_themes": [
-        "tunnel discovery",
-        "operator setup flow",
-        "tested configurator changes"
+        "deployment docs",
+        "AO write safety",
+        "builder setup clarity"
       ],
       "narrative_threads": [
-        "making node access easier to configure",
-        "turning HyperBEAM access features into reusable operator tooling"
+        "reducing setup friction for AO-adjacent builders",
+        "turning infrastructure paths into clearer app-building instructions"
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-08-31T20:08:33Z",
+      "last_success_at": "2026-09-03T17:52:57Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-08-31T20:08:33Z",
+      "last_success_at": "2026-09-03T17:52:57Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-08-31T20:08:33Z",
+      "last_success_at": "2026-09-03T17:52:57Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-08-31T20:08:33Z",
+      "last_success_at": "2026-09-03T17:52:57Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
