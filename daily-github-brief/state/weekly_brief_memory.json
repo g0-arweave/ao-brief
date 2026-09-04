@@ -1,11 +1,21 @@
 {
   "global": {
-    "last_success_at": "2026-08-29T00:08:46Z"
+    "last_success_at": "2026-09-04T17:49:26Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-08-29T00:08:46Z",
+      "last_success_at": "2026-09-04T17:49:26Z",
       "last_seen_shas": [
+        "90f521a8ac220025ac0281a51c701b645603ac15",
+        "d9d2617bb1a2cd9e4cd94a07dacbf045f27a7655",
+        "f41a7f2d8db99b5450f0933aaeb93bb84c28def5",
+        "044733cc2ed620d5421f6d35a733da651b37bb49",
+        "d3f470427f89f051d7c07741fd26ce3cab3f91ce",
+        "07ba1ddcfe8f5c30987ad6935c486997be637645",
+        "6439bcfde63ead50f74f3b89135904efeff32539",
+        "c0d81469e9106089961a605e5301edc9349fe727",
+        "72ac3cba326bcbaaa67a836ea886cc8cebad2387",
+        "c58436df665ddebb368d1469ea23bf0ffdb91c77",
         "aa74037a7d7448add43a3c223f0dcb75f29f3abb",
         "5e5186fe896956c500e56a0726d7f09715fac38d",
         "4238094a81e32ed999bc80f47cf87227aa56a055",
@@ -264,8 +274,18 @@
         "6be1816357ee247c9aba73901fb6f530ce6d4697",
         "cca5b4d416b012e11b080853cd35f303f8efeda4"
       ],
-      "last_public_activity_at": "2026-08-25T22:24:29Z",
+      "last_public_activity_at": "2026-08-30T20:59:29Z",
       "recent_commit_titles": [
+        "feat(store): read published Arweave offset indexes in place",
+        "impr(store_arlmdb): retain fetched chunks between reads",
+        "impr(opts): resolve Arweave offsets from the published index by default",
+        "impr: unify offset read handling",
+        "impr(bits): type bit fields as floats, atoms and enums",
+        "impr(store_arlmdb): key retained chunks by the device's own address",
+        "feat(store_arlmdb): list bounded prefix runs",
+        "Merge pull request #1108 from permaweb/feat/arlmdb",
+        "feat(ao): raw execution mode for full resolutions",
+        "Merge pull request #1109 from permaweb/feat/resolve-many-raw",
         "feat: source Arweave offsets from the ~arweave@2.9 routes",
         "Merge pull request #1098 from permaweb/feat/remote-arweave-offsets",
         "chore: add local store cacheing of derived Arweave data",
@@ -335,35 +355,25 @@
         "Merge pull request #1018 from permaweb/fix/dev_cron_report_url",
         "feat(copycat): skip already-indexed blocks unless reindex is requested",
         "Merge pull request #1021 from permaweb/impr/copycat-cache-tx-headers",
-        "chore: docs; speeling",
-        "impr: log ordering",
-        "Merge pull request #794 from permaweb/impr/log_host",
-        "fix: preserve opaque arweave offset keys",
-        "test: cover arweave offset store discovery",
-        "Merge pull request #1024 from permaweb/fix/arweave-store-slashes",
-        "fix: make arweave tx indexing configurable",
-        "Merge pull request #1025 from permaweb/fix/arweave-index-txs-option",
-        "impr: `~lua@5.3a` default minimum sandbox from node `Opts`.",
-        "Merge pull request #1002 from permaweb/fix/lua-default-safe-sandbox",
-        "feat: add push_result and http_result paranoid-verify topics"
+        "chore: docs; speeling"
       ],
-      "rolling_context": "HyperBEAM continued its operator reliability track, with a stronger focus on Arweave read readiness for fresh nodes. Sam added optional remote Arweave index reads and local caching for downloaded Arweave messages, reducing wait time and repeated network work. He also hardened inbound cookie parsing and made circular feature-loading failures clearer when preloaded stores are misconfigured.",
-      "current_phase": "Arweave read reliability and startup hardening",
+      "rolling_context": "HyperBEAM continued its Arweave read reliability work, moving from remote index readiness into in-place reads of published LMDB stores on Arweave. Sam added chunk retention, bounded prefix listing, and default offset lookup from a published on-chain index, reducing repeat fetches and reliance on gateway index lookups. He also added raw AO execution mode for full resolutions, with test vector coverage for direct pure execution flows.",
+      "current_phase": "Arweave-backed store reads and direct AO execution paths",
       "recent_themes": [
-        "remote Arweave index reads",
-        "local caching of downloaded Arweave data",
-        "safer malformed input handling",
-        "clearer startup failure modes"
+        "in-place LMDB reads from Arweave",
+        "chunk reuse between reads",
+        "published-index offset lookup",
+        "raw AO execution mode"
       ],
       "narrative_threads": [
-        "making fresh nodes useful sooner",
-        "making infrastructure less fragile and easier to operate",
-        "turning edge-case failures into clear operator feedback"
+        "making node data access less wasteful and easier to trust",
+        "separating direct execution paths from full node processing when requested"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-08-29T00:08:46Z",
+      "last_success_at": "2026-09-04T17:49:26Z",
       "last_seen_shas": [
+        "a799860c4a75e5360425b96682716268cd1d34ad",
         "34f2fb2773311c4eb07091debea198da457f25c0",
         "271469c22e0d6e2d7b6f7a5d75759fde596fdf18",
         "7fdf901d09d96d3a4a6ca6afbb6220130089c653",
@@ -435,8 +445,9 @@
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
       ],
-      "last_public_activity_at": "2026-08-10T13:48:17Z",
+      "last_public_activity_at": "2026-09-03T08:40:14Z",
       "recent_commit_titles": [
+        "Merge pull request #1 from jajablinky/codex/modernize-permaweb-wiki",
         "feat: tell a usable router from a published claim",
         "feat: discover routers, hard-code one, describe none",
         "feat: discover tunnels in the tunnel picker",
@@ -503,33 +514,32 @@
         "Port mystical devices to packaged HyperBEAM layout",
         "test: add local paid whisper compliance flows"
       ],
-      "rolling_context": "xylophonez continued practical HyperBEAM-adjacent tooling work, centered this week on `andee-configurator`. Commits added router and tunnel discovery, plus checks to distinguish usable routers from weak published claims. In HyperBEAM PRs, xylophonez also contributed payment hook, metrics, and byte metering improvements that support more reliable node operation.",
-      "current_phase": "router/tunnel discovery and operator reliability",
+      "rolling_context": "xylophonez merged a large `permaweb-llm-wiki` update focused on modern Permaweb deployment and AO guidance. The merged PR refreshed guidance for `@permaweb/deploy` 7.0.0, manifests, GitHub Actions, HyperBEAM upload routes, and safer AO read/write examples, with syntax, link, JSON, and policy checks documented. This shifts recent visible activity from operator discovery tools toward builder documentation and onboarding quality.",
+      "current_phase": "Permaweb and AO documentation modernization",
       "recent_themes": [
-        "usable router checks",
-        "tunnel discovery",
-        "payment and metering support"
+        "modern deploy guidance",
+        "safer AO examples",
+        "validated documentation updates"
       ],
       "narrative_threads": [
-        "making node setup less manual",
-        "improving trust in discovered infrastructure",
-        "tightening service/payment paths around HyperBEAM"
+        "making Permaweb app deployment easier to follow",
+        "turning AO usage patterns into clearer reusable docs"
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-08-29T00:08:46Z",
+      "last_success_at": "2026-09-04T17:49:26Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-08-29T00:08:46Z",
+      "last_success_at": "2026-09-04T17:49:26Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-08-29T00:08:46Z",
+      "last_success_at": "2026-09-04T17:49:26Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-08-29T00:08:46Z",
+      "last_success_at": "2026-09-04T17:49:26Z",
       "last_seen_shas": [
         "2348a9dbef90b207303c14b025607453c02b3e57",
         "46a7cdf2abeca0380cd5c612a6abad1e3993e8ae",
