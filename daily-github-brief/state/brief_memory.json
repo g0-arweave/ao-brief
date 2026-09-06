@@ -1,11 +1,19 @@
 {
   "global": {
-    "last_success_at": "2026-09-03T17:52:57Z"
+    "last_success_at": "2026-09-06T17:06:10Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-09-03T17:52:57Z",
+      "last_success_at": "2026-09-06T17:06:10Z",
       "last_seen_shas": [
+        "41aafd5c6f6d995b1c6b9ee9663185869dc6e418",
+        "896669d4ccb014ad62278fa1be61cb32297402ef",
+        "f15642c136db41076e8bc9fa5dd4a9e8d143518a",
+        "7023a232718d224a23312bb62783e9b785a816cf",
+        "2b93698941fc517371dd8217d19dd6b67de1d720",
+        "90957641302d21d2c6588763a170938df2e50288",
+        "4c563598a801467cc6314bed810b7c56c297173b",
+        "2416b3d2c14cc11897218e273654eafd9acc3518",
         "72ac3cba326bcbaaa67a836ea886cc8cebad2387",
         "c58436df665ddebb368d1469ea23bf0ffdb91c77",
         "90f521a8ac220025ac0281a51c701b645603ac15",
@@ -235,8 +243,16 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-08-30T20:59:29Z",
+      "last_public_activity_at": "2026-09-06T15:18:31Z",
       "recent_commit_titles": [
+        "feat: generalized store pre and post-processing pipelines",
+        "impr(store): normalize keys and values to and from the store",
+        "perf: do not invoke `hb_maps` on a known loaded message (store configs)",
+        "perf: avoid needless atom-to-binary in store `Opts` lookup",
+        "impr: support bitstring prefixes; `match` normalization; and tidy up",
+        "fix: bitstring in the `from_store` steps, too. Additionally inline util.",
+        "Merge pull request #1115 from permaweb/feat/store-key-value-pipeline",
+        "Merge pull request #1113 from permaweb/fix/shutdown",
         "feat(ao): raw execution mode for full resolutions",
         "Merge pull request #1109 from permaweb/feat/resolve-many-raw",
         "feat(store): read published Arweave offset indexes in place",
@@ -308,30 +324,22 @@
         "Merge pull request #1025 from permaweb/fix/arweave-index-txs-option",
         "fix(codec): preserve commitment bundle hints",
         "fix(http): preserve structured HTTPSig messages",
-        "fix(http): skip bodies for bodyless responses",
-        "test(meta): use default HTTP options in hook test",
-        "feat(copycat): cache L1 transaction headers during block indexing",
-        "Merge pull request #1020 from permaweb/fix/httpsig-bundle-hint",
-        "Merge pull request #1018 from permaweb/fix/dev_cron_report_url",
-        "feat(copycat): skip already-indexed blocks unless reindex is requested",
-        "Merge pull request #1021 from permaweb/impr/copycat-cache-tx-headers",
-        "chore: docs; speeling",
-        "impr: log ordering"
+        "fix(http): skip bodies for bodyless responses"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work has been making specific AO node paths more direct and easier to reason about. After recent Arweave-backed LMDB store reads, today's merged PR added raw mode across full AO resolution sequences, with test vectors updated to run under raw opts where appropriate. The durable pattern is reducing extra moving parts in targeted paths while keeping the normal checked path separate.",
-      "current_phase": "direct raw execution path for AO resolutions",
+      "rolling_context": "Sam's visible HyperBEAM work continues to make specific AO node paths more direct and easier to operate. After recent raw full-sequence resolution and Arweave-backed store read work, today's merged store PR added prefix-based handling plus key/value transforms around store calls, keeping operator storage choices separate from AO-Core and app logic. A separate shutdown fix improved clean node termination for tests and operations.",
+      "current_phase": "flexible store handling and ops cleanup",
       "recent_themes": [
-        "raw full-sequence resolution",
-        "cleaner pure execution tests",
-        "direct paths for targeted AO flows"
+        "store normalization pipelines",
+        "prefix-based storage routing",
+        "clean shutdown behavior"
       ],
       "narrative_threads": [
-        "making AO node behavior easier to test and debug",
-        "separating normal checked execution from explicit direct modes"
+        "separating operator setup choices from common AO logic",
+        "reducing fragile paths in node operation"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-09-03T17:52:57Z",
+      "last_success_at": "2026-09-06T17:06:10Z",
       "last_seen_shas": [
         "a799860c4a75e5360425b96682716268cd1d34ad",
         "7fdf901d09d96d3a4a6ca6afbb6220130089c653",
@@ -467,19 +475,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-09-03T17:52:57Z",
+      "last_success_at": "2026-09-06T17:06:10Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-09-03T17:52:57Z",
+      "last_success_at": "2026-09-06T17:06:10Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-09-03T17:52:57Z",
+      "last_success_at": "2026-09-06T17:06:10Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-09-03T17:52:57Z",
+      "last_success_at": "2026-09-06T17:06:10Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
