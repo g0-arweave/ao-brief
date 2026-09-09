@@ -1,11 +1,13 @@
 {
   "global": {
-    "last_success_at": "2026-09-08T17:56:45Z"
+    "last_success_at": "2026-09-09T17:51:42Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-09-08T17:56:45Z",
+      "last_success_at": "2026-09-09T17:51:42Z",
       "last_seen_shas": [
+        "b639cdb22467b66cbf65c2f21d60dca38f9d8199",
+        "946959a4980102ffd746a9b39466198f75cd3352",
         "9b3b2ceda9b3cadb9d76f836510b3bfbd00e529a",
         "ac146339f1d9ce30f4061c5c9c19da29561af1dc",
         "ff64f8ab3e61e1f1c09ac85521218c396d3b3c6d",
@@ -246,8 +248,10 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-09-08T14:40:40Z",
+      "last_public_activity_at": "2026-09-08T18:19:11Z",
       "recent_commit_titles": [
+        "Merge pull request #1119 from permaweb/fix/bits-repeat-enum",
+        "Merge pull request #1116 from permaweb/fix/arweave-raw-id-check",
         "feat(store): list children from a child, in either direction, up to a limit",
         "deps(elmdb): pin feat/list-range for children lists from a child",
         "Merge pull request #1117 from permaweb/feat/store-list-bounds",
@@ -325,24 +329,22 @@
         "Merge pull request #1027 from permaweb/fix/store-hook-signed-requests",
         "fix: preserve opaque arweave offset keys",
         "test: cover arweave offset store discovery",
-        "Merge pull request #1024 from permaweb/fix/arweave-store-slashes",
-        "fix: make arweave tx indexing configurable",
-        "Merge pull request #1025 from permaweb/fix/arweave-index-txs-option"
+        "Merge pull request #1024 from permaweb/fix/arweave-store-slashes"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work is continuing to make store reads more exact and less wasteful. After recent prefix-based store handling and key/value transforms, PR #1117 added bounded list reads with start keys, direction, and limits across store backends. The PR ties this directly to efficient GraphQL execution over local stores and Arweave-hosted content, especially returning one page of results without building a full result set first.",
-      "current_phase": "bounded store reads for efficient query serving",
+      "rolling_context": "Sam's visible HyperBEAM work continues to improve data access correctness and safety. After bounded store reads for efficient GraphQL-style query serving, today's merges fixed parsing for enum fields inside repeated data formats and added stricter rejection of raw Arweave reads with mismatched item IDs. The pattern is tighter data handling: faster reads where possible, and fewer bad edge cases where data enters or is decoded by the node.",
+      "current_phase": "data handling correctness and safer read paths",
       "recent_themes": [
         "bounded store listing",
-        "efficient GraphQL data reads",
-        "consistent store backend behavior"
+        "safer Arweave reads",
+        "format parser correctness"
       ],
       "narrative_threads": [
-        "making AO node storage paths less fragile and easier to operate",
-        "reducing wasted work when serving large data queries"
+        "making AO data serving more exact and less wasteful",
+        "reducing edge cases that can break app and node behavior"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-09-08T17:56:45Z",
+      "last_success_at": "2026-09-09T17:51:42Z",
       "last_seen_shas": [
         "a799860c4a75e5360425b96682716268cd1d34ad",
         "7fdf901d09d96d3a4a6ca6afbb6220130089c653",
@@ -478,19 +480,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-09-08T17:56:45Z",
+      "last_success_at": "2026-09-09T17:51:42Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-09-08T17:56:45Z",
+      "last_success_at": "2026-09-09T17:51:42Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-09-08T17:56:45Z",
+      "last_success_at": "2026-09-09T17:51:42Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-09-08T17:56:45Z",
+      "last_success_at": "2026-09-09T17:51:42Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
