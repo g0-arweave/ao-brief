@@ -1,11 +1,27 @@
 {
   "global": {
-    "last_success_at": "2026-09-04T18:34:23Z"
+    "last_success_at": "2026-09-11T17:55:54Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-09-04T18:34:23Z",
+      "last_success_at": "2026-09-11T17:55:54Z",
       "last_seen_shas": [
+        "896669d4ccb014ad62278fa1be61cb32297402ef",
+        "f15642c136db41076e8bc9fa5dd4a9e8d143518a",
+        "7023a232718d224a23312bb62783e9b785a816cf",
+        "2b93698941fc517371dd8217d19dd6b67de1d720",
+        "90957641302d21d2c6588763a170938df2e50288",
+        "4c563598a801467cc6314bed810b7c56c297173b",
+        "9b3b2ceda9b3cadb9d76f836510b3bfbd00e529a",
+        "ac146339f1d9ce30f4061c5c9c19da29561af1dc",
+        "2416b3d2c14cc11897218e273654eafd9acc3518",
+        "ff64f8ab3e61e1f1c09ac85521218c396d3b3c6d",
+        "b639cdb22467b66cbf65c2f21d60dca38f9d8199",
+        "946959a4980102ffd746a9b39466198f75cd3352",
+        "badc858ec045b19ab237956f688d48a39f0fdce4",
+        "08f3530db0a462df6c3b719553f7e4d3facd3b30",
+        "5dbe16cf5ead9e36b330acf3bb9b4f7ca7df751a",
+        "ea8cdbffd9637791021511961fd82e79b7374d05",
         "90f521a8ac220025ac0281a51c701b645603ac15",
         "d9d2617bb1a2cd9e4cd94a07dacbf045f27a7655",
         "f41a7f2d8db99b5450f0933aaeb93bb84c28def5",
@@ -274,8 +290,24 @@
         "6be1816357ee247c9aba73901fb6f530ce6d4697",
         "cca5b4d416b012e11b080853cd35f303f8efeda4"
       ],
-      "last_public_activity_at": "2026-08-30T20:59:29Z",
+      "last_public_activity_at": "2026-09-11T15:55:32Z",
       "recent_commit_titles": [
+        "impr(store): normalize keys and values to and from the store",
+        "perf: do not invoke `hb_maps` on a known loaded message (store configs)",
+        "perf: avoid needless atom-to-binary in store `Opts` lookup",
+        "impr: support bitstring prefixes; `match` normalization; and tidy up",
+        "fix: bitstring in the `from_store` steps, too. Additionally inline util.",
+        "Merge pull request #1115 from permaweb/feat/store-key-value-pipeline",
+        "feat(store): list children from a child, in either direction, up to a limit",
+        "deps(elmdb): pin feat/list-range for children lists from a child",
+        "Merge pull request #1113 from permaweb/fix/shutdown",
+        "Merge pull request #1117 from permaweb/feat/store-list-bounds",
+        "Merge pull request #1119 from permaweb/fix/bits-repeat-enum",
+        "Merge pull request #1116 from permaweb/fix/arweave-raw-id-check",
+        "impr(store_arlmdb): serve any LMDB 1.0 file through the store pipeline",
+        "Merge pull request #1122 from permaweb/impr/arlmdb-store",
+        "impr(cache): write the match index through the `cache-write' hook",
+        "Merge pull request #1128 from permaweb/impr/cache-indexing-hook",
         "feat(store): read published Arweave offset indexes in place",
         "impr(store_arlmdb): retain fetched chunks between reads",
         "impr(opts): resolve Arweave offsets from the published index by default",
@@ -339,39 +371,24 @@
         "fix: preserve application upload targets",
         "fix(httpsig): preserve nested content-disposition",
         "Merge pull request #1028 from permaweb/fix/andee-tunnel-runtime",
-        "fix: maintain node message `Opts` in read/cache calls for remote stores",
-        "Merge pull request #1032 from permaweb/fix/gateway-node-options",
-        "wip: fixes, simplification",
-        "fix: avoid expanding unrelated manifest paths",
-        "Merge pull request #1013 from permaweb/feat/http-reply-sigs",
-        "Merge pull request #1011 from permaweb/impr/task-status",
-        "Merge pull request #1015 from permaweb/fix/manifest-route-scaling",
-        "fix(codec): preserve commitment bundle hints",
-        "fix(http): preserve structured HTTPSig messages",
-        "fix(http): skip bodies for bodyless responses",
-        "test(meta): use default HTTP options in hook test",
-        "feat(copycat): cache L1 transaction headers during block indexing",
-        "Merge pull request #1020 from permaweb/fix/httpsig-bundle-hint",
-        "Merge pull request #1018 from permaweb/fix/dev_cron_report_url",
-        "feat(copycat): skip already-indexed blocks unless reindex is requested",
-        "Merge pull request #1021 from permaweb/impr/copycat-cache-tx-headers",
-        "chore: docs; speeling"
+        "fix: maintain node message `Opts` in read/cache calls for remote stores"
       ],
-      "rolling_context": "HyperBEAM continued its Arweave read reliability work, moving from remote index readiness into in-place reads of published LMDB stores on Arweave. Sam added chunk retention, bounded prefix listing, and default offset lookup from a published on-chain index, reducing repeat fetches and reliance on gateway index lookups. He also added raw AO execution mode for full resolutions, with test vector coverage for direct pure execution flows.",
-      "current_phase": "Arweave-backed store reads and direct AO execution paths",
+      "rolling_context": "HyperBEAM continued its Arweave-backed data serving work, moving from specific LMDB index reads toward broader support for any sorted-set LMDB 1.0 file served through the store path. Sam also landed bounded store listing, prefix/key/value normalization, and a cache-write hook for custom indexing, with PR context tying the work to real-time Arweave-compatible GraphQL serving. Reliability fixes also landed for shutdown, raw Arweave item ID checks, and repeated enum parsing.",
+      "current_phase": "GraphQL-ready store reads and custom indexing",
       "recent_themes": [
-        "in-place LMDB reads from Arweave",
-        "chunk reuse between reads",
-        "published-index offset lookup",
-        "raw AO execution mode"
+        "bounded store list reads",
+        "Arweave-hosted LMDB compatibility",
+        "cache-write indexing hooks",
+        "store normalization and safety fixes"
       ],
       "narrative_threads": [
-        "making node data access less wasteful and easier to trust",
-        "separating direct execution paths from full node processing when requested"
+        "making AO data easier to page and serve",
+        "reducing fragile assumptions in Arweave-backed reads",
+        "giving node operators more control over indexing"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-09-04T18:34:23Z",
+      "last_success_at": "2026-09-11T17:55:54Z",
       "last_seen_shas": [
         "a799860c4a75e5360425b96682716268cd1d34ad",
         "34f2fb2773311c4eb07091debea198da457f25c0",
@@ -527,19 +544,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-09-04T18:34:23Z",
+      "last_success_at": "2026-09-11T17:55:54Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-09-04T18:34:23Z",
+      "last_success_at": "2026-09-11T17:55:54Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-09-04T18:34:23Z",
+      "last_success_at": "2026-09-11T17:55:54Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-09-04T18:34:23Z",
+      "last_success_at": "2026-09-11T17:55:54Z",
       "last_seen_shas": [
         "2348a9dbef90b207303c14b025607453c02b3e57",
         "46a7cdf2abeca0380cd5c612a6abad1e3993e8ae",
