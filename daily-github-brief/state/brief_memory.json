@@ -1,11 +1,13 @@
 {
   "global": {
-    "last_success_at": "2026-09-11T17:45:34Z"
+    "last_success_at": "2026-09-12T17:13:17Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-09-11T17:45:34Z",
+      "last_success_at": "2026-09-12T17:13:17Z",
       "last_seen_shas": [
+        "8593885cb3995860f8523f99b00fc195564dd88d",
+        "2c03978a3d201444bf7aada3eb35809153e41ef3",
         "5dbe16cf5ead9e36b330acf3bb9b4f7ca7df751a",
         "ea8cdbffd9637791021511961fd82e79b7374d05",
         "badc858ec045b19ab237956f688d48a39f0fdce4",
@@ -252,8 +254,10 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-09-11T15:55:32Z",
+      "last_public_activity_at": "2026-09-11T23:03:12Z",
       "recent_commit_titles": [
+        "feat(copycat): carry weave offsets to the match index",
+        "Merge pull request #1129 from permaweb/feat/copycat-offsets",
         "impr(cache): write the match index through the `cache-write' hook",
         "Merge pull request #1128 from permaweb/impr/cache-indexing-hook",
         "impr(store_arlmdb): serve any LMDB 1.0 file through the store pipeline",
@@ -331,24 +335,22 @@
         "fix: maintain node message `Opts` in read/cache calls for remote stores",
         "Merge pull request #1032 from permaweb/fix/gateway-node-options",
         "fix: preserve application upload targets",
-        "fix(httpsig): preserve nested content-disposition",
-        "Merge pull request #1028 from permaweb/fix/andee-tunnel-runtime",
-        "impr: honor `store-all-signed` for messages committed via `~auth-hook@1.0`"
+        "fix(httpsig): preserve nested content-disposition"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to make data access and serving more reusable. After broader LMDB read support and safer store handling, PR #1128 moved match indexing behind an `on/cache-write` hook so operators can customize indexing work when data is written. The durable pattern is less special-case storage code and clearer extension points around node data flows.",
-      "current_phase": "flexible cache-write indexing",
+      "rolling_context": "Sam's visible HyperBEAM work continues to make data access and indexing more useful. After PR #1128 moved match indexing behind an `on/cache-write` hook, PR #1129 now carries Arweave weave offsets into `~copycat@1.0` messages before cache write, so indexed data has position context. The same PR adds an optional pending store for unconfirmed messages, keeping confirmed and pending data paths cleaner.",
+      "current_phase": "offset-aware cache indexing",
       "recent_themes": [
-        "operator-configurable indexing",
-        "reusable data serving paths",
-        "less hardcoded cache logic"
+        "real-time indexing prep",
+        "GraphQL support prep",
+        "cleaner pending message handling"
       ],
       "narrative_threads": [
-        "HyperBEAM data paths are becoming easier to reuse across query and serving needs",
-        "Node operators are getting cleaner ways to add useful behavior without changing core cache code"
+        "less hardcoded cache/index logic",
+        "richer query support through better indexed data"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-09-11T17:45:34Z",
+      "last_success_at": "2026-09-12T17:13:17Z",
       "last_seen_shas": [
         "a799860c4a75e5360425b96682716268cd1d34ad",
         "7fdf901d09d96d3a4a6ca6afbb6220130089c653",
@@ -484,19 +486,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-09-11T17:45:34Z",
+      "last_success_at": "2026-09-12T17:13:17Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-09-11T17:45:34Z",
+      "last_success_at": "2026-09-12T17:13:17Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-09-11T17:45:34Z",
+      "last_success_at": "2026-09-12T17:13:17Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-09-11T17:45:34Z",
+      "last_success_at": "2026-09-12T17:13:17Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
