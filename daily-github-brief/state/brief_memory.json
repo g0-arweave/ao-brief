@@ -1,11 +1,13 @@
 {
   "global": {
-    "last_success_at": "2026-09-12T17:13:17Z"
+    "last_success_at": "2026-09-16T18:12:55Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-09-12T17:13:17Z",
+      "last_success_at": "2026-09-16T18:12:55Z",
       "last_seen_shas": [
+        "10746695782748a581c2727d645e5f63a94fb759",
+        "7db26c99fac55905d490bac5eb32766a454d9611",
         "8593885cb3995860f8523f99b00fc195564dd88d",
         "2c03978a3d201444bf7aada3eb35809153e41ef3",
         "5dbe16cf5ead9e36b330acf3bb9b4f7ca7df751a",
@@ -254,8 +256,10 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-09-11T23:03:12Z",
+      "last_public_activity_at": "2026-09-16T01:45:30Z",
       "recent_commit_titles": [
+        "chore: update default chain node set",
+        "Merge pull request #1135 from permaweb/chore/update-default-chain-nodes",
         "feat(copycat): carry weave offsets to the match index",
         "Merge pull request #1129 from permaweb/feat/copycat-offsets",
         "impr(cache): write the match index through the `cache-write' hook",
@@ -333,24 +337,22 @@
         "Merge pull request #1041 from permaweb/fix/location-tag-variants-20260724",
         "Merge pull request #1042 from permaweb/fix/not_load_empty_device",
         "fix: maintain node message `Opts` in read/cache calls for remote stores",
-        "Merge pull request #1032 from permaweb/fix/gateway-node-options",
-        "fix: preserve application upload targets",
-        "fix(httpsig): preserve nested content-disposition"
+        "Merge pull request #1032 from permaweb/fix/gateway-node-options"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work continues to make data access and indexing more useful. After PR #1128 moved match indexing behind an `on/cache-write` hook, PR #1129 now carries Arweave weave offsets into `~copycat@1.0` messages before cache write, so indexed data has position context. The same PR adds an optional pending store for unconfirmed messages, keeping confirmed and pending data paths cleaner.",
-      "current_phase": "offset-aware cache indexing",
+      "rolling_context": "Sam's visible HyperBEAM work recently focused on making data access and indexing more useful, including weave offsets in copycat messages and cleaner handling for pending messages. The latest activity is operational upkeep: PR #1135 updates the default Arweave chain node set in `hb_arweave_nodes.hrl`, keeping node defaults current after the deeper indexing work.",
+      "current_phase": "operator default maintenance after indexing work",
       "recent_themes": [
-        "real-time indexing prep",
-        "GraphQL support prep",
-        "cleaner pending message handling"
+        "default chain node upkeep",
+        "cleaner node setup",
+        "offset-aware cache indexing"
       ],
       "narrative_threads": [
-        "less hardcoded cache/index logic",
-        "richer query support through better indexed data"
+        "HyperBEAM is improving both deeper message/indexing paths and day-to-day node operation",
+        "Better defaults reduce manual setup for AO node operators"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-09-12T17:13:17Z",
+      "last_success_at": "2026-09-16T18:12:55Z",
       "last_seen_shas": [
         "a799860c4a75e5360425b96682716268cd1d34ad",
         "7fdf901d09d96d3a4a6ca6afbb6220130089c653",
@@ -486,19 +488,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-09-12T17:13:17Z",
+      "last_success_at": "2026-09-16T18:12:55Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-09-12T17:13:17Z",
+      "last_success_at": "2026-09-16T18:12:55Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-09-12T17:13:17Z",
+      "last_success_at": "2026-09-16T18:12:55Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-09-12T17:13:17Z",
+      "last_success_at": "2026-09-16T18:12:55Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
