@@ -1,11 +1,31 @@
 {
   "global": {
-    "last_success_at": "2026-09-16T18:12:55Z"
+    "last_success_at": "2026-09-18T17:42:29Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-09-16T18:12:55Z",
+      "last_success_at": "2026-09-18T17:42:29Z",
       "last_seen_shas": [
+        "5d94598faca729a4120f0bece83fec4f6d10dbf5",
+        "bb2c698526b110db1fe573693bfca2dac0bcce51",
+        "a95c24cd735ce5b47845f2bdea483c3eec5ff2c4",
+        "0f392b2608b65e36ba3fc539c3811c778d1b491a",
+        "46be287a6e9b2e687fd3126c1462c97bab9b27eb",
+        "a3e9c5e2b7d3a98f3266663cd601dbcd309cc17f",
+        "e1fa969182261f6fa0df89fa70ea96a630988118",
+        "118997a6048f96f4a95cfb7c7bc11dfd7247b6a3",
+        "9ee996e1d3baacd2d433a432b5a59280a9d7a0ad",
+        "4d7fc5a748706000815991bea64cf4ca53d1eb31",
+        "6c1f2019f75d19cff4836d289164e2fa50e81bfc",
+        "c79c0fa257d0b6469774ddc52efe5b4e5f9374a6",
+        "a3ba338edffd77fe68e6e5a150f66404b6369f6a",
+        "1c8f540f17280c6456f5bbe7c39341f780534b9f",
+        "3c94478d92b085f8ac81b9bd3e1ddef467940655",
+        "656af64ddae5352c223026d466dfd3fc59d56c42",
+        "f8bd193e349c1944dc98f53cde3e30e3e58858ae",
+        "29b49947af2adb92ee114dcedd4f2f8f8b9b9454",
+        "d8e09c557391f63cba97cdb84a3c95530b067e70",
+        "3321b9baaafc68bad1d07275cd5c964044546e0f",
         "10746695782748a581c2727d645e5f63a94fb759",
         "7db26c99fac55905d490bac5eb32766a454d9611",
         "8593885cb3995860f8523f99b00fc195564dd88d",
@@ -256,8 +276,28 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-09-16T01:45:30Z",
+      "last_public_activity_at": "2026-09-17T21:56:35Z",
       "recent_commit_titles": [
+        "fix(query): accept open GraphQL block bounds",
+        "fix(query): return an empty ID for unresolved parents",
+        "fix(query): accept the standard BlockFilter variable type",
+        "fix(query): expose the Arweave network height",
+        "fix(query): project native transaction amounts accurately",
+        "Merge branch 'agent/graphql-capture-simple-fixes' into fix/realtime-graphql-metadata",
+        "Merge branch 'fix/realtime-graphql-metadata' into fix/match-by-offset-and-id",
+        "Merge branch 'fix/match-by-offset-and-id' into feat/realtime-graphql",
+        "fix(query): OR tag values within leapfrog predicates",
+        "fix(query): paginate blocks by height",
+        "fix(query): use corrected GraphQL list-variable coercion",
+        "fix(query): accept explicit null in nullable GraphQL filters",
+        "chore(query): pin the published GraphQL nullable fix",
+        "Merge signed-ID indexing fixes into GraphQL query stack",
+        "fix(query): normalize GraphQL tag filter names",
+        "fix(copycat): cache binary bundle children without private fields",
+        "fix(query): skip size offset lookups for known non-L1 messages",
+        "Merge Copycat binary-child fix into GraphQL v1 stack",
+        "fix(release): build without a local configuration file",
+        "Merge pull request #1132 from permaweb/feat/realtime-graphql",
         "chore: update default chain node set",
         "Merge pull request #1135 from permaweb/chore/update-default-chain-nodes",
         "feat(copycat): carry weave offsets to the match index",
@@ -317,42 +357,23 @@
         "Merge pull request #1072 from xylophonez/fix/hyperbuddy-metrics-content-type",
         "fix: improve constraint of FS store paths",
         "Merge pull request #1075 from permaweb/fix/store-fs-path-confinement",
-        "chore: improve `CONTRIBUTING.md` with details of current canon.",
-        "chore: add `anti-patterns` section to `CONTRIBUTING.md`",
-        "chore: update `README.md`",
-        "chore: update `AGENTS.md` with suggestions for building on HyperBEAM",
-        "Merge pull request #1068 from permaweb/docs/canon-comments-and-commits-v2",
-        "fix: `README.md` header logo",
-        "Merge pull request #1069 from permaweb/fix/readme-header-logo",
-        "impr: support cross-node cron pushes",
-        "fix: load bare ID bases before execution",
-        "Merge pull request #1066 from permaweb/fix/bare-id-resolution",
-        "Merge pull request #1067 from permaweb/impr/now-with-push",
-        "Merge pull request #1061 from permaweb/fix/forge-spec-body",
-        "Merge pull request #1055 from permaweb/feat/name-reserved-hosts",
-        "Merge pull request #1045 from permaweb/codex/fix-lua-module-loading-recursion",
-        "chore: tidy flow and test",
-        "Merge pull request #1044 from permaweb/codex/fix-remote-response-link-loads",
-        "fix: resolve current scheduler locations",
-        "Merge pull request #1041 from permaweb/fix/location-tag-variants-20260724",
-        "Merge pull request #1042 from permaweb/fix/not_load_empty_device",
-        "fix: maintain node message `Opts` in read/cache calls for remote stores",
-        "Merge pull request #1032 from permaweb/fix/gateway-node-options"
+        "chore: improve `CONTRIBUTING.md` with details of current canon."
       ],
-      "rolling_context": "Sam's visible HyperBEAM work recently focused on making data access and indexing more useful, including weave offsets in copycat messages and cleaner handling for pending messages. The latest activity is operational upkeep: PR #1135 updates the default Arweave chain node set in `hb_arweave_nodes.hrl`, keeping node defaults current after the deeper indexing work.",
-      "current_phase": "operator default maintenance after indexing work",
+      "rolling_context": "Sam's visible HyperBEAM work moved from recent indexing and operator-default upkeep into a larger query reliability push. PR #1132 merged realtime GraphQL with ArLMDB snapshots, using mixed local and onchain stores so nodes can serve fresher query results while offloading much of the index storage to Arweave. The day also included targeted fixes for block pagination, tag filters, nullable GraphQL inputs, native transaction amounts, binary bundle-child ingestion, and clean release builds.",
+      "current_phase": "realtime GraphQL query stack merged and being hardened",
       "recent_themes": [
-        "default chain node upkeep",
-        "cleaner node setup",
-        "offset-aware cache indexing"
+        "realtime GraphQL support",
+        "faster and more reliable app queries",
+        "mixed local and onchain index storage",
+        "release build cleanup"
       ],
       "narrative_threads": [
-        "HyperBEAM is improving both deeper message/indexing paths and day-to-day node operation",
-        "Better defaults reduce manual setup for AO node operators"
+        "HyperBEAM indexing work is becoming more useful to app builders through better query paths",
+        "AO node operation is being made less fragile through small build and ingestion fixes"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-09-16T18:12:55Z",
+      "last_success_at": "2026-09-18T17:42:29Z",
       "last_seen_shas": [
         "a799860c4a75e5360425b96682716268cd1d34ad",
         "7fdf901d09d96d3a4a6ca6afbb6220130089c653",
@@ -488,19 +509,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-09-16T18:12:55Z",
+      "last_success_at": "2026-09-18T17:42:29Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-09-16T18:12:55Z",
+      "last_success_at": "2026-09-18T17:42:29Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-09-16T18:12:55Z",
+      "last_success_at": "2026-09-18T17:42:29Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-09-16T18:12:55Z",
+      "last_success_at": "2026-09-18T17:42:29Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
