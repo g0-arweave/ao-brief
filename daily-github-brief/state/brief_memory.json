@@ -1,11 +1,13 @@
 {
   "global": {
-    "last_success_at": "2026-09-19T17:18:15Z"
+    "last_success_at": "2026-09-21T19:31:13Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-09-19T17:18:15Z",
+      "last_success_at": "2026-09-21T19:31:13Z",
       "last_seen_shas": [
+        "11fc9e3153e5dc7ef426b1780fca937dbffc69c6",
+        "5142ab9515b86f9a2c4938672a657faa39c67bf9",
         "3db10473addf59d0b81f5695e0591672c73918d7",
         "5d94598faca729a4120f0bece83fec4f6d10dbf5",
         "bb2c698526b110db1fe573693bfca2dac0bcce51",
@@ -277,8 +279,10 @@
         "8c19c6adb45fc658e1ac06e6555efd916fd305e5",
         "5f049b2d1ee555a21bcabfa232fff9bb38f0d48b"
       ],
-      "last_public_activity_at": "2026-09-18T20:03:44Z",
+      "last_public_activity_at": "2026-09-20T20:23:23Z",
       "recent_commit_titles": [
+        "impr: lower format perf cost by terminating `~p` early",
+        "Merge pull request #1138 from permaweb/impr/format-speed",
         "Merge pull request #1137 from permaweb/fix/remove-default-gateway-store",
         "fix(query): accept open GraphQL block bounds",
         "fix(query): return an empty ID for unresolved parents",
@@ -356,24 +360,22 @@
         "Merge pull request #1078 from permaweb/fix/arweave-ao-types-metadata",
         "Merge pull request #1073 from xylophonez/feat/meter-request-response-bytes",
         "Merge pull request #1071 from xylophonez/fix/p4-multi-hook-edge",
-        "Merge pull request #1072 from xylophonez/fix/hyperbuddy-metrics-content-type",
-        "fix: improve constraint of FS store paths",
-        "Merge pull request #1075 from permaweb/fix/store-fs-path-confinement"
+        "Merge pull request #1072 from xylophonez/fix/hyperbuddy-metrics-content-type"
       ],
-      "rolling_context": "Sam's visible HyperBEAM work recently centered on the realtime GraphQL query stack, including mixed local and onchain index storage plus follow-up fixes for query reliability and release builds. Today's merge removed the gateway store from default options in hb_opts.erl, a small cleanup that keeps node defaults more explicit after the larger query/indexing push.",
-      "current_phase": "post-GraphQL hardening and default cleanup",
+      "rolling_context": "Sam's visible HyperBEAM work recently centered on the realtime GraphQL query stack, including mixed local and onchain index storage plus follow-up fixes for query reliability and release builds. After a small default cleanup, today's merged PR #1138 lowered the cost of logging large events by terminating `~p` formatting early in hb_format.erl. The recent pattern is post-feature hardening: cleaner defaults, lower operational cost, and fewer sharp edges after the larger query/indexing push.",
+      "current_phase": "post-GraphQL hardening and performance cleanup",
       "recent_themes": [
-        "cleaner node defaults",
-        "realtime GraphQL hardening",
-        "more explicit operator configuration"
+        "lower logging cost",
+        "cleaner node operation",
+        "realtime GraphQL hardening"
       ],
       "narrative_threads": [
-        "query stack is being hardened after merge",
-        "HyperBEAM defaults are being kept simple as storage/query paths expand"
+        "large feature work followed by targeted reliability and performance fixes",
+        "making HyperBEAM less wasteful and easier to operate"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-09-19T17:18:15Z",
+      "last_success_at": "2026-09-21T19:31:13Z",
       "last_seen_shas": [
         "a799860c4a75e5360425b96682716268cd1d34ad",
         "7fdf901d09d96d3a4a6ca6afbb6220130089c653",
@@ -509,19 +511,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-09-19T17:18:15Z",
+      "last_success_at": "2026-09-21T19:31:13Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-09-19T17:18:15Z",
+      "last_success_at": "2026-09-21T19:31:13Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-09-19T17:18:15Z",
+      "last_success_at": "2026-09-21T19:31:13Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-09-19T17:18:15Z",
+      "last_success_at": "2026-09-21T19:31:13Z",
       "last_seen_shas": [
         "5b7b0a43f4bf69dbb9720470c095cfb7db012a34",
         "fff1eb84de0bd6f816f315415b714b10429b6c24",
