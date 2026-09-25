@@ -1,11 +1,14 @@
 {
   "global": {
-    "last_success_at": "2026-09-18T18:39:01Z"
+    "last_success_at": "2026-09-25T18:54:23Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-09-18T18:39:01Z",
+      "last_success_at": "2026-09-25T18:54:23Z",
       "last_seen_shas": [
+        "3db10473addf59d0b81f5695e0591672c73918d7",
+        "11fc9e3153e5dc7ef426b1780fca937dbffc69c6",
+        "5142ab9515b86f9a2c4938672a657faa39c67bf9",
         "f6cbfa49324e300f2dab4b5e3e23a7d2f751c59a",
         "8593885cb3995860f8523f99b00fc195564dd88d",
         "2c03978a3d201444bf7aada3eb35809153e41ef3",
@@ -302,13 +305,13 @@
         "b6efdee76e986707454541904743510f36043868",
         "08bfd55b5862d0c8b0cb87992ae23bf8b5475e58",
         "b3630f32e9248a10d69a1f7aab78f7971ca3e387",
-        "618be36cb4f37d0088070a69f4cc5f8955dcb6af",
-        "09e1c0afe2ae18f2d7c554f4ee3887a1829e3875",
-        "b15fd32e8556c456009865e58f7f521bff477d74",
-        "df1e237d2c9df0da24f48d1604f63b543e33d9cc"
+        "618be36cb4f37d0088070a69f4cc5f8955dcb6af"
       ],
-      "last_public_activity_at": "2026-09-17T21:56:35Z",
+      "last_public_activity_at": "2026-09-20T20:23:23Z",
       "recent_commit_titles": [
+        "Merge pull request #1137 from permaweb/fix/remove-default-gateway-store",
+        "impr: lower format perf cost by terminating `~p` early",
+        "Merge pull request #1138 from permaweb/impr/format-speed",
         "feat(query): serve GraphQL pages from the match index",
         "feat(copycat): carry weave offsets to the match index",
         "Merge pull request #1129 from permaweb/feat/copycat-offsets",
@@ -385,27 +388,22 @@
         "Merge pull request #1100 from permaweb/fix/cookie-pair-parse",
         "fix(device-load): refuse circular device resolutions",
         "Merge pull request #1103 from permaweb/fix/invalid-preloaded-store-boot-spin",
-        "fix: limit codec response headers",
-        "Merge pull request #1084 from permaweb/fix/http-codec-extra-headers",
-        "fix(hyperbuddy): bound link expansion",
-        "Merge pull request #1086 from permaweb/impr/hyperbuddy-link-choices"
+        "fix: limit codec response headers"
       ],
-      "rolling_context": "HyperBEAM advanced from store/index groundwork into a merged realtime GraphQL stack backed by ArLMDB snapshots. Sam landed offset-aware indexing, match groups keyed by weave position and signed ID, many GraphQL compatibility/correctness fixes, and a clean release-build fix that removes the need for a local config file.",
-      "current_phase": "Realtime GraphQL hardening and indexed Arweave-style reads",
+      "rolling_context": "HyperBEAM previously advanced from store/index groundwork into realtime GraphQL support backed by ArLMDB snapshots, with many compatibility and correctness fixes. This week was smaller and more operational: Sam merged cleaner defaults by removing the gateway store from default opts, and lowered logging cost for large events by changing formatting behavior.",
+      "current_phase": "Operational hardening after GraphQL/indexing work",
       "recent_themes": [
-        "GraphQL pages served from local match indexes",
-        "offset-aware and signed-ID-safe matching",
-        "client compatibility fixes for GraphQL filters and pagination",
-        "cleaner release builds and operator setup"
+        "cheaper large-event logging",
+        "cleaner node defaults",
+        "making infrastructure less fragile and easier to operate"
       ],
       "narrative_threads": [
-        "AO nodes gaining more direct local data-serving ability",
-        "query correctness and trust improving through edge-case fixes",
-        "operator setup becoming less fragile"
+        "GraphQL and indexed-read work followed by hardening",
+        "operator setup and performance cleanup"
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-09-18T18:39:01Z",
+      "last_success_at": "2026-09-25T18:54:23Z",
       "last_seen_shas": [
         "a799860c4a75e5360425b96682716268cd1d34ad",
         "34f2fb2773311c4eb07091debea198da457f25c0",
@@ -561,19 +559,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-09-18T18:39:01Z",
+      "last_success_at": "2026-09-25T18:54:23Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-09-18T18:39:01Z",
+      "last_success_at": "2026-09-25T18:54:23Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-09-18T18:39:01Z",
+      "last_success_at": "2026-09-25T18:54:23Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-09-18T18:39:01Z",
+      "last_success_at": "2026-09-25T18:54:23Z",
       "last_seen_shas": [
         "2348a9dbef90b207303c14b025607453c02b3e57",
         "46a7cdf2abeca0380cd5c612a6abad1e3993e8ae",
