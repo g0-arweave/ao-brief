@@ -25,23 +25,45 @@ jobs:
     timeout-minutes: 10
 
     steps:
+      - name: Check schedule window
+        id: schedule_window
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          TZ: America/Los_Angeles
+        run: |
+          if [ "$EVENT_NAME" != "schedule" ]; then
+            echo "should_run=1" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          local_time="$(date '+%Y-%m-%d %H:%M:%S %Z')"
+          local_hour="$(date '+%H')"
+          echo "Scheduled run started at ${local_time}."
+
+          if [ "$local_hour" = "07" ]; then
+            echo "should_run=1" >> "$GITHUB_OUTPUT"
+          else
+            echo "Scheduled run is outside the 7am America/Los_Angeles hour; skipping brief generation."
+            echo "should_run=0" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Check out repo
+        if: steps.schedule_window.outputs.should_run == '1'
         uses: actions/checkout@v4
 
       - name: Check for tracked updates
-        if: github.event_name == 'schedule'
+        if: github.event_name == 'schedule' && steps.schedule_window.outputs.should_run == '1'
         id: preflight
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: python3 daily-github-brief/preflight.py
 
-      - name: Stop if no tracked updates
-        if: github.event_name == 'schedule' && steps.preflight.outputs.has_updates != '1'
-        run: |
-          echo "No new tracked commits; skipping dependency setup and email generation."
-          exit 0
+      - name: Report no tracked updates
+        if: github.event_name == 'schedule' && steps.schedule_window.outputs.should_run == '1' && steps.preflight.outputs.has_updates != '1'
+        run: echo "No new tracked commits; skipping dependency setup and email generation."
 
       - name: Set up Python
+        if: steps.schedule_window.outputs.should_run == '1' && (github.event_name != 'schedule' || steps.preflight.outputs.has_updates == '1')
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -49,9 +71,11 @@ jobs:
           cache-dependency-path: daily-github-brief/requirements.txt
 
       - name: Install dependencies
+        if: steps.schedule_window.outputs.should_run == '1' && (github.event_name != 'schedule' || steps.preflight.outputs.has_updates == '1')
         run: pip install -r daily-github-brief/requirements.txt
 
       - name: Decide run mode
+        if: steps.schedule_window.outputs.should_run == '1' && (github.event_name != 'schedule' || steps.preflight.outputs.has_updates == '1')
         id: mode
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
@@ -61,6 +85,7 @@ jobs:
           fi
 
       - name: Run daily brief
+        if: steps.schedule_window.outputs.should_run == '1' && (github.event_name != 'schedule' || steps.preflight.outputs.has_updates == '1')
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
@@ -80,7 +105,7 @@ jobs:
           fi
 
       - name: Commit updated memory and archive
-        if: steps.mode.outputs.dry_run != '1'
+        if: steps.schedule_window.outputs.should_run == '1' && (github.event_name != 'schedule' || steps.preflight.outputs.has_updates == '1') && steps.mode.outputs.dry_run != '1'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
