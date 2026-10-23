@@ -1,10 +1,10 @@
 {
   "global": {
-    "last_success_at": "2026-10-16T19:02:33Z"
+    "last_success_at": "2026-10-23T18:43:54Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-10-16T19:02:33Z",
+      "last_success_at": "2026-10-23T18:43:54Z",
       "last_seen_shas": [
         "3db10473addf59d0b81f5695e0591672c73918d7",
         "11fc9e3153e5dc7ef426b1780fca937dbffc69c6",
@@ -403,8 +403,19 @@
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-10-16T19:02:33Z",
+      "last_success_at": "2026-10-23T18:43:54Z",
       "last_seen_shas": [
+        "ca4eee2d14ad375e08c946a39339afd7c12f4720",
+        "21016ebd1ade2380d5415b0ddef95e70195883ee",
+        "ceab72574b35991989c74eb8349ca556797d1699",
+        "f0e8f3a5ca2f2f243f2ad0faa0691830daf60d1e",
+        "428452689a7e575e41b9e6133eb8835e004c5753",
+        "df77d3186938758754acdd8379aaf5da14dd7cb2",
+        "ba831e04e0c5f22f65d2a3ffb528af25d7180e2f",
+        "af1d53d2684df40df8379bd51799ecfadf6847a9",
+        "b15e4fa997109c04a16a7e3c42086b9f97bb4e86",
+        "c649256b94400afc975c5461eed87eb3445e5ea0",
+        "cb946740a1002fcf97cb45da88aafa6007344346",
         "a799860c4a75e5360425b96682716268cd1d34ad",
         "34f2fb2773311c4eb07091debea198da457f25c0",
         "271469c22e0d6e2d7b6f7a5d75759fde596fdf18",
@@ -477,8 +488,18 @@
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
       ],
-      "last_public_activity_at": "2026-09-03T08:40:14Z",
+      "last_public_activity_at": "2026-10-23T12:36:39Z",
       "recent_commit_titles": [
+        "build: pin standalone Forge tooling to HyperBEAM RC4 [rung a]",
+        "build: target native HyperBEAM RC4 with bootstrap1.11 [rung b]",
+        "fix(bootstrap): load canonical RC4 ledger assets from the archive [rung b]",
+        "build(aopayment): target RC4 and expose ao-payment@1.11 [rung b]",
+        "fix(aopayment): bound P4 admission by reserved credit [rung b]",
+        "fix(bootstrap): compose native RC4 paid hooks and recipient roles [rung b]",
+        "fix(pricing): fail closed on RC4 upload estimates as v1.11 [rung b partial]",
+        "fix(gc): prune RC4 escaped indexes as v1.11 [rung b partial]",
+        "docs(aopayment): record the v0.11 upgrade and validation boundary [rung a]",
+        "fix(aopayment): bind automatic payout to a durable P4 debit [rung b]",
         "Merge pull request #1 from jajablinky/codex/modernize-permaweb-wiki",
         "feat: tell a usable router from a published claim",
         "feat: discover routers, hard-code one, describe none",
@@ -559,19 +580,19 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-10-16T19:02:33Z",
+      "last_success_at": "2026-10-23T18:43:54Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-10-16T19:02:33Z",
+      "last_success_at": "2026-10-23T18:43:54Z",
       "last_seen_shas": []
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-10-16T19:02:33Z",
+      "last_success_at": "2026-10-23T18:43:54Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-10-16T19:02:33Z",
+      "last_success_at": "2026-10-23T18:43:54Z",
       "last_seen_shas": [
         "2348a9dbef90b207303c14b025607453c02b3e57",
         "46a7cdf2abeca0380cd5c612a6abad1e3993e8ae",
