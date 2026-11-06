@@ -4,6 +4,7 @@ Readable AO development briefs, backed by public GitHub receipts.
 
 ## Briefs
 
+- [AO Weekly Synthesis - 2026-11-06](2026-11-06-weekly.md)
 - [AO Weekly Synthesis - 2026-10-30](2026-10-30-weekly.md)
 - [AO Weekly Synthesis - 2026-10-23](2026-10-23-weekly.md)
 - [AO Weekly Synthesis - 2026-09-25](2026-09-25-weekly.md)
