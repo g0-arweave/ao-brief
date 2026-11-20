@@ -1,10 +1,10 @@
 {
   "global": {
-    "last_success_at": "2026-11-13T21:40:09Z"
+    "last_success_at": "2026-11-20T21:58:34Z"
   },
   "sources": {
     "sam-hyperbeam": {
-      "last_success_at": "2026-11-13T21:40:09Z",
+      "last_success_at": "2026-11-20T21:58:34Z",
       "last_seen_shas": [
         "56c529a81579e0f90e8218af62a88eda026a41bf",
         "6e3772b5f05e538922c835d9d3df035b11886abe",
@@ -403,8 +403,18 @@
       ]
     },
     "xylophonez-profile": {
-      "last_success_at": "2026-11-13T21:40:09Z",
+      "last_success_at": "2026-11-20T21:58:34Z",
       "last_seen_shas": [
+        "34e7aa55e90c5bc3fc83e7e1292354711437df70",
+        "0c154390b8febed44fe0dd8f8a0af6df3e3d089b",
+        "960b114f7977acbf359d1a4c326c150520b25f05",
+        "02e1b2c7eab98a5d3b49fdabee9962069b11c460",
+        "88cfcfd37d13b4385d64c98c0c79b253f58b0fc5",
+        "7ba0d440f296d005e77f52719e77024dc96b2300",
+        "ed410d4e82b19aff476d885fb09ea420a92d68eb",
+        "48a2aeb82a2aa5ba779aaf31ee40b5235d12e683",
+        "181b1167389f6344b604bf49977f221bbb304ffd",
+        "cd8472197088eaee14212982207dd418c8c41d16",
         "ac4bff286f35f1e01733c0a6344af7ab26847568",
         "a0706446f808afea9429f668b22a59cc2c1e5cca",
         "deb43e17f8d30a51f88309d936e41e529d4f7734",
@@ -522,8 +532,18 @@
         "9675cd4c48b360039c5474f80a2685835ed482c6",
         "9a7b6249275594448f31d617cffbdb578fc5dd1f"
       ],
-      "last_public_activity_at": "2026-11-13T18:05:05Z",
+      "last_public_activity_at": "2026-11-17T12:29:38Z",
       "recent_commit_titles": [
+        "fix(aopayment): settle AO imports on the ledger's own slot result [rung b]",
+        "Good \"git\" signature for xylophonezygote@gmail.com with ED25519 key SHA256:USwJnJWSIwh2LFl78Q1yzbm0lpOhc2wHucwwXqgb968",
+        "fix(aopayment): report a failed ledger computation at once in settlement [rung b]",
+        "build(bootstrap): target HyperBEAM 81cba3e7, the AndEE 0.11 runtime [rung a]",
+        "fix(bootstrap): ship the AndEE 0.11 runtime's ledger scripts [rung b]",
+        "test(bootstrap): a restart keeps the registered ledger [rung a]",
+        "feat(aopayment): rename the device to ao-payment@1.12 [rung b]",
+        "fix(bootstrap): compose ao-payment@1.12 [rung b]",
+        "refactor(aopayment): read the ledger's current slot in one place [rung b]",
+        "fix(aopayment): bound an import's schedule search to its notice [rung b]",
         "fix(aopayment): commit intent records before acting on them [rung b]",
         "fix(aopayment): charge executed P4 work above its admission hold [rung b]",
         "fix(aopayment): require an external beneficiary for automatic payout [rung b]",
@@ -593,17 +613,7 @@
         "dev_acme: never crash node boot; run bring-up in spawned proc with catch",
         "dev_acme: export info/1 declaring exports so the device is dispatchable",
         "dev_acme: place info/1 after attributes (packager lint rejects attr-after-fn)",
-        "dev_acme: rename hook fn start->run ('start' path collides with hb dispatch)",
-        "config: fix on/start hook (path run + result ignore) and pin to working device",
-        "Ship prep: remove debug log, document on/start gotchas + production status",
-        "Initial standalone HyperBEAM docs device",
-        "feat: publish standalone ao payment device",
-        "Initial standalone device package",
-        "feat: enable ao payment p4 auto-withdraw",
-        "fix: sign settlement withdrawals with node wallet",
-        "feat: auto-withdraw native p4 charges",
-        "Add native p4 bundler profile",
-        "Add recharging waterfall profile"
+        "dev_acme: rename hook fn start->run ('start' path collides with hb dispatch)"
       ],
       "rolling_context": "xylophonez merged a large `permaweb-llm-wiki` update focused on modern Permaweb deployment and AO guidance. The merged PR refreshed guidance for `@permaweb/deploy` 7.0.0, manifests, GitHub Actions, HyperBEAM upload routes, and safer AO read/write examples, with syntax, link, JSON, and policy checks documented. This shifts recent visible activity from operator discovery tools toward builder documentation and onboarding quality.",
       "current_phase": "Permaweb and AO documentation modernization",
@@ -618,11 +628,11 @@
       ]
     },
     "nickj202-profile": {
-      "last_success_at": "2026-11-13T21:40:09Z",
+      "last_success_at": "2026-11-20T21:58:34Z",
       "last_seen_shas": []
     },
     "lucifer0x17-profile": {
-      "last_success_at": "2026-11-13T21:40:09Z",
+      "last_success_at": "2026-11-20T21:58:34Z",
       "last_seen_shas": [
         "dddbdd3fc9fe662d129a0f55148ef2099d2749ba",
         "a5d79938bbfcfaa759ddc40a3e0a19f9464aa2ef",
@@ -638,11 +648,11 @@
       ]
     },
     "jamespiechota-profile": {
-      "last_success_at": "2026-11-13T21:40:09Z",
+      "last_success_at": "2026-11-20T21:58:34Z",
       "last_seen_shas": []
     },
     "permaweb-os": {
-      "last_success_at": "2026-11-13T21:40:09Z",
+      "last_success_at": "2026-11-20T21:58:34Z",
       "last_seen_shas": [
         "159c43a5d73e2bd974e03cbd691aabe953bf2cc0",
         "f61c424675813c065c1f1fdbe94aa94cdfcd3299",
